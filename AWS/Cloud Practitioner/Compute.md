@@ -29,3 +29,4 @@ EC2 instances are resizable, you pay only for what you use and can adjust capaci
 | Provisioning speed | Seconds to minutes | Weeks to months (procurement + setup) |
 | Hardware management | AWS-managed | Your team's responsibility |
 
+	
