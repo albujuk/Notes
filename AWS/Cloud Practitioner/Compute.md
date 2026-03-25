@@ -6,7 +6,7 @@ EC2 is AWS's core compute service. It provides **virtual machines (instances)** 
 
 ### Multi-Tenancy
 
-EC2 instances run on **shared physical hardware** but are fully isolated from one another - this model is called **multi-tenancy**. AWS's hypervisor enforces the isolation so that one tenant cannot access another's data or resources.
+EC2 instances run on **shared physical hardware** but are fully isolated from one another 4 this model is called **multi-tenancy**. AWS's hypervisor enforces the isolation so that one tenant cannot access another's data or resources.
 
 ### Elasticity (Scaling)
 
