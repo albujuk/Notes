@@ -11,12 +11,12 @@ The **Master Node** is a specialized node responsible for managing and orchestra
 
 ## Master vs. Worker Nodes
 
-| Feature | Master Node | Worker Node |
-| :--- | :--- | :--- |
-| **Role** | Control Plane (Management) | Data Plane (Execution) |
-| **Responsibility** | Orchestration, scheduling, and cluster management. | Running application containers (Pods). |
-| **Key Components** | API Server, etcd, Scheduler, Controller Manager. | Kubelet, Container Runtime, Kube-proxy. |
-| **Count** | Typically 1 or 3 (for high availability). | Scalable to hundreds or thousands. |
+| Feature                | Master Node (Control Plane)                                                | Worker Node (Data Plane)                                           |
+| :--------------------- | :------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| **Role**               | Management & Orchestration                                                 | Execution & Workload                                               |
+| **Responsibility**     | Maintaining desired state, scheduling, and cluster-wide decisions.         | Running application containers and managing local networking.      |
+| **Primary Components** | API Server, etcd, Scheduler, Controller Manager, Cloud Controller Manager. | Kubelet, Kube-proxy, Container Runtime (e.g., Docker, containerd). |
+| **Count**              | 1 (Single) or 3+ (High Availability).                                      | 1 to many (Scalable).                                              |
 
 ---
 
