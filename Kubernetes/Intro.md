@@ -1,5 +1,10 @@
-**Node**: a machine, p or v, k8s installed on it. also may be worker nodes and called minions.
-**Cluster**: list of nodes grouped
-multiple nodes helps distribute the load
+# Kubernetes Introduction
 
-a master node is a node but k8s is installed on it and it manages the other nodes inside the cluster
+## Node
+A **Node** is a physical or virtual machine with Kubernetes installed. Nodes serve as the worker machines in a cluster and are sometimes referred to as "minions."
+
+## Cluster
+A **Cluster** is a collection of nodes grouped together. Distributing workloads across multiple nodes ensures high availability and efficient load balancing.
+
+## Master Node
+The **Master Node** is a specialized node responsible for managing and orchestrating the other nodes within the cluster, ensuring the desired state of the system is maintained.
