@@ -6,6 +6,8 @@ Learning path in order:
 |---|-------|------|---------------|
 | 1 | Compute | [[AWS/Cloud Practitioner/Compute]] | EC2, multi-tenancy, vertical/horizontal scaling, cloud vs on-premises, Lambda, Beanstalk, Batch, Lightsail, Outposts |
 | 2 | Containers | [[AWS/Cloud Practitioner/Containers]] | ECR, ECS, EKS, Fargate |
+| 3 | Global Infrastructure | [[AWS/Cloud Practitioner/Global Infrastructure]] | Regions, AZs, edge locations, local zones, Outposts |
+| 4 | CloudFormation | [[AWS/Cloud Practitioner/CloudFormation]] | IaC, templates, stacks, change sets, CDK, SAM |
 
 ---
 
