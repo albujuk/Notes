@@ -67,30 +67,51 @@ Every folder has an `Index.md`. `Home.md` is the root index.
 
 ## 4. Obsidian CLI
 
-Use the `obsidian` command to interact with the vault while Obsidian is running:
+Use the `obsidian` command to interact with the vault while Obsidian is running.
+
+`file=<name>` resolves by name (wikilink-style). `path=<path>` is exact.
 
 ```bash
 # Read / write
 obsidian read file=<name>
 obsidian create path=<path> content=<text>
 obsidian append file=<name> content=<text>
+obsidian prepend file=<name> content=<text>
+obsidian delete file=<name>
+obsidian rename file=<name> name=<new-name>
+obsidian move file=<name> to=<folder-path>
 
 # Search
-obsidian search query=<text>
-obsidian search:context query=<text>
+obsidian search query=<text>                         # files matching query
+obsidian search:context query=<text>                 # matching lines with context
+obsidian search query=<text> path=<folder>           # limit to folder
 
-# Inspect
+# Inspect vault
 obsidian files
+obsidian files folder=<path>
 obsidian folders
 obsidian tags counts
 obsidian tasks todo
+obsidian tasks verbose                               # grouped by file with line numbers
+obsidian outline file=<name>                         # headings tree
+obsidian links file=<name>                           # outgoing links
+obsidian backlinks file=<name>                       # incoming links
+obsidian orphans                                     # files with no incoming links
+obsidian deadends                                    # files with no outgoing links
+obsidian unresolved                                  # broken wikilinks in vault
 
 # Frontmatter properties
 obsidian property:set name=<key> value=<val> file=<name>
 obsidian property:read name=<key> file=<name>
-```
+obsidian property:remove name=<key> file=<name>
+obsidian properties file=<name>                      # list all properties on file
 
-`file=<name>` resolves by name (wikilink-style). `path=<path>` is exact.
+# Daily notes
+obsidian daily:read
+obsidian daily:append content=<text>
+obsidian daily:prepend content=<text>
+obsidian daily:path                                  # get path of today's note
+```
 
 ---
 
