@@ -29,72 +29,21 @@ Stateful firewall at the **instance** level. You define allow rules only (no exp
 
 ## Network ACLs (NACLs)
 
-Stateful**less** firewall at the **subnet** level. Rules evaluated in number order; first match wins. Must explicitly allow both inbound and return traffic. Default NACL allows all traffic.
+Stateless firewall at the **subnet** level. Rules evaluated in number order; first match wins. Must explicitly allow both inbound and return traffic. Default NACL allows all traffic.
 
-| | Security Group | NACL |
-|--|--|--|
-| Level | Instance | Subnet |
-| State | Stateful | Stateless |
-| Rules | Allow only | Allow + Deny |
-| Evaluation | All rules | In order, first match |
+| Feature            | Security Groups                                                       | Network ACLs                                                 |
+| ------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Scope**          | Instance level (attached to EC2 instances)                            | Subnet level (associated with subnets)                       |
+| **State**          | Stateful (remembers state)                                            | Stateless (doesn't remember state)                           |
+| **Rule types**     | Only allow type rules                                                 | Both allow and deny type rules                               |
+| **Return traffic** | Return traffic is automatically allowed if inbound traffic is allowed | Return traffic must be implicitly allowed in both directions |
+| **Uses**           | Fine-grained control of traffic for individual EC2 instances          | Broad control of traffic in and out of subnets               |
+
+> Securing subnets and resources with NACLs and security groups is **your responsibility** under the Shared Responsibility Model — networking traffic protection is a critical defense for applications *in* the cloud.
 
 ## Virtual Private Gateway
 
-VPN endpoint on the AWS side. Attach to a VPC to enable encrypted connections from on-premises networks or remote clients into that VPC.
-
----
-
-## Connecting to AWS
-
-### AWS Client VPN
-
-Remote workers connect to AWS or on-premises resources over an encrypted VPN tunnel from their device. Client-based, OpenVPN-compatible.
-
-### AWS Site-to-Site VPN
-
-Links an entire on-premises network to a VPC over an encrypted IPsec tunnel through the internet. Uses a Virtual Private Gateway on the AWS side and a customer gateway on the on-premises side.
-
-### AWS PrivateLink
-
-Exposes services privately inside AWS without traffic touching the public internet. Uses VPC endpoints — traffic stays on the AWS network. Common for accessing AWS services (S3, DynamoDB) or sharing your own service with other VPCs/accounts.
-
-- **Interface endpoint** — elastic network interface with private IP; used for most AWS services and custom services
-- **Gateway endpoint** — route table entry; only for S3 and DynamoDB (free)
-- Traffic never leaves AWS backbone — no NAT, no internet gateway needed
-
-### AWS Direct Connect
-
-Dedicated physical network connection from on-premises to AWS. Bypasses the public internet entirely — lower latency, more consistent throughput. Takes weeks to provision; higher cost than VPN.
-
-- Speeds: 1 Gbps, 10 Gbps, 100 Gbps (or sub-1G via hosted connection through a partner)
-- Traffic is **not encrypted by default** — add Site-to-Site VPN on top for encryption
-- Use case: large data transfers, latency-sensitive workloads, regulatory requirements
-
----
-
-### VPN vs PrivateLink vs Direct Connect
-
-|                  | Site-to-Site VPN                             | PrivateLink                            | Direct Connect                                     |
-| ---------------- | -------------------------------------------- | -------------------------------------- | -------------------------------------------------- |
-| **Traffic path** | Public internet (encrypted)                  | AWS backbone only                      | Dedicated private line                             |
-| **Encryption**   | Yes (IPsec)                                  | Not needed (private)                   | No (add VPN on top)                                |
-| **Connects**     | On-prem ↔ VPC                                | Service-to-service (within/across AWS) | On-prem ↔ AWS                                      |
-| **Setup time**   | Minutes                                      | Minutes                                | Weeks                                              |
-| **Cost**         | Low                                          | Per-endpoint + data                    | High (port hours + data)                           |
-| **Bandwidth**    | Variable (internet-dependent)                | High (AWS network)                     | Consistent (up to 100 Gbps)                        |
-| **Use case**     | Quick on-prem link, backup to Direct Connect | Private access to AWS/custom services  | Production workloads needing consistent throughput |
-
-**Key distinctions:**
-- VPN = encrypted tunnel *over* internet → cheap, fast to set up, bandwidth varies
-- PrivateLink = traffic never leaves AWS → for service exposure, not on-prem connectivity
-- Direct Connect = physical line → predictable performance, high cost, long lead time; often paired with VPN as encrypted backup
-
-| Option | Path | Use case |
-|--------|------|----------|
-| Client VPN | Internet (encrypted) | Remote workers |
-| Site-to-Site VPN | Internet (encrypted) | On-prem ↔ VPC |
-| PrivateLink | AWS network | Private service access |
-| Direct Connect | Dedicated line | High-throughput / low-latency on-prem link |
+VPN endpoint on the AWS side. Attach to a VPC to enable encrypted connections from on-premises networks or remote clients into that VPC. Used by [[Connectivity#AWS Site-to-Site VPN|Site-to-Site VPN]].
 
 ---
 
@@ -116,4 +65,4 @@ Content delivery network. Caches content at [[Global Infrastructure#Edge Locatio
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[AWS/Cloud Practitioner/Index]] · [[Home]] · [[Connectivity]] →

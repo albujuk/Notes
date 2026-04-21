@@ -133,6 +133,7 @@ Fixed filename: `update-content.md`. May exist in multiple dirs simultaneously, 
 2. For each: read content, apply to appropriate note(s) in the same directory.
 3. Empty `update-content.md` after applying (don't delete).
 4. Update `Index.md` if new notes were created.
+5. Update `Home.md` file tree if new notes were created.
 
 **Rules:**
 - User writes; Claude routes and applies.

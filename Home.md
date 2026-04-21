@@ -24,6 +24,7 @@ Notes/
 │       ├── Global Infrastructure.md
 │       ├── CloudFormation.md
 │       ├── Networking.md
+│       ├── Connectivity.md
 │       └── missing.md
 └── Kubernetes/
     ├── Index.md
