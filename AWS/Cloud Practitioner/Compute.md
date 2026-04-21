@@ -106,12 +106,16 @@ Must stay on-prem?             → Outposts
 graph LR
     A([EC2]) --> B([Lightsail]) --> C(["ECS / EKS"]) --> D([Beanstalk]) --> E([Fargate]) --> F([Lambda])
 
-    classDef c1 fill:#c0392b,color:#fff,stroke:none
-    classDef c2 fill:#e67e22,color:#fff,stroke:none
-    classDef c3 fill:#d4ac0d,color:#fff,stroke:none
-    classDef c4 fill:#27ae60,color:#fff,stroke:none
-    classDef c5 fill:#1abc9c,color:#fff,stroke:none
-    classDef c6 fill:#2980b9,color:#fff,stroke:none
+    MC([More Control]) ~~~~~~~ MM([More Managed])
+
+    classDef c1  fill:#c0392b,color:#fff,stroke:none
+    classDef c2  fill:#e67e22,color:#fff,stroke:none
+    classDef c3  fill:#d4ac0d,color:#fff,stroke:none
+    classDef c4  fill:#27ae60,color:#fff,stroke:none
+    classDef c5  fill:#1abc9c,color:#fff,stroke:none
+    classDef c6  fill:#2980b9,color:#fff,stroke:none
+    classDef lctrl fill:none,stroke:none,color:#e74c3c,font-style:italic,font-size:13px
+    classDef lmgd  fill:none,stroke:none,color:#2980b9,font-style:italic,font-size:13px
 
     class A c1
     class B c2
@@ -119,12 +123,9 @@ graph LR
     class D c4
     class E c5
     class F c6
+    class MC lctrl
+    class MM lmgd
 ```
-
-<div style="display:flex;justify-content:space-between;margin-top:4px">
-  <span style="color:#e74c3c;font-weight:700;font-style:italic">more control</span>
-  <span style="color:#2980b9;font-weight:700;font-style:italic">more managed</span>
-</div>
 
 ---
 
