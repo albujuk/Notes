@@ -33,6 +33,30 @@ EC2 instances are resizable; pay only for what you use, adjust capacity any time
 
 ## Other Compute Services
 
+### AWS Lambda
+
+**Serverless compute** — run code without provisioning or managing servers. Pay only for compute time consumed.
+
+- Upload your function code; Lambda handles everything else (scaling, availability, patching)
+- Triggered by events (HTTP requests via API Gateway, S3 uploads, DynamoDB changes, etc.)
+- **Max execution duration: 15 minutes** per invocation — not suited for long-running processes
+
+**Cold starts** — on the first invocation (or after a period of idle), Lambda must initialize a new execution environment (download code, start runtime). This adds latency. Mitigation: **Provisioned Concurrency** keeps a set number of environments pre-warmed and ready.
+
+**Concurrency** — each simultaneous invocation runs in its own isolated environment. Default soft limit: **1,000 concurrent executions per region** (can be raised via support request).
+
+**Pricing** — charged on two dimensions:
+- **Requests:** first 1 M requests/month free; $0.20 per 1 M requests after
+- **Duration:** billed in GB-seconds (memory allocated × execution time); 400,000 GB-seconds/month free
+
+**When Lambda is unsuitable:**
+
+| Scenario | Reason |
+|----------|--------|
+| Workloads > 15 min | Hard execution limit |
+| Persistent connections (e.g., WebSockets, long-poll DB) | Environment torn down after each invocation |
+| Stateful applications requiring in-memory state across calls | Each invocation is isolated; no shared state |
+
 ### Elastic Beanstalk
 
 Fully managed PaaS. Deploy and scale web applications without managing infrastructure. You provide the code; Beanstalk handles capacity, load balancing, and health monitoring.

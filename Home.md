@@ -19,12 +19,15 @@ Notes/
 │   ├── Index.md
 │   └── Cloud Practitioner/
 │       ├── Index.md
-│       └── Compute.md
+│       ├── Compute.md
+│       └── Containers.md
 └── Kubernetes/
     ├── Index.md
     ├── Intro.md
     ├── Pods.md
-    └── Workloads.md
+    ├── Workloads.md
+    ├── kubectl.md
+    └── missing.md
 ```
 
 ---

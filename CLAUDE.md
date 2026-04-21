@@ -44,12 +44,16 @@ Notes/
 │   ├── Index.md
 │   └── Cloud Practitioner/
 │       ├── Index.md
-│       └── Compute.md
+│       ├── Compute.md
+│       ├── Containers.md
+│       └── missing.md
 └── Kubernetes/
     ├── Index.md
     ├── Intro.md
     ├── Pods.md
-    └── Workloads.md
+    ├── Workloads.md
+    ├── kubectl.md
+    └── missing.md
 ```
 
 ---
@@ -101,5 +105,16 @@ Manual git ops via CLI work normally.
 
 - Use wikilinks (`[[File Name]]`) for internal links.
 - Index nav footers use: `← [[Parent/Index]] · [[Home]]`
-- Split large topics into multiple files; keep each file focused on one concept.
+- Only split a topic into multiple files when the file gets too long or subtopics diverge enough to warrant separate navigation. Don't split preemptively.
 - Add example commands alongside concept explanations.
+
+---
+
+## 7. Missing Topics
+
+Each folder may contain a `missing.md` that tracks topics not yet studied.
+
+**Rules:**
+- Don't add content to `missing.md` — the user fills it in when they study the topic.
+- When a topic from `missing.md` gets its own note, remove it from `missing.md`.
+- Current missing-topic files: `AWS/Cloud Practitioner/missing.md`, `Kubernetes/missing.md`.

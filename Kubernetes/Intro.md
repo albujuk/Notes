@@ -32,7 +32,7 @@ The **API Server** acts as the front end for Kubernetes. Users, management devic
 The **kubelet** is an agent that runs on each node in the cluster. It is responsible for ensuring that containers are running as expected within their pods.
 
 ## 4. Container Runtime
-The **Container Runtime** is the underlying software used to run containers. It handles the actual execution of containerized applications on the nodes.
+The **Container Runtime** is the underlying software responsible for managing container lifecycle on a node: pulling images from a registry, creating and starting containers, and stopping or removing them when no longer needed. Common runtimes include **containerd** (the most widely used) and **CRI-O**. The kubelet communicates with the container runtime through a standardized interface called the **Container Runtime Interface (CRI)**, which decouples Kubernetes from any specific runtime implementation.
 
 ## 5. Controller
 The **Controller** is the "brain" behind orchestration. It monitors nodes and containers, making decisions to bring up new instances if the current state deviates from the desired state (e.g., if a node or container goes down).

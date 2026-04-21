@@ -94,6 +94,8 @@ spec:
         name: nginx-ifconfig-conf  # configMap proxying / → localhost:8000
 ```
 
+> ConfigMaps not yet documented — see [[Kubernetes/missing]]
+
 `emptyDir` is created when Pod starts, deleted when Pod dies. Both containers see the same files through it.
 
 ```mermaid
