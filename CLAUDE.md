@@ -110,7 +110,23 @@ Manual git ops via CLI work normally.
 
 ---
 
-## 7. Missing Topics
+## 7. Update Files — Pending Changes Workflow
+
+Fixed filename: `update-content.md`. May exist in multiple dirs simultaneously, each with different content. Claude decides which note(s) in that dir the content belongs in — may split across multiple files.
+
+**When user says "do your work" (or equivalent trigger):**
+1. Glob `**/update-content.md` to find all instances.
+2. For each: read content, apply to appropriate note(s) in the same directory.
+3. Delete the `update-content.md` after applying.
+4. Update `Index.md` if new notes were created.
+
+**Rules:**
+- User writes; Claude routes and applies.
+- Always empty `update-content.md` after applying (don't delete).
+
+---
+
+## 8. Missing Topics
 
 Each folder may contain a `missing.md` that tracks topics not yet studied.
 
