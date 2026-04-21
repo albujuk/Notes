@@ -102,20 +102,28 @@ Must stay on-prem?             → Outposts
 
 ### Control vs. Convenience Spectrum
 
-<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:8px 0">
-  <span style="font-size:0.75em;color:#e74c3c;font-weight:700">more control</span>
-  <span style="background:#c0392b;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">EC2</span>
-  <span style="color:#aaa">›</span>
-  <span style="background:#e67e22;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Lightsail</span>
-  <span style="color:#aaa">›</span>
-  <span style="background:#d4ac0d;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">ECS / EKS</span>
-  <span style="color:#aaa">›</span>
-  <span style="background:#27ae60;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Beanstalk</span>
-  <span style="color:#aaa">›</span>
-  <span style="background:#1abc9c;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Fargate</span>
-  <span style="color:#aaa">›</span>
-  <span style="background:#2980b9;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Lambda</span>
-  <span style="font-size:0.75em;color:#2980b9;font-weight:700">more managed</span>
+```mermaid
+graph LR
+    A([EC2]) --> B([Lightsail]) --> C(["ECS / EKS"]) --> D([Beanstalk]) --> E([Fargate]) --> F([Lambda])
+
+    classDef c1 fill:#c0392b,color:#fff,stroke:none
+    classDef c2 fill:#e67e22,color:#fff,stroke:none
+    classDef c3 fill:#d4ac0d,color:#fff,stroke:none
+    classDef c4 fill:#27ae60,color:#fff,stroke:none
+    classDef c5 fill:#1abc9c,color:#fff,stroke:none
+    classDef c6 fill:#2980b9,color:#fff,stroke:none
+
+    class A c1
+    class B c2
+    class C c3
+    class D c4
+    class E c5
+    class F c6
+```
+
+<div style="display:flex;justify-content:space-between;margin-top:4px">
+  <span style="color:#e74c3c;font-weight:700;font-style:italic">more control</span>
+  <span style="color:#2980b9;font-weight:700;font-style:italic">more managed</span>
 </div>
 
 ---
