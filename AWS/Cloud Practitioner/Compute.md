@@ -103,7 +103,7 @@ Must stay on-prem?             → Outposts
 ### Control vs. Convenience Spectrum
 
 <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:8px 0">
-  <span style="font-size:0.75em;color:#888">more control</span>
+  <span style="font-size:0.75em;color:#e74c3c;font-weight:700">more control</span>
   <span style="background:#c0392b;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">EC2</span>
   <span style="color:#aaa">›</span>
   <span style="background:#e67e22;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Lightsail</span>
@@ -115,7 +115,7 @@ Must stay on-prem?             → Outposts
   <span style="background:#1abc9c;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Fargate</span>
   <span style="color:#aaa">›</span>
   <span style="background:#2980b9;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Lambda</span>
-  <span style="font-size:0.75em;color:#888">more managed</span>
+  <span style="font-size:0.75em;color:#2980b9;font-weight:700">more managed</span>
 </div>
 
 ---
