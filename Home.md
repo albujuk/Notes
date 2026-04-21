@@ -20,7 +20,11 @@ Notes/
 │   └── Cloud Practitioner/
 │       ├── Index.md
 │       ├── Compute.md
-│       └── Containers.md
+│       ├── Containers.md
+│       ├── Global Infrastructure.md
+│       ├── CloudFormation.md
+│       ├── Networking.md
+│       └── missing.md
 └── Kubernetes/
     ├── Index.md
     ├── Intro.md

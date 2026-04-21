@@ -8,6 +8,7 @@ Learning path in order:
 | 2 | Containers | [[AWS/Cloud Practitioner/Containers]] | ECR, ECS, EKS, Fargate |
 | 3 | Global Infrastructure | [[AWS/Cloud Practitioner/Global Infrastructure]] | Regions, AZs, edge locations, local zones, Outposts |
 | 4 | CloudFormation | [[AWS/Cloud Practitioner/CloudFormation]] | IaC, templates, stacks, change sets, CDK, SAM |
+| 5 | Networking | [[AWS/Cloud Practitioner/Networking]] | VPC, internet gateway, virtual private gateway, Client VPN, Site-to-Site VPN, PrivateLink, Direct Connect |
 
 ---
 

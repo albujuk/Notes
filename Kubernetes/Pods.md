@@ -1,12 +1,13 @@
 # Pods
 
-A **Pod** is the smallest deployable unit in Kubernetes — a wrapper around one or more containers that share the same network namespace and storage. Every container in Kubernetes runs inside a Pod.
+A **Pod** is the smallest deployable unit in Kubernetes — a wrapper around one or more containers that share the same network namespace and storage. Every container in Kubernetes runs inside a Pod. Pods are managed at scale by [[Workloads|workload controllers]] (ReplicaSet, Deployment).
 
 - Each Pod gets its own internal IP address within the cluster.
 - Pods are ephemeral: if they die, Kubernetes spins up a new one (with a new IP).
 - Kubernetes scales by adding/removing Pods, not containers directly.
 
 ## kubectl Commands
+> Full reference: [[kubectl]]
 
 ```bash
 # Create pod (imperative)

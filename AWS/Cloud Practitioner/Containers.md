@@ -6,7 +6,7 @@ Containers package code + dependencies together, ensuring consistent runs across
 
 ## Amazon ECR — Elastic Container Registry
 
-Fully managed **container image registry**. Store, manage, and deploy container images securely at scale. Integrates with ECS and EKS.
+Fully managed **container image registry**. Store, manage, and deploy container images securely at scale. Integrates with [[#Amazon ECS|ECS]] and [[#Amazon EKS|EKS]].
 
 - **Image layering:** stores images as layers; unchanged layers are shared across image versions, reducing storage and push/pull time.
 - **Access control:** IAM-based — permissions are granted via IAM policies (no separate user management).
@@ -25,7 +25,7 @@ Fully managed **container orchestration** service. Deploys, manages, and scales 
 
 ## Amazon EKS — Elastic Kubernetes Service
 
-Fully managed **Kubernetes** service. Runs Kubernetes clusters on AWS and on-premises. Automates infrastructure management and integrates with AWS networking, security, and storage.
+Fully managed **[[Kubernetes/Intro|Kubernetes]]** service. Runs Kubernetes clusters on AWS and on-premises. Automates infrastructure management and integrates with AWS networking, security, and storage.
 
 - Higher operational complexity than ECS; choose EKS when you need **Kubernetes portability** (e.g., multi-cloud strategy) or already run Kubernetes on-premises and want a consistent control plane.
 
@@ -41,11 +41,11 @@ Fully managed **Kubernetes** service. Runs Kubernetes clusters on AWS and on-pre
 
 ## AWS Fargate
 
-**Serverless compute engine** for containers. Run containers without managing servers or clusters. Works with both ECS and EKS.
+**Serverless compute engine** for containers. Run containers without managing servers or clusters. Works with both [[#Amazon ECS|ECS]] and [[#Amazon EKS|EKS]].
 
-| | ECS / EKS on EC2 | ECS / EKS on Fargate |
+| | ECS / EKS on [[Compute#EC2 — Elastic Compute Cloud\|EC2]] | ECS / EKS on Fargate |
 |-|------------------|----------------------|
-| Server management | You manage EC2 instances | AWS manages all servers |
+| Server management | You manage [[Compute#EC2 — Elastic Compute Cloud\|EC2]] instances | AWS manages all servers |
 | Control | More control | Less control |
 | Use case | Predictable, large workloads | Variable, hands-off ops |
 

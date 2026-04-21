@@ -35,12 +35,12 @@ Region: us-east-1
 
 ## Edge Locations
 
-Data centers used by **CloudFront** (CDN) and other edge services to cache and deliver content close to users.
+Data centers used by **[[Networking#CDN — CloudFront|CloudFront]]** (CDN) and other edge services to cache and deliver content close to users.
 
 - 400+ edge locations globally — far more than regions
-- Cache content from origin servers (S3, EC2, etc.)
+- Cache content from origin servers (S3, [[Compute#EC2 — Elastic Compute Cloud|EC2]], etc.)
 - Reduce latency by serving from nearest edge node
-- Also used by: **Route 53** (DNS), **AWS Shield**, **AWS WAF**
+- Also used by: **[[Networking#DNS — Route 53|Route 53]]** (DNS), **AWS Shield**, **AWS WAF**
 
 **Edge location vs Region:**
 
@@ -49,13 +49,13 @@ Data centers used by **CloudFront** (CDN) and other edge services to cache and d
 | Purpose | Run AWS services | Cache / deliver content |
 | Count | ~30 | 400+ |
 | AZs inside | Yes | No |
-| Example service | EC2, RDS | CloudFront, Route 53 |
+| Example service | [[Compute#EC2 — Elastic Compute Cloud\|EC2]], RDS | [[Networking#CDN — CloudFront\|CloudFront]], [[Networking#DNS — Route 53\|Route 53]] |
 
 ---
 
 ## Local Zones
 
-Extensions of a region placed closer to dense population centers. Low-latency access to select AWS services (EC2, EBS, RDS).
+Extensions of a [[#Regions|region]] placed closer to dense population centers. Low-latency access to select AWS services ([[Compute#EC2 — Elastic Compute Cloud|EC2]], EBS, RDS).
 
 - Not a full region — subset of services only
 - Use case: latency-sensitive apps (gaming, media, ML inference)

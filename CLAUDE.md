@@ -7,34 +7,12 @@ Claude Code guidance for this repository.
 ## 1. Vault Overview
 
 Obsidian markdown notes vault synced via Git.
-- **Name:** Notes
 - **Path:** `$HOME/Documents/Notes`
 - **Community plugins:** obsidian-git only
-- **Core plugins:** file-explorer, search, graph, backlink, canvas, tag-pane, properties, daily-notes, templates, note-composer, bookmarks, outline, bases
-- No CSS snippets or custom themes
 
 ---
 
-## 2. Navigation — Always Check Indexes First
-
-Every folder has an `Index.md`. Start there before reading or editing notes.
-
-| Scope | File |
-|-------|------|
-| Whole vault | `Home.md` |
-| AWS | `AWS/Index.md` |
-| AWS Cloud Practitioner | `AWS/Cloud Practitioner/Index.md` |
-| Kubernetes | `Kubernetes/Index.md` |
-
-**Rules:**
-- Before adding a note: check the folder's `Index.md` to understand existing structure and order.
-- After adding a note: update the folder's `Index.md` (and parent indexes if it's a new folder).
-- After adding a folder: add it to `Home.md` and the parent folder's `Index.md`.
-- Keep indexes in learning/logical order, not alphabetical.
-
----
-
-## 3. Vault Structure
+## 2. Vault Structure
 
 ```
 Notes/
@@ -46,6 +24,9 @@ Notes/
 │       ├── Index.md
 │       ├── Compute.md
 │       ├── Containers.md
+│       ├── Global Infrastructure.md
+│       ├── CloudFormation.md
+│       ├── Networking.md
 │       └── missing.md
 └── Kubernetes/
     ├── Index.md
@@ -55,6 +36,32 @@ Notes/
     ├── kubectl.md
     └── missing.md
 ```
+
+---
+
+## 3. Indexes and Reference Docs
+
+Every folder has an `Index.md`. `Home.md` is the root index.
+
+**Always:**
+- Check the folder's `Index.md` before adding or editing notes
+- Keep index rows in learning/logical order, not alphabetical
+- Index row format: `| # | Topic | [[File]] | one-line summary of contents |`
+
+**When content changes:**
+- New note → add row to folder's `Index.md`
+- New folder → add to parent `Index.md` + `Home.md` Topics table + `Home.md` file tree + Section 2 above
+- Note deleted/renamed → update every index that references it
+- Do index updates in the same edit pass as the content change — never leave them out of sync
+
+**Files to keep in sync:**
+
+| File | What it tracks |
+|------|---------------|
+| `Home.md` | All top-level topic folders + file tree |
+| `AWS/Index.md` | All certification/track sub-folders under AWS |
+| `AWS/Cloud Practitioner/Index.md` | All notes in Cloud Practitioner, in learning order |
+| `Kubernetes/Index.md` | All notes in Kubernetes, in learning order |
 
 ---
 
@@ -81,27 +88,13 @@ obsidian tasks todo
 # Frontmatter properties
 obsidian property:set name=<key> value=<val> file=<name>
 obsidian property:read name=<key> file=<name>
-
-# Daily notes
-obsidian daily:read
-obsidian daily:append content=<text>
 ```
 
 `file=<name>` resolves by name (wikilink-style). `path=<path>` is exact.
 
 ---
 
-## 5. Git Sync
-
-obsidian-git plugin behavior:
-- **On Obsidian open:** pull from remote (`autoPullOnBoot`)
-- **On Obsidian close:** commit + push (`commitOnClose`, `pushOnClose`)
-
-Manual git ops via CLI work normally.
-
----
-
-## 6. Note Conventions
+## 5. Note Conventions
 
 - Use wikilinks (`[[File Name]]`) for internal links.
 - Index nav footers use: `← [[Parent/Index]] · [[Home]]`
@@ -110,27 +103,39 @@ Manual git ops via CLI work normally.
 
 ---
 
-## 7. Update Files — Pending Changes Workflow
+## 6. Update Files — Pending Changes Workflow
 
 Fixed filename: `update-content.md`. May exist in multiple dirs simultaneously, each with different content. Claude decides which note(s) in that dir the content belongs in — may split across multiple files.
 
 **When user says "do your work" (or equivalent trigger):**
 1. Glob `**/update-content.md` to find all instances.
 2. For each: read content, apply to appropriate note(s) in the same directory.
-3. Delete the `update-content.md` after applying.
+3. Empty `update-content.md` after applying (don't delete).
 4. Update `Index.md` if new notes were created.
 
 **Rules:**
 - User writes; Claude routes and applies.
-- Always empty `update-content.md` after applying (don't delete).
 
 ---
 
-## 8. Missing Topics
+## 7. Missing Topics
 
 Each folder may contain a `missing.md` that tracks topics not yet studied.
 
 **Rules:**
 - Don't add content to `missing.md` — the user fills it in when they study the topic.
 - When a topic from `missing.md` gets its own note, remove it from `missing.md`.
-- Current missing-topic files: `AWS/Cloud Practitioner/missing.md`, `Kubernetes/missing.md`.
+
+---
+
+## 8. Cross-Linking
+
+When adding or editing notes, wire up wikilinks between related concepts across files. Do this proactively — don't wait to be asked.
+
+**Rules:**
+- Link to a section anchor when the target is a specific heading: `[[File#Section|display text]]`
+- Link across topics when concepts are related (e.g. EKS → Kubernetes/Intro, Lambda → Compute#AWS Lambda)
+- Link across domains (AWS ↔ Kubernetes) when one concept is the managed version of the other
+- Never link to a heading that doesn't exist — verify anchor names match exactly (case-sensitive in Obsidian)
+- Prefer inline links; keep display text natural
+- Don't over-link: first meaningful mention in a section is enough, not every occurrence

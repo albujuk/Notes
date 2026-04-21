@@ -83,7 +83,7 @@ Outputs:          # Values to export or display after deployment
 ## Related Services
 
 - **AWS CDK** — write CloudFormation templates using real code (TypeScript, Python, etc.), compiles down to CloudFormation
-- **AWS SAM** — CloudFormation extension for serverless (Lambda, API Gateway, DynamoDB)
+- **AWS SAM** — CloudFormation extension for serverless ([[Compute#AWS Lambda|Lambda]], API Gateway, DynamoDB)
 - **Service Catalog** — distribute approved CloudFormation templates across an org
 
 ---

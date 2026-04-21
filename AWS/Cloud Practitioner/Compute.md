@@ -43,7 +43,7 @@ EC2 instances are resizable; pay only for what you use, adjust capacity any time
 
 **Cold starts** — on the first invocation (or after a period of idle), Lambda must initialize a new execution environment (download code, start runtime). This adds latency. Mitigation: **Provisioned Concurrency** keeps a set number of environments pre-warmed and ready.
 
-**Concurrency** — each simultaneous invocation runs in its own isolated environment. Default soft limit: **1,000 concurrent executions per region** (can be raised via support request).
+**Concurrency** — each simultaneous invocation runs in its own isolated environment. Default soft limit: **1,000 concurrent executions per [[Global Infrastructure#Regions|region]]** (can be raised via support request).
 
 **Pricing** — charged on two dimensions:
 - **Requests:** first 1 M requests/month free; $0.20 per 1 M requests after
@@ -71,7 +71,7 @@ Simplified cloud platform offering VPS, containers, and databases with **predict
 
 ### AWS Outposts
 
-Extends AWS infrastructure and services to **on-premises locations** for low-latency or local data processing requirements.
+Extends AWS infrastructure and services to **on-premises locations** for low-latency or local data processing requirements. See also: [[Global Infrastructure#Outposts]].
 
 ---
 
@@ -82,8 +82,8 @@ Extends AWS infrastructure and services to **on-premises locations** for low-lat
 | **EC2** | Full (OS, runtime, config) | Yes | Custom workloads, long-running, full control | Per-second (min 60 s) |
 | **Elastic Beanstalk** | App code only | No (AWS manages infra) | Web apps/APIs, skip infra setup | No extra cost — pay for underlying EC2/RDS |
 | **Lambda** | Function code only | No — fully serverless | Event-driven, short tasks (≤15 min), spiky traffic | Per-request + GB-second |
-| **ECS / EKS** | Container definition | Depends on launch type | Containerized microservices, long-running containers | EC2 launch: pay instances; Fargate: pay vCPU+mem |
-| **AWS Fargate** | Container code only | No — serverless containers | Containers without managing EC2 clusters | Per vCPU-second + GB-second |
+| **[[Containers#Amazon ECS\|ECS]] / [[Containers#Amazon EKS\|EKS]]** | Container definition | Depends on launch type | Containerized microservices, long-running containers | EC2 launch: pay instances; Fargate: pay vCPU+mem |
+| **[[Containers#AWS Fargate\|AWS Fargate]]** | Container code only | No — serverless containers | Containers without managing EC2 clusters | Per vCPU-second + GB-second |
 | **AWS Batch** | Job definition | No | Large-scale batch jobs, HPC, data pipelines | Pay for underlying compute only while jobs run |
 | **Lightsail** | Full (simplified VPS) | Yes (abstracted) | Simple apps, fixed budget, AWS beginners | Fixed monthly price |
 | **Outposts** | Full (on-prem) | Yes — physical rack | Low-latency workloads that must stay on-premises | Hardware lease + AWS service fees |

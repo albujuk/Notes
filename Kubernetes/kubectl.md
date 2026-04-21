@@ -3,17 +3,17 @@
 > Deployment, Service, and ConfigMap commands are previews — full docs not yet written. See [[Kubernetes/missing]].
 
 ```bash
-# Pods
+# Pods — [[Pods]]
 kubectl run nginx --image=nginx --dry-run=client -o yaml
 kubectl apply -f <file>.yaml
 kubectl get pods -o wide
 kubectl describe pod <name>
 
-# ReplicaSet
+# ReplicaSet — [[Workloads#ReplicaSet]]
 kubectl get rs
 kubectl scale rs <name> --replicas=<n>
 
-# ReplicationController
+# ReplicationController — [[Workloads#ReplicationController]]
 kubectl get rc
 
 # Deployment

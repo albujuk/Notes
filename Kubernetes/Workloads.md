@@ -2,7 +2,7 @@
 
 ## ReplicationController
 
-Older API object. Ensures a specified number of Pod replicas are running at all times. If a Pod dies, RC creates a replacement. Replaced by ReplicaSet (and Deployment) but still supported.
+Older API object. Ensures a specified number of [[Pods|Pod]] replicas are running at all times. If a Pod dies, RC creates a replacement. Replaced by [[#ReplicaSet]] (and Deployment) but still supported.
 
 ```yaml
 apiVersion: v1
@@ -37,7 +37,7 @@ kubectl delete rc nginx-rc
 
 ## ReplicaSet
 
-Successor to ReplicationController. Key difference: supports **set-based selectors** (`In`, `NotIn`, `Exists`) vs RC's equality-only selectors. In practice, you rarely create ReplicaSets directly — Deployments manage them for you.
+Successor to [[#ReplicationController]]. Key difference: supports **set-based selectors** (`In`, `NotIn`, `Exists`) vs RC's equality-only selectors. In practice, you rarely create ReplicaSets directly — Deployments manage them for you.
 
 ```yaml
 apiVersion: apps/v1
