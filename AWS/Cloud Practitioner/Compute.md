@@ -75,4 +75,49 @@ Extends AWS infrastructure and services to **on-premises locations** for low-lat
 
 ---
 
+## Compute Services — Comparison
+
+| Service | Control | Servers to manage | Best for | Pricing model |
+|---------|---------|-------------------|----------|---------------|
+| **EC2** | Full (OS, runtime, config) | Yes | Custom workloads, long-running, full control | Per-second (min 60 s) |
+| **Elastic Beanstalk** | App code only | No (AWS manages infra) | Web apps/APIs, skip infra setup | No extra cost — pay for underlying EC2/RDS |
+| **Lambda** | Function code only | No — fully serverless | Event-driven, short tasks (≤15 min), spiky traffic | Per-request + GB-second |
+| **ECS / EKS** | Container definition | Depends on launch type | Containerized microservices, long-running containers | EC2 launch: pay instances; Fargate: pay vCPU+mem |
+| **AWS Fargate** | Container code only | No — serverless containers | Containers without managing EC2 clusters | Per vCPU-second + GB-second |
+| **AWS Batch** | Job definition | No | Large-scale batch jobs, HPC, data pipelines | Pay for underlying compute only while jobs run |
+| **Lightsail** | Full (simplified VPS) | Yes (abstracted) | Simple apps, fixed budget, AWS beginners | Fixed monthly price |
+| **Outposts** | Full (on-prem) | Yes — physical rack | Low-latency workloads that must stay on-premises | Hardware lease + AWS service fees |
+
+### Key Decision Questions
+
+```
+Need full OS control?          → EC2
+Event-driven / short burst?    → Lambda
+Web app, skip infra entirely?  → Elastic Beanstalk
+Containers, no cluster mgmt?   → Fargate (or ECS/EKS on Fargate)
+Batch / HPC jobs?              → AWS Batch
+Simple app, fixed budget?      → Lightsail
+Must stay on-prem?             → Outposts
+```
+
+### Control vs. Convenience Spectrum
+
+<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:8px 0">
+  <span style="font-size:0.75em;color:#888">more control</span>
+  <span style="background:#c0392b;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">EC2</span>
+  <span style="color:#aaa">›</span>
+  <span style="background:#e67e22;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Lightsail</span>
+  <span style="color:#aaa">›</span>
+  <span style="background:#d4ac0d;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">ECS / EKS</span>
+  <span style="color:#aaa">›</span>
+  <span style="background:#27ae60;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Beanstalk</span>
+  <span style="color:#aaa">›</span>
+  <span style="background:#1abc9c;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Fargate</span>
+  <span style="color:#aaa">›</span>
+  <span style="background:#2980b9;color:#fff;padding:3px 10px;border-radius:20px;font-weight:600">Lambda</span>
+  <span style="font-size:0.75em;color:#888">more managed</span>
+</div>
+
+---
+
 ← [[AWS/Cloud Practitioner/Index]] · [[Home]]
