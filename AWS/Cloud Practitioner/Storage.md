@@ -13,6 +13,8 @@ tags:
   - block-storage
   - ebs-snapshots
   - data-lifecycle-manager
+  - s3
+  - object-storage
 ---
 # Storage
 
@@ -94,6 +96,53 @@ Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root 
 | **Best for**    | Temp buffers, caches, scratch       | Databases, OS volumes, long-term data |
 | **Backup**      | None (ephemeral)                    | EBS Snapshots                         |
 | **Root volume** | Legacy (instance store-backed [[Compute#AMI — Amazon Machine Image\|AMIs]]) | Default for all modern [[Compute#AMI — Amazon Machine Image\|AMIs]] |
+
+---
+
+## Amazon Simple Storage Service (S3)
+
+Fully managed, highly-available **object storage** service. 99.999999999% (11 nines) durability. Supports versioning, lifecycle management, and multiple storage classes. Files stored as **objects** in **buckets**; objects range from bytes to terabytes.
+
+Integrates with most AWS services. Use cases: backups, data lakes, static website hosting, media delivery, archiving, compliance data retention.
+
+### S3 Objects
+
+Fundamental unit of storage. Each object contains:
+
+| Component | Description |
+|-----------|-------------|
+| **Data** | The file content itself |
+| **Key** | Unique identifier (like a file name) within a bucket |
+| **Metadata** | System and user-defined metadata |
+| **Version ID** | Populated when versioning is enabled |
+| **Access control** | Permissions on the object |
+
+### S3 Buckets
+
+Container for objects. Key properties:
+
+- **Globally unique name** across all of AWS
+- Created in a specific **Region**
+- Virtually unlimited objects per bucket
+- Access control and policies applied at bucket level
+- Configurable: versioning, logging, access permissions
+
+### Object Lifecycle Management
+
+S3 lifecycle policies **automatically transition objects** between storage classes based on defined rules, optimizing costs over time. Supports automatic transitions (e.g. move to Glacier after 90 days) and expirations (auto-delete after N days).
+
+### Use Cases
+
+| Category | Examples |
+|----------|----------|
+| Content delivery | Static websites, media files |
+| Application data | Backup storage, app assets |
+| Analytics | Data lakes, log archiving |
+| Compliance | Long-term data retention |
+
+### Security
+
+**Private by default** — all buckets and objects are private unless explicitly made public. Granular access control via bucket policies, IAM policies, and ACLs.
 
 ---
 

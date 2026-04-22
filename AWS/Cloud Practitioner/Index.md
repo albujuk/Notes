@@ -15,7 +15,7 @@ Learning path in order:
 | # | Topic | File | What's inside |
 |---|-------|------|---------------|
 | 1 | Compute | [[AWS/Cloud Practitioner/Compute]] | EC2, multi-tenancy, vertical/horizontal scaling, cloud vs on-premises, Lambda, Beanstalk, Batch, Lightsail, Outposts |
-| 2 | Storage | [[AWS/Cloud Practitioner/Storage]] | EC2 instance store, EBS, EBS snapshots, root volume |
+| 2 | Storage | [[AWS/Cloud Practitioner/Storage]] | EC2 instance store, EBS, EBS snapshots, root volume, S3 objects/buckets, lifecycle management |
 | 3 | Containers | [[AWS/Cloud Practitioner/Containers]] | ECR, ECS, EKS, Fargate |
 | 4 | Global Infrastructure | [[AWS/Cloud Practitioner/Global Infrastructure]] | Regions, AZs, edge locations, local zones, Outposts |
 | 5 | CloudFormation | [[AWS/Cloud Practitioner/CloudFormation]] | IaC, templates, stacks, change sets, CDK, SAM |
