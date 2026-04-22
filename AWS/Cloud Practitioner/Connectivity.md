@@ -24,6 +24,15 @@ Dedicated physical network connection from on-premises to AWS. Bypasses the publ
 - Traffic is **not encrypted by default** — add Site-to-Site VPN on top for encryption
 - Use case: large data transfers, latency-sensitive workloads, regulatory requirements
 
+## AWS Transit Gateway
+
+Hub-and-spoke transit hub that interconnects multiple VPCs and on-premises networks through a single gateway. Replaces complex VPC peering meshes.
+
+- Attach VPCs, Site-to-Site VPNs, and Direct Connect connections to one gateway
+- Route tables on the gateway control which attachments can talk to each other
+- Supports inter-region peering (connect Transit Gateways across regions)
+- Scales to thousands of VPCs
+
 ---
 
 ## VPN vs PrivateLink vs Direct Connect

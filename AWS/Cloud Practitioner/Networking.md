@@ -77,6 +77,14 @@ Routes application traffic through the AWS private global network instead of the
 | **Best for** | Static assets, video, HTTP cacheable content | TCP/UDP apps, APIs, gaming, IoT |
 | **Entry point** | Edge location caches | Anycast IPs → AWS network |
 
+## API Gateway
+
+Managed service for creating, publishing, and securing APIs at any scale. Acts as the front door for backend services (Lambda, EC2, HTTP endpoints).
+
+- Handles auth, throttling, caching, request/response transformation
+- Supports REST, HTTP, and WebSocket APIs
+- Scales automatically — no infrastructure to manage
+
 ---
 
 ← [[AWS/Cloud Practitioner/Index]] · [[Home]] · [[Connectivity]] →

@@ -27,6 +27,8 @@ Notes/
 │       ├── Global Infrastructure.md
 │       ├── CloudFormation.md
 │       ├── Networking.md
+│       ├── Connectivity.md
+│       ├── Messaging.md
 │       └── missing.md
 └── Kubernetes/
     ├── Index.md
@@ -129,9 +131,9 @@ obsidian daily:path                                  # get path of today's note
 Fixed filename: `update-content.md`. May exist in multiple dirs simultaneously, each with different content. Claude decides which note(s) in that dir the content belongs in — may split across multiple files.
 
 **When user says "do your work" (or equivalent trigger):**
-1. Glob `**/update-content.md` to find all instances.
+1. Run `obsidian files` to list vault files and find all `update-content.md` instances. Do NOT use `find` — RTK proxying can silently swallow results.
 2. For each: read content, apply to appropriate note(s) in the same directory.
-3. Empty `update-content.md` after applying (don't delete).
+3. Empty `update-content.md` after applying using the `Write` tool with empty content. Do NOT use `obsidian create` — it appends ` 1` to the filename instead of overwriting.
 4. Update `Index.md` if new notes were created.
 5. Update `Home.md` file tree if new notes were created.
 
