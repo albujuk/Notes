@@ -21,6 +21,18 @@ tags:
 
 EC2 is AWS's core compute service. Provides **virtual machines (instances)** running on AWS-managed physical hardware.
 
+### AMI — Amazon Machine Image
+
+A pre-configured template used to launch EC2 instances. Contains the OS, application server, and any software. Every EC2 instance is launched from an AMI.
+
+- **AWS-provided:** Amazon Linux, Ubuntu, Windows Server, etc.
+- **AWS Marketplace:** third-party AMIs (commercial or free)
+- **Custom:** create your own from a running instance (capture its root volume + launch permissions)
+
+AMIs are region-scoped — copy an AMI to another region to launch instances there.
+
+> The root volume type determines the AMI type: modern AMIs are **EBS-backed** (durable); legacy AMIs can be instance store-backed (ephemeral). See [[Storage#Where is the root volume?]].
+
 ### Multi-Tenancy
 
 Instances run on **shared physical hardware** but are fully isolated — this model is called **multi-tenancy**. AWS's hypervisor enforces isolation so one tenant cannot access another's data or resources.

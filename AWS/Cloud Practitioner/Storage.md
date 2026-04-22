@@ -12,7 +12,6 @@ tags:
   - instance-store
   - block-storage
 ---
-
 # Storage
 
 ## EC2 Instance Store
@@ -33,11 +32,11 @@ Back up EBS volumes with **EBS snapshots** (incremental, stored in S3).
 
 ### Use cases
 
-| Use case | Notes |
-|----------|-------|
-| Database hosting | Low-latency, consistent IOPS |
-| App backup storage | Snapshots for point-in-time recovery |
-| Dev environment cloning | Launch a snapshot as a new volume |
+| Use case                | Notes                                |
+| ----------------------- | ------------------------------------ |
+| Database hosting        | Low-latency, consistent IOPS         |
+| App backup storage      | Snapshots for point-in-time recovery |
+| Dev environment cloning | Launch a snapshot as a new volume    |
 
 ### Benefits
 
@@ -51,19 +50,19 @@ Back up EBS volumes with **EBS snapshots** (incremental, stored in S3).
 
 ## Where is the root volume?
 
-Default: **EBS-backed.** The root volume is an EBS volume (attached at `/dev/xvda` or `/dev/sda1`). All current AMIs (Amazon Linux, Ubuntu, etc.) use EBS-backed root volumes.
+Default: **EBS-backed.** The root volume is an EBS volume (attached at `/dev/xvda` or `/dev/sda1`). All current [[Compute#AMI — Amazon Machine Image|AMIs]] (Amazon Linux, Ubuntu, etc.) use EBS-backed root volumes.
 
-Instance store-backed AMIs exist (root on ephemeral storage) but are legacy and rarely used today.
+Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root on ephemeral storage) but are legacy and rarely used today.
 
 ## Instance Store vs. EBS — Comparison
 
-| | EC2 Instance Store | Amazon EBS |
-|---|---|---|
-| **Persistence** | Lost on stop/terminate | Survives stop/terminate |
-| **Type** | Physically attached (local) | Network-attached |
-| **Best for** | Temp buffers, caches, scratch | Databases, OS volumes, long-term data |
-| **Backup** | None (ephemeral) | EBS Snapshots |
-| **Root volume** | Legacy (instance store-backed AMIs) | Default for all modern AMIs |
+|                 | EC2 Instance Store                  | Amazon EBS                            |
+| --------------- | ----------------------------------- | ------------------------------------- |
+| **Persistence** | Lost on stop/terminate              | Survives stop/terminate               |
+| **Type**        | Physically attached (local)         | Network-attached                      |
+| **Best for**    | Temp buffers, caches, scratch       | Databases, OS volumes, long-term data |
+| **Backup**      | None (ephemeral)                    | EBS Snapshots                         |
+| **Root volume** | Legacy (instance store-backed [[Compute#AMI — Amazon Machine Image\|AMIs]]) | Default for all modern [[Compute#AMI — Amazon Machine Image\|AMIs]] |
 
 ---
 
