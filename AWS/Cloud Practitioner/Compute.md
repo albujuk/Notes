@@ -19,6 +19,39 @@ EC2 instances are resizable; pay only for what you use, adjust capacity any time
 | Scale **out** | Add more instances (horizontal) | Distribute load across many instances |
 | Scale **in** | Remove instances | Demand has dropped |
 
+### Auto Scaling
+
+Automates the scale-out / scale-in process. You define a group of EC2 instances; Auto Scaling adjusts the count based on demand — no manual intervention.
+
+**Three capacity settings per group:**
+
+| Setting | Meaning |
+|---------|---------|
+| **Minimum** | Floor — never drop below this count |
+| **Desired** | Target count when no scaling event is active |
+| **Maximum** | Ceiling — never exceed this count |
+
+**Scaling policies:**
+
+- **Target tracking** — maintain a metric at a target value (e.g. keep average CPU at 50%). Simplest to configure.
+- **Step scaling** — add/remove a fixed number of instances when a CloudWatch alarm threshold is crossed.
+- **Scheduled** — scale at a known time (e.g. add capacity every weekday at 08:00).
+
+**Example:** An e-commerce site sets minimum=2, desired=4, maximum=10. Scale-in policy: "if CPU < 20% for 5 minutes, remove 1 instance."
+
+| Time | Event | Instances |
+|------|-------|-----------|
+| 02:00 AM | Traffic almost zero, CPU drops to 8% | 4 |
+| 02:05 AM | CPU < 20% for 5 min → scale-in fires | 3 |
+| 02:10 AM | Still low → fires again | 2 |
+| 02:15 AM | Still low → policy wants to fire again | 2 — minimum blocks it |
+
+At 02:15 the policy would remove another instance, but desired can't go below minimum=2, so it stops.
+
+Pairs with **Elastic Load Balancing (ELB)** — new instances register with the load balancer automatically; terminated instances deregister before shutdown.
+
+> Auto Scaling is free — you pay only for the EC2 instances it manages.
+
 ---
 
 ## Cloud vs. On-Premises

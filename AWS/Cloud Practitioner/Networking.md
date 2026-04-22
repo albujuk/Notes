@@ -63,6 +63,20 @@ Content delivery network. Caches content at [[Global Infrastructure#Edge Locatio
 - DDoS protection via AWS Shield (Standard included free)
 - Can restrict content by geography
 
+## Global Accelerator
+
+Routes application traffic through the AWS private global network instead of the public internet — faster, more reliable, avoids congested internet paths.
+
+- Assigns two static anycast IPs to your application (no DNS propagation delays on failover)
+- Intelligent traffic routing + fast failover across [[Global Infrastructure#Regions|regions]] and [[Global Infrastructure#Availability Zones (AZs)|AZs]]
+- Works with EC2, ALB, NLB, Elastic IPs
+
+| | CloudFront | Global Accelerator |
+|---|---|---|
+| **What it optimizes** | Content delivery (caches at edge) | Network path (no caching) |
+| **Best for** | Static assets, video, HTTP cacheable content | TCP/UDP apps, APIs, gaming, IoT |
+| **Entry point** | Edge location caches | Anycast IPs → AWS network |
+
 ---
 
 ← [[AWS/Cloud Practitioner/Index]] · [[Home]] · [[Connectivity]] →
