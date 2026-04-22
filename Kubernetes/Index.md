@@ -1,3 +1,12 @@
+---
+domain: kubernetes
+track: core
+type: index
+tags:
+  - kubernetes
+  - index
+---
+
 # Kubernetes — Index
 
 Learning path in order:

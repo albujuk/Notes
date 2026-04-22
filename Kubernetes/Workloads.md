@@ -1,3 +1,17 @@
+---
+domain: kubernetes
+track: core
+topic: workloads
+type: note
+tags:
+  - kubernetes
+  - workloads
+  - replicaset
+  - replication-controller
+  - deployment
+  - scaling
+---
+
 # Kubernetes Workloads
 
 ## ReplicationController

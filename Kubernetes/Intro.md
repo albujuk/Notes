@@ -1,3 +1,18 @@
+---
+domain: kubernetes
+track: core
+topic: architecture
+type: note
+tags:
+  - kubernetes
+  - architecture
+  - nodes
+  - control-plane
+  - master-node
+  - etcd
+  - kubelet
+---
+
 # Kubernetes Introduction
 
 ## Node

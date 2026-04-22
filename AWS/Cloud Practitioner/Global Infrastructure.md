@@ -1,3 +1,18 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: global-infrastructure
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - global-infrastructure
+  - regions
+  - availability-zones
+  - edge-locations
+  - outposts
+---
+
 # AWS Global Infrastructure
 
 ## Regions
@@ -72,4 +87,4 @@ AWS-managed hardware rack installed **in your own data center**. Runs native AWS
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Index]] · [[Home]]

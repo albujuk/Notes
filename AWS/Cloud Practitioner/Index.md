@@ -1,3 +1,13 @@
+---
+domain: aws
+track: cloud-practitioner
+type: index
+tags:
+  - aws
+  - cloud-practitioner
+  - index
+---
+
 # AWS Cloud Practitioner — Index
 
 Learning path in order:

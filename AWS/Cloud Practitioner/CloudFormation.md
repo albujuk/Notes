@@ -1,3 +1,18 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: iac
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - cloudformation
+  - iac
+  - infrastructure-as-code
+  - cdk
+  - sam
+---
+
 # AWS CloudFormation
 
 Infrastructure as Code (IaC) service. Define AWS resources in a template — CloudFormation provisions and manages them.
@@ -88,4 +103,4 @@ Outputs:          # Values to export or display after deployment
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Index]] · [[Home]]

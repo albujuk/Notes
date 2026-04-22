@@ -1,3 +1,20 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: networking
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - networking
+  - vpc
+  - route53
+  - cloudfront
+  - security-groups
+  - nacl
+  - api-gateway
+---
+
 # Networking
 
 ## VPC (Virtual Private Cloud)
@@ -87,4 +104,4 @@ Managed service for creating, publishing, and securing APIs at any scale. Acts a
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]] · [[Connectivity]] →
+← [[Index]] · [[Home]] · [[Connectivity]] →

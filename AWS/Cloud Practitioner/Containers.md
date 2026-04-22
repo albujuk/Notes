@@ -1,3 +1,19 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: containers
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - containers
+  - ecs
+  - eks
+  - ecr
+  - fargate
+  - docker
+---
+
 # Containers
 
 Containers package code + dependencies together, ensuring consistent runs across environments. AWS offers managed services for storing, orchestrating, and running containers.
@@ -54,4 +70,4 @@ Fully managed **[[Kubernetes/Intro|Kubernetes]]** service. Runs Kubernetes clust
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Index]] · [[Home]]

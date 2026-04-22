@@ -1,3 +1,19 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: connectivity
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - connectivity
+  - vpn
+  - direct-connect
+  - privatelink
+  - transit-gateway
+  - hybrid-cloud
+---
+
 # Connectivity — Connecting to AWS
 
 ## AWS Client VPN
@@ -61,4 +77,4 @@ Hub-and-spoke transit hub that interconnects multiple VPCs and on-premises netwo
 
 ---
 
-← [[Networking]] · [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Networking]] · [[Index]] · [[Home]]

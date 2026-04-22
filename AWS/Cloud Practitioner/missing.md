@@ -17,4 +17,4 @@ Topics not yet studied. Fill in when studied (and move to their own note).
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Index]] · [[Home]]

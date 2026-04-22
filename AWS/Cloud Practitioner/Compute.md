@@ -1,3 +1,20 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: compute
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - compute
+  - ec2
+  - lambda
+  - serverless
+  - elastic-beanstalk
+  - fargate
+  - auto-scaling
+---
+
 # Compute
 
 ## EC2 — Elastic Compute Cloud
@@ -162,4 +179,4 @@ graph LR
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Index]] · [[Home]]

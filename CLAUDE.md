@@ -29,7 +29,8 @@ Notes/
 │       ├── Networking.md
 │       ├── Connectivity.md
 │       ├── Messaging.md
-│       └── missing.md
+│       ├── missing.md
+│       └── update-content.md
 └── Kubernetes/
     ├── Index.md
     ├── Intro.md
@@ -120,7 +121,8 @@ obsidian daily:path                                  # get path of today's note
 ## 5. Note Conventions
 
 - Use wikilinks (`[[File Name]]`) for internal links.
-- Index nav footers use: `← [[Parent/Index]] · [[Home]]`
+- Every topic folder must have exactly one `Index.md` (capital I).
+- **Wikilink path rules:** short names resolve to the file with that name in the **same directory**. Use `[[Index]]`, `[[Pods]]`, `[[Networking]]` for files in the same folder. For files in a different folder, use full path with display text: `[[AWS/Index|Index]]`, `[[Kubernetes/Index|Index]]`.
 - Only split a topic into multiple files when the file gets too long or subtopics diverge enough to warrant separate navigation. Don't split preemptively.
 - Add example commands alongside concept explanations.
 
@@ -152,7 +154,28 @@ Each folder may contain a `missing.md` that tracks topics not yet studied.
 
 ---
 
-## 8. Cross-Linking
+## 8. Frontmatter Schema
+
+All content notes and index files carry YAML frontmatter. Do NOT add frontmatter to `missing.md`, `update-content.md`, `CLAUDE.md`, or `Home.md`.
+
+```yaml
+---
+domain: aws | kubernetes          # top-level subject area
+track: cloud-practitioner | core  # certification / learning track
+topic: compute | networking | ... # required on notes; omit on index files (type: index has no topic)
+type: note | index
+tags:
+  - <domain>
+  - <track>
+  - <topic-specific tags>
+---
+```
+
+**When adding a new note:** copy the frontmatter from a sibling note and update `topic` and `tags`. Tags should include the domain, track, and key concepts covered in the note.
+
+---
+
+## 9. Cross-Linking
 
 When adding or editing notes, wire up wikilinks between related concepts across files. Do this proactively — don't wait to be asked.
 

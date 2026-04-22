@@ -1,3 +1,19 @@
+---
+domain: aws
+track: cloud-practitioner
+topic: messaging
+type: note
+tags:
+  - aws
+  - cloud-practitioner
+  - messaging
+  - sqs
+  - sns
+  - eventbridge
+  - event-driven
+  - pub-sub
+---
+
 # Messaging & Event-Driven Services
 
 Services for communication between application components. Together they support event-driven, decoupled architectures that scale reliably.
@@ -55,4 +71,4 @@ Publish-subscribe service. A publisher sends one message to an **SNS topic**; SN
 
 ---
 
-← [[AWS/Cloud Practitioner/Index]] · [[Home]]
+← [[Index]] · [[Home]]

@@ -1,3 +1,15 @@
+---
+domain: kubernetes
+track: core
+topic: kubectl
+type: note
+tags:
+  - kubernetes
+  - kubectl
+  - cli
+  - reference
+---
+
 # kubectl Reference
 
 > Deployment, Service, and ConfigMap commands are previews — full docs not yet written. See [[Kubernetes/missing]].
@@ -37,4 +49,4 @@ kubectl describe configmap <name>
 
 ---
 
-← [[Kubernetes/Index]] · [[Home]]
+← [[Index]] · [[Home]]
