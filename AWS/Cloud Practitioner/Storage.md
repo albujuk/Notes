@@ -15,6 +15,8 @@ tags:
   - data-lifecycle-manager
   - s3
   - object-storage
+  - s3-storage-classes
+  - glacier
 ---
 # Storage
 
@@ -129,7 +131,18 @@ Container for objects. Key properties:
 
 ### Object Lifecycle Management
 
-S3 lifecycle policies **automatically transition objects** between storage classes based on defined rules, optimizing costs over time. Supports automatic transitions (e.g. move to Glacier after 90 days) and expirations (auto-delete after N days).
+S3 lifecycle policies **automatically transition objects** between storage classes or delete them based on defined rules, eliminating manual tier management.
+
+Two action types:
+
+- **Transition actions** — move objects to a cheaper storage class after N days (e.g. → Standard-IA after 30 days → Glacier Deep Archive after 1 year)
+- **Expiration actions** — permanently delete objects after N days
+
+Example flow: object uploaded → Standard → Standard-IA at 30 days → Glacier Instant Retrieval at 90 days → deleted at 1 year.
+
+Common use cases:
+- **Periodic logs** — keep for a week or month, then delete automatically
+- **Aging data** — frequently accessed at first, then archived as access drops off, then deleted per compliance requirements
 
 ### Use Cases
 
@@ -143,6 +156,26 @@ S3 lifecycle policies **automatically transition objects** between storage class
 ### Security
 
 **Private by default** — all buckets and objects are private unless explicitly made public. Granular access control via bucket policies, IAM policies, and ACLs.
+
+### S3 Storage Classes
+
+S3 offers multiple storage classes optimized for different access patterns, cost requirements, and resiliency needs.
+
+| Storage Class | Access Pattern | Retrieval | Key Use Case |
+|---|---|---|---|
+| **S3 Standard** | Frequent | Immediate | General-purpose: dynamic websites, CDN, big data |
+| **S3 Intelligent-Tiering** | Unknown / changing | Immediate | Auto-moves to cheapest tier based on access frequency |
+| **S3 Standard-IA** | Infrequent, rapid when needed | Immediate | Long-term backups, disaster recovery |
+| **S3 One Zone-IA** | Infrequent, single AZ OK | Immediate | Secondary backups, easily recreatable data |
+| **S3 Express One Zone** | Very frequent, latency-sensitive | Single-digit ms | High-performance apps; 10× faster, 80% lower request cost vs Standard |
+| **S3 Glacier Instant Retrieval** | Rarely accessed | Milliseconds | Archives needing instant access; up to 68% cheaper than Standard-IA |
+| **S3 Glacier Flexible Retrieval** | 1–2× per year | 1–5 min (expedited) / 5–12 hr (bulk, free) | Backup, disaster recovery, offsite storage |
+| **S3 Glacier Deep Archive** | Once or twice per year | 12 hr default | Regulatory compliance retention (7–10+ years) |
+| **S3 Outposts** | On-premises | Immediate (local) | Local data residency; uses standard S3 APIs on AWS Outposts hardware |
+
+**S3 Intelligent-Tiering tiers:** frequent access → infrequent access → archive instant access. No retrieval fees; small monthly monitoring fee per object.
+
+Default storage class when no class is specified: **S3 Standard**.
 
 ---
 
