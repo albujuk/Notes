@@ -19,6 +19,7 @@ Learning path in order:
 | 2a | Block Storage | [[AWS/Cloud Practitioner/BlockStorage]] | EC2 instance store, EBS, EBS snapshots, Data Lifecycle Manager |
 | 2b | S3 | [[AWS/Cloud Practitioner/S3]] | Objects, buckets, storage classes, lifecycle management |
 | 2c | File Storage | [[AWS/Cloud Practitioner/FileStorage]] | EFS, FSx (Windows, NetApp ONTAP, OpenZFS, Lustre) |
+| 2d | Storage Gateway | [[AWS/Cloud Practitioner/StorageGateway]] | Hybrid cloud storage; File, Volume, and Tape gateway types |
 | 3 | Containers | [[AWS/Cloud Practitioner/Containers]] | ECR, ECS, EKS, Fargate |
 | 4 | Global Infrastructure | [[AWS/Cloud Practitioner/Global Infrastructure]] | Regions, AZs, edge locations, local zones, Outposts |
 | 5 | CloudFormation | [[AWS/Cloud Practitioner/CloudFormation]] | IaC, templates, stacks, change sets, CDK, SAM |
