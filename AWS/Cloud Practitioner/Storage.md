@@ -11,6 +11,8 @@ tags:
   - ec2
   - instance-store
   - block-storage
+  - ebs-snapshots
+  - data-lifecycle-manager
 ---
 # Storage
 
@@ -47,6 +49,35 @@ Back up EBS volumes with **EBS snapshots** (incremental, stored in S3).
 | **Disaster recovery**     | Snapshots restorable in different regions                 |
 | **Cost optimization**     | Modify volume type or size without downtime               |
 | **Performance tuning**    | Switch volume type (gp3, io2, etc.) on the fly            |
+
+### EBS Snapshots
+
+Point-in-time backups of an EBS volume. Stored redundantly across multiple AZs using S3. Use cases: disaster recovery, data migration, volume resizing, consistent production backups.
+
+**Incremental:** only changed blocks saved after the initial snapshot. Each snapshot still appears as a full point-in-time copy — AWS manages the chain automatically.
+
+| Snapshot | What's stored |
+|----------|---------------|
+| Initial | Full copy of all data blocks |
+| Subsequent | Only blocks changed since last snapshot |
+| Deletion | Only data unique to that snapshot removed; shared data preserved |
+
+New volumes created from a snapshot are an exact copy of the original at snapshot time.
+
+**Customer responsibility (shared responsibility model):** schedule and manage regular snapshots, monitor costs, delete unnecessary snapshots, encrypt sensitive data, verify integrity, test restoration procedures.
+
+#### Amazon Data Lifecycle Manager
+
+Automates creation, retention, and deletion of EBS snapshots. Schedules snapshots during off-peak hours, automatically deletes outdated backups, enforces retention rules for compliance.
+
+Configure via EC2 console, API, AWS CLI, SDKs, or [[CloudFormation]].
+
+**Policy setup steps:**
+1. Create EBS snapshot policy
+2. Select target resource type (EBS volume or EC2 instance)
+3. Exclude volumes (root, data, or none)
+4. Set custom schedule (frequency + retention count)
+5. Apply additional actions: tags, archiving, fast snapshot restore, cross-region copy, cross-account sharing
 
 ## Where is the root volume?
 
