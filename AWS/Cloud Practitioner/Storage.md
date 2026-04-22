@@ -161,17 +161,17 @@ Common use cases:
 
 S3 offers multiple storage classes optimized for different access patterns, cost requirements, and resiliency needs.
 
-| Storage Class | Access Pattern | Retrieval | Key Use Case |
-|---|---|---|---|
-| **S3 Standard** | Frequent | Immediate | General-purpose: dynamic websites, CDN, big data |
-| **S3 Intelligent-Tiering** | Unknown / changing | Immediate | Auto-moves to cheapest tier based on access frequency |
-| **S3 Standard-IA** | Infrequent, rapid when needed | Immediate | Long-term backups, disaster recovery |
-| **S3 One Zone-IA** | Infrequent, single AZ OK | Immediate | Secondary backups, easily recreatable data |
-| **S3 Express One Zone** | Very frequent, latency-sensitive | Single-digit ms | High-performance apps; 10× faster, 80% lower request cost vs Standard |
-| **S3 Glacier Instant Retrieval** | Rarely accessed | Milliseconds | Archives needing instant access; up to 68% cheaper than Standard-IA |
-| **S3 Glacier Flexible Retrieval** | 1–2× per year | 1–5 min (expedited) / 5–12 hr (bulk, free) | Backup, disaster recovery, offsite storage |
-| **S3 Glacier Deep Archive** | Once or twice per year | 12 hr default | Regulatory compliance retention (7–10+ years) |
-| **S3 Outposts** | On-premises | Immediate (local) | Local data residency; uses standard S3 APIs on AWS Outposts hardware |
+| Storage Class                     | Access Pattern                   | Retrieval                                  | Key Use Case                                                          |
+| --------------------------------- | -------------------------------- | ------------------------------------------ | --------------------------------------------------------------------- |
+| **S3 Standard**                   | Frequent                         | Immediate                                  | General-purpose: dynamic websites, CDN, big data                      |
+| **S3 Intelligent-Tiering**        | Unknown / changing               | Immediate                                  | Auto-moves to cheapest tier based on access frequency                 |
+| **S3 Standard-IA**                | Infrequent, rapid when needed    | Immediate                                  | Long-term backups, disaster recovery                                  |
+| **S3 One Zone-IA**                | Infrequent, single AZ OK         | Immediate                                  | Secondary backups, easily recreatable data                            |
+| **S3 Express One Zone**           | Very frequent, latency-sensitive | Single-digit ms                            | High-performance apps; 10× faster, 80% lower request cost vs Standard |
+| **S3 Glacier Instant Retrieval**  | Rarely accessed                  | Milliseconds                               | Archives needing instant access; up to 68% cheaper than Standard-IA   |
+| **S3 Glacier Flexible Retrieval** | 1–2× per year                    | 1–5 min (expedited) / 5–12 hr (bulk, free) | Backup, disaster recovery, offsite storage                            |
+| **S3 Glacier Deep Archive**       | Once or twice per year           | 12 hr default                              | Regulatory compliance retention (7–10+ years)                         |
+| **S3 Outposts**                   | On-premises                      | Immediate (local)                          | Local data residency; uses standard S3 APIs on AWS Outposts hardware  |
 
 **S3 Intelligent-Tiering tiers:** frequent access → infrequent access → archive instant access. No retrieval fees; small monthly monitoring fee per object.
 
