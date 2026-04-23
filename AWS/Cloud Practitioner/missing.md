@@ -4,7 +4,7 @@ Topics not yet studied. Fill in when studied (and move to their own note).
 
 ## Core Services
 
-- [ ] Security (IAM, KMS, CloudTrail, shared responsibility model)
+- [ ] Security (IAM, KMS, CloudTrail) — shared responsibility model covered in [[Security]]
 - [ ] Monitoring & Management (CloudWatch)
 - [ ] Billing & Cost Management (pricing models, TCO, consolidated billing)
 
