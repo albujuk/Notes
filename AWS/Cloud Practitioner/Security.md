@@ -9,6 +9,15 @@ tags:
   - security
   - shared-responsibility
   - iam
+  - shield
+  - waf
+  - kms
+  - encryption
+  - macie
+  - inspector
+  - guardduty
+  - detective
+  - security-hub
 ---
 
 # AWS Security
@@ -77,6 +86,78 @@ Securely manages, rotates, and retrieves database credentials, API keys, and oth
 Provides centralized view of nodes across accounts, Regions, multi-cloud, and hybrid environments. Enables quick access to node info and automation of registry edits, user management, and security patching.
 
 > **Nodes** — connection points in a network, system, or structure.
+
+---
+
+## Network & Application Protection
+
+| Service | Description |
+|---|---|
+| **AWS Shield** | Protects against DDoS attacks. Standard is free and automatic; Advanced adds enhanced detection and 24/7 support. |
+| **AWS WAF** | Filters web traffic using a web ACL — allows or blocks requests by IP, header, URI, or geo. |
+
+### AWS Shield
+
+Two tiers: **Standard** (automatic, free, covers common DDoS vectors) and **Advanced** (enhanced detection, real-time metrics, cost protection, 24/7 DRT support).
+
+> **DDoS** — attack that floods a system with traffic to make it unavailable to legitimate users.
+
+### AWS WAF (Web Application Firewall)
+
+Filters incoming web traffic using a **web ACL** that defines rules to allow or block requests based on IP addresses, HTTP headers, URI strings, or geographic location.
+
+> **Web ACL** — ordered set of rules WAF evaluates against each incoming request.
+
+---
+
+## Data Protection
+
+| Service | Description |
+|---|---|
+| **AWS KMS** | Creates and manages cryptographic keys to encrypt/decrypt data across AWS services. |
+| **Amazon Macie** | Uses ML to discover and protect sensitive data (PII, credentials) in [[S3]]. |
+| **AWS Certificate Manager (ACM)** | Provisions and auto-renews SSL/TLS certificates for encrypting data in transit. |
+
+### AWS KMS (Key Management Service)
+
+Creates and manages **cryptographic keys** used to encrypt and decrypt data across AWS services. Provides centralized key control with full audit logging via CloudTrail.
+
+### Amazon Macie
+
+Uses machine learning to automatically discover, classify, and protect **sensitive data** (PII, credentials) stored in [[S3]]. Generates findings when sensitive data is exposed or at risk.
+
+### AWS Certificate Manager (ACM)
+
+Provisions and manages **SSL/TLS certificates** for use with AWS services. Handles automatic renewal, ensuring data is encrypted in transit.
+
+> **SSL/TLS** — protocols that encrypt data between clients and servers (HTTPS).
+
+---
+
+## Detection & Response
+
+| Service | Description |
+|---|---|
+| **Amazon Inspector** | Scans EC2, container images, and Lambda for software vulnerabilities and network exposure. |
+| **Amazon GuardDuty** | Continuously monitors for malicious activity via CloudTrail, VPC Flow Logs, and DNS — no agents needed. |
+| **Amazon Detective** | Investigates security incidents using interactive visualizations built from log data. |
+| **AWS Security Hub** | Aggregates findings from GuardDuty, Inspector, Macie, and third-party tools into a single prioritized dashboard. |
+
+### Amazon Inspector
+
+Automatically scans EC2 instances, container images, and Lambda functions for **software vulnerabilities** and unintended network exposure. Produces a risk score to prioritize findings.
+
+### Amazon GuardDuty
+
+Continuously monitors AWS accounts and workloads for **malicious activity** using threat intelligence, ML, and behavioral analysis. Analyzes CloudTrail, VPC Flow Logs, and DNS logs — no agents required.
+
+### Amazon Detective
+
+Helps **investigate security incidents** by building interactive visualizations from log data. Surfaces relationships between resources, IPs, and user activity to speed root-cause analysis.
+
+### AWS Security Hub
+
+**Aggregates findings** from GuardDuty, Inspector, Macie, and third-party tools into a single dashboard. Normalizes and prioritizes findings into actionable insights using security standards (e.g. CIS benchmarks).
 
 ---
 
