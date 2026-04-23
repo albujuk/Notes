@@ -123,4 +123,21 @@ Data analytics transforms raw historical data to uncover insights and trends.
 
 ---
 
+## Resources
+
+| Service | Description |
+|---------|-------------|
+| [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) | Ingest terabytes of streaming data in real time |
+| [Amazon Data Firehose](https://aws.amazon.com/firehose/) | Ingest and deliver data within seconds to data lakes and warehouses |
+| [Amazon S3](https://aws.amazon.com/s3/) | Store virtually limitless amounts of all types of data |
+| [Amazon Redshift](https://aws.amazon.com/redshift/) | Store and analyze petabytes of structured or semi-structured data |
+| [AWS Glue Data Catalog](https://docs.aws.amazon.com/prescriptive-guidance/latest/serverless-etl-aws-glue/aws-glue-data-catalog.html) | Centralized metadata repository for analytics services |
+| [AWS Glue](https://aws.amazon.com/glue/) | Process data using the Glue Data Catalog as reference |
+| [Amazon EMR](https://aws.amazon.com/emr/) | Process big data workloads using Apache Spark and other frameworks |
+| [Amazon Athena](https://aws.amazon.com/athena/) | Analyze various data sources anywhere with a single SQL query |
+| [Amazon QuickSight](https://aws.amazon.com/quicksight/) | Visualize data with interactive dashboards |
+| [Amazon OpenSearch Service](https://aws.amazon.com/opensearch-service/) | Visualize and monitor real-time data analytics with keyword or NLP searches |
+
+---
+
 ← [[Index]] · [[Home]]

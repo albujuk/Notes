@@ -177,4 +177,25 @@ Interactive AI assistant integrated with a company's information repositories (c
 
 ---
 
+## Resources
+
+| Service | Description |
+|---------|-------------|
+| [Amazon Comprehend](https://aws.amazon.com/comprehend/) | Use NLP to extract key insights from documents |
+| [Amazon Polly](https://aws.amazon.com/polly/) | Convert text into lifelike speech |
+| [Amazon Transcribe](https://aws.amazon.com/transcribe/) | Convert speech into text |
+| [Amazon Translate](https://aws.amazon.com/translate/) | Translate text into multiple languages |
+| [Amazon Kendra](https://aws.amazon.com/kendra/) | Intelligently query enterprise content with NLP |
+| [Amazon Rekognition](https://aws.amazon.com/rekognition/) | Identify objects and activities in images and videos |
+| [Amazon Textract](https://aws.amazon.com/textract/) | Detect and extract typed and handwritten text in documents |
+| [Amazon Lex](https://aws.amazon.com/lex/) | Add voice and text conversational interfaces to applications |
+| [Amazon Personalize](https://aws.amazon.com/personalize/) | Add personalized customer recommendations to applications |
+| [Amazon SageMaker AI](https://aws.amazon.com/sagemaker-ai/) | Build, train, and deploy ML models without managing infrastructure |
+| [Amazon SageMaker JumpStart](https://aws.amazon.com/sagemaker-ai/jumpstart/) | Deploy pre-trained ML solutions with a few clicks |
+| [Amazon Bedrock](https://aws.amazon.com/bedrock/) | Fine-tune and integrate large FMs into AWS applications via single API |
+| [Amazon Q Business](https://aws.amazon.com/q/business/) | Answer questions using company information repositories |
+| [Amazon Q Developer](https://aws.amazon.com/q/developer/) | Accelerate development with code recommendations |
+
+---
+
 ← [[Index]] · [[Home]]
