@@ -29,7 +29,9 @@ tags:
 
 # AWS AI / ML Services
 
-AWS offers three tiers of AI/ML services — from fully managed pre-built models to raw infrastructure for custom solutions.
+AWS offers three tiers of AI/ML services — from fully managed pre-built models to raw infrastructure for custom solutions. For data pipeline and analytics services (Kinesis, Glue, Redshift, Athena, etc.) see [[Analytics]].
+
+---
 
 | Tier | What you get | Who it's for |
 |------|-------------|--------------|
@@ -85,7 +87,7 @@ Extract insights from documents, images, and video.
 
 NLP-powered enterprise search. Understands query context to return precise answers — not just keyword-matched documents.
 
-**Use cases:** Intelligent search, chatbots, application search integration.
+**Use cases:** Intelligent search, [[#Amazon Lex|chatbot]] backend search, application search integration.
 
 ### Amazon Rekognition
 
@@ -119,8 +121,6 @@ Uses historical data to generate personalized recommendations.
 
 ---
 
----
-
 ## Tier 2 — ML Services
 
 More control over ML solutions without managing infrastructure. Build, train, and deploy custom models.
@@ -149,7 +149,7 @@ Software libraries providing pre-built, optimized components for building ML mod
 
 ### AWS ML Infrastructure
 
-ML-optimized [[Compute#Amazon EC2|EC2]] instances, Amazon EMR, and [[Containers#Amazon ECS|Amazon ECS]] support custom solutions — high performance and flexibility for advanced ML workloads.
+ML-optimized [[Compute#Amazon EC2|EC2]] instances, [[Analytics#Amazon EMR|Amazon EMR]], and [[Containers#Amazon ECS|Amazon ECS]] support custom solutions — high performance and flexibility for advanced ML workloads.
 
 ---
 
@@ -171,7 +171,7 @@ Fully managed service for adapting and deploying foundation models from Amazon a
 
 ### Amazon Q
 
-Interactive AI assistant integrated with a company's information repositories (code, wikis, ticketing systems). Two variants: **Amazon Q Business** (enterprise knowledge assistant) and **Amazon Q Developer** (coding assistant, IDE integration).
+Interactive AI assistant integrated with a company's information repositories (code, wikis, ticketing systems). Two variants: **Amazon Q Business** (enterprise knowledge assistant) and **Amazon Q Developer** (coding assistant, IDE integration). Also powers natural language queries in [[Analytics#Amazon QuickSight|Amazon QuickSight]].
 
 **Use cases:** Internal knowledge search, code generation, developer productivity.
 

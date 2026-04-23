@@ -149,4 +149,10 @@ Centralized disaster recovery, compliance backup policies, consolidating multipl
 
 ---
 
+## Amazon Redshift
+
+Fully managed **data warehouse** — optimized for analytical queries on large historical datasets, not OLTP workloads. Columnar storage and massively parallel processing. See [[Analytics#Amazon Redshift|Analytics]] for full coverage including its role in data pipelines and visualization.
+
+---
+
 ← [[Index]] · [[Home]]
