@@ -22,6 +22,9 @@ tags:
   - sagemaker
   - pytorch
   - tensorflow
+  - generative-ai
+  - bedrock
+  - amazon-q
 ---
 
 # AWS AI / ML Services
@@ -147,6 +150,30 @@ Software libraries providing pre-built, optimized components for building ML mod
 ### AWS ML Infrastructure
 
 ML-optimized [[Compute#Amazon EC2|EC2]] instances, Amazon EMR, and [[Containers#Amazon ECS|Amazon ECS]] support custom solutions — high performance and flexibility for advanced ML workloads.
+
+---
+
+## Generative AI on AWS
+
+Foundation model (FM) based services — higher-level than the 3-tier ML model, focused on deploying and adapting large pre-trained models.
+
+### Amazon SageMaker JumpStart
+
+ML hub with foundation models and pre-built ML solutions deployable in a few clicks. Extends [[#Amazon SageMaker AI]] with an FM catalog — browse, evaluate, and deploy models without writing training code.
+
+**Use cases:** Rapid FM prototyping, fine-tuning FMs on custom data.
+
+### Amazon Bedrock
+
+Fully managed service for adapting and deploying foundation models from Amazon and leading AI companies (Anthropic, Cohere, Meta, Mistral, etc.). No infrastructure to manage — access FMs via API and customize them with your own data using techniques like RAG and fine-tuning.
+
+**Use cases:** Generative AI applications, chatbots, content generation, document summarization.
+
+### Amazon Q
+
+Interactive AI assistant integrated with a company's information repositories (code, wikis, ticketing systems). Two variants: **Amazon Q Business** (enterprise knowledge assistant) and **Amazon Q Developer** (coding assistant, IDE integration).
+
+**Use cases:** Internal knowledge search, code generation, developer productivity.
 
 ---
 
