@@ -26,7 +26,7 @@ Learning path in order:
 | 6 | Networking | [[AWS/Cloud Practitioner/Networking]] | VPC, subnets, internet/NAT gateway, route tables, security groups, NACLs, Route 53, CloudFront, Global Accelerator, API Gateway |
 | 7 | Connectivity | [[AWS/Cloud Practitioner/Connectivity]] | Client VPN, Site-to-Site VPN, PrivateLink, Direct Connect, Transit Gateway, comparison tables |
 | 8 | Messaging | [[AWS/Cloud Practitioner/Messaging]] | EventBridge, SQS, SNS — event-driven and message-based communication |
-| 9 | Database | [[AWS/Cloud Practitioner/Database]] | RDS — managed relational DB; Aurora — high-throughput MySQL/PostgreSQL-compatible, 6-copy replication; DynamoDB — NoSQL, single-digit ms, auto-scaling |
+| 9 | Database | [[AWS/Cloud Practitioner/Database]] | RDS, Aurora, DynamoDB (NoSQL), ElastiCache (in-memory caching) |
 
 ---
 

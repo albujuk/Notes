@@ -10,8 +10,10 @@ tags:
   - rds
   - aurora
   - dynamodb
+  - elasticache
   - relational
   - nosql
+  - caching
   - managed-service
 ---
 
@@ -82,6 +84,21 @@ Fully managed **NoSQL** database. Supports document and key-value data structure
 ### Use cases
 
 Gaming platforms, financial services, mobile applications with global user bases.
+
+---
+
+## Amazon ElastiCache
+
+Fully managed **in-memory caching** service. Compatible with Redis, Valkey, and Memcached — same tools and configs, no infrastructure to manage. Automatically detects and replaces failed nodes.
+
+- **Sub-millisecond latency** — data lives in memory, not on disk
+- **Auto-scaling** — add/remove nodes as demand changes
+- **Multi-AZ replication** — primary + replica nodes across AZs; automatic failover promotes replica to primary within minutes
+- **Encryption** — at rest (disk + backups) and in transit (TLS)
+
+### Use cases
+
+Session data management, database query caching, gaming leaderboards.
 
 ---
 
