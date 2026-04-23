@@ -4,7 +4,7 @@ Topics not yet studied. Fill in when studied (and move to their own note).
 
 ## Core Services
 
-- [ ] Database (RDS, DynamoDB, Aurora, Redshift)
+- [ ] Database (DynamoDB, Redshift)
 - [ ] Security (IAM, KMS, CloudTrail, shared responsibility model)
 - [ ] Monitoring & Management (CloudWatch)
 - [ ] Billing & Cost Management (pricing models, TCO, consolidated billing)
