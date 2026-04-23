@@ -9,7 +9,9 @@ tags:
   - database
   - rds
   - aurora
+  - dynamodb
   - relational
+  - nosql
   - managed-service
 ---
 
@@ -64,6 +66,22 @@ Managed relational database built for the cloud. MySQL- and PostgreSQL-compatibl
 ### Use cases
 
 Gaming applications, media and content management, real-time analytics.
+
+---
+
+## Amazon DynamoDB
+
+Fully managed **NoSQL** database. Supports document and key-value data structures. Flexible schema — ideal for applications needing high performance and seamless scaling.
+
+- **Single-digit millisecond** response times at any scale
+- **Auto-scaling throughput** — scales up/down based on actual usage; consistent performance without manual intervention; no practical table size limit
+- **99.999% availability** — data replicated across 3 facilities within each Region; multiple copies across Regions for fault tolerance
+- **Encryption at rest and in transit** — automatic, with choice of encryption key type
+- Pay only for resources used
+
+### Use cases
+
+Gaming platforms, financial services, mobile applications with global user bases.
 
 ---
 
