@@ -19,11 +19,26 @@ tags:
   - textract
   - lex
   - personalize
+  - sagemaker
+  - pytorch
+  - tensorflow
 ---
 
-# AWS AI Services
+# AWS AI / ML Services
 
-Pre-built, managed AI models trained for specific functions. No ML expertise required — consume via API.
+AWS offers three tiers of AI/ML services — from fully managed pre-built models to raw infrastructure for custom solutions.
+
+| Tier | What you get | Who it's for |
+|------|-------------|--------------|
+| 1 — AI Services | Pre-built models, API access | No ML expertise needed |
+| 2 — ML Services | Build/train/deploy your own models (managed infra) | Data scientists |
+| 3 — ML Frameworks & Infra | Full control, your own frameworks on AWS compute | ML experts |
+
+---
+
+## Tier 1 — AI Services
+
+Pre-built, managed AI models. No ML expertise required — consume via API.
 
 Three groups: **language**, **computer vision & search**, **conversational AI & personalization**.
 
@@ -98,6 +113,40 @@ Add voice and text conversational interfaces to applications. Uses NLU (natural 
 Uses historical data to generate personalized recommendations.
 
 **Use cases:** Streaming recommendations, product recommendations, trending content.
+
+---
+
+---
+
+## Tier 2 — ML Services
+
+More control over ML solutions without managing infrastructure. Build, train, and deploy custom models.
+
+### Amazon SageMaker AI
+
+Fully managed service to build, train, and deploy your own ML models. Provides an integrated IDE with simplified access control and transparency over ML projects. Features: experiment tracking, data visualization, workflow debugging/monitoring, and access to hundreds of pre-trained models deployable in a few steps.
+
+**Key benefits:**
+
+| Benefit | Description |
+|---------|-------------|
+| Choice of ML tools | Data scientists use the IDE; business analysts use the no-code interface |
+| Fully managed infrastructure | SageMaker provides high-performance, cost-effective infra — focus on model development |
+| Repeatable ML workflows | Automate and standardize MLOps practices with transparency and auditability |
+
+---
+
+## Tier 3 — ML Frameworks and Infrastructure
+
+Complete control over the ML training process. Use in-house expertise, ML frameworks, and AWS compute directly.
+
+### ML Frameworks
+
+Software libraries providing pre-built, optimized components for building ML models. AWS supports: **PyTorch**, **Apache MXNet**, **TensorFlow**.
+
+### AWS ML Infrastructure
+
+ML-optimized [[Compute#Amazon EC2|EC2]] instances, Amazon EMR, and [[Containers#Amazon ECS|Amazon ECS]] support custom solutions — high performance and flexibility for advanced ML workloads.
 
 ---
 

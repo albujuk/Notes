@@ -27,7 +27,7 @@ Learning path in order:
 | 7 | Connectivity | [[AWS/Cloud Practitioner/Connectivity]] | Client VPN, Site-to-Site VPN, PrivateLink, Direct Connect, Transit Gateway, comparison tables |
 | 8 | Messaging | [[AWS/Cloud Practitioner/Messaging]] | EventBridge, SQS, SNS — event-driven and message-based communication |
 | 9 | Database | [[AWS/Cloud Practitioner/Database]] | RDS, Aurora, DynamoDB (NoSQL), DocumentDB (document/MongoDB), Neptune (graph), ElastiCache (caching), AWS Backup |
-| 10 | AI Services | [[AWS/Cloud Practitioner/AI]] | Pre-built AI: Comprehend, Polly, Transcribe, Translate, Kendra, Rekognition, Textract, Lex, Personalize |
+| 10 | AI / ML Services | [[AWS/Cloud Practitioner/AI]] | 3-tier model: pre-built AI (Comprehend, Polly, Rekognition, Lex, etc.), SageMaker AI, ML frameworks & infrastructure |
 
 ---
 
