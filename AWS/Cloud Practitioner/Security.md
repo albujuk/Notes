@@ -44,4 +44,40 @@ AWS is responsible for securing the infrastructure that runs AWS services:
 
 ---
 
+---
+
+## AWS IAM (Identity and Access Management)
+
+**Securely manage identities and access to AWS services and resources.**
+
+By default, all actions in AWS are denied. Permissions must be explicitly granted.
+
+> **Principle of least privilege** — give people and systems access only to what they need and nothing else.
+
+IAM provides **users**, **groups**, and **roles** to configure access based on operational and security needs. **IAM policies** define the permissions for these identities.
+
+---
+
+## Additional Access Management Services
+
+### AWS IAM Identity Center
+
+Centralizes identity and access management across AWS accounts and applications. Connects to an existing identity source and provides workforce **single sign-on (SSO)** access to all connected AWS services and accounts.
+
+> **Federated identity management** — system that allows users to access multiple applications/services/domains using a single set of credentials.
+
+### AWS Secrets Manager
+
+Securely manages, rotates, and retrieves database credentials, API keys, and other secrets throughout their lifecycle.
+
+> **Secrets** — confidential information intended for specific individuals/groups (e.g. passwords, DB credentials, API keys).
+
+### AWS Systems Manager
+
+Provides centralized view of nodes across accounts, Regions, multi-cloud, and hybrid environments. Enables quick access to node info and automation of registry edits, user management, and security patching.
+
+> **Nodes** — connection points in a network, system, or structure.
+
+---
+
 ← [[Index]] · [[Home]]
