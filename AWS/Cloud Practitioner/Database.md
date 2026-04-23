@@ -11,8 +11,12 @@ tags:
   - aurora
   - dynamodb
   - elasticache
+  - documentdb
+  - neptune
   - relational
   - nosql
+  - document
+  - graph
   - caching
   - managed-service
 ---
@@ -87,6 +91,35 @@ Gaming platforms, financial services, mobile applications with global user bases
 
 ---
 
+## Amazon DocumentDB
+
+Fully managed **document database** with MongoDB compatibility. Stores, queries, and indexes JSON-like documents with dynamic schemas — no predefined schema required.
+
+- MongoDB-compatible: same tools, drivers, and queries work without changes
+- Handles semistructured data that doesn't fit rigid relational tables
+- Automatic scaling, continuous backup, encryption, enterprise-grade security
+- Iterate schema freely — no migrations needed for schema changes
+
+### Use cases
+
+Content management systems, catalog and inventory management, user profile and personalization.
+
+---
+
+## Amazon Neptune
+
+Fully managed **graph database**. Purpose-built for highly connected datasets where relationships between entities are as important as the data itself.
+
+- Excels at traversing complex relationships (user connections, friend networks, interaction patterns) — difficult to model in relational DBs
+- High availability with automatic failover and backups
+- Maintains high performance as data complexity grows
+
+### Use cases
+
+Social network connection mapping, fraud detection, search and recommendation engines.
+
+---
+
 ## Amazon ElastiCache
 
 Fully managed **in-memory caching** service. Compatible with Redis, Valkey, and Memcached — same tools and configs, no infrastructure to manage. Automatically detects and replaces failed nodes.
@@ -99,6 +132,20 @@ Fully managed **in-memory caching** service. Compatible with Redis, Valkey, and 
 ### Use cases
 
 Session data management, database query caching, gaming leaderboards.
+
+---
+
+## AWS Backup
+
+Centralized backup management across AWS resources and on-premises deployments. Single dashboard to monitor and manage all backups — eliminates juggling multiple backup strategies per service.
+
+- Supports: [[BlockStorage#EBS|EBS]] volumes, [[FileStorage#Amazon EFS|EFS]] file systems, RDS, DynamoDB, and more
+- Flexible scheduling, encryption, cross-Region backup for disaster recovery
+- Automates data protection policies for compliance consistency
+
+### Use cases
+
+Centralized disaster recovery, compliance backup policies, consolidating multiple backup processes.
 
 ---
 
