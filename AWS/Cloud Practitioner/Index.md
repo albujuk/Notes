@@ -36,6 +36,7 @@ Learning path in order:
 | 16 | Support Plans | [[AWS/Cloud Practitioner/Support]] | Basic, Developer, Business, Enterprise On-Ramp, Enterprise — response times, Trusted Advisor access, TAM availability |
 | 17 | Marketplace & Partners | [[AWS/Cloud Practitioner/Marketplace]] | AWS Marketplace (SaaS, ML/AI, data/analytics); AWS Partner Network (APN) — benefits, events, training |
 | 18 | Cloud Adoption Framework | [[AWS/Cloud Practitioner/CloudAdoptionFramework]] | AWS CAF; six perspectives; 7 Rs of migration; migration services: Migration Evaluator, Application Discovery Service, Migration Hub, Application Migration Service |
+| 19 | Specialized Services | [[AWS/Cloud Practitioner/SpecializedServices]] | Development (CodeBuild, CodePipeline, X-Ray, AppSync, Amplify); Business (Connect, SES); End-User Computing (AppStream, WorkSpaces); IoT Core |
 
 ---
 
