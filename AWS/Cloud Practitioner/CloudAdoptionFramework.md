@@ -13,61 +13,45 @@ tags:
 
 # AWS Cloud Adoption Framework (CAF)
 
-Framework that brings AWS experience and best practices to companies preparing to migrate to the AWS Cloud. Provides tools to accelerate the migration journey, organize resources, and align management during the transition.
-
-**Benefits:** Reduce business risk, improve sustainability and corporate transparency, grow revenue through new products and services, reduce operational costs, increase productivity, and improve customer experience.
-
-**Use cases:** Migrate legacy infrastructure and applications; migrate and optimize business processes and operations; create new business models with cloud transformation.
+Brings AWS best practices to companies migrating to the cloud. Accelerates migration, organizes resources, and aligns management.
 
 ---
 
-## The Six Perspectives
+## Six Perspectives
 
-CAF organizes migration stakeholders into six perspectives — four business-focused, two technical.
-
-### Business
-
-Ensures IT aligns with business needs and IT investments link to key business results. Build a strong business case for cloud adoption and prioritize initiatives so business and IT strategies align.
-
-**Roles:** Business managers, finance managers, budget owners, strategy stakeholders.
-
----
-
-### People
-
-Supports development of an organization-wide change management strategy. Evaluate organizational structures and roles, assess new skill and process requirements, and identify gaps to prioritize training, staffing, and organizational changes.
-
-**Roles:** Human resources, staffing, people managers.
+| Perspective | Focus | Roles |
+|-------------|-------|-------|
+| **Business** | Align IT with business goals; build cloud adoption business case | Business/finance managers, budget owners, strategy stakeholders |
+| **People** | Organization-wide change management; identify skill/role gaps | HR, staffing, people managers |
+| **Governance** | Align IT strategy with business strategy; minimize risk | CIO, program managers, enterprise architects, business analysts |
+| **Platform** | Implement cloud technology for adoption requirements | — |
+| **Security** | Meet visibility, auditability, control, and agility objectives | CISO, IT security managers/analysts |
+| **Operations** | Enable and recover IT workloads per agreed service levels | IT operations/support managers |
 
 ---
 
-### Governance
+## 7 Rs of Migration
 
-Aligns IT strategy with business strategy to maximize business value and minimize risks. Update staff skills and processes to maintain business governance in the cloud; manage and measure cloud investments to evaluate business outcomes.
-
-**Roles:** CIO, program managers, enterprise architects, business analysts, portfolio managers.
-
----
-
-### Platform
-
-Implements cloud technology to meet the organization's cloud adoption requirements.
-
----
-
-### Security
-
-Ensures the organization meets security objectives for visibility, auditability, control, and agility. Structure the selection and implementation of security controls to meet organizational needs.
-
-**Roles:** CISO, IT security managers, IT security analysts.
+| Strategy | Also called | Description |
+|----------|-------------|-------------|
+| **Relocate** | — | Move VMs/containers already running on-premises to cloud as-is |
+| **Rehost** | Lift and shift | Move apps as-is; servers become VMs. Up to 30% cost savings |
+| **Replatform** | Lift, tinker, and shift | Minor cloud optimizations; no core code changes (e.g. MySQL → RDS) |
+| **Refactor** | Rearchitect | Redesign using cloud-native features; highest cost, most impact |
+| **Repurchase** | Drop and shop | Replace app with cloud-based version (e.g. from AWS Marketplace) |
+| **Retain** | Stays where it lays | Keep near-EOL apps; only migrate what makes sense |
+| **Retire** | — | Remove unused apps; 10%+ of portfolios qualify |
 
 ---
 
-### Operations
+## Migration Services
 
-Enables, runs, uses, operates, and recovers IT workloads to the level agreed upon with business stakeholders. Defines day-to-day, quarter-to-quarter, and year-to-year operating procedures; identifies process changes and training needed for successful cloud adoption.
-
-**Roles:** IT operations managers, IT support managers.
+| Phase | Service | Purpose |
+|-------|---------|---------|
+| **Assess** | Migration Evaluator | Data-driven business case; analyzes current state, projects cloud costs, surfaces licensing reuse |
+| **Mobilize** | Application Discovery Service | Discovers on-premises server inventory, connections, and dependencies |
+| **Mobilize** | Migration Hub | Centralized hub for full migration lifecycle — planning, execution, tracking; free |
+| **Migrate & Modernize** | Application Migration Service | Lifts and modernizes on-premises/cloud apps; supports any OS; no downtime during replication |
 
 ---
 
