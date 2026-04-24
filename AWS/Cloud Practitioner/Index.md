@@ -29,8 +29,9 @@ Learning path in order:
 | 9 | Database | [[AWS/Cloud Practitioner/Database]] | RDS, Aurora, DynamoDB (NoSQL), DocumentDB (document/MongoDB), Neptune (graph), ElastiCache (caching), AWS Backup, Redshift (data warehouse) |
 | 10 | Analytics & Data Pipelines | [[AWS/Cloud Practitioner/Analytics]] | ETL pipeline stages; Kinesis, Firehose (ingestion); S3, Redshift (storage); Glue Data Catalog; Glue, EMR (processing); Athena, QuickSight, OpenSearch (analysis) |
 | 11 | AI / ML Services | [[AWS/Cloud Practitioner/AI]] | 3-tier model: pre-built AI (Comprehend, Polly, Rekognition, Lex, etc.), SageMaker AI, ML frameworks & infrastructure; Generative AI: SageMaker JumpStart, Bedrock, Amazon Q |
-| 12 | Security | [[AWS/Cloud Practitioner/Security]] | Shared responsibility model; IAM (users, groups, roles, policies, least privilege); IAM Identity Center (SSO, federation); Secrets Manager; Systems Manager |
-| 13 | Governance | [[AWS/Cloud Practitioner/Governance]] | Control Tower (multi-account governance); Service Catalog (curated resource catalog); License Manager (software license tracking and BYOL) |
+| 12 | Security | [[AWS/Cloud Practitioner/Security]] | Shared responsibility model; IAM (users, groups, roles, policies, least privilege); IAM Identity Center (SSO, federation); Secrets Manager; Systems Manager; IAM Access Analyzer |
+| 13 | Governance | [[AWS/Cloud Practitioner/Governance]] | Control Tower, Organizations (multi-account governance); Service Catalog; Config; Audit Manager; Artifact; License Manager |
+| 14 | Monitoring & Observability | [[AWS/Cloud Practitioner/Monitoring]] | CloudWatch (metrics/logs/alarms); CloudTrail (API auditing); Trusted Advisor (best practice checks); AWS Health (service events and notifications) |
 
 ---
 

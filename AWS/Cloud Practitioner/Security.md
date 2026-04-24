@@ -161,4 +161,12 @@ Helps **investigate security incidents** by building interactive visualizations 
 
 ---
 
+## IAM Access Analyzer
+
+Provides capabilities to set, verify, and refine security permissions to achieve **least privilege** security standards. Analyzes resource policies to identify external access and validate that permissions match intent.
+
+**Use cases:** Find overly permissive policies, validate policies before deploying, generate least-privilege policies from access activity.
+
+---
+
 ← [[Index]] · [[Home]]

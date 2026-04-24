@@ -48,4 +48,36 @@ Helps manage software licenses and fine-tune licensing costs. Supports **AWS BYO
 
 ---
 
+## AWS Organizations
+
+Centrally manage and govern your environment as you grow and scale AWS resources. Manage policies for groups of accounts and automate account creation.
+
+**Use cases:** Apply service control policies (SCPs) across accounts, consolidate billing, enforce guardrails at the organizational level. Often used with [[Governance#AWS Control Tower|Control Tower]].
+
+---
+
+## AWS Config
+
+Assess, audit, and evaluate the configurations of your AWS resources. Continuously records configuration changes and evaluates them against desired rules.
+
+**Use cases:** Detect non-compliant resources, track configuration history, trigger remediation actions.
+
+---
+
+## AWS Audit Manager
+
+Continually audits your AWS usage to streamline risk and compliance assessment. Maps AWS usage to compliance frameworks and generates audit-ready reports.
+
+**Use cases:** Simplify audits for standards like PCI DSS, HIPAA, SOC 2.
+
+---
+
+## AWS Artifact
+
+Self-service portal providing on-demand access to AWS security and compliance documentation — reports, certifications, and agreements.
+
+**Use cases:** Download AWS ISO certifications, SOC reports, and sign BAAs (Business Associate Agreements) for HIPAA.
+
+---
+
 ← [[Index]] · [[Home]]
