@@ -32,6 +32,9 @@ Learning path in order:
 | 12 | Security | [[AWS/Cloud Practitioner/Security]] | Shared responsibility model; IAM (users, groups, roles, policies, least privilege); IAM Identity Center (SSO, federation); Secrets Manager; Systems Manager; IAM Access Analyzer |
 | 13 | Governance | [[AWS/Cloud Practitioner/Governance]] | Control Tower, Organizations (multi-account governance); Service Catalog; Config; Audit Manager; Artifact; License Manager |
 | 14 | Monitoring & Observability | [[AWS/Cloud Practitioner/Monitoring]] | CloudWatch (metrics/logs/alarms); CloudTrail (API auditing); Trusted Advisor (best practice checks); AWS Health (service events and notifications) |
+| 15 | Billing & Cost Management | [[AWS/Cloud Practitioner/Billing]] | Organizations (consolidated billing), Billing dashboard, Budgets, Cost Explorer, Pricing Calculator |
+| 16 | Support Plans | [[AWS/Cloud Practitioner/Support]] | Basic, Developer, Business, Enterprise On-Ramp, Enterprise — response times, Trusted Advisor access, TAM availability |
+| 17 | Marketplace & Partners | [[AWS/Cloud Practitioner/Marketplace]] | AWS Marketplace (SaaS, ML/AI, data/analytics); AWS Partner Network (APN) — benefits, events, training |
 
 ---
 
