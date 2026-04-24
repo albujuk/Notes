@@ -37,6 +37,7 @@ Learning path in order:
 | 17 | Marketplace & Partners | [[AWS/Cloud Practitioner/Marketplace]] | AWS Marketplace (SaaS, ML/AI, data/analytics); AWS Partner Network (APN) — benefits, events, training |
 | 18 | Cloud Adoption Framework | [[AWS/Cloud Practitioner/CloudAdoptionFramework]] | AWS CAF; six perspectives; 7 Rs of migration; migration services: Migration Evaluator, Application Discovery Service, Migration Hub, Application Migration Service |
 | 19 | Specialized Services | [[AWS/Cloud Practitioner/SpecializedServices]] | Development (CodeBuild, CodePipeline, X-Ray, AppSync, Amplify); Business (Connect, SES); End-User Computing (AppStream, WorkSpaces); IoT Core |
+| 20 | Well-Architected Framework | [[AWS/Cloud Practitioner/WellArchitected]] | Six pillars; Well-Architected Tool; Architecture Center and Blog |
 
 ---
 
