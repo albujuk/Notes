@@ -19,14 +19,14 @@ Structured approach to designing and operating secure, high-performing, resilien
 
 ## Six Pillars
 
-| Pillar | Focus |
-|--------|-------|
-| **Operational Excellence** | Run, monitor, and improve operations; automate changes; respond to events |
-| **Security** | Protect data, systems, and assets; manage identities; detect threats |
-| **Reliability** | Recover from failures; scale to meet demand; manage change |
+| Pillar                     | Focus                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------- |
+| **Operational Excellence** | Run, monitor, and improve operations; automate changes; respond to events                |
+| **Security**               | Protect data, systems, and assets; manage identities; detect threats                     |
+| **Reliability**            | Recover from failures; scale to meet demand; manage change                               |
 | **Performance Efficiency** | Use compute resources efficiently; select right resource types; adapt to changing demand |
-| **Cost Optimization** | Avoid unnecessary costs; understand spending; select cost-effective resources |
-| **Sustainability** | Minimize environmental impact of cloud workloads |
+| **Cost Optimization**      | Avoid unnecessary costs; understand spending; select cost-effective resources            |
+| **Sustainability**         | Minimize environmental impact of cloud workloads                                         |
 
 ---
 
