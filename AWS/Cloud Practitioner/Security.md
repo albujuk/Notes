@@ -115,12 +115,17 @@ Filters incoming web traffic using a **web ACL** that defines rules to allow or 
 | Service | Description |
 |---|---|
 | **AWS KMS** | Creates and manages cryptographic keys to encrypt/decrypt data across AWS services. |
+| **AWS CloudHSM** | Dedicated single-tenant hardware security module for key management and cryptographic operations. |
 | **Amazon Macie** | Uses ML to discover and protect sensitive data (PII, credentials) in [[S3]]. |
 | **AWS Certificate Manager (ACM)** | Provisions and auto-renews SSL/TLS certificates for encrypting data in transit. |
 
 ### AWS KMS (Key Management Service)
 
 Creates and manages **cryptographic keys** used to encrypt and decrypt data across AWS services. Provides centralized key control with full audit logging via CloudTrail.
+
+### AWS CloudHSM
+
+Dedicated **hardware security module (HSM)** — single-tenant, fully managed. Use when compliance requirements mandate exclusive hardware control over key management.
 
 ### Amazon Macie
 
@@ -131,6 +136,15 @@ Uses machine learning to automatically discover, classify, and protect **sensiti
 Provisions and manages **SSL/TLS certificates** for use with AWS services. Handles automatic renewal, ensuring data is encrypted in transit.
 
 > **SSL/TLS** — protocols that encrypt data between clients and servers (HTTPS).
+
+### Encryption Services — Quick Comparison
+
+| Service | Primary Purpose |
+|---------|----------------|
+| **AWS KMS** | Create and manage encryption keys for data at rest across AWS services |
+| **AWS CloudHSM** | Dedicated hardware for key management (single-tenant) |
+| **AWS Certificate Manager** | SSL/TLS certificates for data in transit |
+| **AWS Secrets Manager** | Store and rotate secrets/credentials |
 
 ---
 
