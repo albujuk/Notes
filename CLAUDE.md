@@ -14,70 +14,73 @@ Obsidian markdown notes vault synced via Git.
 
 ## 2. Vault Structure
 
+Numbered top-level buckets (PARA-ish). Buckets are pre-reserved but only created when their first note lands. **Do not pre-create empty buckets.**
+
 ```
 Notes/
 ├── Home.md                          ← root index
 ├── CLAUDE.md
-├── AWS/
-│   ├── README.md
-│   └── Cloud Practitioner/
+├── 000 - Inbox/                     ← quick captures, unsorted
+│   └── README.md
+├── 100 - Cloud/
+│   └── AWS/
 │       ├── README.md
-│       ├── Compute.md
-│       ├── Containers.md
-│       ├── Global Infrastructure.md
-│       ├── CloudFormation.md
-│       ├── Networking.md
-│       ├── Connectivity.md
-│       ├── Messaging.md
-│       ├── missing.md
-│       └── update-content.md
-└── Kubernetes/
+│       └── Cloud Practitioner/
+│           ├── README.md
+│           ├── (notes)
+│           └── missing.md
+├── 200 - DevOps/                    ← reserved (CI-CD, Linux, Monitoring)
+├── 300 - Containers/
+│   └── Kubernetes/
+│       ├── README.md
+│       ├── (notes)
+│       ├── kubectl.md
+│       └── missing.md
+├── 400 - IaC/                       ← reserved (Terraform, Ansible)
+├── 500 - Networking/                ← reserved
+├── 600 - Security/                  ← reserved
+├── 700 - Projects/                  ← reserved
+├── 800 - References/                ← reserved (Cheatsheets, Bookmarks, Glossary)
+└── 900 - Meta/
     ├── README.md
-    ├── Architecture/
-    │   ├── README.md
-    │   ├── Cluster.md
-    │   └── Components.md
-    ├── Workloads/
-    │   ├── README.md
-    │   ├── Pods.md
-    │   ├── Patterns.md
-    │   └── Controllers.md
-    ├── Networking/
-    │   └── README.md
-    ├── Storage/
-    │   └── README.md
-    ├── Configuration/
-    │   └── README.md
-    ├── kubectl.md
-    └── missing.md
+    └── MOCs/
+        ├── AWS MOC.md
+        └── Kubernetes MOC.md
 ```
+
+**Subfolder rule of thumb:** only create a subfolder when you already have **10+ notes** on that topic and they feel cluttered. Don't pre-create empty subfolders for what might exist someday. Folders = coarse buckets. Tags + links = fine-grained organization.
 
 ---
 
-## 3. Indexes and Reference Docs
+## 3. Indexes vs MOCs
 
-Every folder has an `README.md`. `Home.md` is the root index.
+Two distinct artifacts:
+
+- **`README.md` — folder index. Mechanical.** Lists files in that folder. Answers "what's in this folder?". Plain link list, no commentary needed.
+- **`<Topic> MOC.md` — concept map. Intellectual.** Groups notes by relationship, not file location. Can link across folders, add context, show learning order, cluster ideas thematically. Answers "how do these ideas connect?". Lives in `900 - Meta/MOCs/`.
+
+`Home.md` is the root index — links to top-level READMEs and to MOCs.
 
 **Always:**
-- Check the folder's `README.md` before adding or editing notes
-- Keep index rows in learning/logical order, not alphabetical
-- Index row format: `| # | Topic | [[File]] | one-line summary of contents |`
+- Check the folder's `README.md` before adding or editing notes.
+- Keep `README.md` rows in learning/logical order, not alphabetical.
+- Index row format (when richer than a bare list): `| # | [[File]] | one-line summary |`
 
 **When content changes:**
-- New note → add row to folder's `README.md`
-- New folder → add to parent `README.md` + `Home.md` Topics table + `Home.md` file tree + Section 2 above
-- Note deleted/renamed → update every index that references it
-- Do index updates in the same edit pass as the content change — never leave them out of sync
+- New note → add row to folder's `README.md`. Update relevant MOC if it changes the concept map.
+- New folder → add to parent `README.md` + `Home.md` (Topics table + file tree) + Section 2 above.
+- Note deleted/renamed → update every index/MOC that references it.
+- Do index/MOC updates in the same edit pass as the content change — never out of sync.
 
 **Files to keep in sync:**
 
-| File | What it tracks |
-|------|---------------|
-| `Home.md` | All top-level topic folders + file tree |
-| `AWS/README.md` | All certification/track sub-folders under AWS |
-| `AWS/Cloud Practitioner/README.md` | All notes in Cloud Practitioner, in learning order |
-| `Kubernetes/README.md` | All sub-section indexes under Kubernetes (Architecture, Workloads, Networking, Storage, Configuration) + kubectl |
-| `Kubernetes/<Section>/README.md` | All notes within that section, in learning order |
+| File | Tracks |
+|------|--------|
+| `Home.md` | Top-level buckets, MOCs, file tree |
+| `100 - Cloud/AWS/README.md` | Cert/track sub-folders under AWS |
+| `100 - Cloud/AWS/Cloud Practitioner/README.md` | Notes in Cloud Practitioner, learning order |
+| `300 - Containers/Kubernetes/README.md` | Notes in Kubernetes, learning order |
+| `900 - Meta/MOCs/<Topic> MOC.md` | Concept map for that topic |
 
 ---
 
@@ -88,13 +91,11 @@ Every folder has an `README.md`. `Home.md` is the root index.
 Acceptable fallbacks:
 - Mid-file surgical edits → `Edit` (CLI has no equivalent — only `read`/`append`/`prepend`/`create`)
 - Bulk multi-file regex → `sed` via `Bash`
-- Clearing `update-content.md` → `Write` with empty content (see Section 6)
+- Clearing inbox or update files → `Write` with empty content (see Section 6)
 - Renames/moves → prefer `obsidian rename` / `obsidian move` over `mv`
 - Git → always `Bash`
 
 Obsidian must be running for the CLI to work. If a CLI call fails with a connection error, surface it before falling back.
-
-Use the `obsidian` command to interact with the vault while Obsidian is running.
 
 `file=<name>` resolves by name (wikilink-style). `path=<path>` is exact. Most commands default to the active file when `file`/`path` omitted. Quote values with spaces. Use `\n` for newline in `content`.
 
@@ -178,31 +179,32 @@ Other namespaces: `bookmark*`, `template*`, `plugin*`, `theme*`, `snippet*`, `ta
 
 - Use wikilinks (`[[File Name]]`) for internal links.
 - Every topic folder must have exactly one `README.md` (uppercase, GitHub-style — renders by default in folder views).
-- **Wikilink path rules:** short names resolve to the file with that name in the **same directory**. Use `[[README]]`, `[[Pods]]`, `[[Networking]]` for files in the same folder. For files in a different folder, use full path with display text: `[[AWS/README|AWS]]`, `[[Kubernetes/README|Kubernetes]]`.
-- Only split a topic into multiple files when the file gets too long or subtopics diverge enough to warrant separate navigation. Don't split preemptively.
+- **Wikilink path rules:** bare `[[Name]]` is fine when the target filename is unique vault-wide. When duplicates exist (multiple `README.md`, multiple `missing.md`), use full path with display text: `[[100 - Cloud/AWS/README|AWS]]`, `[[300 - Containers/Kubernetes/README|Kubernetes]]`.
+- Only split a topic into multiple files when the file gets too long or subtopics diverge enough. Don't split preemptively.
 - Add example commands alongside concept explanations.
 
 ---
 
-## 6. Update Files — Pending Changes Workflow
+## 6. Inbox — Pending Changes Workflow
 
-Fixed filename: `update-content.md`. May exist in multiple dirs simultaneously, each with different content. Claude decides which note(s) in that dir the content belongs in — may split across multiple files.
+Quick captures land in `000 - Inbox/`. Files there are unsorted; Claude routes them into the right topic folder(s).
 
 **When user says "do your work" (or equivalent trigger):**
-1. Run `obsidian files` to list vault files and find all `update-content.md` instances. Do NOT use `find` — RTK proxying can silently swallow results.
-2. For each: read content, apply to appropriate note(s) in the same directory.
-3. Empty `update-content.md` after applying using the `Write` tool with empty content. Do NOT use `obsidian create` — it appends ` 1` to the filename instead of overwriting.
-4. Update `README.md` if new notes were created.
-5. Update `Home.md` file tree if new notes were created.
+1. Run `obsidian files folder="000 - Inbox"` to list inbox files. Do NOT use `find` — RTK proxying can silently swallow results.
+2. For each file (skip `README.md`): read content, decide which existing note(s) it belongs in, apply.
+3. After applying, delete the inbox file with `obsidian delete file=<name>`. (May go to trash; use `permanent` flag to skip.)
+4. If the content is a brand new topic, create a new note in the correct bucket folder, add a row to that folder's `README.md`, and update the relevant MOC.
+5. Update `Home.md` file tree if a new top-level bucket or folder was created.
 
 **Rules:**
 - User writes; Claude routes and applies.
+- Inbox should be empty (except `README.md`) after a "do your work" pass.
 
 ---
 
 ## 7. Missing Topics
 
-Each folder may contain a `missing.md` that tracks topics not yet studied.
+Each topic folder may contain a `missing.md` tracking topics not yet studied.
 
 **Rules:**
 - Don't add content to `missing.md` — the user fills it in when they study the topic.
@@ -212,14 +214,14 @@ Each folder may contain a `missing.md` that tracks topics not yet studied.
 
 ## 8. Frontmatter Schema
 
-All content notes and index files carry YAML frontmatter. Do NOT add frontmatter to `missing.md`, `update-content.md`, `CLAUDE.md`, or `Home.md`.
+All content notes and index files carry YAML frontmatter. Do NOT add frontmatter to `missing.md`, inbox files, `CLAUDE.md`, or `Home.md`.
 
 ```yaml
 ---
-domain: aws | kubernetes          # top-level subject area
-track: cloud-practitioner | core  # certification / learning track
-topic: compute | networking | ... # required on notes; omit on index files (type: index has no topic)
-type: note | index
+domain: aws | kubernetes | ...    # top-level subject area; expand as new buckets fill
+track: cloud-practitioner | core  # certification / learning track (omit if N/A)
+topic: compute | networking | ... # required on notes; omit on index files
+type: note | index | moc
 tags:
   - <domain>
   - <track>
@@ -227,7 +229,9 @@ tags:
 ---
 ```
 
-**When adding a new note:** copy the frontmatter from a sibling note and update `topic` and `tags`. Tags should include the domain, track, and key concepts covered in the note.
+**When adding a new note:** copy the frontmatter from a sibling note and update `topic` and `tags`. Tags should include the domain, track, and key concepts covered.
+
+**MOC files** (`900 - Meta/MOCs/<Topic> MOC.md`) use `type: moc` with a `moc` tag plus the topic tag.
 
 ---
 
@@ -237,8 +241,8 @@ When adding or editing notes, wire up wikilinks between related concepts across 
 
 **Rules:**
 - Link to a section anchor when the target is a specific heading: `[[File#Section|display text]]`
-- Link across topics when concepts are related (e.g. EKS → Kubernetes/Architecture/Cluster, Lambda → Compute#AWS Lambda)
-- Link across domains (AWS ↔ Kubernetes) when one concept is the managed version of the other
+- Link across topics when concepts are related (e.g. EKS → [[Cluster]], Lambda → [[Compute#AWS Lambda]])
+- Link across domains (AWS ↔ Kubernetes) when one concept is the managed version of the other — and surface the connection in the relevant MOC.
 - Never link to a heading that doesn't exist — verify anchor names match exactly (case-sensitive in Obsidian)
 - Prefer inline links; keep display text natural
 - Don't over-link: first meaningful mention in a section is enough, not every occurrence

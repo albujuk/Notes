@@ -4,10 +4,17 @@ Central index for all topics in this vault.
 
 ## Topics
 
-| # | Subject | Folder | Index |
-|---|---------|--------|-------|
-| 1 | Amazon Web Services | `AWS/` | [[AWS/README]] |
-| 2 | Kubernetes | `Kubernetes/` | [[Kubernetes/README]] |
+| # | Bucket | Folder | Index |
+|---|--------|--------|-------|
+| 1 | Cloud | `100 - Cloud/` | [[100 - Cloud/AWS/README\|AWS]] |
+| 2 | Containers | `300 - Containers/` | [[300 - Containers/Kubernetes/README\|Kubernetes]] |
+
+## Maps of Content
+
+Concept maps that group ideas across folders:
+
+- [[Kubernetes MOC]]
+- [[AWS MOC]]
 
 ---
 
@@ -15,38 +22,25 @@ Central index for all topics in this vault.
 
 ```
 Notes/
-├── AWS/
-│   ├── README.md
-│   └── Cloud Practitioner/
+├── 000 - Inbox/                     ← quick captures, unsorted notes
+├── 100 - Cloud/
+│   └── AWS/
 │       ├── README.md
-│       ├── Compute.md
-│       ├── Containers.md
-│       ├── Global Infrastructure.md
-│       ├── CloudFormation.md
-│       ├── Networking.md
-│       ├── Connectivity.md
-│       └── missing.md
-└── Kubernetes/
-    ├── README.md
-    ├── Architecture/
-    │   ├── README.md
-    │   ├── Cluster.md
-    │   └── Components.md
-    ├── Workloads/
-    │   ├── README.md
-    │   ├── Pods.md
-    │   ├── Patterns.md
-    │   └── Controllers.md
-    ├── Networking/
-    │   └── README.md
-    ├── Storage/
-    │   └── README.md
-    ├── Configuration/
-    │   └── README.md
-    ├── kubectl.md
-    └── missing.md
+│       └── Cloud Practitioner/
+│           ├── README.md
+│           └── (notes)
+├── 300 - Containers/
+│   └── Kubernetes/
+│       ├── README.md
+│       └── (notes)
+└── 900 - Meta/
+    └── MOCs/
+        ├── AWS MOC.md
+        └── Kubernetes MOC.md
 ```
+
+Folder buckets are pre-numbered (`200 - DevOps`, `400 - IaC`, `500 - Networking`, `600 - Security`, `700 - Projects`, `800 - References`) but only created when the first note for that bucket lands.
 
 ---
 
-> Start a topic → open its Index. Each index lists files in learning order.
+> Start a topic → open its index. Concept connections → open a MOC.
