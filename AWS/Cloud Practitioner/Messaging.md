@@ -71,4 +71,4 @@ Publish-subscribe service. A publisher sends one message to an **SNS topic**; SN
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

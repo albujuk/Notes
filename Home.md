@@ -6,8 +6,8 @@ Central index for all topics in this vault.
 
 | # | Subject | Folder | Index |
 |---|---------|--------|-------|
-| 1 | Amazon Web Services | `AWS/` | [[AWS/Index]] |
-| 2 | Kubernetes | `Kubernetes/` | [[Kubernetes/Index]] |
+| 1 | Amazon Web Services | `AWS/` | [[AWS/README]] |
+| 2 | Kubernetes | `Kubernetes/` | [[Kubernetes/README]] |
 
 ---
 
@@ -16,9 +16,9 @@ Central index for all topics in this vault.
 ```
 Notes/
 ├── AWS/
-│   ├── Index.md
+│   ├── README.md
 │   └── Cloud Practitioner/
-│       ├── Index.md
+│       ├── README.md
 │       ├── Compute.md
 │       ├── Containers.md
 │       ├── Global Infrastructure.md
@@ -27,10 +27,22 @@ Notes/
 │       ├── Connectivity.md
 │       └── missing.md
 └── Kubernetes/
-    ├── Index.md
-    ├── Intro.md
-    ├── Pods.md
-    ├── Workloads.md
+    ├── README.md
+    ├── Architecture/
+    │   ├── README.md
+    │   ├── Cluster.md
+    │   └── Components.md
+    ├── Workloads/
+    │   ├── README.md
+    │   ├── Pods.md
+    │   ├── Patterns.md
+    │   └── Controllers.md
+    ├── Networking/
+    │   └── README.md
+    ├── Storage/
+    │   └── README.md
+    ├── Configuration/
+    │   └── README.md
     ├── kubectl.md
     └── missing.md
 ```

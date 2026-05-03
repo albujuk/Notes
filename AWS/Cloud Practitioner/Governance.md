@@ -80,4 +80,4 @@ Self-service portal providing on-demand access to AWS security and compliance do
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

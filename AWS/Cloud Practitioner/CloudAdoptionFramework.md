@@ -61,4 +61,4 @@ Brings AWS best practices to companies migrating to the cloud. Accelerates migra
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

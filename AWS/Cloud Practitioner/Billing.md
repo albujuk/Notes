@@ -70,4 +70,4 @@ Per-service pricing pages detail costs for storage, requests, data transfer, ins
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

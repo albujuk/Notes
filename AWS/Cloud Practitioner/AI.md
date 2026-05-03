@@ -198,4 +198,4 @@ Interactive AI assistant integrated with a company's information repositories (c
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

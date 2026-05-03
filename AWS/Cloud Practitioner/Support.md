@@ -83,4 +83,4 @@ Global community of partners that build solutions and services on AWS. Engage pa
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

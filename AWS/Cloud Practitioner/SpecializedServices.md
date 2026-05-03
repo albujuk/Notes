@@ -57,4 +57,4 @@ tags:
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

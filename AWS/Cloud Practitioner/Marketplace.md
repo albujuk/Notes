@@ -43,4 +43,4 @@ Global community of partners that build solutions and services on AWS. Partners 
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

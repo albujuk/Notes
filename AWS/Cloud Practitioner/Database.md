@@ -155,4 +155,4 @@ Fully managed **data warehouse** — optimized for analytical queries on large h
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

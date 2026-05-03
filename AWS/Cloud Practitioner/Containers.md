@@ -41,7 +41,7 @@ Fully managed **container orchestration** service. Deploys, manages, and scales 
 
 ## Amazon EKS — Elastic Kubernetes Service
 
-Fully managed **[[Kubernetes/Intro|Kubernetes]]** service. Runs Kubernetes clusters on AWS and on-premises. Automates infrastructure management and integrates with AWS networking, security, and storage.
+Fully managed **[[Kubernetes/Architecture/Cluster|Kubernetes]]** service. Runs Kubernetes clusters on AWS and on-premises. Automates infrastructure management and integrates with AWS networking, security, and storage.
 
 - Higher operational complexity than ECS; choose EKS when you need **Kubernetes portability** (e.g., multi-cloud strategy) or already run Kubernetes on-premises and want a consistent control plane.
 
@@ -70,4 +70,4 @@ Fully managed **[[Kubernetes/Intro|Kubernetes]]** service. Runs Kubernetes clust
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

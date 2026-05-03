@@ -41,4 +41,4 @@ Learning path in order:
 
 ---
 
-← [[AWS/Index]] · [[Home]]
+← [[AWS/README]] · [[Home]]

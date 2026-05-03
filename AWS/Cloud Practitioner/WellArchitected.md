@@ -43,4 +43,4 @@ Provides a consistent process for measuring your architecture against AWS best p
 
 ---
 
-← [[Index]] · [[Home]]
+← [[README]] · [[Home]]

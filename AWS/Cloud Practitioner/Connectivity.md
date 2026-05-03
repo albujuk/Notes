@@ -77,4 +77,4 @@ Hub-and-spoke transit hub that interconnects multiple VPCs and on-premises netwo
 
 ---
 
-← [[Networking]] · [[Index]] · [[Home]]
+← [[Networking]] · [[README]] · [[Home]]

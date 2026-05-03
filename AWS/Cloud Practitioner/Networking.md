@@ -104,4 +104,4 @@ Managed service for creating, publishing, and securing APIs at any scale. Acts a
 
 ---
 
-← [[Index]] · [[Home]] · [[Connectivity]] →
+← [[README]] · [[Home]] · [[Connectivity]] →

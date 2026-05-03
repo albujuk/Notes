@@ -1,56 +1,19 @@
 ---
 domain: kubernetes
 track: core
-topic: pods
+topic: patterns
 type: note
 tags:
   - kubernetes
   - pods
-  - containers
   - sidecar
   - multi-container
+  - patterns
 ---
 
-# Pods
+# Multi-Container Pod Patterns
 
-A **Pod** is the smallest deployable unit in Kubernetes — a wrapper around one or more containers that share the same network namespace and storage. Every container in Kubernetes runs inside a Pod. Pods are managed at scale by [[Workloads|workload controllers]] (ReplicaSet, Deployment).
-
-- Each Pod gets its own internal IP address within the cluster.
-- Pods are ephemeral: if they die, Kubernetes spins up a new one (with a new IP).
-- Kubernetes scales by adding/removing Pods, not containers directly.
-
-## kubectl Commands
-> Full reference: [[kubectl]]
-
-```bash
-# Create pod (imperative)
-kubectl run nginx --image=nginx
-
-# Generate YAML without creating (dry run)
-kubectl run nginx --image=nginx --dry-run=client -o yaml
-
-# Generate YAML and save to file
-kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml
-
-# Apply manifest
-kubectl apply -f pod.yaml
-
-# List pods
-kubectl get pods
-kubectl get pods -o wide          # includes node, IP
-
-# Inspect
-kubectl describe pod nginx
-kubectl logs nginx
-
-# Delete
-kubectl delete pod nginx
-```
-
----
-
-## Multi-Container Pods
-A Pod *can* hold multiple containers, but they must be **different types/images** — not duplicates of the same app. Common pattern: a main app container + a helper (sidecar) container (e.g., a log shipper, proxy, or config reloader). They share localhost and volumes.
+A [[Pods|Pod]] *can* hold multiple containers, but they must be **different types/images** — not duplicates of the same app. Common pattern: a main app container + a helper (sidecar) container (e.g., a log shipper, proxy, or config reloader). They share localhost and volumes.
 
 ## Sidecar Example — Log Shipper
 
@@ -108,7 +71,7 @@ spec:
         name: nginx-ifconfig-conf  # configMap proxying / → localhost:8000
 ```
 
-> ConfigMaps not yet documented — see [[Kubernetes/missing]]
+> ConfigMaps not yet documented — see [[Kubernetes/missing|missing]]
 
 `emptyDir` is created when Pod starts, deleted when Pod dies. Both containers see the same files through it.
 
@@ -137,3 +100,7 @@ graph LR
     VOL -->|"tails logs"| FLUENT
     FLUENT -->|"ships"| ES
 ```
+
+---
+
+← [[README]] · [[Kubernetes/README|Kubernetes]] · [[Home]]

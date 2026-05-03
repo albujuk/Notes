@@ -40,4 +40,4 @@ Virtual tape library (VTL) interface. Replaces physical tape infrastructure. Vir
 
 ---
 
-← [[Index]] · [[Storage]]
+← [[README]] · [[Storage]]

@@ -28,4 +28,4 @@ AWS storage spans three fundamental types:
 
 ---
 
-← [[Index]] · [[Compute]] · [[Home]]
+← [[README]] · [[Compute]] · [[Home]]

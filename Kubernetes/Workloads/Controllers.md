@@ -1,18 +1,21 @@
 ---
 domain: kubernetes
 track: core
-topic: workloads
+topic: controllers
 type: note
 tags:
   - kubernetes
   - workloads
+  - controllers
   - replicaset
   - replication-controller
   - deployment
   - scaling
 ---
 
-# Kubernetes Workloads
+# Workload Controllers
+
+Controllers manage [[Pods|Pods]] at scale — keeping a desired number of replicas alive and rescheduling them when they die. **ReplicationController** was the original; **ReplicaSet** replaced it; **Deployment** wraps ReplicaSet and is what you actually use day-to-day.
 
 ## ReplicationController
 
@@ -103,9 +106,13 @@ kubectl create deployment nginx --image=nginx --replicas=3 --dry-run=client -o y
 
 ## RC vs ReplicaSet
 
-| Feature             | ReplicationController          | ReplicaSet                           |
-| :------------------ | :----------------------------- | :----------------------------------- |
-| **API version**     | `v1`                           | `apps/v1`                            |
+| Feature             | ReplicationController          | ReplicaSet                                   |
+| :------------------ | :----------------------------- | :------------------------------------------- |
+| **API version**     | `v1`                           | `apps/v1`                                    |
 | **Selector type**   | Equality only (`key: value`)   | Set-based (`matchLabels`/`matchExpressions`) |
-| **Status**          | Legacy                         | Current (but use Deployment)         |
-| **Managed by**      | Standalone                     | Deployment                           |
+| **Status**          | Legacy                         | Current (but use Deployment)                 |
+| **Managed by**      | Standalone                     | Deployment                                   |
+
+---
+
+← [[README]] · [[Kubernetes/README|Kubernetes]] · [[Home]]

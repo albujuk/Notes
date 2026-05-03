@@ -97,4 +97,4 @@ Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root 
 
 ---
 
-← [[Storage]] · [[Index]] · [[Home]]
+← [[Storage]] · [[README]] · [[Home]]
