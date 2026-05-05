@@ -115,4 +115,80 @@ kubectl create deployment nginx --image=nginx --replicas=3 --dry-run=client -o y
 
 ---
 
+## Deployment
+
+The controller you should use for all stateless workloads. A Deployment manages [[#ReplicaSet|ReplicaSets]] for you — when you create a Deployment, it creates a ReplicaSet under the hood. The real power comes when you update your application.
+
+**How a rolling update works:**
+1. You apply a new image version (`kubectl set image` or `kubectl apply` with updated YAML).
+2. Deployment creates a **new ReplicaSet** with the updated pod template.
+3. It scales the new RS up one pod at a time while scaling the old RS down.
+4. The old RS is kept at 0 replicas — this is what enables rollback.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
+```
+
+```bash
+kubectl apply -f deployment.yaml
+kubectl get deployments
+kubectl get deployment nginx-deployment
+kubectl describe deployment nginx-deployment
+
+# Update image (triggers rolling update)
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+
+# Watch rollout progress
+kubectl rollout status deployment/nginx-deployment
+
+# Rollback to previous version
+kubectl rollout undo deployment/nginx-deployment
+
+# View rollout history
+kubectl rollout history deployment/nginx-deployment
+
+# Scale
+kubectl scale deployment nginx-deployment --replicas=5
+
+# Generate YAML via dry-run
+kubectl create deployment nginx --image=nginx --replicas=3 --dry-run=client -o yaml
+```
+
+---
+
+## ReplicaSet vs Deployment
+
+| Feature | ReplicaSet | Deployment |
+| :--- | :--- | :--- |
+| **Maintains pod count** | Yes | Yes (via RS) |
+| **Rolling updates** | No | Yes |
+| **Rollback** | No | Yes (`kubectl rollout undo`) |
+| **Update strategy** | None | `RollingUpdate` / `Recreate` |
+| **Revision history** | No | Yes (old RSes kept) |
+| **Use directly in prod?** | No | Yes |
+
+Rule: always use Deployments. A bare ReplicaSet has no update or rollback capability. Think of the ReplicaSet as the engine and the Deployment as the car — you always drive the car.
+
+---
+
 ← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]

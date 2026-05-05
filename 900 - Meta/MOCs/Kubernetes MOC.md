@@ -21,10 +21,11 @@ The control plane decides; the data plane runs.
 Stack from atom up:
 
 - [[Pods]] — smallest deployable unit, one or more containers sharing localhost + storage
-- [[Controllers]] — keep N pod replicas alive (ReplicationController → ReplicaSet → Deployment)
+- [[Controllers]] — keep N pod replicas alive (ReplicationController → ReplicaSet → [[Controllers#Deployment|Deployment]])
+  - [[Controllers#Deployment|Deployment]] wraps ReplicaSet and adds rolling updates + rollback — use this for all stateless workloads
 - [[Patterns]] — multi-container Pod patterns (sidecar, log shipper)
 
-A Pod alone is fragile. Wrap it in a controller for self-healing replicas.
+A Pod alone is fragile. Wrap it in a controller for self-healing replicas. Use a Deployment (not a bare ReplicaSet) so you can update and roll back without downtime.
 
 ## Cross-domain links
 
