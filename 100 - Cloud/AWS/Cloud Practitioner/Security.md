@@ -183,4 +183,4 @@ Provides capabilities to set, verify, and refine security permissions to achieve
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

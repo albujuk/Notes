@@ -70,4 +70,4 @@ Fully managed **[[Cluster|Kubernetes]]** service. Runs Kubernetes clusters on AW
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

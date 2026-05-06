@@ -77,4 +77,4 @@ graph TB
 
 ---
 
-← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]
+← [[300 - Containers/Kubernetes/README|Kubernetes]]

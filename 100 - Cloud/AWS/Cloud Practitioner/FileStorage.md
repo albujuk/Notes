@@ -50,4 +50,4 @@ Compared to [[FileStorage#Amazon Elastic File System (EFS)|EFS]] (NFS-only), FSx
 
 ---
 
-← [[Storage]] · [[README]] · [[Home]]
+← [[Storage]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

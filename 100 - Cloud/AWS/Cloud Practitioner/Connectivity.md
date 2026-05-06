@@ -77,4 +77,4 @@ Hub-and-spoke transit hub that interconnects multiple VPCs and on-premises netwo
 
 ---
 
-← [[Networking]] · [[README]] · [[Home]]
+← [[Networking]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

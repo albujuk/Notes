@@ -80,4 +80,4 @@ Self-service portal providing on-demand access to AWS security and compliance do
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

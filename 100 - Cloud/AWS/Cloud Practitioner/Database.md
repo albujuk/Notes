@@ -155,4 +155,4 @@ Fully managed **data warehouse** — optimized for analytical queries on large h
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

@@ -55,4 +55,4 @@ A Pod can hold multiple containers that share localhost and volumes. Used for he
 
 ---
 
-← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]
+← [[300 - Containers/Kubernetes/README|Kubernetes]]

@@ -70,4 +70,4 @@ Per-service pricing pages detail costs for storage, requests, data transfer, ins
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

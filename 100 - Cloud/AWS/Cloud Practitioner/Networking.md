@@ -104,4 +104,4 @@ Managed service for creating, publishing, and securing APIs at any scale. Acts a
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]] · [[Connectivity]] →
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Connectivity]] →

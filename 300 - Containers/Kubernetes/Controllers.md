@@ -199,4 +199,4 @@ Rule: always use Deployments. A bare ReplicaSet has no update or rollback capabi
 
 ---
 
-← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]
+← [[300 - Containers/Kubernetes/README|Kubernetes]]

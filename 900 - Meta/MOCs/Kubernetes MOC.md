@@ -39,4 +39,4 @@ A Pod alone is fragile. Wrap it in a controller for self-healing replicas. Use a
 
 ---
 
-← [[Home]]
+← [[README]]

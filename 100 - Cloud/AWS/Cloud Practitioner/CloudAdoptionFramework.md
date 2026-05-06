@@ -61,4 +61,4 @@ Brings AWS best practices to companies migrating to the cloud. Accelerates migra
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

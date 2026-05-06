@@ -18,7 +18,7 @@ Numbered top-level buckets (PARA-ish). Buckets are pre-reserved but only created
 
 ```
 Notes/
-├── Home.md                          ← root index
+├── README.md                        ← root index
 ├── CLAUDE.md
 ├── 000 - Inbox/                     ← quick captures, unsorted
 │   └── README.md
@@ -59,7 +59,7 @@ Two distinct artifacts:
 - **`README.md` — folder index. Mechanical.** Lists files in that folder. Answers "what's in this folder?". Plain link list, no commentary needed.
 - **`<Topic> MOC.md` — concept map. Intellectual.** Groups notes by relationship, not file location. Can link across folders, add context, show learning order, cluster ideas thematically. Answers "how do these ideas connect?". Lives in `900 - Meta/MOCs/`.
 
-`Home.md` is the root index — links to top-level READMEs and to MOCs.
+`README.md` is the root index — links to top-level READMEs and to MOCs.
 
 **Always:**
 - Check the folder's `README.md` before adding or editing notes.
@@ -68,7 +68,7 @@ Two distinct artifacts:
 
 **When content changes:**
 - New note → add row to folder's `README.md`. Update relevant MOC if it changes the concept map.
-- New folder → add to parent `README.md` + `Home.md` (Topics table + file tree) + Section 2 above.
+- New folder → add to parent `README.md` + root `README.md` (Topics table + file tree) + Section 2 above.
 - Note deleted/renamed → update every index/MOC that references it.
 - Do index/MOC updates in the same edit pass as the content change — never out of sync.
 
@@ -76,7 +76,7 @@ Two distinct artifacts:
 
 | File | Tracks |
 |------|--------|
-| `Home.md` | Top-level buckets, MOCs, file tree |
+| `README.md` | Top-level buckets, MOCs, file tree |
 | `100 - Cloud/AWS/README.md` | Cert/track sub-folders under AWS |
 | `100 - Cloud/AWS/Cloud Practitioner/README.md` | Notes in Cloud Practitioner, learning order |
 | `300 - Containers/Kubernetes/README.md` | Notes in Kubernetes, learning order |
@@ -194,7 +194,7 @@ Quick captures land in `000 - Inbox/`. Files there are unsorted; Claude routes t
 2. For each file (skip `README.md`): read content, decide which existing note(s) it belongs in, apply.
 3. After applying, delete the inbox file with `obsidian delete file=<name>`. (May go to trash; use `permanent` flag to skip.)
 4. If the content is a brand new topic, create a new note in the correct bucket folder, add a row to that folder's `README.md`, and update the relevant MOC.
-5. Update `Home.md` file tree if a new top-level bucket or folder was created.
+5. Update `README.md` file tree if a new top-level bucket or folder was created.
 
 **Rules:**
 - User writes; Claude routes and applies.
@@ -214,7 +214,7 @@ Each topic folder may contain a `missing.md` tracking topics not yet studied.
 
 ## 8. Frontmatter Schema
 
-All content notes and index files carry YAML frontmatter. Do NOT add frontmatter to `missing.md`, inbox files, `CLAUDE.md`, or `Home.md`.
+All content notes and index files carry YAML frontmatter. Do NOT add frontmatter to `missing.md`, inbox files, `CLAUDE.md`, or `README.md`.
 
 ```yaml
 ---
@@ -238,6 +238,12 @@ tags:
 ## 9. Cross-Linking
 
 When adding or editing notes, wire up wikilinks between related concepts across files. Do this proactively — don't wait to be asked.
+
+**Link hierarchy:**
+- Root `README.md` → folder READMEs only (not individual notes)
+- Folder READMEs → individual notes + link up to root `README.md`
+- Individual notes → sibling notes + their folder README (NOT root `README.md`)
+- Use display text on full-path links: `[[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]`
 
 **Rules:**
 - Link to a section anchor when the target is a specific heading: `[[File#Section|display text]]`

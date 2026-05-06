@@ -41,4 +41,4 @@ Learning path in order:
 
 ---
 
-← [[100 - Cloud/AWS/README|AWS]] · [[Home]]
+← [[100 - Cloud/AWS/README|AWS]] · [[README]]

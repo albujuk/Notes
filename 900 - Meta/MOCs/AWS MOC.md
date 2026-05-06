@@ -64,4 +64,4 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 
 ---
 
-← [[Home]]
+← [[README]]

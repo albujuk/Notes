@@ -91,4 +91,4 @@ kubectl scale deployment <name> --replicas=<n>
 
 ---
 
-← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]
+← [[300 - Containers/Kubernetes/README|Kubernetes]]

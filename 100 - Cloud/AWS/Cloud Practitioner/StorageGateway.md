@@ -40,4 +40,4 @@ Virtual tape library (VTL) interface. Replaces physical tape infrastructure. Vir
 
 ---
 
-← [[README]] · [[Storage]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Storage]]

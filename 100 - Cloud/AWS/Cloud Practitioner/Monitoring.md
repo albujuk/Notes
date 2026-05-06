@@ -63,4 +63,4 @@ Data source for events and changes affecting your AWS Cloud resources. Notifies 
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

@@ -31,4 +31,4 @@ Topics not yet studied. Fill in when studied (and move to their own note).
 
 ---
 
-← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]
+← [[300 - Containers/Kubernetes/README|Kubernetes]]

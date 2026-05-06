@@ -87,4 +87,4 @@ AWS-managed hardware rack installed **in your own data center**. Runs native AWS
 
 ---
 
-← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Home]]
+← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

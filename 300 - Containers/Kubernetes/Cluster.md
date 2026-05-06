@@ -42,4 +42,4 @@ AWS offers **[[Containers#Amazon EKS — Elastic Kubernetes Service|EKS]]** — 
 
 ---
 
-← [[300 - Containers/Kubernetes/README|Kubernetes]] · [[Home]]
+← [[300 - Containers/Kubernetes/README|Kubernetes]]

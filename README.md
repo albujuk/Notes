@@ -1,6 +1,6 @@
-# Notes — Home
+# Notes
 
-Central index for all topics in this vault.
+Personal knowledge base — Obsidian vault, synced via Git.
 
 ## Topics
 
@@ -11,8 +11,6 @@ Central index for all topics in this vault.
 
 ## Maps of Content
 
-Concept maps that group ideas across folders:
-
 - [[Kubernetes MOC]]
 - [[AWS MOC]]
 
@@ -22,24 +20,21 @@ Concept maps that group ideas across folders:
 
 ```
 Notes/
-├── 000 - Inbox/                     ← quick captures, unsorted notes
+├── 000 - Inbox/                     ← quick captures, unsorted
 ├── 100 - Cloud/
 │   └── AWS/
 │       ├── README.md
 │       └── Cloud Practitioner/
-│           ├── README.md
-│           └── (notes)
 ├── 300 - Containers/
 │   └── Kubernetes/
-│       ├── README.md
-│       └── (notes)
+│       └── README.md
 └── 900 - Meta/
     └── MOCs/
         ├── AWS MOC.md
         └── Kubernetes MOC.md
 ```
 
-Folder buckets are pre-numbered (`200 - DevOps`, `400 - IaC`, `500 - Networking`, `600 - Security`, `700 - Projects`, `800 - References`) but only created when the first note for that bucket lands.
+Buckets are pre-numbered (`200 - DevOps`, `400 - IaC`, `500 - Networking`, `600 - Security`, `700 - Projects`, `800 - References`) — created on first use, not pre-emptively.
 
 ---
 

@@ -97,4 +97,4 @@ Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root 
 
 ---
 
-← [[Storage]] · [[README]] · [[Home]]
+← [[Storage]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]
