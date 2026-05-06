@@ -45,16 +45,53 @@ spec:
 ```bash
 kubectl apply -f rc.yaml
 kubectl get rc
-kubectl get rc nginx-rc
-kubectl describe rc nginx-rc
-kubectl delete rc nginx-rc
 ```
+
+→ full command reference: [[kubectl#ReplicationController|kubectl]]
 
 ---
 
 ## ReplicaSet
 
 Successor to [[#ReplicationController]]. Key difference: supports **set-based selectors** (`In`, `NotIn`, `Exists`) vs RC's equality-only selectors. In practice, you rarely create ReplicaSets directly — Deployments manage them for you.
+
+### Selector types
+
+**RC — equality-only (`selector: key: value`):**
+```yaml
+selector:
+  app: nginx        # matches pods where app == "nginx" exactly, nothing else
+```
+
+**RS — set-based (`selector: matchLabels` / `matchExpressions`):**
+
+`matchLabels` is shorthand equality (same as RC):
+```yaml
+selector:
+  matchLabels:
+    app: nginx
+```
+
+`matchExpressions` is where RS gets powerful:
+```yaml
+selector:
+  matchExpressions:
+    - key: app
+      operator: In
+      values: [nginx, apache]     # app must be "nginx" OR "apache"
+
+    - key: env
+      operator: NotIn
+      values: [prod]              # env must NOT be "prod"
+
+    - key: tier
+      operator: Exists            # "tier" key must exist, any value accepted
+```
+
+**Concrete example — RC limitation:**
+You have pods labeled `app: nginx-v1` and `app: nginx-v2`. RC can only target one exact value, so you'd need two separate RCs. RS can target both with one selector: `app In (nginx-v1, nginx-v2)`.
+
+**Why this matters for Deployments:** when a Deployment does a rolling update, it spins up a new RS for `nginx:1.16` while the old RS still owns `nginx:1.14` pods. The Deployment's selector uses `matchExpressions` to track pods across both RSes during the transition — impossible with RC's equality-only selectors.
 
 ```yaml
 apiVersion: apps/v1
@@ -81,26 +118,9 @@ spec:
 ```bash
 kubectl apply -f rs.yaml
 kubectl get rs
-kubectl get rs nginx-rs
-kubectl describe rs nginx-rs
-
-# Scale
-kubectl scale rs nginx-rs --replicas=5
-kubectl scale rs nginx-rs --replicas=1
-
-# Delete RS but keep pods
-kubectl delete rs nginx-rs --cascade=orphan
-
-# Delete RS and pods
-kubectl delete rs nginx-rs
 ```
 
-### Generate YAML via dry-run
-
-```bash
-# No direct `kubectl create replicaset` — use a Deployment dry-run and strip the extra fields
-kubectl create deployment nginx --image=nginx --replicas=3 --dry-run=client -o yaml
-```
+→ full command reference: [[kubectl#ReplicaSet|kubectl]]
 
 ---
 
@@ -152,27 +172,15 @@ spec:
 ```bash
 kubectl apply -f deployment.yaml
 kubectl get deployments
-kubectl get deployment nginx-deployment
-kubectl describe deployment nginx-deployment
 
 # Update image (triggers rolling update)
 kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
 
-# Watch rollout progress
-kubectl rollout status deployment/nginx-deployment
-
-# Rollback to previous version
+# Rollback
 kubectl rollout undo deployment/nginx-deployment
-
-# View rollout history
-kubectl rollout history deployment/nginx-deployment
-
-# Scale
-kubectl scale deployment nginx-deployment --replicas=5
-
-# Generate YAML via dry-run
-kubectl create deployment nginx --image=nginx --replicas=3 --dry-run=client -o yaml
 ```
+
+→ full command reference: [[kubectl#Deployment|kubectl]]
 
 ---
 
