@@ -75,9 +75,12 @@ kubectl delete deployment <name>
 # Create / generate
 kubectl create deployment <name> --image=<image> --replicas=<n>
 kubectl create deployment <name> --image=<image> --replicas=<n> --dry-run=client -o yaml
+# args after -- become the container command
+kubectl create deployment <name> --image=<image> -- <cmd> <arg1> <arg2>
 
 # Update
 kubectl set image deployment/<name> <container>=<image>
+kubectl set image deployment/<name> <container>=<image> --record  # record cause in rollout history
 
 # Rollout
 kubectl rollout status deployment/<name>
