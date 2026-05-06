@@ -71,4 +71,6 @@ Publish-subscribe service. A publisher sends one message to an **SNS topic**; SN
 
 ---
 
+→ [aws.amazon.com — Messaging](https://aws.amazon.com/messaging/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

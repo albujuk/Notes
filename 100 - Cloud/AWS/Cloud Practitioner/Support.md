@@ -83,4 +83,6 @@ Global community of partners that build solutions and services on AWS. Engage pa
 
 ---
 
+→ [aws.amazon.com — Support Plans](https://aws.amazon.com/premiumsupport/plans/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

@@ -43,4 +43,6 @@ Global community of partners that build solutions and services on AWS. Partners 
 
 ---
 
+→ [aws.amazon.com — Marketplace](https://aws.amazon.com/marketplace/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

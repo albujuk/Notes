@@ -97,4 +97,6 @@ Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root 
 
 ---
 
+→ [docs.aws.amazon.com — EBS User Guide](https://docs.aws.amazon.com/ebs/latest/userguide/)
+
 ← [[Storage]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

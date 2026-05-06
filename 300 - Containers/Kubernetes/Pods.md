@@ -55,4 +55,6 @@ A Pod can hold multiple containers that share localhost and volumes. Used for he
 
 ---
 
+→ [kubernetes.io — Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
+
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

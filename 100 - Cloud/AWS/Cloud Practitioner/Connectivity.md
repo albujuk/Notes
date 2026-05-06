@@ -77,4 +77,6 @@ Hub-and-spoke transit hub that interconnects multiple VPCs and on-premises netwo
 
 ---
 
+→ [aws.amazon.com — Hybrid Connectivity](https://aws.amazon.com/hybrid-connectivity/)
+
 ← [[Networking]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

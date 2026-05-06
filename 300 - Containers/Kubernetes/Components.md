@@ -77,4 +77,6 @@ graph TB
 
 ---
 
+→ [kubernetes.io — Components](https://kubernetes.io/docs/concepts/overview/components/)
+
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

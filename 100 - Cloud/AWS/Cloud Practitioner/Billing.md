@@ -70,4 +70,6 @@ Per-service pricing pages detail costs for storage, requests, data transfer, ins
 
 ---
 
+→ [docs.aws.amazon.com — AWS Cost Management](https://aws.amazon.com/aws-cost-management/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

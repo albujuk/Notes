@@ -103,4 +103,6 @@ Outputs:          # Values to export or display after deployment
 
 ---
 
+→ [docs.aws.amazon.com — CloudFormation User Guide](https://docs.aws.amazon.com/cloudformation/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

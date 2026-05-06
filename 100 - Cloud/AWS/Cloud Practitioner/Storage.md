@@ -28,4 +28,6 @@ AWS storage spans three fundamental types:
 
 ---
 
+→ [aws.amazon.com — Storage Products](https://aws.amazon.com/products/storage/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Compute]]

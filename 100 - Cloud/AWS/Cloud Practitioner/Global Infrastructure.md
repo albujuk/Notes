@@ -87,4 +87,6 @@ AWS-managed hardware rack installed **in your own data center**. Runs native AWS
 
 ---
 
+→ [aws.amazon.com — Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

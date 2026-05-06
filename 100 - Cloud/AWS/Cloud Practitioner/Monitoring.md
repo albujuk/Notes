@@ -63,4 +63,6 @@ Data source for events and changes affecting your AWS Cloud resources. Notifies 
 
 ---
 
+→ [docs.aws.amazon.com — CloudWatch User Guide](https://docs.aws.amazon.com/cloudwatch/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

@@ -183,4 +183,6 @@ Provides capabilities to set, verify, and refine security permissions to achieve
 
 ---
 
+→ [docs.aws.amazon.com — Security](https://docs.aws.amazon.com/security/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

@@ -61,4 +61,6 @@ Brings AWS best practices to companies migrating to the cloud. Accelerates migra
 
 ---
 
+→ [aws.amazon.com — Cloud Adoption Framework](https://aws.amazon.com/cloud-adoption-framework/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

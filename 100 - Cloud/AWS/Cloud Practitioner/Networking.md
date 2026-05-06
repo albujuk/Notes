@@ -104,4 +104,6 @@ Managed service for creating, publishing, and securing APIs at any scale. Acts a
 
 ---
 
+→ [docs.aws.amazon.com — VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)
+
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Connectivity]] →

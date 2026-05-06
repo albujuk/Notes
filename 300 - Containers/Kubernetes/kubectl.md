@@ -94,4 +94,6 @@ kubectl scale deployment <name> --replicas=<n>
 
 ---
 
+→ [kubernetes.io — kubectl Reference](https://kubernetes.io/docs/reference/kubectl/)
+
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

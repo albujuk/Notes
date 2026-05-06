@@ -199,4 +199,6 @@ Rule: always use Deployments. A bare ReplicaSet has no update or rollback capabi
 
 ---
 
+→ [kubernetes.io — Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]
