@@ -16,6 +16,7 @@ tags:
 | 3 | [[Pods]] | Pod concept, kubectl commands, multi-container intro |
 | 4 | [[Patterns]] | Multi-container Pod patterns, sidecar example (fluentd + nginx) |
 | 5 | [[Controllers]] | ReplicationController, ReplicaSet, Deployment, rolling updates, rollback |
+| — | [[Concepts]] | Core K8s concepts: declarative vs imperative |
 | — | [[kubectl]] | Quick command reference |
 | — | [[300 - Containers/Kubernetes/missing\|missing]] | Topics not yet documented |
 

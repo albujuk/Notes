@@ -32,6 +32,10 @@ A Pod alone is fragile. Wrap it in a controller for self-healing replicas. Use a
 - [[Cluster]] → [[Containers#Amazon EKS — Elastic Kubernetes Service|EKS]] — AWS managed control plane (you don't run master nodes)
 - [[Components]] → [[Containers#Amazon ECS — Elastic Container Service|ECS]] — AWS-native alternative when Kubernetes portability not needed
 
+## Core concepts
+
+- [[Concepts]] — declarative vs imperative, reconciliation loop, labels & selectors
+
 ## Operating reference
 
 - [[kubectl]] — command reference
