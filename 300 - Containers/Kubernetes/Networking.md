@@ -1,3 +1,16 @@
+---
+domain: kubernetes
+track: core
+topic: networking
+type: note
+tags:
+  - kubernetes
+  - networking
+  - cni
+  - dns
+  - ebpf
+---
+
 # Kubernetes Networking — Deep Dive
 
 ## The Networking Problem K8s Has to Solve
@@ -28,11 +41,10 @@ Containers _within_ the same Pod share one namespace — that's why they communi
 
 Every Pod has a hidden container called **pause** (a.k.a. the _infra_ or _sandbox_ container). It does nothing except hold the network namespace open. All app containers in the Pod attach to it. This way, if your app container crashes and restarts, the network namespace (and Pod IP) stays stable.
 
-```
-Pod
-├── pause container  ◀── owns the netns
-├── app container    ◀── joins pause's netns
-└── sidecar          ◀── joins pause's netns
+```mermaid
+graph TD
+    pause["pause container<br>owns the netns"] --> app["app container<br>joins pause's netns"]
+    pause --> sidecar["sidecar<br>joins pause's netns"]
 ```
 
 ---
@@ -43,15 +55,23 @@ How do two Pods on the **same node** talk?
 
 Each Pod namespace connects to the host via a **veth pair** — a virtual ethernet cable with one end in the Pod namespace and the other in the host namespace.
 
-```
-Pod A netns          Host netns          Pod B netns
-┌──────────┐         ┌──────────┐        ┌──────────┐
-│  eth0    │◀──────▶│  vethA   │        │  eth0    │
-│10.244.1.2│         │          │        │10.244.1.3│
-└──────────┘         │  bridge  │        └──────────┘
-                     │ (cbr0 /  │◀──────▶│  vethB   │
-                     │  cni0)   │        │          │
-                     └──────────┘        └──────────┘
+```mermaid
+flowchart LR
+    subgraph podA["Pod A netns"]
+        ethA["eth0<br>10.244.1.2"]
+    end
+    subgraph host["Host netns"]
+        bridge["bridge<br>(cni0 / cbr0)"]
+        vethA["vethA"]
+        vethB["vethB"]
+    end
+    subgraph podB["Pod B netns"]
+        ethB["eth0<br>10.244.1.3"]
+    end
+    ethA <--> vethA
+    vethA --- bridge
+    bridge --- vethB
+    vethB <--> ethB
 ```
 
 All veth host-ends plug into a **Linux bridge** (usually `cni0` or `cbr0`). The bridge acts like a virtual switch — it learns MACs and forwards frames between veth pairs. Pod-to-Pod traffic on the same node never leaves the host.
@@ -68,16 +88,20 @@ Wrap the Pod-to-Pod packet inside another packet that the physical network _does
 
 **VXLAN** is the most common:
 
-```
-Pod A (10.244.1.2)  →  sends packet to  →  Pod B (10.244.2.3)
+```mermaid
+sequenceDiagram
+    participant PodA as Pod A<br>10.244.1.2
+    participant NodeA as Node A
+    participant PhysNet as Physical Network
+    participant NodeB as Node B
+    participant PodB as Pod B<br>10.244.2.3
 
-On Node A:
-  Original packet: src=10.244.1.2  dst=10.244.2.3
-  VXLAN wraps it:  src=NodeA_IP    dst=NodeB_IP  [UDP port 8472]
-  Sent over physical network ──────────────────────────────▶
-
-On Node B:
-  VXLAN decapsulates → original packet delivered to Pod B
+    PodA->>NodeA: Original: src=10.244.1.2 dst=10.244.2.3
+    NodeA->>NodeA: VXLAN wraps<br>src=NodeA_IP dst=NodeB_IP<br>UDP port 8472
+    NodeA->>PhysNet: encapsulated packet
+    PhysNet->>NodeB: Node-to-Node UDP traffic only
+    NodeB->>NodeB: VXLAN decapsulates
+    NodeB->>PodB: Original packet delivered
 ```
 
 The physical network only sees Node-to-Node UDP traffic. It doesn't need to know anything about Pod IPs. This works anywhere — bare metal, cloud, on-prem — as long as nodes can reach each other.
@@ -113,21 +137,19 @@ CNI is just a **spec + convention**. It defines:
 - What JSON config that binary reads
 - What it must do: assign IP, set up interfaces, program routes
 
-```
-kubelet creates Pod
-    │
-    ▼
-calls CNI binary (e.g. /opt/cni/bin/flannel)
-    │
-    ▼
-CNI plugin:
-  1. Creates veth pair
-  2. Assigns IP from IPAM
-  3. Connects veth to bridge
-  4. Programs routes
-    │
-    ▼
-Pod has network
+```mermaid
+flowchart TD
+    A["kubelet creates Pod"] --> B["calls CNI binary<br>(e.g. /opt/cni/bin/flannel)"]
+    B --> C1
+
+    subgraph C["CNI plugin"]
+        direction TB
+        C1["1. Creates veth pair"] --> C2["2. Assigns IP from IPAM"]
+        C2 --> C3["3. Connects veth to bridge"]
+        C3 --> C4["4. Programs routes"]
+    end
+
+    C4 --> D["Pod has network"]
 ```
 
 ### IPAM — IP Address Management
@@ -202,24 +224,21 @@ Used heavily in telco/NFV workloads where Pods need a management network + a hig
 
 This is worth understanding because it's the direction the ecosystem is heading.
 
-**iptables** (traditional):
+```mermaid
+flowchart LR
+    subgraph ipt["iptables (traditional)"]
+        direction TB
+        P1["Packet arrives"] --> R1["traverses chain of rules linearly"]
+        R1 --> M1["each rule: match? apply action"]
+        M1 --> S1["O(n) with number of rules<br>10,000 services = 10,000+ rules"]
+    end
 
-```
-Packet arrives
-  → traverses chain of rules linearly
-  → each rule: match? apply action
-  → O(n) with number of rules
-  → 10,000 services = 10,000+ rules to evaluate
-```
-
-**eBPF** (Cilium, Calico eBPF mode):
-
-```
-Packet arrives
-  → eBPF program attached to kernel hook runs directly
-  → hash map lookup: O(1)
-  → no userspace, no rule chains
-  → 10,000 services = same speed as 10
+    subgraph eb["eBPF (Cilium, Calico eBPF)"]
+        direction TB
+        P2["Packet arrives"] --> R2["eBPF program at kernel hook"]
+        R2 --> M2["hash map lookup: O(1)"]
+        M2 --> S2["no userspace, no rule chains<br>10,000 services = same speed as 10"]
+    end
 ```
 
 eBPF programs are JIT-compiled, verified for safety by the kernel, and run in kernel space. At scale the performance difference is dramatic — both in latency and CPU overhead.
@@ -230,25 +249,22 @@ eBPF programs are JIT-compiled, verified for safety by the kernel, and run in ke
 
 Let's trace a packet from Pod A on Node 1 to Pod B on Node 2 using **Calico with BGP**:
 
-```
-1. Pod A (10.244.1.5) sends packet to Pod B (10.244.2.8)
+```mermaid
+sequenceDiagram
+    participant PodA as Pod A<br>10.244.1.5
+    participant Node1 as Node 1<br>192.168.1.11
+    participant PhysNet as Physical Network
+    participant Node2 as Node 2<br>192.168.1.12
+    participant PodB as Pod B<br>10.244.2.8
 
-2. Packet leaves Pod A's eth0
-   → crosses veth pair into host namespace
-
-3. Host routing table on Node 1:
-   10.244.2.0/24 via 192.168.1.12 (Node 2)  ← learned via BGP
-   → packet forwarded to Node 2's physical IP
-
-4. Physical network delivers to Node 2
-
-5. Node 2 routing table:
-   10.244.2.0/24 → local bridge (cni0)
-   → packet hits bridge
-   → forwarded to correct veth
-   → delivered to Pod B's eth0
-
-6. Pod B receives packet, src=10.244.1.5
+    PodA->>Node1: 1. Packet: src=10.244.1.5 dst=10.244.2.8
+    Note over Node1: 2. veth pair → host namespace
+    Note over Node1: 3. Route: 10.244.2.0/24 via 192.168.1.12 (BGP)
+    Node1->>PhysNet: 4. Forwarded to Node 2
+    PhysNet->>Node2: 4. Delivered to Node 2
+    Note over Node2: 5. Route: 10.244.2.0/24 → local bridge (cni0)
+    Note over Node2: bridge → correct veth
+    Node2->>PodB: 6. Packet delivered, src=10.244.1.5
 ```
 
 No NAT anywhere. Pod A sees its real IP as source. Pod B sees Pod A's real IP. That's the flat network model in action.
@@ -259,16 +275,17 @@ No NAT anywhere. Pod A sees its real IP as source. Pod B sees Pod A's real IP. T
 
 When a Pod does `curl http://api-service`:
 
-```
-Pod
- │ queries /etc/resolv.conf
- │ nameserver: 10.96.0.10  (CoreDNS ClusterIP)
- ▼
-CoreDNS Pod
- │ receives: api-service.default.svc.cluster.local
- │ looks up in its cache / watches
- ▼
-returns: 10.96.45.12  (Service ClusterIP)
+```mermaid
+sequenceDiagram
+    participant Pod
+    participant Resolv as /etc/resolv.conf
+    participant CoreDNS as CoreDNS<br>10.96.0.10
+    participant API as API Server
+
+    Pod->>Resolv: curl http://api-service
+    Resolv->>CoreDNS: query: api-service.default.svc.cluster.local
+    CoreDNS-->>Pod: 10.96.45.12 (Service ClusterIP)
+    Note over CoreDNS,API: CoreDNS watches API server<br>for Service/Endpoint changes
 ```
 
 CoreDNS watches the API server for Service/Endpoint changes and keeps its records live. It also handles external DNS forwarding for names it doesn't recognize.
@@ -295,3 +312,5 @@ So a bare `curl api-service` automatically expands to the full FQDN.
 |VXLAN overlay|A tunnel through the physical network|
 |BGP routing|Teaching routers where each Pod subnet lives|
 |eBPF|Tiny programs running in the kernel for O(1) packet decisions|
+
+← [[300 - Containers/Kubernetes/README|Kubernetes]] | [[Kubernetes MOC]]

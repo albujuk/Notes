@@ -22,7 +22,7 @@ Remote workers connect to AWS or on-premises resources over an encrypted VPN tun
 
 ## AWS Site-to-Site VPN
 
-Links an entire on-premises network to a VPC over an encrypted IPsec tunnel through the internet. Uses a [[Networking#Virtual Private Gateway|Virtual Private Gateway]] on the AWS side and a customer gateway on the on-premises side.
+Links an entire on-premises network to a VPC over an encrypted IPsec tunnel through the internet. Uses a [[100 - Cloud/AWS/Cloud Practitioner/Networking#Virtual Private Gateway|Virtual Private Gateway]] on the AWS side and a customer gateway on the on-premises side.
 
 ## AWS PrivateLink
 
@@ -79,4 +79,4 @@ Hub-and-spoke transit hub that interconnects multiple VPCs and on-premises netwo
 
 → [aws.amazon.com — Hybrid Connectivity](https://aws.amazon.com/hybrid-connectivity/)
 
-← [[Networking]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]
+← [[100 - Cloud/AWS/Cloud Practitioner/Networking|Networking]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

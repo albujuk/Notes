@@ -30,7 +30,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 
 ## Networking + connectivity
 
-- [[Networking]] — VPC, subnets, route tables, IGW/NAT, security groups vs NACLs, Route 53, CloudFront
+- [[100 - Cloud/AWS/Cloud Practitioner/Networking|Networking]] — VPC, subnets, route tables, IGW/NAT, security groups vs NACLs, Route 53, CloudFront
 - [[Connectivity]] — VPN, Direct Connect, Transit Gateway, PrivateLink (cross-VPC/on-prem)
 - [[Messaging]] — EventBridge, SQS, SNS (async decoupling)
 

@@ -27,6 +27,10 @@ Stack from atom up:
 
 A Pod alone is fragile. Wrap it in a controller for self-healing replicas. Use a Deployment (not a bare ReplicaSet) so you can update and roll back without downtime.
 
+## Networking
+
+- [[300 - Containers/Kubernetes/Networking|Networking]] — how Pods talk to each other across nodes: CNI, veth pairs, VXLAN overlay vs BGP routing, plugin comparison (Flannel/Calico/Cilium), eBPF vs iptables dataplane, CoreDNS resolution path
+
 ## Cross-domain links
 
 - [[Cluster]] → [[Containers#Amazon EKS — Elastic Kubernetes Service|EKS]] — AWS managed control plane (you don't run master nodes)

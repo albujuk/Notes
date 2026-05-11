@@ -50,12 +50,12 @@ Region: us-east-1
 
 ## Edge Locations
 
-Data centers used by **[[Networking#CDN — CloudFront|CloudFront]]** (CDN) and other edge services to cache and deliver content close to users.
+Data centers used by **[[100 - Cloud/AWS/Cloud Practitioner/Networking#CDN — CloudFront|CloudFront]]** (CDN) and other edge services to cache and deliver content close to users.
 
 - 400+ edge locations globally — far more than regions
 - Cache content from origin servers (S3, [[Compute#EC2 — Elastic Compute Cloud|EC2]], etc.)
 - Reduce latency by serving from nearest edge node
-- Also used by: **[[Networking#DNS — Route 53|Route 53]]** (DNS), **AWS Shield**, **AWS WAF**
+- Also used by: **[[100 - Cloud/AWS/Cloud Practitioner/Networking#DNS — Route 53|Route 53]]** (DNS), **AWS Shield**, **AWS WAF**
 
 **Edge location vs Region:**
 
@@ -64,7 +64,7 @@ Data centers used by **[[Networking#CDN — CloudFront|CloudFront]]** (CDN) and 
 | Purpose | Run AWS services | Cache / deliver content |
 | Count | ~30 | 400+ |
 | AZs inside | Yes | No |
-| Example service | [[Compute#EC2 — Elastic Compute Cloud\|EC2]], RDS | [[Networking#CDN — CloudFront\|CloudFront]], [[Networking#DNS — Route 53\|Route 53]] |
+| Example service | [[Compute#EC2 — Elastic Compute Cloud\|EC2]], RDS | [[100 - Cloud/AWS/Cloud Practitioner/Networking#CDN — CloudFront\|CloudFront]], [[100 - Cloud/AWS/Cloud Practitioner/Networking#DNS — Route 53\|Route 53]] |
 
 ---
 
