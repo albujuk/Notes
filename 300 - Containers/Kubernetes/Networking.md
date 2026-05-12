@@ -144,9 +144,9 @@ flowchart TD
 
     subgraph C["CNI plugin"]
         direction TB
-        C1["1. Creates veth pair"] --> C2["2. Assigns IP from IPAM"]
-        C2 --> C3["3. Connects veth to bridge"]
-        C3 --> C4["4. Programs routes"]
+        C1["1\. Creates veth pair"] --> C2["2\. Assigns IP from IPAM"]
+        C2 --> C3["3\. Connects veth to bridge"]
+        C3 --> C4["4\. Programs routes"]
     end
 
     C4 --> D["Pod has network"]
@@ -156,12 +156,12 @@ flowchart TD
 
 A sub-component of CNI responsible for handing out IPs. Common backends:
 
-|IPAM Plugin|How it works|
-|---|---|
-|`host-local`|Each node allocates from its own fixed subnet range|
-|`dhcp`|Calls out to a DHCP server|
-|`calico-ipam`|Calico's own block-based allocator|
-|`whereabouts`|Cluster-wide IP range tracking (good for multus)|
+| IPAM Plugin   | How it works                                        |
+| ------------- | --------------------------------------------------- |
+| `host-local`  | Each node allocates from its own fixed subnet range |
+| `dhcp`        | Calls out to a DHCP server                          |
+| `calico-ipam` | Calico's own block-based allocator                  |
+| `whereabouts` | Cluster-wide IP range tracking (good for multus)    |
 
 ---
 
