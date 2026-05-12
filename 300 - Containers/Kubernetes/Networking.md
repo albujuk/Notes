@@ -144,9 +144,9 @@ flowchart TD
 
     subgraph C["CNI plugin"]
         direction TB
-        C1["1\. Creates veth pair"] --> C2["2\. Assigns IP from IPAM"]
-        C2 --> C3["3\. Connects veth to bridge"]
-        C3 --> C4["4\. Programs routes"]
+        C1["Creates veth pair"] --> C2["Assigns IP from IPAM"]
+        C2 --> C3["Connects veth to bridge"]
+        C3 --> C4["Programs routes"]
     end
 
     C4 --> D["Pod has network"]
