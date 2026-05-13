@@ -11,35 +11,23 @@ tags:
   - ebpf
 ---
 
-# Kubernetes Networking — Deep Dive
+# Kubernetes Networking
 
-## The Networking Problem K8s Has to Solve
+Problem: Pod on Node A must reach Pod on Node B as if same LAN. OS knows nothing about Pods — network layer builds it.
 
-When you run containers across multiple nodes, you face a fundamental challenge: how does a container on **Node A** talk to a container on **Node B** as if they're on the same LAN?
+## Network Namespaces
 
-The OS has no idea about Pods. You have to build this yourself — and that's what the network layer does.
-
----
-
-## The Network Namespaces Foundation
-
-This is all Linux under the hood.
-
-Every Pod lives in its own **network namespace** — an isolated copy of the network stack with its own interfaces, routing table, and iptables rules.
+Each Pod = own Linux netns (own interfaces, routes, iptables). Containers in same Pod share one netns → talk via `localhost`, can't bind same port.
 
 ```
 Node
-├── Host network namespace (eth0, lo, ...)
-├── Pod A namespace (eth0 @ 10.244.1.2, lo)
-├── Pod B namespace (eth0 @ 10.244.1.3, lo)
-└── Pod C namespace (eth0 @ 10.244.1.4, lo)
+├── Host netns (eth0, lo)
+├── Pod A netns (eth0 @ 10.244.1.2)
+├── Pod B netns (eth0 @ 10.244.1.3)
+└── Pod C netns (eth0 @ 10.244.1.4)
 ```
 
-Containers _within_ the same Pod share one namespace — that's why they communicate via `localhost` and must not bind the same port.
-
-### The pause Container
-
-Every Pod has a hidden container called **pause** (a.k.a. the _infra_ or _sandbox_ container). It does nothing except hold the network namespace open. All app containers in the Pod attach to it. This way, if your app container crashes and restarts, the network namespace (and Pod IP) stays stable.
+**pause container**: hidden infra/sandbox container. Holds netns open so Pod IP stays stable when app containers restart. App + sidecars join its netns.
 
 ```mermaid
 graph TD
@@ -47,13 +35,9 @@ graph TD
     pause --> sidecar["sidecar<br>joins pause's netns"]
 ```
 
----
+## Intra-Node
 
-## Intra-Node Communication
-
-How do two Pods on the **same node** talk?
-
-Each Pod namespace connects to the host via a **veth pair** — a virtual ethernet cable with one end in the Pod namespace and the other in the host namespace.
+Pod netns ↔ host via **veth pair** (virtual cable). Host ends plug into Linux **bridge** (`cni0`/`cbr0`) = virtual switch. Same-node traffic never leaves host.
 
 ```mermaid
 flowchart LR
@@ -74,19 +58,13 @@ flowchart LR
     vethB <--> ethB
 ```
 
-All veth host-ends plug into a **Linux bridge** (usually `cni0` or `cbr0`). The bridge acts like a virtual switch — it learns MACs and forwards frames between veth pairs. Pod-to-Pod traffic on the same node never leaves the host.
+## Inter-Node
 
----
+Two approaches.
 
-## Inter-Node Communication — The Real Challenge
+### Overlay (Encapsulation) — VXLAN
 
-This is where CNI plugins do their heavy lifting. There are two fundamental approaches:
-
-### Approach 1 — Overlay Networks (Encapsulation)
-
-Wrap the Pod-to-Pod packet inside another packet that the physical network _does_ understand.
-
-**VXLAN** is the most common:
+Wrap Pod packet in Node-to-Node UDP. Physical net sees only Node IPs.
 
 ```mermaid
 sequenceDiagram
@@ -104,38 +82,24 @@ sequenceDiagram
     NodeB->>PodB: Original packet delivered
 ```
 
-The physical network only sees Node-to-Node UDP traffic. It doesn't need to know anything about Pod IPs. This works anywhere — bare metal, cloud, on-prem — as long as nodes can reach each other.
+Works anywhere. Cost: ~50B header + CPU.
 
-**Drawback:** encapsulation overhead, extra CPU, ~50 bytes of header per packet.
+### Native Routing (No Overlay)
 
----
-
-### Approach 2 — Native/Direct Routing (No Overlay)
-
-Skip encapsulation entirely. Tell the physical network how to reach each Pod CIDR.
-
-Each node owns a Pod subnet (e.g. Node A owns `10.244.1.0/24`). You program routes so that traffic destined for `10.244.2.0/24` goes directly to Node B's IP.
+Each node owns Pod CIDR; program routes so traffic to that CIDR goes to that node IP.
 
 ```
-Node A routing table:
-  10.244.1.0/24  via local bridge (own pods)
+Node A routes:
+  10.244.1.0/24  via local bridge
   10.244.2.0/24  via 192.168.1.11  (Node B)
   10.244.3.0/24  via 192.168.1.12  (Node C)
 ```
 
-**No encapsulation.** Packets travel natively. Much faster.
+Faster, no encap. Needs physical net to know routes — easy in cloud VPC, needs BGP on bare metal.
 
-**Drawback:** your physical network/router must know these routes. Works easily in clouds with VPC route tables (AWS, GCP), harder on bare metal unless you use BGP.
+## CNI
 
----
-
-## CNI — Container Network Interface
-
-CNI is just a **spec + convention**. It defines:
-
-- A binary that kubelet calls when a Pod starts/stops
-- What JSON config that binary reads
-- What it must do: assign IP, set up interfaces, program routes
+Spec: binary kubelet calls on Pod start/stop. Must assign IP, set up interfaces, program routes.
 
 ```mermaid
 flowchart TD
@@ -152,77 +116,33 @@ flowchart TD
     C4 --> D["Pod has network"]
 ```
 
-### IPAM — IP Address Management
+**IPAM** — hands out IPs:
 
-A sub-component of CNI responsible for handing out IPs. Common backends:
+| Plugin | How |
+|---|---|
+| `host-local` | Per-node fixed subnet |
+| `dhcp` | DHCP server |
+| `calico-ipam` | Calico block allocator |
+| `whereabouts` | Cluster-wide (multus) |
 
-| IPAM Plugin   | How it works                                        |
-| ------------- | --------------------------------------------------- |
-| `host-local`  | Each node allocates from its own fixed subnet range |
-| `dhcp`        | Calls out to a DHCP server                          |
-| `calico-ipam` | Calico's own block-based allocator                  |
-| `whereabouts` | Cluster-wide IP range tracking (good for multus)    |
+## CNI Plugins
 
----
+**Flannel** — simplest. VXLAN default, host-gw if L2 adjacent. No NetworkPolicy.
 
-## Major CNI Plugins Compared
+**Calico** — production standard. BGP native routing (fallback VXLAN/IP-in-IP). Full NetworkPolicy + CRD. WireGuard encryption. eBPF dataplane optional.
 
-### Flannel
+**Cilium** — eBPF-native. Replaces iptables + kube-proxy. L3/L4/L7 policy (HTTP, gRPC). Hubble observability. ClusterMesh. Needs kernel 5.10+.
 
-The simplest option. Pure Layer 3 overlay.
+**Weave** — VXLAN, auto peer discovery, encryption. Mostly legacy.
 
-- Default backend: **VXLAN**
-- Can also do host-gw (direct routing, no overlay) if nodes are L2 adjacent
-- No NetworkPolicy support — needs Calico on top for that
-- Very low operational complexity
-- Good for: learning, small clusters, simple setups
-
-### Calico
-
-The most widely used in production.
-
-- Default: **no overlay** — uses BGP to distribute routes natively
-- Can fall back to VXLAN/IP-in-IP if BGP isn't possible
-- Full **NetworkPolicy** support + its own extended `NetworkPolicy` CRD
-- Built-in **WireGuard** encryption between nodes
-- eBPF dataplane available (bypasses iptables entirely)
-- Good for: production, anything needing policy enforcement
-
-### Cilium
-
-The modern, eBPF-native option.
-
-- Replaces iptables with **eBPF programs** loaded directly into the kernel
-- Operates at L3/L4/L7 — can enforce policy based on HTTP methods, paths, gRPC calls
-- Built-in **Hubble** for deep network observability (flow logs per connection)
-- Supports **ClusterMesh** — connect multiple K8s clusters at the network level
-- Replaces kube-proxy entirely with eBPF
-- Higher operational complexity, requires newer kernels (5.10+)
-- Good for: large-scale production, observability-heavy environments, multi-cluster
-
-### Weave
-
-- VXLAN-based overlay
-- Automatic peer discovery (no etcd dependency for topology)
-- Built-in encryption
-- Mostly legacy now — less common in new deployments
-
-### Multus
-
-Not a standalone CNI — a **meta-plugin** that lets a Pod attach to _multiple_ networks.
+**Multus** — meta-plugin. Attach Pod to multiple networks (telco/NFV).
 
 ```yaml
 annotations:
   k8s.v1.cni.cncf.io/networks: sriov-net, macvlan-net
 ```
 
-Used heavily in telco/NFV workloads where Pods need a management network + a high-speed data plane network simultaneously.
-
----
-
-## eBPF vs iptables Dataplane
-
-This is worth understanding because it's the direction the ecosystem is heading.
+## eBPF vs iptables
 
 ```mermaid
 flowchart LR
@@ -241,13 +161,9 @@ flowchart LR
     end
 ```
 
-eBPF programs are JIT-compiled, verified for safety by the kernel, and run in kernel space. At scale the performance difference is dramatic — both in latency and CPU overhead.
+eBPF: JIT-compiled, kernel-verified, kernel-space. At scale: big latency + CPU win.
 
----
-
-## Cross-Node Packet Walk (End to End)
-
-Let's trace a packet from Pod A on Node 1 to Pod B on Node 2 using **Calico with BGP**:
+## Cross-Node Packet Walk (Calico+BGP)
 
 ```mermaid
 sequenceDiagram
@@ -267,13 +183,9 @@ sequenceDiagram
     Node2->>PodB: 6. Packet delivered, src=10.244.1.5
 ```
 
-No NAT anywhere. Pod A sees its real IP as source. Pod B sees Pod A's real IP. That's the flat network model in action.
+No NAT. Real Pod IPs end-to-end = flat network model.
 
----
-
-## DNS Resolution Path
-
-When a Pod does `curl http://api-service`:
+## DNS
 
 ```mermaid
 sequenceDiagram
@@ -288,29 +200,27 @@ sequenceDiagram
     Note over CoreDNS,API: CoreDNS watches API server<br>for Service/Endpoint changes
 ```
 
-CoreDNS watches the API server for Service/Endpoint changes and keeps its records live. It also handles external DNS forwarding for names it doesn't recognize.
+CoreDNS watches API server for Service/Endpoint changes. Forwards external names.
 
-The search domains in `/etc/resolv.conf` inside a Pod look like:
+Pod `/etc/resolv.conf`:
 
 ```
 search default.svc.cluster.local svc.cluster.local cluster.local
 nameserver 10.96.0.10
 ```
 
-So a bare `curl api-service` automatically expands to the full FQDN.
+Bare `curl api-service` auto-expands to FQDN.
 
----
+## Mental Models
 
-## Key Mental Models
-
-|Concept|Think of it as|
+| Concept | = |
 |---|---|
-|Network namespace|A VM's isolated network stack, but for a Pod|
-|veth pair|A patch cable between Pod and host|
-|Linux bridge|A virtual switch on the node|
-|CNI plugin|The contractor that wires everything up|
-|VXLAN overlay|A tunnel through the physical network|
-|BGP routing|Teaching routers where each Pod subnet lives|
-|eBPF|Tiny programs running in the kernel for O(1) packet decisions|
+| Network namespace | Pod's isolated network stack |
+| veth pair | Patch cable Pod ↔ host |
+| Linux bridge | Virtual switch on node |
+| CNI plugin | Contractor wiring it up |
+| VXLAN overlay | Tunnel through physical net |
+| BGP | Teach routers where Pod subnets live |
+| eBPF | Kernel programs, O(1) packet decisions |
 
 ← [[300 - Containers/Kubernetes/README|Kubernetes]] | [[Kubernetes MOC]]
