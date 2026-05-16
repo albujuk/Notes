@@ -10,19 +10,6 @@ tags:
   - dns
   - ebpf
 ---
----
-domain: kubernetes
-track: core
-topic: networking
-type: note
-tags:
-  - kubernetes
-  - networking
-  - cni
-  - dns
-  - ebpf
----
-
 # Kubernetes Networking — Deep Dive
 
 ## The Networking Problem K8s Has to Solve
