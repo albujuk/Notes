@@ -52,3 +52,38 @@ if targetPort is not present, it will have its value from port, and if NodePort 
 How do we connect or specify the desired pod? 
 We use the labels, like what we did in replicasets rs
 
+```yaml
+apiVersion: v1
+
+kind: Service 
+
+metadata:
+  name: app-service
+
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30080
+  selector:
+    app: my-app
+    type: front-end
+```
+
+The `selector` matches pod labels — Service routes traffic only to pods with **all** matching labels.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
+    app: my-app
+    type: front-end
+spec:
+  containers:
+    - name: my-container
+      image: nginx
+```
+
