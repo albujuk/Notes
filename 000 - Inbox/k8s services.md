@@ -46,3 +46,9 @@ graph LR
     SP --> TP
 ```
 
+The mandatory field in the ports is port.
+if targetPort is not present, it will have its value from port, and if NodePort is not  present it will pick a free port between 30000 and 32767
+
+How do we connect or specify the desired pod? 
+We use the labels, like what we did in replicasets rs
+
