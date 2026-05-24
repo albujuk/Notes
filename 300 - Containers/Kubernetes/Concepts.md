@@ -17,12 +17,12 @@ tags:
 
 ## Imperative vs Declarative
 
-| | Imperative | Declarative |
-|---|---|---|
-| **How** | Tell K8s *what to do* | Tell K8s *desired state* |
-| **Commands** | `create`, `delete`, `scale`, `set image` | `apply`, `diff` |
-| **Idempotent** | No — fails if object exists | Yes — create or update |
-| **GitOps** | Poor fit | Native fit |
+|                | Imperative                               | Declarative              |
+| -------------- | ---------------------------------------- | ------------------------ |
+| **How**        | Tell K8s *what to do*                    | Tell K8s *desired state* |
+| **Commands**   | `create`, `delete`, `scale`, `set image` | `apply`, `diff`          |
+| **Idempotent** | No — fails if object exists              | Yes — create or update   |
+| **GitOps**     | Poor fit                                 | Native fit               |
 
 **Imperative** — you manage the sequence. Good for quick one-offs, debugging, bootstrapping.
 
