@@ -65,6 +65,32 @@ By default, all actions in AWS are denied. Permissions must be explicitly grante
 
 IAM provides **users**, **groups**, and **roles** to configure access based on operational and security needs. **IAM policies** define the permissions for these identities.
 
+### IAM Policies
+
+**JSON documents** that define _what actions are allowed or denied_ on _which resources_. Think of them as the rulebook.
+
+### IAM Roles
+
+A role is an **identity without permanent credentials** — it's assumed temporarily by a user, service, or application. For example, an EC2 instance assumes a role to access S3, rather than having hardcoded credentials. Roles have policies attached to them that define what the role can do.
+
+By default, IAM role session credentials are valid for **1 hour**, but the maximum session duration can be configured to up to **12 hours** (43,200 seconds).
+
+### Access Keys
+
+**Long-term credentials** (Access Key ID + Secret Access Key) used to authenticate programmatically via CLI, SDK, or API calls. They prove _who you are_, not _what you can do_.
+
+- Permissions are still determined by the **policies** attached to that user
+- Associated with **IAM users**, not roles
+- Considered less secure than roles because they're static and can leak
+
+### Mental Model
+
+| Concept        | Answers the question...        | Example                                 |
+| -------------- | ------------------------------ | --------------------------------------- |
+| **Policy**     | What am I _allowed_ to do?     | Allow `s3:PutObject` on `my-bucket`     |
+| **Role**       | _Who/what_ am I (temporarily)? | EC2 instance acting as a backup service |
+| **Access Key** | How do I _prove_ who I am?     | CLI credentials for a CI/CD pipeline    |
+
 ---
 
 ## Additional Access Management Services

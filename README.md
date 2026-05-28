@@ -24,7 +24,8 @@ Notes/
 ├── 100 - Cloud/
 │   └── AWS/
 │       ├── README.md
-│       └── Cloud Practitioner/
+│       ├── Cloud Practitioner/
+│       └── Solutions Architect Associate/
 ├── 300 - Containers/
 │   └── Kubernetes/
 │       └── README.md
