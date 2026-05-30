@@ -35,7 +35,7 @@ No charge for creating a placement group.
 
 ### Rules and Limitations
 
-- An instance can be in **one placement group at a time** — can't span multiple groups
+- An instance can be in **one placement group at a time**; can't span multiple groups
 - You **can't merge** placement groups
 - On-Demand Capacity Reservations and zonal Reserved Instances can be used with placement groups (capacity is auto-matched)
 - **Dedicated Hosts** can't be launched in placement groups
@@ -47,7 +47,7 @@ No charge for creating a placement group.
 
 An ENI is a logical networking component in a VPC that represents a virtual network card. You can create and configure network interfaces and attach them to instances in the same Availability Zone.
 
-Attributes follow the ENI as it's attached/detached and reattached to another instance — network traffic redirects with it.
+Attributes follow the ENI as it's attached/detached and reattached to another instance; network traffic redirects with it.
 
 ### Attributes
 
@@ -64,8 +64,8 @@ Attributes follow the ENI as it's attached/detached and reattached to another in
 
 ### Primary vs Secondary
 
-- **Primary network interface** — default ENI on every instance; cannot be detached.
-- **Secondary network interfaces** — additional ENIs you create and attach; max count varies by instance type.
+- **Primary network interface**: default ENI on every instance; cannot be detached.
+- **Secondary network interfaces**: additional ENIs you create and attach; max count varies by instance type.
 
 ---
 
@@ -85,7 +85,7 @@ Hibernation saves RAM contents to the EBS root volume before stopping the instan
 | **RAM size** | Linux < 150 GiB; Windows ≤ 16 GiB (T3/T3a Windows: ≥ 1 GiB recommended) |
 | **Root volume type** | Must be EBS (not instance store) |
 | **Root volume size** | Large enough for RAM + OS/apps; space reserved at launch |
-| **Root volume encryption** | Mandatory — RAM data is always encrypted when written to EBS |
+| **Root volume encryption** | Mandatory: RAM data is always encrypted when written to EBS |
 
 Instance must be enabled for hibernation at launch and meet all [hibernation prerequisites](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html).
 

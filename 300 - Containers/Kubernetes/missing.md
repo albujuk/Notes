@@ -1,4 +1,4 @@
-# Kubernetes — Missing Topics
+# Kubernetes: Missing Topics
 
 Topics not yet studied. Fill in when studied (and move to their own note).
 
@@ -15,7 +15,7 @@ Topics not yet studied. Fill in when studied (and move to their own note).
 ## Configuration
 
 - [ ] ConfigMaps & Secrets
-  - Note: `Pods.md` line 94 references `configMap: nginx-ifconfig-conf` — needs a ConfigMaps file
+  - Note: `Pods.md` line 94 references `configMap: nginx-ifconfig-conf`; needs a ConfigMaps file
 
 ## Storage
 

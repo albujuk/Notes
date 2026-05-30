@@ -13,15 +13,15 @@ tags:
 
 # Multi-Container Pod Patterns
 
-A [[Pods|Pod]] *can* hold multiple containers, but they must be **different types/images** — not duplicates of the same app. Common pattern: a main app container + a helper (sidecar) container (e.g., a log shipper, proxy, or config reloader). They share localhost and volumes.
+A [[Pods|Pod]] *can* hold multiple containers, but they must be **different types/images**, not duplicates of the same app. Common pattern: a main app container + a helper (sidecar) container (e.g., a log shipper, proxy, or config reloader). They share localhost and volumes.
 
-## Sidecar Example — Log Shipper
+## Sidecar Example: Log Shipper
 
-Your app writes logs to a file. The sidecar picks them up and ships to a log aggregator. App knows nothing about shipping — it just writes.
+Your app writes logs to a file. The sidecar picks them up and ships to a log aggregator. App knows nothing about shipping; it just writes.
 
-App used: **albujuk/ifconfig-py** — lightweight Python web service (like ifconfig.me) that returns client IP and metadata. Runs on port `8000`, exposes `/ip`, `/ua`, `/json`, `/health`, etc.
+App used: **albujuk/ifconfig-py**, lightweight Python web service (like ifconfig.me) that returns client IP and metadata. Runs on port `8000`, exposes `/ip`, `/ua`, `/json`, `/health`, etc.
 
-Setup: `ifconfig-py` sits behind **nginx** (reverse proxy on port 80). nginx forwards requests to `localhost:8000`. A **fluentd** sidecar ships nginx access logs to Elasticsearch. All three share the same Pod — same localhost, same volumes.
+Setup: `ifconfig-py` sits behind **nginx** (reverse proxy on port 80). nginx forwards requests to `localhost:8000`. A **fluentd** sidecar ships nginx access logs to Elasticsearch. All three share the same Pod: same localhost, same volumes.
 
 ```
 Pod
@@ -57,7 +57,7 @@ spec:
         - name: logs
           mountPath: /var/log/nginx
 
-    - name: log-shipper           # sidecar — different image, different job
+    - name: log-shipper           # sidecar: different image, different job
       image: fluentd
       volumeMounts:
         - name: logs
@@ -71,7 +71,7 @@ spec:
         name: nginx-ifconfig-conf  # configMap proxying / → localhost:8000
 ```
 
-> ConfigMaps not yet documented — see [[300 - Containers/Kubernetes/missing|missing]]
+> ConfigMaps not yet documented; see [[300 - Containers/Kubernetes/missing|missing]]
 
 `emptyDir` is created when Pod starts, deleted when Pod dies. Both containers see the same files through it.
 
@@ -103,6 +103,6 @@ graph LR
 
 ---
 
-→ [kubernetes.io — Multi-Container Pods](https://kubernetes.io/docs/concepts/workloads/pods/#how-pods-manage-multiple-containers)
+→ [kubernetes.io: Multi-Container Pods](https://kubernetes.io/docs/concepts/workloads/pods/#how-pods-manage-multiple-containers)
 
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

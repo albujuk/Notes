@@ -15,13 +15,13 @@ tags:
 
 # AWS CloudFormation
 
-Infrastructure as Code (IaC) service. Define AWS resources in a template — CloudFormation provisions and manages them.
+Infrastructure as Code (IaC) service. Define AWS resources in a template: CloudFormation provisions and manages them.
 
 ---
 
 ## Core Concepts
 
-**Template** — JSON or YAML file describing resources to create.
+**Template:** JSON or YAML file describing resources to create.
 
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
@@ -32,9 +32,9 @@ Resources:
       BucketName: my-app-bucket
 ```
 
-**Stack** — single unit of related resources deployed from one template. Create, update, or delete all resources together.
+**Stack:** single unit of related resources deployed from one template. Create, update, or delete all resources together.
 
-**Change Set** — preview of what will change before applying an update. Avoid surprises on production stacks.
+**Change Set:** preview of what will change before applying an update. Avoid surprises on production stacks.
 
 ---
 
@@ -42,7 +42,7 @@ Resources:
 
 1. Write template (YAML/JSON)
 2. Upload to CloudFormation (directly or via S3)
-3. CloudFormation creates a **stack** — provisions all defined resources in correct dependency order
+3. CloudFormation creates a **stack:** provisions all defined resources in correct dependency order
 4. Update template → CloudFormation diffs and updates only changed resources
 5. Delete stack → all resources torn down together
 
@@ -56,7 +56,7 @@ Resources:
 | Dependency ordering | CloudFormation resolves resource creation order automatically |
 | Rollback | Failed stack update auto-rolls back to last stable state |
 | Drift detection | Detects when actual resource state differs from template |
-| Free | No charge for CloudFormation itself — pay only for resources created |
+| Free | No charge for CloudFormation itself: pay only for resources created |
 
 ---
 
@@ -71,7 +71,7 @@ Parameters:       # Input values at deploy time
     Type: String
     Default: dev
 
-Resources:        # Required — the actual AWS resources
+Resources:        # Required: the actual AWS resources
   MyEC2:
     Type: AWS::EC2::Instance
     Properties:
@@ -97,12 +97,12 @@ Outputs:          # Values to export or display after deployment
 
 ## Related Services
 
-- **AWS CDK** — write CloudFormation templates using real code (TypeScript, Python, etc.), compiles down to CloudFormation
-- **AWS SAM** — CloudFormation extension for serverless ([[Compute#AWS Lambda|Lambda]], API Gateway, DynamoDB)
-- **Service Catalog** — distribute approved CloudFormation templates across an org
+- **AWS CDK:** write CloudFormation templates using real code (TypeScript, Python, etc.), compiles down to CloudFormation
+- **AWS SAM:** CloudFormation extension for serverless ([[Compute#AWS Lambda|Lambda]], API Gateway, DynamoDB)
+- **Service Catalog:** distribute approved CloudFormation templates across an org
 
 ---
 
-→ [docs.aws.amazon.com — CloudFormation User Guide](https://docs.aws.amazon.com/cloudformation/)
+→ [docs.aws.amazon.com: CloudFormation User Guide](https://docs.aws.amazon.com/cloudformation/)
 
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

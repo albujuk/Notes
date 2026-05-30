@@ -14,7 +14,7 @@ tags:
 
 ## `--save-config` and the last-applied annotation
 
-`kubectl create --save-config` writes `kubectl.kubernetes.io/last-applied-configuration` on the object — the full JSON of the current spec. Without it, a later `apply` has no baseline and may diff incorrectly.
+`kubectl create --save-config` writes `kubectl.kubernetes.io/last-applied-configuration` on the object: the full JSON of the current spec. Without it, a later `apply` has no baseline and may diff incorrectly.
 
 ```yaml
 metadata:
@@ -28,7 +28,7 @@ Use `--save-config` on `create` when you plan to manage the object with `apply` 
 ---
 
 ```bash
-# Explain — resource field docs
+# Explain: resource field docs
 kubectl explain <resource>                  # top-level fields
 kubectl explain <resource>.<field>          # drill into field (e.g. pod.spec.containers)
 kubectl explain <resource> --recursive      # full field tree
@@ -109,6 +109,6 @@ kubectl scale deployment <name> --replicas=<n>
 
 ---
 
-→ [kubernetes.io — kubectl Reference](https://kubernetes.io/docs/reference/kubectl/)
+→ [kubernetes.io: kubectl Reference](https://kubernetes.io/docs/reference/kubectl/)
 
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

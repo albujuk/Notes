@@ -38,8 +38,8 @@ Provides a consistent process for measuring your architecture against AWS best p
 
 ## Resources
 
-- [AWS Architecture Center](https://aws.amazon.com/architecture/) — reference architectures and best practices for secure, efficient, scalable solutions
-- [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) — technical insights and best practices
+- [AWS Architecture Center](https://aws.amazon.com/architecture/): reference architectures and best practices for secure, efficient, scalable solutions
+- [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/): technical insights and best practices
 
 ---
 

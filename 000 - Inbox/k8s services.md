@@ -71,7 +71,7 @@ spec:
     type: front-end
 ```
 
-The `selector` matches pod labels — Service routes traffic only to pods with **all** matching labels.
+The `selector` matches pod labels. Service routes traffic only to pods with **all** matching labels.
 
 ```yaml
 apiVersion: v1

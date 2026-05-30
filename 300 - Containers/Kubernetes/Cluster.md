@@ -38,10 +38,10 @@ The **Master Node** is a specialized node responsible for managing and orchestra
 
 ## Managed Kubernetes on AWS
 
-AWS offers **[[Containers#Amazon EKS — Elastic Kubernetes Service|EKS]]** — a fully managed control plane so you don't run the master node yourself.
+AWS offers **[[Containers#Amazon EKS: Elastic Kubernetes Service|EKS]]**, a fully managed control plane so you don't run the master node yourself.
 
 ---
 
-→ [kubernetes.io — Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
+→ [kubernetes.io: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
 
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

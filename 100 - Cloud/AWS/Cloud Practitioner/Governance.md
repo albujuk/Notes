@@ -40,7 +40,7 @@ Create, share, and organize from a curated catalog of AWS resources. Deploy base
 
 ## AWS License Manager
 
-Helps manage software licenses and fine-tune licensing costs. Supports **AWS BYOL (Bring Your Own License)** — use existing licenses purchased from vendors (e.g. Microsoft) on AWS services like EC2 Dedicated Hosts and WorkSpaces.
+Helps manage software licenses and fine-tune licensing costs. Supports **AWS BYOL (Bring Your Own License)**: use existing licenses purchased from vendors (e.g. Microsoft) on AWS services like EC2 Dedicated Hosts and WorkSpaces.
 
 **Benefits:** Visibility and control over licenses, tracking and managing license usage, and reduced risk of noncompliance.
 
@@ -74,7 +74,7 @@ Continually audits your AWS usage to streamline risk and compliance assessment. 
 
 ## AWS Artifact
 
-Self-service portal providing on-demand access to AWS security and compliance documentation — reports, certifications, and agreements.
+Self-service portal providing on-demand access to AWS security and compliance documentation: reports, certifications, and agreements.
 
 **Use cases:** Download AWS ISO certifications, SOC reports, and sign BAAs (Business Associate Agreements) for HIPAA.
 

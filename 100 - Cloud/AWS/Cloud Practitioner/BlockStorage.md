@@ -18,7 +18,7 @@ tags:
 
 ## EC2 Instance Store
 
-Block-level storage **physically attached** to the [[Compute#EC2 — Elastic Compute Cloud|EC2]] host computer. Not a standalone AWS service — bundled with certain instance types.
+Block-level storage **physically attached** to the [[Compute#EC2 — Elastic Compute Cloud|EC2]] host computer. Not a standalone AWS service, bundled with certain instance types.
 
 **Key property: no persistence.** Data is lost when the instance is stopped or terminated.
 
@@ -26,7 +26,7 @@ Best for: buffers, caches, scratch data, temporary computation. Not recommended 
 
 ## Amazon Elastic Block Store (EBS)
 
-Persistent block-level storage volumes that attach to [[Compute#EC2 — Elastic Compute Cloud|EC2 instances]] like external hard drives. Survives instance stops and terminations — data remains available regardless of instance state.
+Persistent block-level storage volumes that attach to [[Compute#EC2 — Elastic Compute Cloud|EC2 instances]] like external hard drives. Survives instance stops and terminations; data remains available regardless of instance state.
 
 **Key property: persistence.** Stop or terminate the instance; EBS data stays.
 
@@ -45,7 +45,7 @@ Back up EBS volumes with **EBS snapshots** (incremental, stored in S3).
 | Capability                | How it helps                                              |
 | ------------------------- | --------------------------------------------------------- |
 | **Data migration**        | Snapshot → restore in another AZ or region                |
-| **Instance type changes** | Detach volume, attach to new instance type — no data loss |
+| **Instance type changes** | Detach volume, attach to new instance type; no data loss |
 | **Disaster recovery**     | Snapshots restorable in different regions                 |
 | **Cost optimization**     | Modify volume type or size without downtime               |
 | **Performance tuning**    | Switch volume type (gp3, io2, etc.) on the fly            |
@@ -54,7 +54,7 @@ Back up EBS volumes with **EBS snapshots** (incremental, stored in S3).
 
 Point-in-time backups of an EBS volume. Stored redundantly across multiple AZs using S3. Use cases: disaster recovery, data migration, volume resizing, consistent production backups.
 
-**Incremental:** only changed blocks saved after the initial snapshot. Each snapshot still appears as a full point-in-time copy — AWS manages the chain automatically.
+**Incremental:** only changed blocks saved after the initial snapshot. Each snapshot still appears as a full point-in-time copy; AWS manages the chain automatically.
 
 | Snapshot | What's stored |
 |----------|---------------|
@@ -85,7 +85,7 @@ Default: **EBS-backed.** The root volume is an EBS volume (attached at `/dev/xvd
 
 Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root on ephemeral storage) but are legacy and rarely used today.
 
-## Instance Store vs. EBS — Comparison
+## Instance Store vs. EBS Comparison
 
 |                 | EC2 Instance Store                  | Amazon EBS                            |
 | --------------- | ----------------------------------- | ------------------------------------- |
@@ -97,6 +97,6 @@ Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root 
 
 ---
 
-→ [docs.aws.amazon.com — EBS User Guide](https://docs.aws.amazon.com/ebs/latest/userguide/)
+→ [docs.aws.amazon.com: EBS User Guide](https://docs.aws.amazon.com/ebs/latest/userguide/)
 
 ← [[Storage]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

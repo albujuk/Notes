@@ -8,7 +8,7 @@ tags:
   - index
 ---
 
-# AWS Solutions Architect Associate — Index
+# AWS Solutions Architect Associate: Index
 
 | # | Topic | File | What's inside |
 |---|-------|------|---------------|

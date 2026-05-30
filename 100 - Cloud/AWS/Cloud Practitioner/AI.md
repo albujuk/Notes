@@ -29,21 +29,21 @@ tags:
 
 # AWS AI / ML Services
 
-AWS offers three tiers of AI/ML services — from fully managed pre-built models to raw infrastructure for custom solutions. For data pipeline and analytics services (Kinesis, Glue, Redshift, Athena, etc.) see [[Analytics]].
+AWS offers three tiers of AI/ML services, from fully managed pre-built models to raw infrastructure for custom solutions. For data pipeline and analytics services (Kinesis, Glue, Redshift, Athena, etc.) see [[Analytics]].
 
 ---
 
 | Tier | What you get | Who it's for |
 |------|-------------|--------------|
-| 1 — AI Services | Pre-built models, API access | No ML expertise needed |
-| 2 — ML Services | Build/train/deploy your own models (managed infra) | Data scientists |
-| 3 — ML Frameworks & Infra | Full control, your own frameworks on AWS compute | ML experts |
+| 1: AI Services | Pre-built models, API access | No ML expertise needed |
+| 2: ML Services | Build/train/deploy your own models (managed infra) | Data scientists |
+| 3: ML Frameworks & Infra | Full control, your own frameworks on AWS compute | ML experts |
 
 ---
 
-## Tier 1 — AI Services
+## Tier 1: AI Services
 
-Pre-built, managed AI models. No ML expertise required — consume via API.
+Pre-built, managed AI models. No ML expertise required; consume via API.
 
 Three groups: **language**, **computer vision & search**, **conversational AI & personalization**.
 
@@ -55,7 +55,7 @@ Interpret text or speech and transform it into something meaningful.
 
 ### Amazon Comprehend
 
-Natural language processing (NLP) to extract insights from documents — key phrases, language detection, sentiment, and common elements.
+Natural language processing (NLP) to extract insights from documents: key phrases, language detection, sentiment, and common elements.
 
 **Use cases:** Content classification, customer sentiment analysis, compliance monitoring.
 
@@ -85,7 +85,7 @@ Extract insights from documents, images, and video.
 
 ### Amazon Kendra
 
-NLP-powered enterprise search. Understands query context to return precise answers — not just keyword-matched documents.
+NLP-powered enterprise search. Understands query context to return precise answers, not just keyword-matched documents.
 
 **Use cases:** Intelligent search, [[#Amazon Lex|chatbot]] backend search, application search integration.
 
@@ -121,7 +121,7 @@ Uses historical data to generate personalized recommendations.
 
 ---
 
-## Tier 2 — ML Services
+## Tier 2: ML Services
 
 More control over ML solutions without managing infrastructure. Build, train, and deploy custom models.
 
@@ -134,12 +134,12 @@ Fully managed service to build, train, and deploy your own ML models. Provides a
 | Benefit | Description |
 |---------|-------------|
 | Choice of ML tools | Data scientists use the IDE; business analysts use the no-code interface |
-| Fully managed infrastructure | SageMaker provides high-performance, cost-effective infra — focus on model development |
+| Fully managed infrastructure | SageMaker provides high-performance, cost-effective infra; focus on model development |
 | Repeatable ML workflows | Automate and standardize MLOps practices with transparency and auditability |
 
 ---
 
-## Tier 3 — ML Frameworks and Infrastructure
+## Tier 3: ML Frameworks and Infrastructure
 
 Complete control over the ML training process. Use in-house expertise, ML frameworks, and AWS compute directly.
 
@@ -149,7 +149,7 @@ Software libraries providing pre-built, optimized components for building ML mod
 
 ### AWS ML Infrastructure
 
-ML-optimized [[Compute#Amazon EC2|EC2]] instances, [[Analytics#Amazon EMR|Amazon EMR]], and [[Containers#Amazon ECS|Amazon ECS]] support custom solutions — high performance and flexibility for advanced ML workloads.
+ML-optimized [[Compute#Amazon EC2|EC2]] instances, [[Analytics#Amazon EMR|Amazon EMR]], and [[Containers#Amazon ECS|Amazon ECS]] support custom solutions: high performance and flexibility for advanced ML workloads.
 
 ---
 

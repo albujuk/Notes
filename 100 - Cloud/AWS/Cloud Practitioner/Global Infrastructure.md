@@ -17,15 +17,15 @@ tags:
 
 ## Regions
 
-Geographic area containing multiple data centers. Each region is isolated — data doesn't leave unless you move it.
+Geographic area containing multiple data centers. Each region is isolated; data doesn't leave unless you move it.
 
 - Currently 30+ regions worldwide
 - Named by geography: `us-east-1`, `eu-west-2`, `ap-southeast-1`
 - When choosing a region, consider:
-  - **Compliance** — data sovereignty laws (data must stay in country)
-  - **Latency** — proximity to users
-  - **Feature availability** — not all services launch in all regions simultaneously
-  - **Pricing** — varies by region
+  - **Compliance**: data sovereignty laws (data must stay in country)
+  - **Latency**: proximity to users
+  - **Feature availability**: not all services launch in all regions simultaneously
+  - **Pricing**: varies by region
 
 ---
 
@@ -52,7 +52,7 @@ Region: us-east-1
 
 Data centers used by **[[100 - Cloud/AWS/Cloud Practitioner/Networking#CDN — CloudFront|CloudFront]]** (CDN) and other edge services to cache and deliver content close to users.
 
-- 400+ edge locations globally — far more than regions
+- 400+ edge locations globally, far more than regions
 - Cache content from origin servers (S3, [[Compute#EC2 — Elastic Compute Cloud|EC2]], etc.)
 - Reduce latency by serving from nearest edge node
 - Also used by: **[[100 - Cloud/AWS/Cloud Practitioner/Networking#DNS — Route 53|Route 53]]** (DNS), **AWS Shield**, **AWS WAF**
@@ -72,7 +72,7 @@ Data centers used by **[[100 - Cloud/AWS/Cloud Practitioner/Networking#CDN — C
 
 Extensions of a [[#Regions|region]] placed closer to dense population centers. Low-latency access to select AWS services ([[Compute#EC2 — Elastic Compute Cloud|EC2]], EBS, RDS).
 
-- Not a full region — subset of services only
+- Not a full region; subset of services only
 - Use case: latency-sensitive apps (gaming, media, ML inference)
 
 ---

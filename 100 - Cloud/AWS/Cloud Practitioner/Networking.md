@@ -25,8 +25,8 @@ Isolated virtual network within AWS. You define the IP range (CIDR block), subne
 
 Subdivisions of a VPC's IP range, scoped to one AZ.
 
-- **Public subnet** — has route to [[#Internet Gateway|internet gateway]]. Resources here can be internet-facing (e.g. load balancers, bastion hosts).
-- **Private subnet** — no route to internet gateway. Resources here are isolated (e.g. databases, app servers). Can still reach internet via [[#NAT Gateway]] for outbound-only traffic.
+- **Public subnet:** has route to [[#Internet Gateway|internet gateway]]. Resources here can be internet-facing (e.g. load balancers, bastion hosts).
+- **Private subnet:** no route to internet gateway. Resources here are isolated (e.g. databases, app servers). Can still reach internet via [[#NAT Gateway]] for outbound-only traffic.
 
 ## Internet Gateway
 
@@ -34,7 +34,7 @@ Attaches to a VPC to allow traffic between VPC resources and the public internet
 
 ## NAT Gateway
 
-Sits in a public subnet. Lets resources in private subnets initiate outbound internet traffic (e.g. download updates) without being reachable from the internet. Managed by AWS — no patching needed.
+Sits in a public subnet. Lets resources in private subnets initiate outbound internet traffic (e.g. download updates) without being reachable from the internet. Managed by AWS: no patching needed.
 
 ## Route Tables
 
@@ -56,7 +56,7 @@ Stateless firewall at the **subnet** level. Rules evaluated in number order; fir
 | **Return traffic** | Return traffic is automatically allowed if inbound traffic is allowed | Return traffic must be implicitly allowed in both directions |
 | **Uses**           | Fine-grained control of traffic for individual EC2 instances          | Broad control of traffic in and out of subnets               |
 
-> Securing subnets and resources with NACLs and security groups is **your responsibility** under the Shared Responsibility Model — networking traffic protection is a critical defense for applications *in* the cloud.
+> Securing subnets and resources with NACLs and security groups is **your responsibility** under the Shared Responsibility Model: networking traffic protection is a critical defense for applications *in* the cloud.
 
 ## Virtual Private Gateway
 
@@ -64,7 +64,7 @@ VPN endpoint on the AWS side. Attach to a VPC to enable encrypted connections fr
 
 ---
 
-## DNS — Route 53
+## DNS: Route 53
 
 AWS managed DNS service.
 
@@ -72,17 +72,17 @@ AWS managed DNS service.
 - Supports routing policies: **Simple**, **Weighted** (A/B split), **Latency-based**, **Failover**, **Geolocation**
 - Can register domain names
 
-## CDN — CloudFront
+## CDN: CloudFront
 
-Content delivery network. Caches content at [[Global Infrastructure#Edge Locations|edge locations]] (Points of Presence) close to users — reduces latency for static assets, video, APIs.
+Content delivery network. Caches content at [[Global Infrastructure#Edge Locations|edge locations]] (Points of Presence) close to users: reduces latency for static assets, video, APIs.
 
-- Integrates with S3, [[Compute#EC2|EC2]], ELB, [[#DNS — Route 53|Route 53]]
+- Integrates with S3, [[Compute#EC2|EC2]], ELB, [[#DNS: Route 53|Route 53]]
 - DDoS protection via AWS Shield (Standard included free)
 - Can restrict content by geography
 
 ## Global Accelerator
 
-Routes application traffic through the AWS private global network instead of the public internet — faster, more reliable, avoids congested internet paths.
+Routes application traffic through the AWS private global network instead of the public internet: faster, more reliable, avoids congested internet paths.
 
 - Assigns two static anycast IPs to your application (no DNS propagation delays on failover)
 - Intelligent traffic routing + fast failover across [[Global Infrastructure#Regions|regions]] and [[Global Infrastructure#Availability Zones (AZs)|AZs]]
@@ -100,10 +100,10 @@ Managed service for creating, publishing, and securing APIs at any scale. Acts a
 
 - Handles auth, throttling, caching, request/response transformation
 - Supports REST, HTTP, and WebSocket APIs
-- Scales automatically — no infrastructure to manage
+- Scales automatically: no infrastructure to manage
 
 ---
 
-→ [docs.aws.amazon.com — VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)
+→ [docs.aws.amazon.com: VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)
 
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Connectivity]] →

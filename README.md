@@ -1,6 +1,6 @@
 # Notes
 
-Personal knowledge base — Obsidian vault, synced via Git.
+Personal knowledge base: Obsidian vault, synced via Git.
 
 ## Topics
 
@@ -35,7 +35,7 @@ Notes/
         └── Kubernetes MOC.md
 ```
 
-Buckets are pre-numbered (`200 - DevOps`, `400 - IaC`, `500 - Networking`, `600 - Security`, `700 - Projects`, `800 - References`) — created on first use, not pre-emptively.
+Buckets are pre-numbered (`200 - DevOps`, `400 - IaC`, `500 - Networking`, `600 - Security`, `700 - Projects`, `800 - References`), created on first use, not pre-emptively.
 
 ---
 

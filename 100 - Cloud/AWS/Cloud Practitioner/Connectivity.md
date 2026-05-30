@@ -14,7 +14,7 @@ tags:
   - hybrid-cloud
 ---
 
-# Connectivity — Connecting to AWS
+# Connectivity: Connecting to AWS
 
 ## AWS Client VPN
 
@@ -26,18 +26,18 @@ Links an entire on-premises network to a VPC over an encrypted IPsec tunnel thro
 
 ## AWS PrivateLink
 
-Exposes services privately inside AWS without traffic touching the public internet. Uses VPC endpoints — traffic stays on the AWS network. Common for accessing AWS services (S3, DynamoDB) or sharing your own service with other VPCs/accounts.
+Exposes services privately inside AWS without traffic touching the public internet. Uses VPC endpoints; traffic stays on the AWS network. Common for accessing AWS services (S3, DynamoDB) or sharing your own service with other VPCs/accounts.
 
-- **Interface endpoint** — elastic network interface with private IP; used for most AWS services and custom services
-- **Gateway endpoint** — route table entry; only for S3 and DynamoDB (free)
-- Traffic never leaves AWS backbone — no NAT, no internet gateway needed
+- **Interface endpoint**: elastic network interface with private IP; used for most AWS services and custom services
+- **Gateway endpoint**: route table entry; only for S3 and DynamoDB (free)
+- Traffic never leaves AWS backbone, so no NAT, no internet gateway needed
 
 ## AWS Direct Connect
 
-Dedicated physical network connection from on-premises to AWS. Bypasses the public internet entirely — lower latency, more consistent throughput. Takes weeks to provision; higher cost than VPN.
+Dedicated physical network connection from on-premises to AWS. Bypasses the public internet entirely for lower latency and more consistent throughput. Takes weeks to provision; higher cost than VPN.
 
 - Speeds: 1 Gbps, 10 Gbps, 100 Gbps (or sub-1G via hosted connection through a partner)
-- Traffic is **not encrypted by default** — add Site-to-Site VPN on top for encryption
+- Traffic is **not encrypted by default**; add Site-to-Site VPN on top for encryption
 - Use case: large data transfers, latency-sensitive workloads, regulatory requirements
 
 ## AWS Transit Gateway

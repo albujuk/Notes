@@ -16,7 +16,7 @@ tags:
 
 ## Amazon Elastic File System (EFS)
 
-Fully managed, scalable **file storage** using the **Linux NFS protocol**. Auto-scales to petabytes as files are added or removed — no disruption to applications. Multiple EC2 instances can access the same EFS filesystem simultaneously (unlike [[BlockStorage#Amazon Elastic Block Store (EBS)|EBS]], which attaches to one instance).
+Fully managed, scalable **file storage** using the **Linux NFS protocol**. Auto-scales to petabytes as files are added or removed with no disruption to applications. Multiple EC2 instances can access the same EFS filesystem simultaneously (unlike [[BlockStorage#Amazon Elastic Block Store (EBS)|EBS]], which attaches to one instance).
 
 Use cases: shared file systems, content repositories, web serving, home directories, big data analytics.
 
@@ -29,7 +29,7 @@ Use cases: shared file systems, content repositories, web serving, home director
 | **EFS One Zone** | Single AZ, frequent access |
 | **EFS One Zone-IA** | Single AZ, infrequent access, lowest cost |
 
-No minimum fee or setup cost — pay only for storage used.
+No minimum fee or setup cost; pay only for storage used.
 
 ---
 

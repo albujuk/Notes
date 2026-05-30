@@ -32,8 +32,8 @@ Presents S3 buckets as NFS or SMB file shares. Data transferred to S3 and cached
 
 ### Volume Gateway
 Provides iSCSI block storage backed by cloud snapshots.
-- **Stored mode** — primary data on-prem, async backup to S3 as EBS snapshots
-- **Cached mode** — primary data in S3, frequently accessed data cached on-prem
+- **Stored mode**: primary data on-prem, async backup to S3 as EBS snapshots
+- **Cached mode**: primary data in S3, frequently accessed data cached on-prem
 
 ### Tape Gateway
 Virtual tape library (VTL) interface. Replaces physical tape infrastructure. Virtual tapes stored in S3; archived tapes moved to S3 Glacier or Glacier Deep Archive.

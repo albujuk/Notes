@@ -8,7 +8,7 @@ tags:
   - index
 ---
 
-# AWS Cloud Practitioner — Index
+# AWS Cloud Practitioner: Index
 
 Learning path in order:
 
@@ -25,7 +25,7 @@ Learning path in order:
 | 5   | CloudFormation             | [[CloudFormation]]         | IaC, templates, stacks, change sets, CDK, SAM                                                                                                                                    |
 | 6   | Networking                 | [[100 - Cloud/AWS/Cloud Practitioner/Networking|Networking]]             | VPC, subnets, internet/NAT gateway, route tables, security groups, NACLs, Route 53, CloudFront, Global Accelerator, API Gateway                                                  |
 | 7   | Connectivity               | [[Connectivity]]           | Client VPN, Site-to-Site VPN, PrivateLink, Direct Connect, Transit Gateway, comparison tables                                                                                    |
-| 8   | Messaging                  | [[Messaging]]              | EventBridge, SQS, SNS — event-driven and message-based communication                                                                                                             |
+| 8   | Messaging                  | [[Messaging]]              | EventBridge, SQS, SNS: event-driven and message-based communication                                                                                                              |
 | 9   | Database                   | [[Database]]               | RDS, Aurora, DynamoDB (NoSQL), DocumentDB (document/MongoDB), Neptune (graph), ElastiCache (caching), AWS Backup, Redshift (data warehouse)                                      |
 | 10  | Analytics & Data Pipelines | [[Analytics]]              | ETL pipeline stages; Kinesis, Firehose (ingestion); S3, Redshift (storage); Glue Data Catalog; Glue, EMR (processing); Athena, QuickSight, OpenSearch (analysis)                 |
 | 11  | AI / ML Services           | [[AI]]                     | 3-tier model: pre-built AI (Comprehend, Polly, Rekognition, Lex, etc.), SageMaker AI, ML frameworks & infrastructure; Generative AI: SageMaker JumpStart, Bedrock, Amazon Q      |
@@ -33,8 +33,8 @@ Learning path in order:
 | 13  | Governance                 | [[Governance]]             | Control Tower, Organizations (multi-account governance); Service Catalog; Config; Audit Manager; Artifact; License Manager                                                       |
 | 14  | Monitoring & Observability | [[Monitoring]]             | CloudWatch (metrics/logs/alarms); CloudTrail (API auditing); Trusted Advisor (best practice checks); AWS Health (service events and notifications)                               |
 | 15  | Billing & Cost Management  | [[Billing]]                | Organizations (consolidated billing), Billing dashboard, Budgets, Cost Explorer, Pricing Calculator                                                                              |
-| 16  | Support Plans              | [[Support]]                | Basic, Developer, Business, Enterprise On-Ramp, Enterprise — response times, Trusted Advisor access, TAM availability                                                            |
-| 17  | Marketplace & Partners     | [[Marketplace]]            | AWS Marketplace (SaaS, ML/AI, data/analytics); AWS Partner Network (APN) — benefits, events, training                                                                            |
+| 16  | Support Plans              | [[Support]]                | Basic, Developer, Business, Enterprise On-Ramp, Enterprise: response times, Trusted Advisor access, TAM availability                                                             |
+| 17  | Marketplace & Partners     | [[Marketplace]]            | AWS Marketplace (SaaS, ML/AI, data/analytics); AWS Partner Network (APN): benefits, events, training                                                                             |
 | 18  | Cloud Adoption Framework   | [[CloudAdoptionFramework]] | AWS CAF; six perspectives; 7 Rs of migration; migration services: Migration Evaluator, Application Discovery Service, Migration Hub, Application Migration Service               |
 | 19  | Specialized Services       | [[SpecializedServices]]    | Development (CodeBuild, CodePipeline, X-Ray, AppSync, Amplify); Business (Connect, SES); End-User Computing (AppStream, WorkSpaces); IoT Core                                    |
 | 20  | Well-Architected Framework | [[WellArchitected]]        | Six pillars; Well-Architected Tool; Architecture Center and Blog                                                                                                                 |

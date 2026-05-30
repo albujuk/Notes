@@ -15,7 +15,7 @@ tags:
 
 # Workload Controllers
 
-Controllers manage [[Pods|Pods]] at scale — keeping a desired number of replicas alive and rescheduling them when they die. **ReplicationController** was the original; **ReplicaSet** replaced it; **Deployment** wraps ReplicaSet and is what you actually use day-to-day.
+Controllers manage [[Pods|Pods]] at scale, keeping a desired number of replicas alive and rescheduling them when they die. **ReplicationController** was the original; **ReplicaSet** replaced it; **Deployment** wraps ReplicaSet and is what you actually use day-to-day.
 
 ## ReplicationController
 
@@ -53,17 +53,17 @@ kubectl get rc
 
 ## ReplicaSet
 
-Successor to [[#ReplicationController]]. Key difference: supports **set-based selectors** (`In`, `NotIn`, `Exists`) vs RC's equality-only selectors. In practice, you rarely create ReplicaSets directly — Deployments manage them for you.
+Successor to [[#ReplicationController]]. Key difference: supports **set-based selectors** (`In`, `NotIn`, `Exists`) vs RC's equality-only selectors. In practice, you rarely create ReplicaSets directly; Deployments manage them for you.
 
 ### Selector types
 
-**RC — equality-only (`selector: key: value`):**
+**RC: equality-only (`selector: key: value`):**
 ```yaml
 selector:
   app: nginx        # matches pods where app == "nginx" exactly, nothing else
 ```
 
-**RS — set-based (`selector: matchLabels` / `matchExpressions`):**
+**RS: set-based (`selector: matchLabels` / `matchExpressions`):**
 
 `matchLabels` is shorthand equality (same as RC):
 ```yaml
@@ -88,10 +88,10 @@ selector:
       operator: Exists            # "tier" key must exist, any value accepted
 ```
 
-**Concrete example — RC limitation:**
+**Concrete example: RC limitation:**
 You have pods labeled `app: nginx-v1` and `app: nginx-v2`. RC can only target one exact value, so you'd need two separate RCs. RS can target both with one selector: `app In (nginx-v1, nginx-v2)`.
 
-**Why this matters for Deployments:** when a Deployment does a rolling update, it spins up a new RS for `nginx:1.16` while the old RS still owns `nginx:1.14` pods. The Deployment's selector uses `matchExpressions` to track pods across both RSes during the transition — impossible with RC's equality-only selectors.
+**Why this matters for Deployments:** when a Deployment does a rolling update, it spins up a new RS for `nginx:1.16` while the old RS still owns `nginx:1.14` pods. The Deployment's selector uses `matchExpressions` to track pods across both RSes during the transition, impossible with RC's equality-only selectors.
 
 ```yaml
 apiVersion: apps/v1
@@ -137,13 +137,13 @@ kubectl get rs
 
 ## Deployment
 
-The controller you should use for all stateless workloads. A Deployment manages [[#ReplicaSet|ReplicaSets]] for you — when you create a Deployment, it creates a ReplicaSet under the hood. The real power comes when you update your application.
+The controller you should use for all stateless workloads. A Deployment manages [[#ReplicaSet|ReplicaSets]] for you. When you create a Deployment, it creates a ReplicaSet under the hood. The real power comes when you update your application.
 
 **How a rolling update works:**
 1. You apply a new image version (`kubectl set image` or `kubectl apply` with updated YAML).
 2. Deployment creates a **new ReplicaSet** with the updated pod template.
 3. It scales the new RS up one pod at a time while scaling the old RS down.
-4. The old RS is kept at 0 replicas — this is what enables rollback.
+4. The old RS is kept at 0 replicas; this is what enables rollback.
 
 ```yaml
 apiVersion: apps/v1
@@ -195,10 +195,10 @@ kubectl rollout undo deployment/nginx-deployment
 | **Revision history** | No | Yes (old RSes kept) |
 | **Use directly in prod?** | No | Yes |
 
-Rule: always use Deployments. A bare ReplicaSet has no update or rollback capability. Think of the ReplicaSet as the engine and the Deployment as the car — you always drive the car.
+Rule: always use Deployments. A bare ReplicaSet has no update or rollback capability. Think of the ReplicaSet as the engine and the Deployment as the car; you always drive the car.
 
 ---
 
-→ [kubernetes.io — Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+→ [kubernetes.io: Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 ← [[300 - Containers/Kubernetes/README|Kubernetes]]

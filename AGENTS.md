@@ -238,7 +238,7 @@ tags:
 
 ## 9. Cross-Linking
 
-When adding or editing notes, wire up wikilinks between related concepts across files. Do this proactively — don't wait to be asked.
+When adding or editing notes, wire up wikilinks between related concepts across files. Do this proactively; don't wait to be asked.
 
 **Link hierarchy:**
 - Root `README.md` → folder READMEs only (not individual notes)
@@ -249,7 +249,7 @@ When adding or editing notes, wire up wikilinks between related concepts across 
 **Rules:**
 - Link to a section anchor when the target is a specific heading: `[[File#Section|display text]]`
 - Link across topics when concepts are related (e.g. EKS → [[Cluster]], Lambda → [[Compute#AWS Lambda]])
-- Link across domains (AWS ↔ Kubernetes) when one concept is the managed version of the other — and surface the connection in the relevant MOC.
-- Never link to a heading that doesn't exist — verify anchor names match exactly (case-sensitive in Obsidian)
+- Link across domains (AWS ↔ Kubernetes) when one concept is the managed version of the other, and surface the connection in the relevant MOC.
+- Never link to a heading that doesn't exist; verify anchor names match exactly (case-sensitive in Obsidian)
 - Prefer inline links; keep display text natural
 - Don't over-link: first meaningful mention in a section is enough, not every occurrence

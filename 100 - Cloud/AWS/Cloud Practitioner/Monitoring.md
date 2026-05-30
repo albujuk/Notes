@@ -55,14 +55,14 @@ Recommends actions to remediate deviations from best practices.
 
 Data source for events and changes affecting your AWS Cloud resources. Notifies you about:
 
-- **Service events** — outages or degradations in AWS services
-- **Planned changes** — scheduled maintenance or deprecations
-- **Account notifications** — actions required on your account
+- **Service events**: outages or degradations in AWS services
+- **Planned changes**: scheduled maintenance or deprecations
+- **Account notifications**: actions required on your account
 
 **Use cases:** Proactively manage impact of AWS events on your resources.
 
 ---
 
-→ [docs.aws.amazon.com — CloudWatch User Guide](https://docs.aws.amazon.com/cloudwatch/)
+→ [docs.aws.amazon.com: CloudWatch User Guide](https://docs.aws.amazon.com/cloudwatch/)
 
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

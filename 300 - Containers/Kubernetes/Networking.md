@@ -10,13 +10,13 @@ tags:
   - dns
   - ebpf
 ---
-# Kubernetes Networking — Deep Dive
+# Kubernetes Networking: Deep Dive
 
 ## The Networking Problem K8s Has to Solve
 
 When you run containers across multiple nodes, you face a fundamental challenge: how does a container on **Node A** talk to a container on **Node B** as if they're on the same LAN?
 
-The OS has no idea about Pods. You have to build this yourself — and that's what the network layer does.
+The OS has no idea about Pods. You have to build this yourself, and that's what the network layer does.
 
 ---
 
@@ -24,7 +24,7 @@ The OS has no idea about Pods. You have to build this yourself — and that's wh
 
 This is all Linux under the hood.
 
-Every Pod lives in its own **network namespace** — an isolated copy of the network stack with its own interfaces, routing table, and iptables rules.
+Every Pod lives in its own **network namespace**, an isolated copy of the network stack with its own interfaces, routing table, and iptables rules.
 
 ```
 Node
@@ -34,7 +34,7 @@ Node
 └── Pod C namespace (eth0 @ 10.244.1.4, lo)
 ```
 
-Containers _within_ the same Pod share one namespace — that's why they communicate via `localhost` and must not bind the same port.
+Containers _within_ the same Pod share one namespace; that's why they communicate via `localhost` and must not bind the same port.
 
 ### The pause Container
 
@@ -52,7 +52,7 @@ graph TD
 
 How do two Pods on the **same node** talk?
 
-Each Pod namespace connects to the host via a **veth pair** — a virtual ethernet cable with one end in the Pod namespace and the other in the host namespace.
+Each Pod namespace connects to the host via a **veth pair**, a virtual ethernet cable with one end in the Pod namespace and the other in the host namespace.
 
 ```mermaid
 flowchart LR
@@ -73,15 +73,15 @@ flowchart LR
     vethB <--> ethB
 ```
 
-All veth host-ends plug into a **Linux bridge** (usually `cni0` or `cbr0`). The bridge acts like a virtual switch — it learns MACs and forwards frames between veth pairs. Pod-to-Pod traffic on the same node never leaves the host.
+All veth host-ends plug into a **Linux bridge** (usually `cni0` or `cbr0`). The bridge acts like a virtual switch; it learns MACs and forwards frames between veth pairs. Pod-to-Pod traffic on the same node never leaves the host.
 
 ---
 
-## Inter-Node Communication — The Real Challenge
+## Inter-Node Communication: The Real Challenge
 
 This is where CNI plugins do their heavy lifting. There are two fundamental approaches:
 
-### Approach 1 — Overlay Networks (Encapsulation)
+### Approach 1: Overlay Networks (Encapsulation)
 
 Wrap the Pod-to-Pod packet inside another packet that the physical network _does_ understand.
 
@@ -103,13 +103,13 @@ sequenceDiagram
     NodeB->>PodB: Original packet delivered
 ```
 
-The physical network only sees Node-to-Node UDP traffic. It doesn't need to know anything about Pod IPs. This works anywhere — bare metal, cloud, on-prem — as long as nodes can reach each other.
+The physical network only sees Node-to-Node UDP traffic. It doesn't need to know anything about Pod IPs. This works anywhere, bare metal, cloud, on-prem, as long as nodes can reach each other.
 
 **Drawback:** encapsulation overhead, extra CPU, ~50 bytes of header per packet.
 
 ---
 
-### Approach 2 — Native/Direct Routing (No Overlay)
+### Approach 2: Native/Direct Routing (No Overlay)
 
 Skip encapsulation entirely. Tell the physical network how to reach each Pod CIDR.
 
@@ -128,7 +128,7 @@ Node A routing table:
 
 ---
 
-## CNI — Container Network Interface
+## CNI: Container Network Interface
 
 CNI is just a **spec + convention**. It defines:
 
@@ -151,7 +151,7 @@ flowchart TD
     C4 --> D["Pod has network"]
 ```
 
-### IPAM — IP Address Management
+### IPAM: IP Address Management
 
 A sub-component of CNI responsible for handing out IPs. Common backends:
 
@@ -172,7 +172,7 @@ The simplest option. Pure Layer 3 overlay.
 
 - Default backend: **VXLAN**
 - Can also do host-gw (direct routing, no overlay) if nodes are L2 adjacent
-- No NetworkPolicy support — needs Calico on top for that
+- No NetworkPolicy support; needs Calico on top for that
 - Very low operational complexity
 - Good for: learning, small clusters, simple setups
 

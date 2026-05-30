@@ -44,7 +44,7 @@ The **Scheduler** is responsible for distributing workloads and [pods](Pods.md) 
 ```mermaid
 graph TB
     subgraph CLUSTER["☸ Kubernetes Cluster"]
-        subgraph MASTER["Master Node — Control Plane"]
+        subgraph MASTER["Master Node: Control Plane"]
             direction LR
             API["API Server"]
             ETCD["etcd"]
@@ -77,6 +77,6 @@ graph TB
 
 ---
 
-→ [kubernetes.io — Components](https://kubernetes.io/docs/concepts/overview/components/)
+→ [kubernetes.io: Components](https://kubernetes.io/docs/concepts/overview/components/)
 
 ← [Kubernetes](300%20-%20Containers/Kubernetes/README.md)
