@@ -56,10 +56,10 @@ Notes/
 
 Two distinct artifacts:
 
-- **`README.md` — folder index. Mechanical.** Lists files in that folder. Answers "what's in this folder?". Plain link list, no commentary needed.
-- **`<Topic> MOC.md` — concept map. Intellectual.** Groups notes by relationship, not file location. Can link across folders, add context, show learning order, cluster ideas thematically. Answers "how do these ideas connect?". Lives in `900 - Meta/MOCs/`.
+- **`README.md`: folder index. Mechanical.** Lists files in that folder. Answers "what's in this folder?". Plain link list, no commentary needed.
+- **`<Topic> MOC.md`: concept map. Intellectual.** Groups notes by relationship, not file location. Can link across folders, add context, show learning order, cluster ideas thematically. Answers "how do these ideas connect?". Lives in `900 - Meta/MOCs/`.
 
-`README.md` is the root index — links to top-level READMEs and to MOCs.
+`README.md` is the root index. It links to top-level READMEs and to MOCs.
 
 **Always:**
 - Check the folder's `README.md` before adding or editing notes.
@@ -70,7 +70,7 @@ Two distinct artifacts:
 - New note → add row to folder's `README.md`. Update relevant MOC if it changes the concept map.
 - New folder → add to parent `README.md` + root `README.md` (Topics table + file tree) + Section 2 above.
 - Note deleted/renamed → update every index/MOC that references it.
-- Do index/MOC updates in the same edit pass as the content change — never out of sync.
+- Do index/MOC updates in the same edit pass as the content change. Never out of sync.
 
 **Files to keep in sync:**
 
@@ -89,7 +89,7 @@ Two distinct artifacts:
 **Default tool for vault operations.** Prefer `obsidian` over filesystem tools (`Read`, `Edit`, `Write`, `find`, `grep`, `sed`, `ls`). Fall back to filesystem tools only when the CLI has no equivalent (e.g. surgical mid-file edits, bulk regex replace, git operations).
 
 Acceptable fallbacks:
-- Mid-file surgical edits → `Edit` (CLI has no equivalent — only `read`/`append`/`prepend`/`create`)
+- Mid-file surgical edits → `Edit` (CLI has no equivalent, only `read`/`append`/`prepend`/`create`)
 - Bulk multi-file regex → `sed` via `Bash`
 - Clearing inbox or update files → `Write` with empty content (see Section 6)
 - Renames/moves → prefer `obsidian rename` / `obsidian move` over `mv`
@@ -99,7 +99,7 @@ Obsidian must be running for the CLI to work. If a CLI call fails with a connect
 
 `file=<name>` resolves by name (wikilink-style). `path=<path>` is exact. Most commands default to the active file when `file`/`path` omitted. Quote values with spaces. Use `\n` for newline in `content`.
 
-**Discoverability — run before guessing:**
+**Discoverability (run before guessing):**
 
 ```bash
 obsidian help                       # full command list
@@ -171,26 +171,27 @@ obsidian history:read file=<name> version=<n>
 obsidian diff file=<name> from=<n> to=<n>
 ```
 
-Other namespaces: `bookmark*`, `template*`, `plugin*`, `theme*`, `snippet*`, `tab*`, `workspace`, `random*`, `base*`, `dev:*` — see `obsidian help`.
+Other namespaces: `bookmark*`, `template*`, `plugin*`, `theme*`, `snippet*`, `tab*`, `workspace`, `random*`, `base*`, `dev:*`. See `obsidian help`.
 
 ---
 
 ## 5. Note Conventions
 
 - Use wikilinks (`[[File Name]]`) for internal links.
-- Every topic folder must have exactly one `README.md` (uppercase, GitHub-style — renders by default in folder views).
+- Every topic folder must have exactly one `README.md` (uppercase, GitHub-style; renders by default in folder views).
 - **Wikilink path rules:** bare `[[Name]]` is fine when the target filename is unique vault-wide. When duplicates exist (multiple `README.md`, multiple `missing.md`), use full path with display text: `[[100 - Cloud/AWS/README|AWS]]`, `[[300 - Containers/Kubernetes/README|Kubernetes]]`.
 - Only split a topic into multiple files when the file gets too long or subtopics diverge enough. Don't split preemptively.
 - Add example commands alongside concept explanations.
+- Do NOT use em dashes (—). Use commas, semicolons, colons, or separate sentences instead.
 
 ---
 
-## 6. Inbox — Pending Changes Workflow
+## 6. Inbox: Pending Changes Workflow
 
 Quick captures land in `000 - Inbox/`. Files there are unsorted; Claude routes them into the right topic folder(s).
 
 **When user says "do your work" (or equivalent trigger):**
-1. Run `obsidian files folder="000 - Inbox"` to list inbox files. Do NOT use `find` — RTK proxying can silently swallow results.
+1. Run `obsidian files folder="000 - Inbox"` to list inbox files. Do NOT use `find`; RTK proxying can silently swallow results.
 2. For each file (skip `README.md`): read content, decide which existing note(s) it belongs in, apply.
 3. After applying, delete the inbox file with `obsidian delete file=<name>`. (May go to trash; use `permanent` flag to skip.)
 4. If the content is a brand new topic, create a new note in the correct bucket folder, add a row to that folder's `README.md`, and update the relevant MOC.
@@ -207,7 +208,7 @@ Quick captures land in `000 - Inbox/`. Files there are unsorted; Claude routes t
 Each topic folder may contain a `missing.md` tracking topics not yet studied.
 
 **Rules:**
-- Don't add content to `missing.md` — the user fills it in when they study the topic.
+- Don't add content to `missing.md`; the user fills it in when they study the topic.
 - When a topic from `missing.md` gets its own note, remove it from `missing.md`.
 
 ---

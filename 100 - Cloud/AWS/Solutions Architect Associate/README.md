@@ -12,7 +12,7 @@ tags:
 
 | # | Topic | File | What's inside |
 |---|-------|------|---------------|
-| 1 | EC2 | [[100 - Cloud/AWS/Solutions Architect Associate/EC2\|EC2]] | Placement groups (cluster, partition, spread), rules and limitations |
+| 1 | EC2 | [[100 - Cloud/AWS/Solutions Architect Associate/EC2\|EC2]] | Placement groups, ENI, hibernation |
 
 ---
 

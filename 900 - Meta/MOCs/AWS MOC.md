@@ -14,7 +14,7 @@ How the AWS notes connect. The folder index ([[100 - Cloud/AWS/Cloud Practitione
 From most user-managed to least:
 
 - [[Compute]] — EC2 (VMs you control), Lambda (serverless functions), Beanstalk, Batch, Lightsail, Outposts
-- [[100 - Cloud/AWS/Solutions Architect Associate/EC2|EC2 (SAA)]] — placement groups (cluster, partition, spread)
+- [[100 - Cloud/AWS/Solutions Architect Associate/EC2|EC2 (SAA)]] — placement groups, ENI, hibernation
 - [[Containers]] — ECR (registry), ECS (AWS-native), EKS (Kubernetes), Fargate (serverless containers)
 
 Trade-off: more control ↔ less ops overhead.
