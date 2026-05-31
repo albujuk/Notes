@@ -1,0 +1,1 @@
+Amazon Machine Image are customization of ec2 instances 
