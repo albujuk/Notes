@@ -14,7 +14,7 @@ tags:
 |---|-------|------|---------------|
 | 1 | EC2 | [[100 - Cloud/AWS/Solutions Architect Associate/EC2\|EC2]] | Placement groups, ENI, hibernation |
 | 2 | AMI | [[100 - Cloud/AWS/Solutions Architect Associate/AMI\|AMI]] | AMI types, region scoping |
-| 3 | EBS | [[100 - Cloud/AWS/Solutions Architect Associate/EBS\|EBS]] | AZ constraint, snapshots, archive, recycle bin, fast snapshot restore |
+| 3 | EBS | [[100 - Cloud/AWS/Solutions Architect Associate/EBS\|EBS]] | AZ constraint, volume types (gp2/gp3, io1/io2, st1, sc1), snapshots, archive, recycle bin |
 
 ---
 
