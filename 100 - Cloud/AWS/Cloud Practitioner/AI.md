@@ -155,17 +155,17 @@ ML-optimized [[Compute#Amazon EC2|EC2]] instances, [[Analytics#Amazon EMR|Amazon
 
 ## Generative AI on AWS
 
-Foundation model (FM) based services — higher-level than the 3-tier ML model, focused on deploying and adapting large pre-trained models.
+Foundation model (FM) based services: higher-level than the 3-tier ML model, focused on deploying and adapting large pre-trained models.
 
 ### Amazon SageMaker JumpStart
 
-ML hub with foundation models and pre-built ML solutions deployable in a few clicks. Extends [[#Amazon SageMaker AI]] with an FM catalog — browse, evaluate, and deploy models without writing training code.
+ML hub with foundation models and pre-built ML solutions deployable in a few clicks. Extends [[#Amazon SageMaker AI]] with an FM catalog: browse, evaluate, and deploy models without writing training code.
 
 **Use cases:** Rapid FM prototyping, fine-tuning FMs on custom data.
 
 ### Amazon Bedrock
 
-Fully managed service for adapting and deploying foundation models from Amazon and leading AI companies (Anthropic, Cohere, Meta, Mistral, etc.). No infrastructure to manage — access FMs via API and customize them with your own data using techniques like RAG and fine-tuning.
+Fully managed service for adapting and deploying foundation models from Amazon and leading AI companies (Anthropic, Cohere, Meta, Mistral, etc.). No infrastructure to manage: access FMs via API and customize them with your own data using techniques like RAG and fine-tuning.
 
 **Use cases:** Generative AI applications, chatbots, content generation, document summarization.
 

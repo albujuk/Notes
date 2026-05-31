@@ -155,6 +155,6 @@ Fully managed **data warehouse**, optimized for analytical queries on large hist
 
 ---
 
-→ [aws.amazon.com — Database Products](https://aws.amazon.com/products/databases/)
+→ [aws.amazon.com - Database Products](https://aws.amazon.com/products/databases/)
 
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

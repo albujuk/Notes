@@ -36,7 +36,7 @@ kubectl explain <resource> --recursive      # full field tree
 
 ---
 
-## Pods — [[Pods|Pods]]
+## Pods: [[Pods|Pods]]
 
 ```bash
 kubectl run <name> --image=<image>
@@ -52,7 +52,7 @@ kubectl exec -it <name> -- /bin/sh
 
 ---
 
-## ReplicationController — [[Controllers#ReplicationController|Controllers]]
+## ReplicationController: [[Controllers#ReplicationController|Controllers]]
 
 ```bash
 kubectl apply -f rc.yaml
@@ -64,7 +64,7 @@ kubectl delete rc <name>
 
 ---
 
-## ReplicaSet — [[Controllers#ReplicaSet|Controllers]]
+## ReplicaSet: [[Controllers#ReplicaSet|Controllers]]
 
 ```bash
 kubectl apply -f rs.yaml
@@ -78,7 +78,7 @@ kubectl delete rs <name>                    # delete RS and pods
 
 ---
 
-## Deployment — [[Controllers#Deployment|Controllers]]
+## Deployment: [[Controllers#Deployment|Controllers]]
 
 ```bash
 kubectl apply -f deployment.yaml

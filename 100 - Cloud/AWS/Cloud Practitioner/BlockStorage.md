@@ -18,7 +18,7 @@ tags:
 
 ## EC2 Instance Store
 
-Block-level storage **physically attached** to the [[Compute#EC2 — Elastic Compute Cloud|EC2]] host computer. Not a standalone AWS service, bundled with certain instance types.
+Block-level storage **physically attached** to the [[Compute#EC2: Elastic Compute Cloud|EC2]] host computer. Not a standalone AWS service, bundled with certain instance types.
 
 **Key property: no persistence.** Data is lost when the instance is stopped or terminated.
 
@@ -26,7 +26,7 @@ Best for: buffers, caches, scratch data, temporary computation. Not recommended 
 
 ## Amazon Elastic Block Store (EBS)
 
-Persistent block-level storage volumes that attach to [[Compute#EC2 — Elastic Compute Cloud|EC2 instances]] like external hard drives. Survives instance stops and terminations; data remains available regardless of instance state.
+Persistent block-level storage volumes that attach to [[Compute#EC2: Elastic Compute Cloud|EC2 instances]] like external hard drives. Survives instance stops and terminations; data remains available regardless of instance state.
 
 **Key property: persistence.** Stop or terminate the instance; EBS data stays.
 
@@ -81,9 +81,9 @@ Configure via EC2 console, API, AWS CLI, SDKs, or [[CloudFormation]].
 
 ## Where is the root volume?
 
-Default: **EBS-backed.** The root volume is an EBS volume (attached at `/dev/xvda` or `/dev/sda1`). All current [[Compute#AMI — Amazon Machine Image|AMIs]] (Amazon Linux, Ubuntu, etc.) use EBS-backed root volumes.
+Default: **EBS-backed.** The root volume is an EBS volume (attached at `/dev/xvda` or `/dev/sda1`). All current [[Compute#AMI: Amazon Machine Image|AMIs]] (Amazon Linux, Ubuntu, etc.) use EBS-backed root volumes.
 
-Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root on ephemeral storage) but are legacy and rarely used today.
+Instance store-backed [[Compute#AMI: Amazon Machine Image|AMIs]] exist (root on ephemeral storage) but are legacy and rarely used today.
 
 ## Instance Store vs. EBS Comparison
 
@@ -93,7 +93,7 @@ Instance store-backed [[Compute#AMI — Amazon Machine Image|AMIs]] exist (root 
 | **Type**        | Physically attached (local)         | Network-attached                      |
 | **Best for**    | Temp buffers, caches, scratch       | Databases, OS volumes, long-term data |
 | **Backup**      | None (ephemeral)                    | EBS Snapshots                         |
-| **Root volume** | Legacy (instance store-backed [[Compute#AMI — Amazon Machine Image\|AMIs]]) | Default for all modern [[Compute#AMI — Amazon Machine Image\|AMIs]] |
+| **Root volume** | Legacy (instance store-backed [[Compute#AMI: Amazon Machine Image\|AMIs]]) | Default for all modern [[Compute#AMI: Amazon Machine Image\|AMIs]] |
 
 ---
 

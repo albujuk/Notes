@@ -40,6 +40,6 @@ Virtual tape library (VTL) interface. Replaces physical tape infrastructure. Vir
 
 ---
 
-→ [docs.aws.amazon.com — Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/)
+→ [docs.aws.amazon.com: Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/)
 
 ← [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]] · [[Storage]]

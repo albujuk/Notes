@@ -50,6 +50,6 @@ Compared to [[FileStorage#Amazon Elastic File System (EFS)|EFS]] (NFS-only), FSx
 
 ---
 
-→ [docs.aws.amazon.com — EFS User Guide](https://docs.aws.amazon.com/efs/latest/ug/)
+→ [docs.aws.amazon.com: EFS User Guide](https://docs.aws.amazon.com/efs/latest/ug/)
 
 ← [[Storage]] · [[100 - Cloud/AWS/Cloud Practitioner/README|Cloud Practitioner]]

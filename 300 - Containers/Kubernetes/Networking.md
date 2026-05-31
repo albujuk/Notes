@@ -180,7 +180,7 @@ The simplest option. Pure Layer 3 overlay.
 
 The most widely used in production.
 
-- Default: **no overlay** — uses BGP to distribute routes natively
+- Default: **no overlay**, uses BGP to distribute routes natively
 - Can fall back to VXLAN/IP-in-IP if BGP isn't possible
 - Full **NetworkPolicy** support + its own extended `NetworkPolicy` CRD
 - Built-in **WireGuard** encryption between nodes
@@ -192,9 +192,9 @@ The most widely used in production.
 The modern, eBPF-native option.
 
 - Replaces iptables with **eBPF programs** loaded directly into the kernel
-- Operates at L3/L4/L7 — can enforce policy based on HTTP methods, paths, gRPC calls
+- Operates at L3/L4/L7, can enforce policy based on HTTP methods, paths, gRPC calls
 - Built-in **Hubble** for deep network observability (flow logs per connection)
-- Supports **ClusterMesh** — connect multiple K8s clusters at the network level
+- Supports **ClusterMesh**; connect multiple K8s clusters at the network level
 - Replaces kube-proxy entirely with eBPF
 - Higher operational complexity, requires newer kernels (5.10+)
 - Good for: large-scale production, observability-heavy environments, multi-cluster
@@ -204,11 +204,11 @@ The modern, eBPF-native option.
 - VXLAN-based overlay
 - Automatic peer discovery (no etcd dependency for topology)
 - Built-in encryption
-- Mostly legacy now — less common in new deployments
+- Mostly legacy now, less common in new deployments
 
 ### Multus
 
-Not a standalone CNI — a **meta-plugin** that lets a Pod attach to _multiple_ networks.
+Not a standalone CNI, a **meta-plugin** that lets a Pod attach to _multiple_ networks.
 
 ```yaml
 annotations:
@@ -240,7 +240,7 @@ flowchart LR
     end
 ```
 
-eBPF programs are JIT-compiled, verified for safety by the kernel, and run in kernel space. At scale the performance difference is dramatic — both in latency and CPU overhead.
+eBPF programs are JIT-compiled, verified for safety by the kernel, and run in kernel space. At scale the performance difference is dramatic, both in latency and CPU overhead.
 
 ---
 

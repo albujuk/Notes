@@ -29,9 +29,9 @@ Data moves through a pipeline: ingestion → storage → cataloging → processi
 
 Both AI/ML and traditional analytics need clean, accessible data. ETL processes handle this:
 
-1. **Extract** — pull data from source systems
-2. **Transform** — convert to a consistent, usable format
-3. **Load** — write to a destination (data warehouse, analytics platform)
+1. **Extract**: pull data from source systems
+2. **Transform**: convert to a consistent, usable format
+3. **Load**: write to a destination (data warehouse, analytics platform)
 
 Data pipelines automate and repeat ETL at scale.
 
@@ -56,8 +56,8 @@ Near real-time ingestion. Fully managed, auto-scaling. Delivers data within seco
 | **Latency**     | Real-time (milliseconds)          | Near real-time (seconds)              |
 | **Management**  | You manage consumers/shards       | Fully managed, no config              |
 | **Processing**  | You write consumer code           | Built-in delivery, no code            |
-| **Destination** | Any — your app reads the stream   | Fixed: S3, Redshift, OpenSearch, etc. |
-| **Retention**   | Data stays in stream (1–365 days) | No retention — deliver and done       |
+| **Destination** | Any; your app reads the stream   | Fixed: S3, Redshift, OpenSearch, etc. |
+| **Retention**   | Data stays in stream (1–365 days) | No retention; deliver and done       |
 | **Use when**    | Process/react to data in flight   | Just need to land data somewhere fast |
 
 ---

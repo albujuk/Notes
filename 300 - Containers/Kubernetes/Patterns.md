@@ -29,7 +29,7 @@ Pod
 ├── nginx         (nginx, :80)                  ← reverse proxy → localhost:8000
 └── fluentd       (fluentd)                     ← reads nginx logs, ships to ES
          ↑
-     shared volume (emptyDir) — nginx writes logs, fluentd reads them
+      shared volume (emptyDir): nginx writes logs, fluentd reads them
 ```
 
 ```yaml
