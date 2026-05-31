@@ -74,6 +74,19 @@ Six volume types, characterized by **size, throughput, and IOPS**. Only SSD volu
 
 > For foundational EBS concepts (AZ constraint, snapshots, delete-on-termination), see [[100 - Cloud/AWS/Cloud Practitioner/BlockStorage#Amazon Elastic Block Store (EBS)|Cloud Practitioner: EBS]].
 
+## EBS Multi-Attach
+
+Attach the same EBS volume to **multiple EC2 instances in the same AZ**. Each instance has full read and write permissions to the high-performance volume.
+
+- Up to **16 EC2 instances** at a time
+- Must use a **cluster-aware file system** (not XFS, EXT4, etc.) such as **OCFS2** (Oracle Cluster File System) or **GFS2** (Global File System 2)
+- Applications must manage concurrent write operations
+- **Use cases:**
+  - Higher application availability in clustered Linux applications (e.g. Teradata)
+  - Shared storage for SAP HANA scale-out deployments
+
+> Supported on **io2 Block Express** and **io1** volume types only. See [[#SSD Volumes|SSD Volumes table]].
+
 ## EBS vs. EC2 Instance Store
 
 |                 | EBS                                    | EC2 Instance Store                              |
