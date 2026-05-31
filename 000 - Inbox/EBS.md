@@ -4,3 +4,5 @@ think of ebs volumes as Network USB sticks.
 can be attached/detached
 have a provisioned capacity, and it can be increased over time.
 
+there is delete on termination attribute which is by default on for ebs root vol and off for external ones.
+
