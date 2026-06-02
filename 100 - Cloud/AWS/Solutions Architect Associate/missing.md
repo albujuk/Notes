@@ -83,7 +83,8 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] RPO and RTO concepts
 - [ ] Route 53 routing policies (simple, weighted, latency, failover, geolocation, multivalue)
 - [ ] Route 53 health checks
-- [ ] Elastic Load Balancing (ALB vs NLB vs GWLB)
+- [ ] Network Load Balancer (NLB) deep dive (static IPs, TLS, cross-zone)
+- [ ] Gateway Load Balancer (GWLB) deep dive (GENEVE, GWLBe, appliance integration)
 - [ ] Auto Scaling (target tracking, step, simple, scheduled policies)
 - [ ] Multi-AZ deployments (RDS, ElastiCache, EFS)
 - [ ] Multi-Region architectures
