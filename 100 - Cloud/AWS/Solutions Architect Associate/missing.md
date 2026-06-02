@@ -83,8 +83,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] RPO and RTO concepts
 - [ ] Route 53 routing policies (simple, weighted, latency, failover, geolocation, multivalue)
 - [ ] Route 53 health checks
-- [ ] Network Load Balancer (NLB) deep dive (static IPs, TLS, cross-zone)
-- [ ] Gateway Load Balancer (GWLB) deep dive (GENEVE, GWLBe, appliance integration)
 - [ ] Auto Scaling (target tracking, step, simple, scheduled policies)
 - [ ] Multi-AZ deployments (RDS, ElastiCache, EFS)
 - [ ] Multi-Region architectures
@@ -135,7 +133,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] AWS Global Accelerator (anycast, static IPs)
 - [ ] CloudFront vs Global Accelerator
 - [ ] VPC design for performance (subnet tiers, IP planning)
-- [ ] Load balancer selection (ALB vs NLB vs GWLB)
 - [ ] AWS PrivateLink
 - [ ] Direct Connect (port speeds, Link Aggregation Groups)
 
