@@ -98,7 +98,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ### Storage Performance
 
 - [ ] Amazon S3 (storage classes, performance optimization, transfer acceleration)
-- [ ] Amazon EFS (performance modes, throughput modes, storage classes)
 - [ ] Amazon FSx (Lustre, Windows, NetApp ONTAP, OpenZFS)
 - [ ] S3 Transfer Acceleration vs CloudFront
 - [ ] Hybrid storage (Storage Gateway, DataSync)
