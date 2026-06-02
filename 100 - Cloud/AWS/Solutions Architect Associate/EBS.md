@@ -98,6 +98,12 @@ Attach the same EBS volume to **multiple EC2 instances in the same AZ**. Each in
 
 > For foundational coverage (use cases, Data Lifecycle Manager), see [[100 - Cloud/AWS/Cloud Practitioner/BlockStorage#EC2 Instance Store|Cloud Practitioner: Instance Store]].
 
+## EBS Encryption
+
+Encrypts everything: data at rest, data in transit (between volume and instance), and snapshots. Nearly no impact on latency or performance. Considered a best practice to always enable.
+
+To encrypt an existing unencrypted volume: create a snapshot, then create a new encrypted volume from that snapshot.
+
 ---
 
 ← [[100 - Cloud/AWS/Solutions Architect Associate/README|Solutions Architect Associate]]
