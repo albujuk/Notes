@@ -83,7 +83,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] RPO and RTO concepts
 - [ ] Route 53 routing policies (simple, weighted, latency, failover, geolocation, multivalue)
 - [ ] Route 53 health checks
-- [ ] Auto Scaling (target tracking, step, simple, scheduled policies)
 - [ ] Multi-AZ deployments (RDS, ElastiCache, EFS)
 - [ ] Multi-Region architectures
 - [ ] Failover strategies
@@ -105,7 +104,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ### Compute Performance
 
 - [ ] EC2 instance families and selection (compute/memory/storage/GPU optimized)
-- [ ] EC2 Auto Scaling (scaling policies, launch templates, mixed instances)
 - [ ] AWS Lambda (memory sizing, cold starts, concurrency, layers)
 - [ ] AWS Fargate (serverless containers)
 - [ ] Amazon ECS vs EKS (container orchestration)

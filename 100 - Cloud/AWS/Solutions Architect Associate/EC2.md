@@ -91,4 +91,30 @@ Instance must be enabled for hibernation at launch and meet all [hibernation pre
 
 ---
 
+## Auto Scaling Groups (ASG)
+
+Automatically adjusts the number of EC2 instances to match demand. Maintains a desired capacity across multiple AZs for high availability.
+
+**Key concepts:**
+- **Min/Max/Desired capacity**: bounds and target instance count
+- **Launch template**: defines instance configuration (AMI, instance type, security groups, etc.)
+- **Health checks**: EC2 status checks + ELB health checks (if integrated)
+- **Cooldown period**: wait time after scaling before another action (default 300s)
+
+### Scaling Policies
+
+| Policy | Trigger | Use case |
+|--------|---------|----------|
+| **Target tracking** | Maintain a target metric value (e.g., 50% CPU) | Most workloads, simplest approach |
+| **Step scaling** | Adjust by different amounts based on alarm breach size | Fine-grained control over scaling response |
+| **Simple scaling** | Single adjustment when alarm breaches | Legacy, replaced by target tracking |
+| **Scheduled scaling** | Time-based (cron) | Predictable traffic patterns |
+| **Predictive scaling** | ML-based forecasting | Proactive scaling for recurring patterns |
+
+### Integration with ELB
+
+ASG can register/deregister instances with a load balancer automatically. When an instance fails ELB health checks, ASG terminates it and launches a replacement.
+
+---
+
 ← [[100 - Cloud/AWS/Solutions Architect Associate/README|Solutions Architect Associate]]
