@@ -40,6 +40,16 @@ Load balancers can be **internet-facing** (public) or **internal** (private).
 | **Network LB (NLB)** | 2017 | 4 | TCP, UDP, TLS | High performance, low latency, TCP/UDP |
 | **Gateway LB (GWLB)** | 2020 | 3 | IP (GENEVE) | Third-party network appliances |
 
+## Cross-Zone Load Balancing
+
+Distributes traffic equally across targets in **all enabled AZs**, not just the AZ the client hit. Without it, each AZ only balances among its own targets, which can cause uneven load if one AZ has fewer targets.
+
+| LB Type | Default | Data Transfer Charges |
+|---------|---------|----------------------|
+| ALB | Enabled | None |
+| NLB | Disabled | Charged when enabled |
+| GWLB | Disabled | Charged when enabled |
+
 ## Application Load Balancer (ALB)
 
 Layer 7 (HTTP/HTTPS). Routes traffic based on content of the request.
