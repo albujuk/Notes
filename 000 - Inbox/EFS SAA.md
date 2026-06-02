@@ -23,3 +23,22 @@ can scale and grow as usage increases without problems or planing needed
 2.  Provisioned – set your throughput regardless of storage size, ex: 1 GiB/s for 1 TB storage
 3. Elastic – automatically scales throughput up or down based on your workloads
 	1.  Used for unpredictable workloads
+
+
+
+## Storage Classes
+Standard: For frequently accessed data and files 
+Infrequent Access: cost-optimized for data that is accessed only a few times each quarter
+Archive: cost-optimized for data that is accessed only a few times each year or less
+
+### By Default:
+- files that are not accessed in Standard storage class or 30 days are transitioned into IA.
+- files that are not accessed in the Standard storage class for 90 days are transitioned in to the Archive storage class.
+- files are not moved back to the Standard storage class, and they remain in the IA or Archive storage class when they are accessed.
+    
+    For performance-sensitive use cases that demand the fastest latency performance (such as applications that work with a large volume of small files), choose to transition files into Standard storage **On first access**.
+
+Use multi az efs for prod, but for dev and test use one zone and it's compatible with IA
+
+using the correct settings and classes will reduce the cost up to 90%
+
