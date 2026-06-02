@@ -22,5 +22,4 @@ can scale and grow as usage increases without problems or planing needed
 1. Bursting – 1 TB = 50MiB/s + burst of up to 100MiB/s
 2.  Provisioned – set your throughput regardless of storage size, ex: 1 GiB/s for 1 TB storage
 3. Elastic – automatically scales throughput up or down based on your workloads
-	1. Up to 3GiB/s for reads and 1GiB/s for writes
-	2.  Used for unpredictable workloads
+	1.  Used for unpredictable workloads
