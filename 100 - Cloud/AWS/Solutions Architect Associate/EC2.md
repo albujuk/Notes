@@ -103,13 +103,13 @@ Automatically adjusts the number of EC2 instances to match demand. Maintains a d
 
 ### Scaling Policies
 
-| Policy | Trigger | Use case |
-|--------|---------|----------|
-| **Target tracking** | Maintain a target metric value (e.g., 50% CPU) | Most workloads, simplest approach |
-| **Step scaling** | Adjust by different amounts based on alarm breach size | Fine-grained control over scaling response |
-| **Simple scaling** | Single adjustment when alarm breaches | Legacy, replaced by target tracking |
-| **Scheduled scaling** | Time-based (cron) | Predictable traffic patterns |
-| **Predictive scaling** | ML-based forecasting | Proactive scaling for recurring patterns |
+| Policy                 | Trigger                                                | Use case                                   |
+| ---------------------- | ------------------------------------------------------ | ------------------------------------------ |
+| **Target tracking**    | Maintain a target metric value (e.g., 50% CPU)         | Most workloads, simplest approach          |
+| **Step scaling**       | Adjust by different amounts based on alarm breach size | Fine-grained control over scaling response |
+| **Simple scaling**     | Single adjustment when alarm breaches                  | Legacy, replaced by target tracking        |
+| **Scheduled scaling**  | Time-based (cron)                                      | Predictable traffic patterns               |
+| **Predictive scaling** | ML-based forecasting                                   | Proactive scaling for recurring patterns   |
 
 ### Integration with ELB
 
