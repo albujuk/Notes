@@ -18,6 +18,7 @@ tags:
 | 4 | EFS | [[100 - Cloud/AWS/Solutions Architect Associate/EFS\|EFS]] | NFS file system, performance/throughput modes, storage classes, lifecycle |
 | 5 | ELB | [[100 - Cloud/AWS/Solutions Architect Associate/ELB\|ELB]] | LB types (ALB, NLB, GWLB), ALB routing, target groups, cross-zone load balancing |
 | 6 | Missing | [[100 - Cloud/AWS/Solutions Architect Associate/missing\|missing]] | SAA-C03 exam topics not yet studied |
+| 7 | Depth Gaps | [[100 - Cloud/AWS/Solutions Architect Associate/saa-depth-gaps\|saa-depth-gaps]] | SAA-specific sub-topics beyond Cloud Practitioner awareness level |
 
 ---
 
