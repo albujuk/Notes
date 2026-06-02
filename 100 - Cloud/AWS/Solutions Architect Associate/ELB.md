@@ -121,7 +121,57 @@ Layer 3. Deploys, scales, and manages third-party virtual appliances (firewalls,
 
 **Architecture:**
 - **GWLB Endpoint (GWLBe)**: VPC endpoint for traffic entry/exit
-- **Target Group**: virtual appliances (EC2 instances running firewall/IDS software)
+- **Target Group**: virtual appliances, target types limited to EC2 instances and private IP addresses
+
+**Traffic Flow (Overview):**
+
+```mermaid
+architecture-beta
+    group vpc(cloud)[VPC]
+
+    service user(internet)[User] 
+    service gwlbe(server)[GWLB Endpoint] in vpc
+    service gwlb(server)[GWLB] in vpc
+    service va(server)[Virtual Appliance] in vpc
+    service app(server)[Application] in vpc
+
+    user:R -- L:gwlbe
+    gwlbe:R -- L:gwlb
+    gwlb:R -- L:va
+    va:R -- L:app
+```
+
+**Traffic Flow (Detailed):**
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant GWLBe as GWLB Endpoint
+    participant GWLB
+    participant Appliance as Virtual Appliance<br/>(Firewall/IDS)
+    participant App as Application<br/>(EC2/ALB)
+
+    Client->>GWLBe: Inbound traffic
+    GWLBe->>GWLB: Forward to GWLB
+    GWLB->>Appliance: GENEVE encapsulated packet
+    
+    Note over Appliance: Inspect packet headers<br/>and payload
+    
+    alt Malicious / Policy Violation
+        Appliance-->>GWLB: DROP (no response)
+        Note over Client,GWLB: Connection rejected<br/>or silently dropped
+    else Clean / Approved
+        Appliance->>GWLB: Return packet (GENEVE)
+        GWLB->>GWLBe: Forward to destination
+        GWLBe->>App: Deliver to application
+        App-->>GWLBe: Response
+        GWLBe->>GWLB: Return traffic
+        GWLB->>Appliance: Inspect outbound (optional)
+        Appliance->>GWLB: Approve outbound
+        GWLB->>GWLBe: Forward response
+        GWLBe->>Client: Response to client
+    end
+```
 
 **Use cases:**
 - Centralized network security (firewalls, intrusion detection)
