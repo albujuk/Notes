@@ -22,3 +22,15 @@ Some LB can be internal or external LBs
 4. Gateway Load Balancer (GWLB): at Layer 3, IP Protocol
 
 
+---
+
+### ALB
+Layer 7 only
+route HTTP traffic across machines (target groups)
+LB to multiple apps on same machines (containers)
+support http2 and ws and redirection e.g. http -> https
+
+#### Routing Methods
+1. Using URL Path e.g. `/users`, `/search` ...
+2. Using Host Names e.g. `one.a.com`, `two.a.com`
+3. Using query strings 
