@@ -41,6 +41,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 
 - [[Database]]: RDS, Aurora, DynamoDB, DocumentDB, Neptune, ElastiCache, Redshift
 - [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS (SAA)]]: Read Replicas vs Multi-AZ, RDS Custom, Backup & Restore, RDS Proxy, Encryption & Security, Aurora (Serverless, Global DB, ML, Babelfish, Fast Cloning)
+- [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache|ElastiCache (SAA)]]: Redis vs Memcached, caching strategies, clustering, high availability
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q
 
