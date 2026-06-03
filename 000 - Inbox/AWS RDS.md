@@ -31,4 +31,13 @@ RDS is a managed service, it provides:
 
 
 ## Multi AZ
-Main use is for Disaster Recovery
+1. Main use is for Disaster Recovery
+2. SYNC replication
+3. One DNS name – automatic app
+4. failover to standby
+5. Increase availability
+6. Failover in case of loss of AZ, loss of network, instance or storage failure
+7. No manual intervention in apps
+8. Not used for scaling
+The Read Replicas can be setup as Multi AZ for Disaster Recovery
+
