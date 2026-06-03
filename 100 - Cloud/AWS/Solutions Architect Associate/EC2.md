@@ -115,6 +115,19 @@ Automatically adjusts the number of EC2 instances to match demand. Maintains a d
 
 ASG can register/deregister instances with a load balancer automatically. When an instance fails ELB health checks, ASG terminates it and launches a replacement.
 
+### Instance Bootstrapping
+
+New instances launched by an ASG use the **launch template**, which defines the AMI and **user data** script. User data runs on first boot (via cloud-init), so it is the mechanism for installing and configuring the app on fresh instances.
+
+Two approaches to ensure new instances are app-ready:
+
+| Approach | How it works | Trade-off |
+|----------|-------------|-----------|
+| **Pre-baked AMI** | Bake the app into a custom AMI (manually or with [[100 - Cloud/AWS/Cloud Practitioner/Compute#EC2 Image Builder|EC2 Image Builder]]); instances launch ready to serve | Faster boot, less dynamic config |
+| **User data bootstrap** | Use user data to install/configure the app on first boot from a base AMI | More flexible, slower boot, can pull latest artifacts |
+
+Both can be combined: pre-bake a base image with dependencies, then use user data for final configuration (environment variables, pulling secrets, registering with services).
+
 ---
 
 ← [[100 - Cloud/AWS/Solutions Architect Associate/README|Solutions Architect Associate]]

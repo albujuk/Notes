@@ -107,17 +107,20 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] AWS Lambda (memory sizing, cold starts, concurrency, layers) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Lambda|Compute: Lambda]]
 - [x] AWS Fargate (serverless containers) → [[100 - Cloud/AWS/Cloud Practitioner/Containers#AWS Fargate|Containers: Fargate]]
 - [x] Amazon ECS vs EKS (container orchestration) → [[100 - Cloud/AWS/Cloud Practitioner/Containers|Containers]]
+- [ ] Amazon ECS Anywhere (run ECS tasks on-premises or in other clouds)
+- [ ] Amazon EKS Anywhere (run EKS clusters on-premises or in other clouds)
+- [ ] Amazon EKS Distro (open-source Kubernetes distribution used by EKS Anywhere)
 - [x] AWS Batch (batch processing workloads) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Batch|Compute: Batch]]
 - [x] Amazon EMR (big data processing) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon EMR|Analytics: EMR]]
 - [x] AWS Outposts (hybrid compute) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Outposts|Compute: Outposts]] / [[100 - Cloud/AWS/Cloud Practitioner/Global Infrastructure#Outposts|Global Infra: Outposts]]
 - [ ] AWS Wavelength (edge compute for 5G)
+- [ ] VMware Cloud on AWS (hybrid cloud with VMware)
 
 ### Database Performance
 
 - [x] Amazon RDS (engines, Multi-AZ, read replicas, instance selection) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon RDS (Relational Database Service)|Database: RDS]]
-- [ ] Aurora Serverless (v1 vs v2, ACU scaling, pause/resume)
-- [ ] Aurora Global Database (cross-region replication <1s, write forwarding)
-- [ ] Aurora advanced features (fast cloning, parallel query, multi-master, ML integration, I/O-Optimized)
+- [ ] Aurora Serverless v1 vs v2, ACU scaling, pause/resume, write forwarding
+- [ ] Aurora fast cloning, parallel query, multi-master, I/O-Optimized
 - [x] Amazon DynamoDB (partition keys, sort keys, GSIs, LSIs, DAX) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DynamoDB|Database: DynamoDB]]
 - [x] Amazon ElastiCache (Redis vs Memcached, clustering, replication) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon ElastiCache|Database: ElastiCache]]
 - [x] Amazon Redshift (data warehousing, distribution styles) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Redshift|Analytics: Redshift]]
@@ -159,6 +162,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] EFS storage classes and lifecycle → [[100 - Cloud/AWS/Cloud Practitioner/FileStorage#EFS Storage Classes|FileStorage: EFS Classes]]
 - [ ] FSx cost considerations
 - [ ] Backup strategies and cost trade-offs
+- [ ] AWS Backup (centralized backup management across AWS services)
 - [ ] Data transfer costs (ingress/egress, cross-region, internet)
 
 ### Compute Cost Optimization

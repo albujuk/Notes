@@ -12,6 +12,10 @@ tags:
   - multi-az
   - read-replicas
   - disaster-recovery
+  - aurora-serverless
+  - aurora-global-database
+  - aurora-ml
+  - babelfish
 ---
 
 # RDS: Relational Database Service
@@ -132,6 +136,49 @@ Proprietary AWS managed relational database (not open source). MySQL- and Postgr
 - Advanced monitoring
 - Routine maintenance
 - Isolation, security, and industry compliance
+
+### Aurora Auto Scaling
+
+When CPU usage increases on read endpoints, Aurora Auto Scaling adds new read replica instances to the scaling group. Requests are distributed across all replicas via the [[#Endpoints|reader endpoint]].
+
+### Custom Endpoints
+
+Custom endpoints route specific types of requests to specific instances. Creating multiple custom endpoints is good practice when you need fine-grained traffic routing (e.g., analytics queries to a dedicated subset of replicas). Custom endpoints affect the behavior of the reader endpoint.
+
+### Aurora Serverless
+
+- Automated database instantiation and auto-scaling based on actual usage
+- Good for infrequent, intermittent, or unpredictable workloads
+- No capacity planning needed
+- Pay per second; can be more cost-effective than provisioned Aurora
+
+### Aurora Global Database
+
+- **1 primary Region** (read/write)
+- **Up to 10 secondary (read-only) Regions**, replication lag < 1 second
+- Up to **16 Read Replicas per secondary Region**
+- Decreases global read latency
+- Promoting a secondary Region for disaster recovery has an **RTO < 1 minute**
+- Typical cross-region replication takes less than 1 second
+
+Simpler alternative: **Aurora Cross Region Read Replicas** (useful for DR, easier to set up but less feature-rich).
+
+### Aurora ML
+
+- Add ML-based predictions to applications via SQL queries
+- Optimized integration between Aurora and AWS ML services
+- Supported services:
+  - **Amazon SageMaker** (any ML model)
+  - **Amazon Comprehend** (sentiment analysis)
+- No ML experience required
+- Use cases: fraud detection, ads targeting, sentiment analysis, product recommendations
+
+### Babelfish for Aurora PostgreSQL
+
+- Allows Aurora PostgreSQL to understand commands targeted for MS SQL Server (e.g., T-SQL)
+- Microsoft SQL Server-based applications can work on Aurora PostgreSQL with little to no code changes
+- Uses the same MS SQL Server client driver
+- Migrate with [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|AWS SCT and DMS]]
 
 ---
 

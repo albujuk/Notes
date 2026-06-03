@@ -14,7 +14,7 @@ How the AWS notes connect. The folder index ([[100 - Cloud/AWS/Cloud Practitione
 From most user-managed to least:
 
 - [[Compute]]: EC2 (VMs you control), Lambda (serverless functions), Beanstalk, Batch, Lightsail, Outposts
-- [[100 - Cloud/AWS/Solutions Architect Associate/EC2|EC2 (SAA)]]: placement groups, ENI, hibernation, Auto Scaling Groups
+- [[100 - Cloud/AWS/Solutions Architect Associate/EC2|EC2 (SAA)]]: placement groups, ENI, hibernation, Auto Scaling Groups, instance bootstrapping
 - [[Containers]]: ECR (registry), ECS (AWS-native), EKS (Kubernetes), Fargate (serverless containers)
 
 Trade-off: more control ↔ less ops overhead.
@@ -40,7 +40,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 ## Data + AI
 
 - [[Database]]: RDS, Aurora, DynamoDB, DocumentDB, Neptune, ElastiCache, Redshift
-- [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS (SAA)]]: Read Replicas vs Multi-AZ, RDS Custom, Aurora architecture and endpoints
+- [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS (SAA)]]: Read Replicas vs Multi-AZ, RDS Custom, Aurora architecture, endpoints, Serverless, Global Database, ML, Babelfish
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q
 
