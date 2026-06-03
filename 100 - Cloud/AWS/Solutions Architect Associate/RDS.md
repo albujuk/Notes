@@ -20,6 +20,7 @@ tags:
   - encryption
   - iam-auth
   - aurora-fast-cloning
+  - rds-proxy
 ---
 
 # RDS: Relational Database Service
@@ -230,6 +231,33 @@ Simpler alternative: **Aurora Cross Region Read Replicas** (useful for DR, easie
 - When updates are made to the new cluster, additional storage is allocated and only changed data is copied
 - Very fast and cost-effective
 - Useful for creating a staging database from production without impacting the production database
+
+---
+
+## RDS Proxy
+
+Fully managed database proxy for RDS and Aurora. Allows apps to pool and share DB connections established with the database.
+
+### Benefits
+
+- **Improves database efficiency**: reduces stress on database resources (CPU, RAM) and minimizes open connections (and timeouts)
+- **Reduces failover time** by up to **66%** for RDS and Aurora
+- **No code changes** required for most apps
+
+### Architecture
+
+- **Serverless**, autoscaling, highly available (multi-AZ)
+- **Never publicly accessible**: must be accessed from within a [[100 - Cloud/AWS/Cloud Practitioner/Networking#VPC (Virtual Private Cloud)|VPC]]
+
+### Supported Engines
+
+- RDS: MySQL, PostgreSQL, MariaDB, MS SQL Server
+- Aurora: MySQL, PostgreSQL
+
+### Security
+
+- Enforce [[#IAM Authentication|IAM Authentication]] for the database
+- Credentials stored securely in [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Secrets Manager|AWS Secrets Manager]]
 
 ---
 

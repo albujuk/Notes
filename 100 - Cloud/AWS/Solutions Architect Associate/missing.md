@@ -89,7 +89,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] Immutable infrastructure patterns
 - [ ] Service quotas and throttling
 - [x] AWS X-Ray (distributed tracing, workload visibility) → [[100 - Cloud/AWS/Cloud Practitioner/SpecializedServices#Development Services|Specialized: Dev Services]]
-- [ ] RDS Proxy (connection pooling)
 
 ## Domain 3: Design High-Performing Architectures (24%)
 
