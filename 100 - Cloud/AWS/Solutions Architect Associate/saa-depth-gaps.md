@@ -471,16 +471,16 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - RDS backup retention and PITR mechanics
 - RDS engine version upgrade strategies (blue/green deployments)
 
-**[[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon Aurora|Database: Aurora]]** → SAA needs:
-- Aurora storage architecture (6 copies across 3 AZs, self-healing)
-- Aurora read replica lag vs RDS replicas (sub-ms)
+**[[100 - Cloud/AWS/Solutions Architect Associate/RDS#Amazon Aurora|RDS: Aurora]]** → SAA needs:
+- ~~Aurora storage architecture (6 copies across 3 AZs, self-healing)~~
+- ~~Aurora read replica lag vs RDS replicas (sub-ms)~~
 - Aurora Serverless v1 vs v2 differences and use cases
 - Aurora Global Database cross-region replication lag (<1s)
 - Aurora fast cloning for dev/test
 - Aurora parallel query for analytics offload
 - Aurora multi-master (write forwarding)
 - Aurora RDS Proxy integration
-- Aurora backtracking (point-in-time without restore)
+- ~~Aurora backtracking (point-in-time without restore)~~
 - Aurora machine learning integration
 - Aurora I/O-Optimized storage class
 

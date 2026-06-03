@@ -22,7 +22,7 @@ Managed relational database service. AWS handles provisioning, patching, backups
 
 ## Supported Engines
 
-PostgreSQL, MySQL, MariaDB, Oracle, Microsoft SQL Server, IBM DB2, [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon Aurora|Amazon Aurora]] (AWS proprietary).
+PostgreSQL, MySQL, MariaDB, Oracle, Microsoft SQL Server, IBM DB2, [[#Amazon Aurora|Amazon Aurora]] (AWS proprietary).
 
 ## Key Features
 
@@ -85,6 +85,53 @@ With RDS Custom you can:
 - Enable native features
 
 Deactivate **Automation Mode** before performing customizations. Take a DB snapshot first.
+
+---
+
+## Amazon Aurora
+
+Proprietary AWS managed relational database (not open source). MySQL- and PostgreSQL-compatible; existing drivers work as if Aurora were a standard MySQL or PostgreSQL database.
+
+> For foundational Aurora concepts (performance claims, use cases), see [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon Aurora|Cloud Practitioner: Aurora]].
+
+### Performance
+
+- Up to **5x** the throughput of standard MySQL on RDS, **3x** PostgreSQL on RDS
+- Costs ~20% more than standard RDS but is more efficient
+- Designed to reduce unnecessary I/O operations
+
+### Storage Architecture
+
+- **Shared storage volume** that auto-expands in 10 GB increments, up to **256 TB**
+- **6 copies across 3 [[100 - Cloud/AWS/Cloud Practitioner/Global Infrastructure#Availability Zones|AZs]]**:
+  - 4 copies needed for writes
+  - 3 copies needed for reads
+- Self-healing with peer-to-peer replication
+- Storage striped across hundreds of volumes
+- Continuous backup to [[100 - Cloud/AWS/Cloud Practitioner/S3|S3]]; point-in-time recovery
+
+### High Availability and Replication
+
+- One **master instance** takes writes
+- Up to **15 Aurora Read Replicas** with **sub-10 ms replica lag** (faster than MySQL replication)
+- Automated failover in less than **30 seconds**
+- Support for **Cross Region Replication**
+
+### Endpoints
+
+- **Writer endpoint**: DNS name always pointing to the master; automatically redirects on failover
+- **Reader endpoint**: connection-level load balancing across all read replicas; automatically tracks replicas as they scale; load balancing happens at the **connection level**, not the statement level
+
+### Features
+
+- Automatic failover
+- Backup and recovery
+- **Backtrack**: restore data at any point in time without using backups
+- Push-button scaling
+- Automated patching with zero downtime
+- Advanced monitoring
+- Routine maintenance
+- Isolation, security, and industry compliance
 
 ---
 

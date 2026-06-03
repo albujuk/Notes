@@ -40,7 +40,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 ## Data + AI
 
 - [[Database]]: RDS, Aurora, DynamoDB, DocumentDB, Neptune, ElastiCache, Redshift
-- [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS (SAA)]]: Read Replicas vs Multi-AZ, RDS Custom
+- [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS (SAA)]]: Read Replicas vs Multi-AZ, RDS Custom, Aurora architecture and endpoints
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q
 
