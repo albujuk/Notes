@@ -120,7 +120,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 - [x] Amazon RDS (engines, Multi-AZ, read replicas, instance selection) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon RDS (Relational Database Service)|Database: RDS]]
 - [ ] Aurora Serverless v1 vs v2, ACU scaling, pause/resume, write forwarding
-- [ ] Aurora fast cloning, parallel query, multi-master, I/O-Optimized
+- [ ] Aurora parallel query, multi-master, I/O-Optimized
 - [x] Amazon DynamoDB (partition keys, sort keys, GSIs, LSIs, DAX) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DynamoDB|Database: DynamoDB]]
 - [x] Amazon ElastiCache (Redis vs Memcached, clustering, replication) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon ElastiCache|Database: ElastiCache]]
 - [x] Amazon Redshift (data warehousing, distribution styles) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Redshift|Analytics: Redshift]]

@@ -16,6 +16,10 @@ tags:
   - aurora-global-database
   - aurora-ml
   - babelfish
+  - backup-restore
+  - encryption
+  - iam-auth
+  - aurora-fast-cloning
 ---
 
 # RDS: Relational Database Service
@@ -89,6 +93,44 @@ With RDS Custom you can:
 - Enable native features
 
 Deactivate **Automation Mode** before performing customizations. Take a DB snapshot first.
+
+---
+
+## Backup & Restore
+
+### RDS Automated Backups
+
+- Daily full backup during the backup window
+- Transaction logs backed up every **5 minutes**
+- Point-in-time restore from oldest backup to **5 minutes ago**
+- Retention: **1 to 35 days** (set to 0 to disable)
+
+### RDS Manual Snapshots
+
+- Manually triggered by the user
+- Retained for as long as you want
+
+> [!tip] Cost trick
+> A stopped RDS database still incurs storage costs. If stopping for a long time, snapshot and delete the instance instead, then restore when needed.
+
+### Aurora Automated Backups
+
+- Retention: **1 to 35 days**, **cannot be disabled**
+- Point-in-time recovery
+
+### Aurora Manual Snapshots
+
+- Manually triggered by the user
+- Retained for as long as you want
+
+### Restoring from S3
+
+| Target | Process |
+|--------|---------|
+| **RDS MySQL** | Backup on-prem DB → store on [[100 - Cloud/AWS/Cloud Practitioner/S3\|S3]] → restore onto new RDS MySQL instance |
+| **Aurora MySQL** | Backup on-prem DB using **Percona XtraBackup** → store on S3 → restore onto new Aurora MySQL cluster |
+
+Restoring any RDS or Aurora backup/snapshot **creates a new database**.
 
 ---
 
@@ -179,6 +221,44 @@ Simpler alternative: **Aurora Cross Region Read Replicas** (useful for DR, easie
 - Microsoft SQL Server-based applications can work on Aurora PostgreSQL with little to no code changes
 - Uses the same MS SQL Server client driver
 - Migrate with [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|AWS SCT and DMS]]
+
+### Aurora Fast Cloning
+
+- Create a new Aurora DB cluster from an existing one
+- **Faster than snapshot & restore**
+- Uses **copy-on-write protocol**: the new cluster initially shares the same data volume as the original (no copying needed)
+- When updates are made to the new cluster, additional storage is allocated and only changed data is copied
+- Very fast and cost-effective
+- Useful for creating a staging database from production without impacting the production database
+
+---
+
+## Encryption & Security
+
+### Encryption at Rest
+
+- Database master and replicas encrypted using **[[100 - Cloud/AWS/Cloud Practitioner/Security#AWS KMS (Key Management Service)|AWS KMS]]**
+- Must be defined at launch time
+- If the master is not encrypted, read replicas cannot be encrypted
+- To encrypt an unencrypted database: snapshot → restore as encrypted
+
+### Encryption in Transit
+
+- TLS-ready by default
+- Use AWS TLS root certificates client-side
+
+### IAM Authentication
+
+- Use IAM roles to connect to the database instead of username/password
+
+### Network Security
+
+- **Security Groups** control network access to RDS/Aurora
+- No SSH available (except on [[#RDS Custom|RDS Custom]])
+
+### Audit Logs
+
+- Can be enabled and sent to [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#Amazon CloudWatch|CloudWatch Logs]] for longer retention
 
 ---
 
