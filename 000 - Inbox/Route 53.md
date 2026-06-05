@@ -13,3 +13,8 @@
 - Public Hosted Zones – contains records that specify how to route traffic on the Internet (public domain names) application1.mypublicdomain.com
 - Private Hosted Zones – contain records that specify how you route traffic within one or more PCs (private domain names) application1.company.internal
 - You pay $0.50 per month per hosted zone
+
+
+# TTL
+Time To Live, is the time where a DNS record is expired and invalidated and must be read again.
+
