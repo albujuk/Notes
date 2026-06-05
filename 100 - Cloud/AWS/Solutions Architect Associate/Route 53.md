@@ -52,6 +52,7 @@ AWS resources (ELB, CloudFront, S3 website) expose an AWS hostname like `lb1-123
 | **Points to** | Any hostname | AWS resource only |
 | **Zone Apex** | Not supported | Supported |
 | **Cost** | Standard DNS query pricing | Free |
+| **TTL** | Configurable by user | Managed by AWS (not configurable) |
 | **Health checks** | No | Native health check |
 | **Use when** | Pointing to non-AWS or non-root domain | Pointing to AWS resources (always prefer over CNAME for AWS targets) |
 
