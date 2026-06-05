@@ -209,7 +209,8 @@ Each topic folder may contain a `missing.md` tracking topics not yet studied.
 
 **Rules:**
 - Don't add content to `missing.md`; the user fills it in when they study the topic.
-- When a topic from `missing.md` gets its own note, remove it from `missing.md`.
+- **Checkbox semantics:** `[x]` means the topic is covered at an intro/awareness level (e.g. a foundational cert or track) but not yet at the current track's depth. Unchecked `[ ]` means not covered at any level.
+- When a topic is fully covered at the current track's depth (has its own dedicated note at the right level), remove it from `missing.md` entirely.
 
 ---
 

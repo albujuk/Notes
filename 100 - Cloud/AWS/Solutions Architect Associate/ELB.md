@@ -27,7 +27,7 @@ Managed load balancing service by AWS. Distributes incoming application traffic 
 - High availability across AZs
 - Separate public and private traffic
 
-Cheaper than managing your own load balancer. Integrates with Route 53, WAF, Global Accelerator, and other AWS services.
+Cheaper than managing your own load balancer. Integrates with [[100 - Cloud/AWS/Solutions Architect Associate/Route 53|Route 53]], WAF, Global Accelerator, and other AWS services.
 
 Load balancers can be **internet-facing** (public) or **internal** (private).
 
