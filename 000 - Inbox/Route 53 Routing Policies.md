@@ -6,3 +6,12 @@ Don't confuse it with load balancer routing
 - If multiple values are returned, a random one is chosen by the **client**
 - When Alias enabled, specify only one AWS resource
 - Can’t be associated with Health Checks
+
+# Weighted
+- Control the % of the requests that go to each specific resource
+- Assign each record a relative weight
+- DNS records must have the same name and type
+- Can be associated with Health Checks
+- Use cases: load balancing between regions, testing new application version
+- Assign a weight of 0 to a record to stop sending traffic to a resource
+- If all records have weight of 0, then all records will be returned equally
