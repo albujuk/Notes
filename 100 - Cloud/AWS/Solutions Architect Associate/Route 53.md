@@ -95,10 +95,19 @@ How Route 53 responds to DNS queries. Don't confuse with [[ELB|load balancer]] r
 ### Geoproximity
 
 - Routes based on geographic location of users **and** resources, with optional bias to expand/shrink regions
+- Think of it as a blend of geolocation, weighted, and latency routing
+- Bias ranges from -99 to 99 (higher = more coverage/traffic attracted)
+- Resources can be:
+  - **AWS resources** (specify AWS region)
+  - **Non-AWS resources** (specify latitude and longitude)
+- Requires **Route 53 Traffic Flow** to use this feature
 
 ### IP-based
 
 - Routes based on the IP address the query originates from (client IP)
+- You provide a list of CIDRs for your clients and the corresponding endpoints/locations (user IP-to-endpoint mappings)
+- Use cases: optimize performance, reduce network costs
+- Example: route end users from a particular ISP to a specific endpoint
 
 ### Multi-Value
 
