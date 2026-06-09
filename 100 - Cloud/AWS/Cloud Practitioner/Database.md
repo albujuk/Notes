@@ -65,7 +65,7 @@ Managed relational database built for the cloud. MySQL- and PostgreSQL-compatibl
 - Up to **5×** the throughput of standard MySQL, **3×** PostgreSQL
 - **Distributed storage** across multiple nodes for high performance and availability
 - **Auto-scaling storage**: grows from 10 GB to 128 TB based on actual usage; no capacity planning needed
-- **Continuous backup to [[S3]]**: point-in-time recovery
+- **Continuous backup to [[100 - Cloud/AWS/Cloud Practitioner/S3]]**: point-in-time recovery
 - **6 copies across 3 AZs**: 99.99% availability; automatic failure detection and traffic rerouting to healthy replicas with no data loss
 - Encryption at rest, automated backups, continuous monitoring
 

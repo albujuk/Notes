@@ -22,7 +22,7 @@ AWS storage spans three fundamental types:
 ## Notes
 
 - [[BlockStorage]]: EC2 Instance Store, EBS, EBS snapshots, Data Lifecycle Manager
-- [[S3]]: Objects, buckets, storage classes, lifecycle management
+- [[100 - Cloud/AWS/Cloud Practitioner/S3]]: Objects, buckets, storage classes, lifecycle management
 - [[FileStorage]]: EFS, FSx (Windows File Server, NetApp ONTAP, OpenZFS, Lustre)
 - [[StorageGateway]]: Hybrid cloud; File, Volume, and Tape gateway types
 

@@ -142,7 +142,7 @@ Filters incoming web traffic using a **web ACL** that defines rules to allow or 
 | --------------------------------- | ------------------------------------------------------------------------------------------------- |
 | **AWS KMS**                       | Creates and manages cryptographic keys to encrypt/decrypt data across AWS services.               |
 | **AWS CloudHSM**                  | Dedicated single-tenant hardware security module for key management and cryptographic operations. |
-| **Amazon Macie**                  | Uses ML to discover and protect sensitive data (PII, credentials) in [[S3]].                      |
+| **Amazon Macie**                  | Uses ML to discover and protect sensitive data (PII, credentials) in [[100 - Cloud/AWS/Cloud Practitioner/S3]].                      |
 | **AWS Certificate Manager (ACM)** | Provisions and auto-renews SSL/TLS certificates for encrypting data in transit.                   |
 
 ### AWS KMS (Key Management Service)
@@ -155,7 +155,7 @@ Dedicated **hardware security module (HSM):** single-tenant, fully managed. Use 
 
 ### Amazon Macie
 
-Uses machine learning to automatically discover, classify, and protect **sensitive data** (PII, credentials) stored in [[S3]]. Generates findings when sensitive data is exposed or at risk.
+Uses machine learning to automatically discover, classify, and protect **sensitive data** (PII, credentials) stored in [[100 - Cloud/AWS/Cloud Practitioner/S3]]. Generates findings when sensitive data is exposed or at risk.
 
 ### AWS Certificate Manager (ACM)
 

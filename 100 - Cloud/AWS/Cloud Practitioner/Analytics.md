@@ -66,7 +66,7 @@ Near real-time ingestion. Fully managed, auto-scaling. Delivers data within seco
 
 ### Amazon S3
 
-Popular choice for data lakes. Object storage for virtually any amount of structured or unstructured data. Fully elastic. → [[S3]]
+Popular choice for data lakes. Object storage for virtually any amount of structured or unstructured data. Fully elastic. → [[100 - Cloud/AWS/Cloud Practitioner/S3]]
 
 ### Amazon Redshift
 
@@ -98,7 +98,7 @@ Large-scale data processing. Handles infrastructure provisioning, cluster manage
 
 ### Amazon Athena
 
-Serverless SQL queries on relational, non-relational, object, and custom data sources. Accesses data in [[S3]], on-premises, or multi-cloud. Pay only for queries you run.
+Serverless SQL queries on relational, non-relational, object, and custom data sources. Accesses data in [[100 - Cloud/AWS/Cloud Practitioner/S3]], on-premises, or multi-cloud. Pay only for queries you run.
 
 **[[#Amazon Redshift]]** is also used here for high-performance complex analytical SQL at scale.
 

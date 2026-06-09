@@ -91,7 +91,7 @@ NLP-powered enterprise search. Understands query context to return precise answe
 
 ### Amazon Rekognition
 
-Video and image analysis. Identifies objects, people, text, scenes, and activities in content stored in [[S3]].
+Video and image analysis. Identifies objects, people, text, scenes, and activities in content stored in [[100 - Cloud/AWS/Cloud Practitioner/S3]].
 
 **Use cases:** Content moderation, identity verification, media analysis, home automation.
 

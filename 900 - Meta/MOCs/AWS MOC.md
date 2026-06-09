@@ -24,7 +24,7 @@ Trade-off: more control ↔ less ops overhead.
 
 - [[Storage]]: block vs object vs file overview
 - [[BlockStorage]]: EC2 instance store, EBS, snapshots
-- [[S3]]: object storage, classes, lifecycle
+- [[100 - Cloud/AWS/Cloud Practitioner/S3]]: object storage, classes, lifecycle
 - [[FileStorage]]: EFS, FSx
 - [[100 - Cloud/AWS/Solutions Architect Associate/EFS|EFS (SAA)]]: NFS file system, performance/throughput modes, storage classes
 - [[StorageGateway]]: hybrid cloud bridge
