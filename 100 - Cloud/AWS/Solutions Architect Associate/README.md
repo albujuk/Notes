@@ -19,7 +19,7 @@ tags:
 | 5 | ELB | [[100 - Cloud/AWS/Solutions Architect Associate/ELB\|ELB]] | LB types (ALB, NLB, GWLB), ALB routing, target groups, cross-zone load balancing |
 | 6 | RDS | [[100 - Cloud/AWS/Solutions Architect Associate/RDS\|RDS]] | Engines, Read Replicas vs Multi-AZ, RDS Custom, Backup & Restore, RDS Proxy, Encryption & Security, Aurora (Serverless, Global DB, ML, Babelfish, Fast Cloning) |
 | 7 | ElastiCache | [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache\|ElastiCache]] | Redis vs Memcached, caching strategies, clustering, high availability |
-| 8 | Route 53 | [[100 - Cloud/AWS/Solutions Architect Associate/Route 53\|Route 53]] | Record types, hosted zones, TTL, CNAME vs Alias |
+| 8 | Route 53 | [[100 - Cloud/AWS/Solutions Architect Associate/Route 53\|Route 53]] | Record types, hosted zones, TTL, CNAME vs Alias, routing policies (Simple, Weighted, Latency, Failover, Geolocation, Geoproximity, Multi-Value), health checks |
 | 9 | Missing | [[100 - Cloud/AWS/Solutions Architect Associate/missing\|missing]] | SAA-C03 exam topics not yet studied |
 | 10 | Depth Gaps | [[100 - Cloud/AWS/Solutions Architect Associate/saa-depth-gaps\|saa-depth-gaps]] | SAA-specific sub-topics beyond Cloud Practitioner awareness level |
 
