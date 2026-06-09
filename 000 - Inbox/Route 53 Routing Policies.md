@@ -23,3 +23,10 @@ Don't confuse it with load balancer routing
 - Can be associated with Health Checks (has a failover capability)
 
 # Health Checks
+- Health Checks lead to Automated DNS Failover:
+1. Health checks that monitor an endpoint (application, server, other AWS resource)
+2. Health checks that monitor other health checks (Calculated Health Checks)
+3. Health checks that monitor CloudWatch Alarms (full control !!) – e.g., throttles of DynamoDB, alarms on RDS, custom metrics, … (helpful for private resources)
+
+Health Checks are integrated with CW metrics
+
