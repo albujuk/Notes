@@ -232,7 +232,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ## Other In-Scope Services
 
 - [x] AWS Amplify (front-end web/mobile) → [[100 - Cloud/AWS/Cloud Practitioner/SpecializedServices#Development Services|Specialized: Dev Services]]
-- [x] AWS Elastic Beanstalk (managed app platform) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#Elastic Beanstalk|Compute: Beanstalk]]
+- [x] AWS Elastic Beanstalk (managed app platform) → [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk|Elastic Beanstalk]]
 - [ ] AWS Serverless Application Repository
 - [ ] Amazon AppFlow (SaaS data integration)
 - [ ] AWS Device Farm (mobile testing)

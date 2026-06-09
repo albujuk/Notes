@@ -16,7 +16,8 @@ tags:
 | 3 | [[Pods]] | Pod concept, kubectl commands, multi-container intro |
 | 4 | [[Patterns]] | Multi-container Pod patterns, sidecar example (fluentd + nginx) |
 | 5 | [[300 - Containers/Kubernetes/Networking]] | Pod networking: CNI, veth pairs, VXLAN, BGP, CNI plugins (Flannel/Calico/Cilium), eBPF, CoreDNS |
-| 6 | [[Controllers]] | ReplicationController, ReplicaSet, Deployment, rolling updates, rollback |
+| 6 | [[Services]] | Service types (ClusterIP, NodePort, LoadBalancer), selectors, port fields |
+| 7 | [[Controllers]] | ReplicationController, ReplicaSet, Deployment, rolling updates, rollback |
 | - | [[Concepts]] | Core K8s concepts: declarative vs imperative |
 | - | [[kubectl]] | Quick command reference |
 | - | [[300 - Containers/Kubernetes/missing\|missing]] | Topics not yet documented |

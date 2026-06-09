@@ -15,6 +15,7 @@ From most user-managed to least:
 
 - [[Compute]]: EC2 (VMs you control), Lambda (serverless functions), Beanstalk, Batch, Lightsail, Outposts
 - [[100 - Cloud/AWS/Solutions Architect Associate/EC2|EC2 (SAA)]]: placement groups, ENI, hibernation, Auto Scaling Groups, instance bootstrapping
+- [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk|Elastic Beanstalk (SAA)]]: managed app platform, components, tiers, Golden AMI + User Data, deployment policies
 - [[Containers]]: ECR (registry), ECS (AWS-native), EKS (Kubernetes), Fargate (serverless containers)
 
 Trade-off: more control ↔ less ops overhead.

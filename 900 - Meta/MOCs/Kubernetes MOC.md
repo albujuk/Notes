@@ -30,6 +30,7 @@ A Pod alone is fragile. Wrap it in a controller for self-healing replicas. Use a
 ## Networking
 
 - [[300 - Containers/Kubernetes/Networking|Networking]]: how Pods talk to each other across nodes: CNI, veth pairs, VXLAN overlay vs BGP routing, plugin comparison (Flannel/Calico/Cilium), eBPF vs iptables dataplane, CoreDNS resolution path
+- [[Services]]: stable endpoints for Pods; ClusterIP (internal), NodePort (external via node), LoadBalancer (external via cloud LB), selectors
 
 ## Cross-domain links
 
@@ -43,7 +44,7 @@ A Pod alone is fragile. Wrap it in a controller for self-healing replicas. Use a
 ## Operating reference
 
 - [[kubectl]]: command reference
-- [[300 - Containers/Kubernetes/missing|missing]]: topics not yet documented (Services, Ingress, ConfigMaps, Secrets, PVs)
+- [[300 - Containers/Kubernetes/missing|missing]]: topics not yet documented (Ingress, Network Policies, ConfigMaps, Secrets, PVs)
 
 ---
 

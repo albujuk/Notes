@@ -8,7 +8,6 @@ Topics not yet studied. Fill in when studied (and move to their own note).
 
 ## Networking
 
-- [ ] Services (ClusterIP, NodePort, LoadBalancer, service discovery)
 - [ ] Ingress
 - [ ] Network Policies
 
