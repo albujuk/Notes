@@ -95,8 +95,9 @@ How Route 53 responds to DNS queries. Don't confuse with [[ELB|load balancer]] r
 ### Geoproximity
 
 - Routes based on geographic location of users **and** resources, with optional bias to expand/shrink regions
-- Think of it as a blend of geolocation, weighted, and latency routing
-- Bias ranges from -99 to 99 (higher = more coverage/traffic attracted)
+- Similar to geolocation (considers geography), latency (considers distance), and weighted (bias acts like a weight), but is its own distinct mechanism
+- Bias ranges from -99 to 99 (positive = expands region to attract distant users, negative = shrinks region to repel traffic)
+- Unlike weighted routing (explicit percentages), bias adjusts geographic boundaries
 - Resources can be:
   - **AWS resources** (specify AWS region)
   - **Non-AWS resources** (specify latitude and longitude)
@@ -134,6 +135,17 @@ Automated DNS failover based on endpoint health. Route 53 health checkers around
 - The 18% threshold ensures multiple regions agree, preventing false negatives from network isolation
 
 Health Checks integrate with CloudWatch metrics.
+
+## Hybrid DNS
+
+Route 53 Resolver automatically answers DNS queries for:
+- Local domain names for EC2 instances
+- Records in Private Hosted Zones
+- Records in public Name Servers
+
+Hybrid DNS resolves queries between VPC (Route 53 Resolver) and your networks (other DNS resolvers). Networks can be:
+- VPC itself / Peered VPC
+- On-premises network (connected through Direct Connect or AWS VPN)
 
 ---
 

@@ -81,9 +81,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 - [ ] Disaster recovery strategies (backup/restore, pilot light, warm standby, active-active)
 - [ ] RPO and RTO concepts
-- [x] Route 53 routing policies (simple, weighted, latency, failover, geolocation, multivalue) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#DNS: Route 53|Networking: Route 53]]
-- [ ] Route 53 health checks
-- [x] Multi-AZ deployments (RDS, ElastiCache, EFS) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon RDS|Database: RDS]] / [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon ElastiCache|Database: ElastiCache]]
 - [ ] Multi-Region architectures
 - [ ] Failover strategies
 - [ ] Immutable infrastructure patterns
@@ -126,7 +123,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] Amazon DocumentDB (MongoDB-compatible) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DocumentDB|Database: DocumentDB]]
 - [ ] Amazon Keyspaces (Cassandra-compatible)
 - [x] Database migration (DMS, SCT, homogeneous vs heterogeneous) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
-- [x] Read replicas and caching strategies → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon RDS|Database: RDS]]
+- [x] Read replicas and caching strategies → [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS]] / [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache|ElastiCache]]
 
 ### Network Performance
 
@@ -155,7 +152,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] S3 storage classes and lifecycle policies (Standard, IA, One Zone-IA, Glacier, Glacier Deep Archive) → [[100 - Cloud/AWS/Cloud Practitioner/S3#S3 Storage Classes|S3: Storage Classes]] / [[100 - Cloud/AWS/Cloud Practitioner/S3#Object Lifecycle Management|S3: Lifecycle]]
 - [x] S3 Intelligent-Tiering → [[100 - Cloud/AWS/Cloud Practitioner/S3#S3 Storage Classes|S3: Storage Classes]]
 - [ ] S3 Requester Pays
-- [ ] EBS volume type selection and sizing
 - [x] EBS snapshot cost management → [[100 - Cloud/AWS/Cloud Practitioner/BlockStorage#EBS Snapshots|BlockStorage: Snapshots]]
 - [x] EFS storage classes and lifecycle → [[100 - Cloud/AWS/Cloud Practitioner/FileStorage#EFS Storage Classes|FileStorage: EFS Classes]]
 - [ ] FSx cost considerations
@@ -171,7 +167,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] Savings Plans (Compute vs EC2 Instance vs SageMaker)
 - [ ] Instance right-sizing (Compute Optimizer)
 - [x] Auto Scaling for cost (scheduled scaling, predictive scaling) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#Auto Scaling|Compute: Auto Scaling]]
-- [ ] EC2 hibernation for cost savings
 - [x] Lambda cost optimization (memory vs duration trade-off) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Lambda|Compute: Lambda]]
 - [x] Fargate vs EC2 for container costs → [[100 - Cloud/AWS/Cloud Practitioner/Containers#AWS Fargate|Containers: Fargate]]
 - [x] AWS Budgets (alerts, actions) → [[100 - Cloud/AWS/Cloud Practitioner/Billing#AWS Budgets|Billing: Budgets]]
