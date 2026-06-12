@@ -91,7 +91,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Storage Performance
 
-- [x] Amazon S3 (storage classes, performance optimization, transfer acceleration) → [[100 - Cloud/AWS/Cloud Practitioner/S3|S3]]
 - [x] Amazon FSx (Lustre, Windows, NetApp ONTAP, OpenZFS) → [[100 - Cloud/AWS/Cloud Practitioner/FileStorage#Amazon FSx|FileStorage: FSx]]
 - [ ] S3 Transfer Acceleration vs CloudFront
 - [x] Hybrid storage (Storage Gateway, DataSync) → [[100 - Cloud/AWS/Cloud Practitioner/StorageGateway|StorageGateway]] / [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
@@ -123,7 +122,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] Amazon DocumentDB (MongoDB-compatible) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DocumentDB|Database: DocumentDB]]
 - [ ] Amazon Keyspaces (Cassandra-compatible)
 - [x] Database migration (DMS, SCT, homogeneous vs heterogeneous) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
-- [x] Read replicas and caching strategies → [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS]] / [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache|ElastiCache]]
 
 ### Network Performance
 
@@ -149,9 +147,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Storage Cost Optimization
 
-- [x] S3 storage classes and lifecycle policies (Standard, IA, One Zone-IA, Glacier, Glacier Deep Archive) → [[100 - Cloud/AWS/Cloud Practitioner/S3#S3 Storage Classes|S3: Storage Classes]] / [[100 - Cloud/AWS/Cloud Practitioner/S3#Object Lifecycle Management|S3: Lifecycle]]
-- [x] S3 Intelligent-Tiering → [[100 - Cloud/AWS/Cloud Practitioner/S3#S3 Storage Classes|S3: Storage Classes]]
-- [ ] S3 Requester Pays
 - [x] EBS snapshot cost management → [[100 - Cloud/AWS/Cloud Practitioner/BlockStorage#EBS Snapshots|BlockStorage: Snapshots]]
 - [x] EFS storage classes and lifecycle → [[100 - Cloud/AWS/Cloud Practitioner/FileStorage#EFS Storage Classes|FileStorage: EFS Classes]]
 - [ ] FSx cost considerations
@@ -232,7 +227,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ## Other In-Scope Services
 
 - [x] AWS Amplify (front-end web/mobile) → [[100 - Cloud/AWS/Cloud Practitioner/SpecializedServices#Development Services|Specialized: Dev Services]]
-- [x] AWS Elastic Beanstalk (managed app platform) → [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk|Elastic Beanstalk]]
 - [ ] AWS Serverless Application Repository
 - [ ] Amazon AppFlow (SaaS data integration)
 - [ ] AWS Device Farm (mobile testing)

@@ -209,8 +209,19 @@ Each topic folder may contain a `missing.md` tracking topics not yet studied.
 
 **Rules:**
 - Don't add content to `missing.md`; the user fills it in when they study the topic.
-- **Checkbox semantics:** `[x]` means the topic is covered at an intro/awareness level (e.g. a foundational cert or track) but not yet at the current track's depth. Unchecked `[ ]` means not covered at any level.
-- When a topic is fully covered at the current track's depth (has its own dedicated note at the right level), remove it from `missing.md` entirely.
+- **Checkbox semantics:**
+  - `[ ]` = not covered at any level
+  - `[x]` = covered at an **intro/awareness level** (e.g. foundational cert like Cloud Practitioner) but **not yet at the current track's depth**. Link to the awareness-level note: `- [x] Topic → [[Path/To/Awareness/Note|display]]`
+  - **Remove entirely** = fully covered at the **current track's depth** (has its own dedicated note or section at the right level). Delete the line from `missing.md`.
+
+**Examples (SAA track):**
+- `[ ] IAM policy evaluation logic` → not studied yet
+- `[x] IAM users, groups, roles → [[100 - Cloud/AWS/Cloud Practitioner/Security#IAM|Security: IAM]]` → covered at Cloud Practitioner level, not yet at SAA depth
+- *(removed)* → covered at SAA depth in a dedicated note like `100 - Cloud/AWS/Solutions Architect Associate/IAM.md`
+
+**When processing inbox content:**
+- If new content covers a topic at the current track's depth, add it to the appropriate note and **remove** that topic from `missing.md` (don't mark it `[x]`).
+- If new content only covers a topic at awareness level, mark it `[x]` with a link.
 
 ---
 

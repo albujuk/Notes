@@ -322,14 +322,14 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 ### High Availability & Fault Tolerance
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Networking#DNS: Route 53|Networking: Route 53]]** → SAA needs:
-- Routing policy selection scenarios (when to use weighted vs latency vs failover vs geoproximity)
-- Health check types (HTTP/HTTPS/TCP, endpoint vs CloudWatch alarm-based)
-- Calculated health checks
-- Private hosted zones
-- Routing to AWS resources (alias records vs CNAME)
-- Failover with active-passive vs active-active
-- Latency-based routing with weighted records
-- Multivalue answer routing vs simple routing with multiple values
+- [x] Routing policy selection scenarios (when to use weighted vs latency vs failover vs geoproximity)
+- [x] Health check types (HTTP/HTTPS/TCP, endpoint vs CloudWatch alarm-based)
+- [x] Calculated health checks
+- [x] Private hosted zones
+- [x] Routing to AWS resources (alias records vs CNAME)
+- [x] Failover with active-passive vs active-active
+- [x] Latency-based routing with weighted records
+- [x] Multivalue answer routing vs simple routing with multiple values
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon RDS|Database: RDS]]** / **[[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon ElastiCache|Database: ElastiCache]]** (Multi-AZ deployments) → SAA needs:
 - Multi-AZ vs read replicas (when to use each)
@@ -358,16 +358,16 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 ### Storage Performance
 
 **[[100 - Cloud/AWS/Cloud Practitioner/S3|S3]]** → SAA needs:
-- S3 performance optimization via request rate partitioning (prefix randomization no longer needed but still tested)
-- Multipart upload tuning
+- [x] S3 performance optimization via request rate partitioning (prefix randomization no longer needed but still tested)
+- [x] Multipart upload tuning
 - S3 Select for filtering
-- Byte-range fetches
+- [x] Byte-range fetches
 - S3 Object Lambda
 - S3 Multi-Region Access Points
-- S3 Transfer Acceleration vs CloudFront trade-off decision scenarios
-- S3 performance with CloudFront origin shield
-- S3 lifecycle transition timing and cost implications
-- S3 event notification fanout patterns with SQS/SNS/Lambda
+- [x] S3 Transfer Acceleration vs CloudFront trade-off decision scenarios
+- [x] S3 performance with CloudFront origin shield
+- [x] S3 lifecycle transition timing and cost implications
+- [x] S3 event notification fanout patterns with SQS/SNS/Lambda
 
 **[[100 - Cloud/AWS/Cloud Practitioner/FileStorage#Amazon FSx|FileStorage: FSx]]** → SAA needs:
 - FSx Lustre S3-backed data repository associations (HSM vs SSD throughput modes)
@@ -500,16 +500,16 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - DynamoDB point-in-time recovery
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon ElastiCache|Database: ElastiCache]]** → SAA needs:
-- Redis vs Memcached decision criteria (persistence, replication, multi-threading, data structures)
-- Redis cluster mode enabled vs disabled
-- Redis replication groups and multi-AZ with auto-failover
-- Redis backup and restore
-- Redis AUTH and encryption in-transit/at-rest
+- [x] Redis vs Memcached decision criteria (persistence, replication, multi-threading, data structures)
+- [x] Redis cluster mode enabled vs disabled
+- [x] Redis replication groups and multi-AZ with auto-failover
+- [x] Redis backup and restore
+- [x] Redis AUTH and encryption in-transit/at-rest
 - ElastiCache Serverless vs provisioned
 - ElastiCache Global Datastore for cross-region DR
-- ElastiCache with DynamoDB DAX comparison
+- [x] ElastiCache with DynamoDB DAX comparison
 - Cache stampede/thundering herd mitigation patterns
-- Cache-aside vs write-through vs write-behind strategies
+- [x] Cache-aside vs write-through vs write-behind strategies
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Redshift|Analytics: Redshift]]** → SAA needs:
 - Redshift node types (RA3 with managed storage vs DC2)
@@ -551,12 +551,12 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - SCT assessment reports and conversion complexity scoring
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon RDS|Database: RDS]]** (read replicas and caching) → SAA needs:
-- Read replica vs Multi-AZ distinction (read scaling vs HA)
-- Read replica promotion to standalone
-- Read replica lag monitoring and mitigation
-- ElastiCache cache invalidation strategies (TTL, write-through, cache-aside)
-- ElastiCache cluster vs replication group architecture
-- Read replica for cross-region DR strategy
+- [x] Read replica vs Multi-AZ distinction (read scaling vs HA)
+- [x] Read replica promotion to standalone
+- [x] Read replica lag monitoring and mitigation
+- [x] ElastiCache cache invalidation strategies (TTL, write-through, cache-aside)
+- [x] ElastiCache cluster vs replication group architecture
+- [x] Read replica for cross-region DR strategy
 - RDS Proxy for connection storm mitigation
 
 ### Network Performance
@@ -660,37 +660,37 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 ### Storage Cost Optimization
 
 **[[100 - Cloud/AWS/Cloud Practitioner/S3#S3 Storage Classes|S3: Storage Classes]]** / **[[100 - Cloud/AWS/Cloud Practitioner/S3#Object Lifecycle Management|S3: Lifecycle]]** → SAA needs:
-- Minimum storage duration charges (30d IA, 90d Glacier, 180d Deep Archive)
-- Early deletion fee calculations
-- Retrieval cost trade-offs per class (expedited vs standard vs bulk)
-- One Zone-IA vs Standard IA decision scenarios
-- Lifecycle policy design for multi-stage cost optimization
+- [x] Minimum storage duration charges (30d IA, 90d Glacier, 180d Deep Archive)
+- [x] Early deletion fee calculations
+- [x] Retrieval cost trade-offs per class (expedited vs standard vs bulk)
+- [x] One Zone-IA vs Standard IA decision scenarios
+- [x] Lifecycle policy design for multi-stage cost optimization
 - S3 Object Lock cost implications
-- Cross-region replication cost impact
+- [x] Cross-region replication cost impact
 
 **[[100 - Cloud/AWS/Cloud Practitioner/S3#S3 Storage Classes|S3: Storage Classes]]** (Intelligent-Tiering) → SAA needs:
-- Monitoring/automation fee per object
-- When Intelligent-Tiering is cheaper than manual lifecycle policies
-- Archive access tier costs
+- [x] Monitoring/automation fee per object
+- [x] When Intelligent-Tiering is cheaper than manual lifecycle policies
+- [x] Archive access tier costs
 - Custom tier configuration (e.g., 7d/14d/30d archives)
 - Minimum object size for cost-effectiveness
 - Non-retrievable archive tier trade-offs
 
 **[[100 - Cloud/AWS/Cloud Practitioner/BlockStorage#EBS Snapshots|BlockStorage: Snapshots]]** → SAA needs:
-- Incremental snapshot cost model (only changed blocks)
-- Cross-region snapshot copy costs
-- DLM (Data Lifecycle Manager) policy design for cost
-- Fast snapshot restore pricing
-- Snapshot vs AMI cost considerations
-- EBS-recycle bin cost impact
+- [x] Incremental snapshot cost model (only changed blocks)
+- [x] Cross-region snapshot copy costs
+- [x] DLM (Data Lifecycle Manager) policy design for cost
+- [x] Fast snapshot restore pricing
+- [x] Snapshot vs AMI cost considerations
+- [x] EBS-recycle bin cost impact
 
 **[[100 - Cloud/AWS/Cloud Practitioner/FileStorage#EFS Storage Classes|FileStorage: EFS Classes]]** → SAA needs:
 - EFS vs EBS vs FSx cost comparison scenarios
-- Provisioned vs bursting vs elastic throughput cost trade-offs
-- EFS One Zone vs Standard cost analysis
-- Intelligent-Tiering for EFS
-- Lifecycle management policy design
-- Cross-AZ data transfer costs for EFS
+- [x] Provisioned vs bursting vs elastic throughput cost trade-offs
+- [x] EFS One Zone vs Standard cost analysis
+- [x] Intelligent-Tiering for EFS
+- [x] Lifecycle management policy design
+- [x] Cross-AZ data transfer costs for EFS
 
 ### Compute Cost Optimization
 
@@ -978,14 +978,14 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - Integration with Cognito and AppSync
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Compute#Elastic Beanstalk|Compute: Beanstalk]]** → SAA needs:
-- Deployment policies (all-at-once, rolling, immutable, blue/green)
-- Environment tiers (web server vs worker)
-- Configuration files (.ebextensions)
-- Platform customization
-- Managed platform updates
-- Integration with RDS and ElastiCache
-- Scaling configuration
-- Custom domain setup
+- [x] Deployment policies (all-at-once, rolling, immutable, blue/green)
+- [x] Environment tiers (web server vs worker)
+- [x] Configuration files (.ebextensions)
+- [x] Platform customization
+- [x] Managed platform updates
+- [x] Integration with RDS and ElastiCache
+- [x] Scaling configuration
+- [x] Custom domain setup
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon QuickSight|Analytics: QuickSight]]** → SAA needs:
 - SPICE vs direct query
@@ -1030,7 +1030,7 @@ These items are not covered by any existing note and need dedicated study:
 
 ### Performance
 - EC2 instance families and selection (compute/memory/storage/GPU optimized)
-- S3 Transfer Acceleration vs CloudFront
+- [x] S3 Transfer Acceleration vs CloudFront
 - AWS Wavelength (edge compute for 5G)
 - Amazon Keyspaces (Cassandra-compatible)
 - Amazon MSK (Managed Streaming for Kafka)
@@ -1060,7 +1060,7 @@ These items are not covered by any existing note and need dedicated study:
 - FSx cost considerations
 - Backup strategies and cost trade-offs
 - Data transfer costs (ingress/egress, cross-region, internet)
-- S3 Requester Pays
+- [x] S3 Requester Pays
 
 ### Management & Governance
 - AWS Resource Access Manager (RAM)

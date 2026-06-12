@@ -25,7 +25,7 @@ Trade-off: more control ↔ less ops overhead.
 - [[Storage]]: block vs object vs file overview
 - [[BlockStorage]]: EC2 instance store, EBS, snapshots
 - [[100 - Cloud/AWS/Cloud Practitioner/S3]]: object storage, classes, lifecycle
-- [[100 - Cloud/AWS/Solutions Architect Associate/S3|S3 (SAA)]]: buckets, versioning, replication (CRR/SRR), batch replication
+- [[100 - Cloud/AWS/Solutions Architect Associate/S3|S3 (SAA)]]: buckets, versioning, replication, storage classes (deep dive), lifecycle rules, Express One Zone, event notifications, performance, batch operations
 - [[FileStorage]]: EFS, FSx
 - [[100 - Cloud/AWS/Solutions Architect Associate/EFS|EFS (SAA)]]: NFS file system, performance/throughput modes, storage classes
 - [[StorageGateway]]: hybrid cloud bridge
