@@ -46,17 +46,17 @@ Brings AWS best practices to companies migrating to the cloud. Accelerates migra
 
 ## Migration Services
 
-| Phase | Service | Purpose |
-|-------|---------|---------|
-| **Assess** | Migration Evaluator | Data-driven business case; analyzes current state, projects cloud costs, surfaces licensing reuse |
-| **Mobilize** | Application Discovery Service | Discovers on-premises server inventory, connections, and dependencies |
-| **Mobilize** | Migration Hub | Centralized hub for full migration lifecycle: planning, execution, tracking; free |
-| **Migrate & Modernize** | Application Migration Service | Lifts and modernizes on-premises/cloud apps; supports any OS; no downtime during replication |
-| **Migrate & Modernize** | AWS DMS | Migrates homogeneous and heterogeneous databases; low downtime; supports ongoing replication; handles TB-scale at low cost |
-| **Migrate & Modernize** | AWS SCT | Converts schema and code objects (stored procedures, views, functions) between database engines; used before DMS for heterogeneous migrations |
-| **Migrate & Modernize** | AWS DataSync | Automates and accelerates large data transfers between on-premises storage and S3/EFS; handles encryption, bandwidth throttling, scheduling, and task reporting |
-| **Migrate & Modernize** | AWS Transfer Family | Fully managed file transfers into/out of S3 and EFS over SFTP, FTPS, FTP; managed encryption and authentication |
-| **Migrate & Modernize** | AWS Direct Connect | Dedicated private connection to AWS; fast, reliable, high-bandwidth data transfer during migration. See [[Connectivity#AWS Direct Connect\|Direct Connect]] |
+| Phase                   | Service                         | Purpose                                                                                                                                                            |
+| ----------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Assess**              | Migration Evaluator             | Data-driven business case; analyzes current state, projects cloud costs, surfaces licensing reuse                                                                  |
+| **Mobilize**            | Application Discovery Service   | Discovers on-premises server inventory, connections, and dependencies                                                                                              |
+| **Mobilize**            | Migration Hub                   | Centralized hub for full migration lifecycle: planning, execution, tracking; free                                                                                  |
+| **Migrate & Modernize** | Application Migration Service   | Lifts and modernizes on-premises/cloud apps; supports any OS; no downtime during replication                                                                       |
+| **Migrate & Modernize** | AWS DMS                         | Migrates homogeneous and heterogeneous databases; low downtime; supports ongoing replication; handles TB-scale at low cost                                         |
+| **Migrate & Modernize** | AWS SCT                         | Converts schema and code objects (stored procedures, views, functions) between database engines; used before DMS for heterogeneous migrations                      |
+| **Migrate & Modernize** | AWS DataSync                    | Automates and accelerates large data transfers between on-premises storage and S3/EFS; handles encryption, bandwidth throttling, scheduling, and task reporting    |
+| **Migrate & Modernize** | AWS Transfer Family             | Fully managed file transfers into/out of S3 and EFS over SFTP, FTPS, FTP; managed encryption and authentication                                                    |
+| **Migrate & Modernize** | AWS Direct Connect              | Dedicated private connection to AWS; fast, reliable, high-bandwidth data transfer during migration. See [[Connectivity#AWS Direct Connect\|Direct Connect]]        |
 | **Migrate & Modernize** | Snowball Edge Storage Optimized | Physical device for offline migration; NVMe storage; petabyte-scale; used when bandwidth is limited, no internet, or data volume makes online transfer impractical |
 
 ---
