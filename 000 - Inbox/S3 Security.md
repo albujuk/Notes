@@ -11,3 +11,23 @@
 
 - It’s important to understand which ones are for which situation for the exam
 
+## SSE-S3
+- Encryption using keys handled, managed, and owned by AWS
+- Object is encrypted server-side
+- Encryption type is **AES-256**
+- Must set header **"x-amz-server-side-encryption": "AES256"**
+- **Enabled by default for new buckets & new objects**
+
+## SSE-KMS
+- Encryption using keys handled and managed by AWS KMS (Key Management Service)
+- KMS advantages: **user control + audit key usage using CloudTrail**
+- Object is encrypted server side
+- Must set header **"x-amz-server-side-encryption": "aws:kms"**
+
+### SSE-KMS Limitation
+- If you use SSE-KMS, you may be impacted by the KMS limits
+- When you upload, it calls the **GenerateDataKey** KMS API
+- When you download, it calls the **Decrypt** KMS API
+- Count towards the KMS quota per second (5500, 10000, 30000 req/s based on region)
+- You can request a quota increase using the Service Quotas Console
+
