@@ -16,7 +16,7 @@ tags:
 | 2 | AMI | [[100 - Cloud/AWS/Solutions Architect Associate/AMI\|AMI]] | AMI types, region scoping |
 | 3 | EBS | [[100 - Cloud/AWS/Solutions Architect Associate/EBS\|EBS]] | AZ constraint, volume types (gp2/gp3, io1/io2, st1, sc1), snapshots, archive, recycle bin, encryption |
 | 4 | EFS | [[100 - Cloud/AWS/Solutions Architect Associate/EFS\|EFS]] | NFS file system, performance/throughput modes, storage classes, lifecycle |
-| 5 | S3 | [[100 - Cloud/AWS/Solutions Architect Associate/S3\|S3]] | Buckets, versioning, replication, storage classes (deep dive), lifecycle rules, Express One Zone, Requester Pays |
+| 5 | S3 | [[100 - Cloud/AWS/Solutions Architect Associate/S3\|S3]] | Buckets, versioning, replication, storage classes (deep dive), lifecycle rules, encryption (SSE-S3/KMS/C), CORS, MFA Delete, Pre-Signed URLs, Object Lock, Access Points, Object Lambda, Requester Pays |
 | 5b | S3 Operations | [[100 - Cloud/AWS/Solutions Architect Associate/S3 Operations\|S3 Operations]] | Event notifications, performance (multi-part, transfer acceleration, byte-range), batch operations, Storage Lens |
 | 6 | ELB | [[100 - Cloud/AWS/Solutions Architect Associate/ELB\|ELB]] | LB types (ALB, NLB, GWLB), ALB routing, target groups, cross-zone load balancing |
 | 7 | RDS | [[100 - Cloud/AWS/Solutions Architect Associate/RDS\|RDS]] | Engines, Read Replicas vs Multi-AZ, RDS Custom, Backup & Restore, RDS Proxy, Encryption & Security, Aurora (Serverless, Global DB, ML, Babelfish, Fast Cloning) |

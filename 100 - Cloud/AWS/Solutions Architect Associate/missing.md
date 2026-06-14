@@ -49,7 +49,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] Encryption in transit (TLS, ACM) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Certificate Manager (ACM)|Security: ACM]]
 - [x] AWS Secrets Manager (rotation, integration) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Secrets Manager|Security: Secrets Manager]]
 - [x] Data lifecycle, classification, retention policies → [[100 - Cloud/AWS/Cloud Practitioner/S3#Object Lifecycle Management|S3: Lifecycle]]
-- [ ] S3 Object Lock, Glacier Vault Lock
+- [ ] AWS Certificate Manager integration with S3 (custom domains)
 
 ### Compliance & Governance
 
