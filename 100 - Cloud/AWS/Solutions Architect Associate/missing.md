@@ -125,9 +125,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Network Performance
 
-- [x] Amazon CloudFront (distributions, origins, behaviors, Lambda@Edge) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#CDN: CloudFront|Networking: CloudFront]]
-- [x] AWS Global Accelerator (anycast, static IPs) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#Global Accelerator|Networking: Global Accelerator]]
-- [x] CloudFront vs Global Accelerator → [[100 - Cloud/AWS/Cloud Practitioner/Networking#Global Accelerator|Networking: Global Accel]]
 - [x] VPC design for performance (subnet tiers, IP planning) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#VPC (Virtual Private Cloud)|Networking: VPC]]
 - [x] AWS PrivateLink → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS PrivateLink|Connectivity: PrivateLink]]
 - [x] Direct Connect (port speeds, Link Aggregation Groups) → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS Direct Connect|Connectivity: Direct Connect]]

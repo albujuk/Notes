@@ -22,6 +22,8 @@ tags:
 | 7 | RDS | [[100 - Cloud/AWS/Solutions Architect Associate/RDS\|RDS]] | Engines, Read Replicas vs Multi-AZ, RDS Custom, Backup & Restore, RDS Proxy, Encryption & Security, Aurora (Serverless, Global DB, ML, Babelfish, Fast Cloning) |
 | 8 | ElastiCache | [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache\|ElastiCache]] | Redis vs Memcached, caching strategies, clustering, high availability |
 | 9 | Route 53 | [[100 - Cloud/AWS/Solutions Architect Associate/Route 53\|Route 53]] | Record types, hosted zones, TTL, CNAME vs Alias, routing policies (Simple, Weighted, Latency, Failover, Geolocation, Geoproximity, Multi-Value), health checks |
+| 9b | CloudFront | [[100 - Cloud/AWS/Solutions Architect Associate/CloudFront\|CloudFront]] | Origins (S3, VPC, Custom), geo restriction, cache invalidations, CloudFront vs S3 CRR |
+| 9c | Global Accelerator | [[100 - Cloud/AWS/Solutions Architect Associate/Global Accelerator\|Global Accelerator]] | Anycast IP, features, health checks, vs CloudFront comparison |
 | 10 | Elastic Beanstalk | [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk\|Elastic Beanstalk]] | Managed app platform, components (app/version/environment), tiers (web/worker), instantiating apps quickly (Golden AMI, User Data, snapshots) |
 | 11 | Missing | [[100 - Cloud/AWS/Solutions Architect Associate/missing\|missing]] | SAA-C03 exam topics not yet studied |
 | 12 | Depth Gaps | [[100 - Cloud/AWS/Solutions Architect Associate/saa-depth-gaps\|saa-depth-gaps]] | SAA-specific sub-topics beyond Cloud Practitioner awareness level |

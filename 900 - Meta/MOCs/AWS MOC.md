@@ -37,6 +37,8 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[100 - Cloud/AWS/Cloud Practitioner/Networking|Networking]]: VPC, subnets, route tables, IGW/NAT, security groups vs NACLs, Route 53, CloudFront
 - [[100 - Cloud/AWS/Solutions Architect Associate/ELB|ELB (SAA)]]: ALB, NLB, GWLB, target groups, routing, cross-zone load balancing
 - [[100 - Cloud/AWS/Solutions Architect Associate/Route 53|Route 53 (SAA)]]: record types, hosted zones, TTL, CNAME vs Alias, routing policies, health checks
+- [[100 - Cloud/AWS/Solutions Architect Associate/CloudFront|CloudFront (SAA)]]: origins (S3, VPC, Custom), geo restriction, cache invalidations, CloudFront vs S3 CRR
+- [[100 - Cloud/AWS/Solutions Architect Associate/Global Accelerator|Global Accelerator (SAA)]]: Anycast IP, health checks, failover, vs CloudFront comparison
 - [[Connectivity]]: VPN, Direct Connect, Transit Gateway, PrivateLink (cross-VPC/on-prem)
 - [[Messaging]]: EventBridge, SQS, SNS (async decoupling)
 
