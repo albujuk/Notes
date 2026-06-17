@@ -21,16 +21,16 @@ Fully managed in-memory caching service. Compatible with Redis, Valkey, and Memc
 
 ## Redis vs Memcached
 
-| Feature | Redis | Memcached |
-|---------|-------|-----------|
-| **Data structures** | Rich (strings, hashes, lists, sets, sorted sets, bitmaps, hyperloglogs) | Simple (strings only) |
-| **Persistence** | Yes (RDB snapshots, AOF logs) | No |
-| **Replication** | Multi-AZ with automatic failover | None |
-| **Clustering** | Yes (sharding across nodes) | No (manual sharding only) |
-| **Pub/Sub** | Yes | No |
-| **Lua scripting** | Yes | No |
-| **Transactions** | Yes (MULTI/EXEC) | No |
-| **Use case** | Complex data, session state, leaderboards, real-time analytics | Simple key-value caching, high-throughput read-heavy workloads |
+| Feature             | Redis                                                                   | Memcached                                                      |
+| ------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **Data structures** | Rich (strings, hashes, lists, sets, sorted sets, bitmaps, hyperloglogs) | Simple (strings only)                                          |
+| **Persistence**     | Yes (RDB snapshots, AOF logs)                                           | No                                                             |
+| **Replication**     | Multi-AZ with automatic failover                                        | None                                                           |
+| **Clustering**      | Yes (sharding across nodes)                                             | No (manual sharding only)                                      |
+| **Pub/Sub**         | Yes                                                                     | No                                                             |
+| **Lua scripting**   | Yes                                                                     | No                                                             |
+| **Transactions**    | Yes (MULTI/EXEC)                                                        | No                                                             |
+| **Use case**        | Complex data, session state, leaderboards, real-time analytics          | Simple key-value caching, high-throughput read-heavy workloads |
 
 ## Caching Strategies
 
