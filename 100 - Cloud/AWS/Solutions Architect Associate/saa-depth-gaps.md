@@ -231,7 +231,7 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - Ordering guarantees and limitations
 - Maximum batch sizes
 - Delay queues
-- SQS as a decoupling pattern in multi-tier apps
+- [x] SQS as a decoupling pattern in multi-tier apps
 - Exactly-once processing trade-offs
 - Message retention period selection
 - Cost comparison standard vs FIFO
@@ -370,19 +370,19 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - [x] S3 event notification fanout patterns with SQS/SNS/Lambda
 
 **[[100 - Cloud/AWS/Cloud Practitioner/FileStorage#Amazon FSx|FileStorage: FSx]]** → SAA needs:
-- FSx Lustre S3-backed data repository associations (HSM vs SSD throughput modes)
-- FSx Windows multi-AZ deployment patterns
-- FSx ONTAP storage virtual machines and FlexVol sizing
-- FSx OpenZFS use cases vs Lustre
-- Throughput mode selection (bursting vs provisioned) per workload
-- FSx backup and restore strategies
+- [x] FSx Lustre S3-backed data repository associations (HSM vs SSD throughput modes)
+- [x] FSx Windows multi-AZ deployment patterns
+- [x] FSx ONTAP storage virtual machines and FlexVol sizing
+- [x] FSx OpenZFS use cases vs Lustre
+- [x] Throughput mode selection (bursting vs provisioned) per workload
+- [x] FSx backup and restore strategies
 
 **[[100 - Cloud/AWS/Cloud Practitioner/StorageGateway|StorageGateway]]** → SAA needs:
-- Storage Gateway volume gateway cached vs stored mode selection scenarios
-- Tape gateway VTL migration patterns
-- File gateway NFS vs SMB performance tuning
-- Storage Gateway with S3 lifecycle policies
-- Hybrid architecture with Direct Connect vs Site-to-Site VPN for gateway traffic
+- [x] Storage Gateway volume gateway cached vs stored mode selection scenarios
+- [x] Tape gateway VTL migration patterns
+- [x] File gateway NFS vs SMB performance tuning
+- [x] Storage Gateway with S3 lifecycle policies
+- [x] Hybrid architecture with Direct Connect vs Site-to-Site VPN for gateway traffic
 - Gateway VM sizing and caching disk requirements
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Storage|Storage]]** → SAA needs:
@@ -533,9 +533,9 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - Neptune with IAM authentication
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DocumentDB|Database: DocumentDB]]** → SAA needs:
-- DocumentDB use cases (content management, catalogs, user profiles)
-- DocumentDB vs MongoDB compatibility gaps
-- DocumentDB global clusters
+- [x] DocumentDB use cases (content management, catalogs, user profiles)
+- [x] DocumentDB vs MongoDB compatibility gaps
+- [x] DocumentDB global clusters
 - DocumentDB read replicas and auto-scaling
 - DocumentDB backup and restore
 - DocumentDB vs DynamoDB decision scenarios
@@ -866,15 +866,15 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - Task monitoring and troubleshooting
 
 **[[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]** (DataSync) → SAA needs:
-- Agent deployment (on-prem)
-- Task configuration (bandwidth throttling, scheduling, verification mode)
-- Source/destination types (NFS, SMB, S3, EFS, FSx, HDFS)
+- [x] Agent deployment (on-prem)
+- [x] Task configuration (bandwidth throttling, scheduling, verification mode)
+- [x] Source/destination types (NFS, SMB, S3, EFS, FSx, HDFS)
 - Task execution monitoring
 - Data integrity verification modes
 
 **[[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]** (Transfer Family) → SAA needs:
-- SFTP/FTPS/FTP protocol differences
-- Identity provider integration (SAML, LDAP, custom Lambda)
+- [x] SFTP/FTPS/FTP protocol differences
+- [x] Identity provider integration (SAML, LDAP, custom Lambda)
 - VPC endpoint types (internet-facing vs VPC-only)
 - Workflow feature for post-upload processing
 - Security policies
@@ -1067,7 +1067,7 @@ These items are not covered by any existing note and need dedicated study:
 - AWS CLI essentials
 
 ### Migration & Transfer
-- AWS Snow Family (Snowcone, Snowball, Snowmobile)
+- [x] AWS Snow Family (Snowcone, Snowball, Snowmobile)
 
 ### Other
 - AWS Serverless Application Repository

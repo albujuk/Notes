@@ -28,6 +28,7 @@ Trade-off: more control ↔ less ops overhead.
 - [[100 - Cloud/AWS/Solutions Architect Associate/S3|S3 (SAA)]]: buckets, versioning, replication, storage classes (deep dive), lifecycle rules, Express One Zone, event notifications, performance, batch operations
 - [[FileStorage]]: EFS, FSx
 - [[100 - Cloud/AWS/Solutions Architect Associate/EFS|EFS (SAA)]]: NFS file system, performance/throughput modes, storage classes
+- [[100 - Cloud/AWS/Solutions Architect Associate/Storage Extras|Storage Extras (SAA)]]: Snow Family, FSx (all types), Storage Gateway, Transfer Family, DataSync, hybrid cloud
 - [[StorageGateway]]: hybrid cloud bridge
 
 Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared → file.
@@ -41,11 +42,13 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[100 - Cloud/AWS/Solutions Architect Associate/Global Accelerator|Global Accelerator (SAA)]]: Anycast IP, health checks, failover, vs CloudFront comparison
 - [[Connectivity]]: VPN, Direct Connect, Transit Gateway, PrivateLink (cross-VPC/on-prem)
 - [[Messaging]]: EventBridge, SQS, SNS (async decoupling)
+- [[100 - Cloud/AWS/Solutions Architect Associate/Messaging|Messaging (SAA)]]: sync vs async patterns, SQS Standard Queue attributes
 
 ## Data + AI
 
 - [[Database]]: RDS, Aurora, DynamoDB, DocumentDB, Neptune, ElastiCache, Redshift
 - [[100 - Cloud/AWS/Solutions Architect Associate/RDS|RDS (SAA)]]: Read Replicas vs Multi-AZ, RDS Custom, Backup & Restore, RDS Proxy, Encryption & Security, Aurora (Serverless, Global DB, ML, Babelfish, Fast Cloning)
+- [[100 - Cloud/AWS/Solutions Architect Associate/Databases|Databases (SAA)]]: DocumentDB (MongoDB-compatible, serverless, global)
 - [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache|ElastiCache (SAA)]]: Redis vs Memcached, caching strategies, clustering, high availability
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q

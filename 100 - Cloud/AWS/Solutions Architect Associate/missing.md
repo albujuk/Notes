@@ -63,7 +63,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Scalable & Loosely Coupled Architectures
 
-- [x] Amazon SQS (standard vs FIFO, visibility timeout, dead-letter queues) → [[100 - Cloud/AWS/Cloud Practitioner/Messaging#Amazon SQS (Simple Queue Service)|Messaging: SQS]]
+- [x] Amazon SQS (standard vs FIFO, visibility timeout, dead-letter queues) → [[100 - Cloud/AWS/Cloud Practitioner/Messaging#Amazon SQS (Simple Queue Service)|Messaging: SQS]] / [[100 - Cloud/AWS/Solutions Architect Associate/Messaging#Amazon SQS: Standard Queue|SAA: SQS Standard]]
 - [x] Amazon SNS (pub/sub, fan-out, message filtering) → [[100 - Cloud/AWS/Cloud Practitioner/Messaging#Amazon SNS (Simple Notification Service)|Messaging: SNS]]
 - [x] Amazon EventBridge (event buses, rules, schemas) → [[100 - Cloud/AWS/Cloud Practitioner/Messaging#Amazon EventBridge|Messaging: EventBridge]]
 - [ ] Amazon MQ (managed message broker)
@@ -91,9 +91,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Storage Performance
 
-- [x] Amazon FSx (Lustre, Windows, NetApp ONTAP, OpenZFS) → [[100 - Cloud/AWS/Cloud Practitioner/FileStorage#Amazon FSx|FileStorage: FSx]]
 - [ ] S3 Transfer Acceleration vs CloudFront
-- [x] Hybrid storage (Storage Gateway, DataSync) → [[100 - Cloud/AWS/Cloud Practitioner/StorageGateway|StorageGateway]] / [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
 - [x] Storage type selection (object vs file vs block) → [[100 - Cloud/AWS/Cloud Practitioner/Storage|Storage]]
 
 ### Compute Performance
@@ -136,8 +134,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] AWS Glue (ETL, Data Catalog, crawlers) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue|Analytics: Glue]] / [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue Data Catalog|Analytics: Glue Catalog]]
 - [x] Amazon Athena (serverless SQL on S3) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Athena|Analytics: Athena]]
 - [ ] AWS Lake Formation (data lake governance)
-- [x] AWS DataSync (data transfer) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
-- [x] AWS Transfer Family (SFTP, FTPS, FTP) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
 - [x] Amazon OpenSearch Service (search and analytics) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon OpenSearch Service|Analytics: OpenSearch]]
 
 ## Domain 4: Design Cost-Optimized Architectures (20%)
@@ -204,9 +200,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 - [x] AWS Application Migration Service (MGN) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
 - [x] AWS DMS (Database Migration Service, SCT) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
-- [ ] AWS Snow Family (Snowcone, Snowball, Snowmobile)
-- [x] AWS DataSync → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
-- [x] AWS Transfer Family → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
 - [x] Migration strategies (6 Rs: rehost, replatform, repurchase, refactor, retire, retain) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#7 Rs of Migration|CAF: 7 Rs]]
 
 ## ML & AI Services (awareness level)
