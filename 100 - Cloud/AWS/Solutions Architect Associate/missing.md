@@ -128,9 +128,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 - [x] Amazon Kinesis (Data Streams, Data Firehose, Video Streams) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Data Ingestion|Analytics: Ingestion]]
 - [ ] Amazon MSK (Managed Streaming for Kafka)
-- [x] AWS Glue (ETL, Data Catalog, crawlers) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue|Analytics: Glue]] / [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue Data Catalog|Analytics: Glue Catalog]]
-- [ ] AWS Lake Formation (data lake governance)
-- [ ] Amazon MSK (Managed Streaming for Kafka)
+- [x] AWS Glue (ETL, Data Catalog, crawlers) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue|Analytics: Glue]] / [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue Data Catalog|Analytics: Glue Catalog]] / [[100 - Cloud/AWS/Solutions Architect Associate/Analytics#AWS Glue|SAA: Glue]]
 
 ## Domain 4: Design Cost-Optimized Architectures (20%)
 

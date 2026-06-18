@@ -629,19 +629,19 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - Kinesis enhanced fan-out vs shared throughput
 - Kinesis Data Firehose transformations (Lambda, dynamic partitioning)
 - Kinesis Data Firehose buffering intervals and size
-- Kinesis vs MSK decision criteria
+- [x] Kinesis vs MSK decision criteria
 - Kinesis Video Streams use cases
 - Kinesis Data Analytics for real-time SQL processing
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue|Analytics: Glue]]** / **[[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue Data Catalog|Analytics: Glue Catalog]]** → SAA needs:
 - Glue job types (Spark, Python Shell, Ray)
 - Glue Dynamic Frame vs Spark DataFrame
-- Glue bookmarks for incremental ETL
-- Glue Data Catalog as central metadata store (Athena, Redshift Spectrum, EMR all use it)
+- [x] Glue bookmarks for incremental ETL
+- [x] Glue Data Catalog as central metadata store (Athena, Redshift Spectrum, EMR all use it)
 - Glue crawlers (schedule, custom classifiers)
 - Glue workflow and triggers for orchestration
 - Glue Flex instances for cost optimization
-- Glue streaming ETL
+- [x] Glue streaming ETL
 - Glue Data Quality rules
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Athena|Analytics: Athena]]** → SAA needs:
@@ -1033,8 +1033,8 @@ These items are not covered by any existing note and need dedicated study:
 - [x] S3 Transfer Acceleration vs CloudFront
 - AWS Wavelength (edge compute for 5G)
 - Amazon Keyspaces (Cassandra-compatible)
-- Amazon MSK (Managed Streaming for Kafka)
-- AWS Lake Formation (data lake governance)
+- [x] Amazon MSK (Managed Streaming for Kafka)
+- [x] AWS Lake Formation (data lake governance)
 
 ### Cost
 - EC2 pricing models (On-Demand, Reserved, Spot, Savings Plans, Dedicated)

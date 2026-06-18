@@ -52,7 +52,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[100 - Cloud/AWS/Solutions Architect Associate/Databases|Databases (SAA)]]: DocumentDB (MongoDB-compatible, serverless, global)
 - [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache|ElastiCache (SAA)]]: Redis vs Memcached, caching strategies, clustering, high availability
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
-- [[100 - Cloud/AWS/Solutions Architect Associate/Analytics|Analytics (SAA)]]: Athena (serverless SQL, federated query), Redshift (data warehousing, Spectrum, snapshots), OpenSearch (search, dashboards), EMR (Hadoop, Spark, big data), QuickSight (BI, dashboards, SPICE)
+- [[100 - Cloud/AWS/Solutions Architect Associate/Analytics|Analytics (SAA)]]: Glue (ETL, DataBrew, Studio, Streaming), Lake Formation (data lake governance), Flink (stream processing), MSK (managed Kafka), Athena (serverless SQL, federated query), Redshift (data warehousing, Spectrum, loading data), OpenSearch (search, dashboards, log analysis), EMR (Hadoop, Spark, big data), QuickSight (BI, dashboards, SPICE), Big Data Ingestion Pipeline
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q
 
 ## Security + governance

@@ -20,6 +20,104 @@ tags:
 
 ---
 
+## AWS Glue
+
+Fully managed, serverless ETL (extract, transform, load) service. Creates, runs, and monitors ETL jobs in a few clicks.
+
+> [!note] Covered at awareness level in [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue|Cloud Practitioner: Glue]]. This section adds SAA-depth details.
+
+### Key Features
+
+- **Managed ETL**: prepare and transform data for analytics
+- **Fully serverless**: no infrastructure to manage
+- **Glue Data Catalog**: centralized metadata repository, used by Athena, Redshift Spectrum, EMR
+- **Glue Job Bookmarks**: prevent re-processing of old data across incremental ETL runs
+- **Glue DataBrew**: clean and normalize data using pre-built transformations (no-code)
+- **Glue Studio**: GUI to create, run, and monitor ETL jobs visually
+- **Glue Streaming ETL**: built on Apache Spark Structured Streaming, compatible with Kinesis Data Streams, Kafka, and MSK
+
+### Use Cases
+
+- Data cataloging and discovery
+- ETL pipelines for data warehouses and data lakes
+- Schema evolution and data quality checks
+- Streaming data transformation
+
+---
+
+## AWS Lake Formation
+
+Fully managed service that makes it easy to set up a secure data lake in days. Built on top of AWS Glue.
+
+### Key Features
+
+- **Centralized data lake**: stores data in one central S3 location, combining structured and unstructured data
+- **Automated setup**: automates collecting, cleansing, moving, cataloging, and de-duplicating data (using ML Transforms)
+- **Out-of-the-box source blueprints**: S3, RDS, relational and NoSQL databases
+- **Fine-grained access control**: row-level and column-level security for applications
+- **Centralized permissions**: manage data access in one place across all analytics services
+- **Built on AWS Glue**: uses Glue Data Catalog and ETL capabilities under the hood
+
+### Use Cases
+
+- Building a governed data lake for analytics
+- Consolidating data from multiple sources into S3
+- Enabling self-service analytics with governed access
+
+---
+
+## Amazon Managed Service for Apache Flink
+
+Previously named Kinesis Data Analytics for Apache Flink. Managed service to run Apache Flink applications for stream processing.
+
+### Key Features
+
+- **Stream processing framework**: Flink (Java, Scala, or SQL) processes data streams in real time
+- **Managed cluster**: AWS provisions compute resources, handles parallel computation and automatic scaling
+- **Application backups**: implemented as checkpoints and snapshots
+- **Full Flink feature support**: use any Apache Flink programming features to transform data
+- **Important**: Flink does **not** read from Amazon Data Firehose
+
+### Use Cases
+
+- Real-time stream processing and transformation
+- Complex event processing
+- Real-time analytics on streaming data
+
+---
+
+## Amazon MSK (Managed Streaming for Apache Kafka)
+
+Fully managed Apache Kafka on AWS. Alternative to Amazon Kinesis for streaming workloads.
+
+### Key Features
+
+- **Managed Kafka**: MSK creates and manages Kafka broker nodes and Zookeeper nodes
+- **VPC deployment**: deploy in your VPC, multi-AZ (up to 3 for HA)
+- **Automatic recovery**: from common Apache Kafka failures
+- **Data storage**: stored on EBS volumes for as long as you want
+- **MSK Serverless**: run Kafka without managing capacity; MSK auto-provisions and scales compute and storage
+
+### Kinesis Data Streams vs Amazon MSK
+
+| Kinesis Data Streams | Amazon MSK |
+|---------------------|------------|
+| 1 MB message size limit | 1 MB default, configurable higher (e.g. 10 MB) |
+| Data Streams with Shards | Kafka Topics with Partitions |
+| Shard Splitting & Merging | Can only add partitions to a topic |
+| KMS at-rest encryption | KMS at-rest encryption |
+| TLS in-flight encryption | PLAINTEXT or TLS in-flight encryption |
+
+### Consumers
+
+Both Kinesis Data Streams and MSK can be consumed by:
+- Kinesis Data Analytics for Apache Flink
+- AWS Glue Streaming ETL Jobs (Apache Spark Streaming)
+- Lambda
+- Applications running on EC2, ECS, EKS
+
+---
+
 ## Amazon Athena
 
 **Serverless** query service to analyze data stored in Amazon S3. Uses standard SQL language to query the files (built on Presto).
@@ -89,6 +187,28 @@ Efficiently query and retrieve structured and semi-structured data from files in
 - Most data remains in Amazon S3
 - Multiple clusters can concurrently query the same dataset in S3 without copies
 
+### Loading Data into Redshift
+
+Large inserts are MUCH better than many small ones.
+
+**Three main approaches:**
+
+| Method | How it works | Best for |
+|--------|-------------|----------|
+| **Amazon Kinesis Data Firehose** | Streams data into Redshift through S3 (COPY command) | Real-time / streaming data |
+| **S3 using COPY command** | Load directly from S3 bucket into Redshift | Large batch loads |
+| **EC2 Instance (JDBC driver)** | Write data in batches from an EC2 instance | Application-driven loads |
+
+**COPY command example:**
+```sql
+copy customer
+from 's3://mybucket/mydata'
+iam_role 'arn:aws:iam::0123456789012:role/MyRedshiftRole';
+```
+
+- S3 COPY can go through the Internet (without Enhanced VPC Routing) or through VPC (with Enhanced VPC Routing)
+- For JDBC, it is better to write data in batches
+
 ### Backup & Recovery
 
 - Redshift has **Multi-AZ** mode for some clusters
@@ -114,6 +234,13 @@ Amazon OpenSearch is the successor to Amazon ElasticSearch.
 - **Ingestion** from Kinesis Data Firehose, AWS IoT, and CloudWatch Logs
 - **Security** through Cognito & IAM, KMS encryption, TLS
 - Comes with **OpenSearch Dashboards** (visualization)
+
+> [!tip] Exam Tip
+> Centralized log storage + real-time search/analysis + threat detection dashboards → **Amazon OpenSearch Service**. Distinguishes it from CloudWatch Logs (storage/basic queries only) or S3 + Athena (batch analysis, not real-time).
+>
+> **Typical architecture:** App/web logs → CloudWatch Logs or agents → Kinesis Data Firehose (optional buffering/transformation) → OpenSearch (storage + indexing) → OpenSearch Dashboards (search, visualization, alerting).
+>
+> **Complementary services:** AWS WAF + Shield (threat blocking), CloudWatch Logs Insights (ad hoc queries), Amazon Security Lake (centralized security data lake), GuardDuty (managed threat detection, feeds findings into OpenSearch).
 
 ---
 
@@ -165,6 +292,49 @@ Can have **long-running cluster** or **transient** (temporary) cluster.
   - You can share the analysis or the dashboard with Users or Groups
   - To share a dashboard, you must first **publish** it
   - Users who see the dashboard can also see the underlying data
+
+---
+
+## Big Data Ingestion Pipeline (Reference Architecture)
+
+Fully serverless pipeline for real-time data collection, transformation, SQL querying, and dashboards.
+
+```mermaid
+flowchart LR
+    IoT["IoT Devices"] -->|Real-time| KDS["Amazon Kinesis<br/>Data Streams"]
+    KDS -->|Every 1 minute| KDF["Amazon Kinesis<br/>Data Firehose"]
+    KDF --> S3In["Amazon S3<br/>(Ingestion Bucket)"]
+    KDF -.-> Lambda1["AWS Lambda"]
+    S3In --> SQS["Amazon SQS<br/>(optional)"]
+    SQS --> Lambda2["AWS Lambda"]
+    Lambda2 -->|trigger| Athena["Amazon Athena"]
+    Athena -.->|Pull data| S3In
+    Athena --> S3Out["Amazon S3<br/>(Reporting Bucket)"]
+    S3Out --> QuickSight["Amazon QuickSight"]
+    S3Out --> Redshift["Amazon Redshift<br/>Serverless"]
+
+    classDef purple fill:#EEEDFE,stroke:#534AB7,color:#26215C
+    classDef green fill:#EAF3DE,stroke:#3B6D11,color:#173404
+    classDef pink fill:#FBEAF0,stroke:#993556,color:#4B1528
+    classDef amber fill:#FAEEDA,stroke:#854F0B,color:#412402
+    classDef blue fill:#E6F1FB,stroke:#185FA5,color:#042C53
+
+    class KDS,KDF,Athena,QuickSight purple
+    class S3In,S3Out green
+    class SQS pink
+    class Lambda1,Lambda2 amber
+    class Redshift blue
+```
+
+**Pipeline flow:**
+
+1. **IoT Core** harvests data from IoT devices
+2. **Kinesis Data Streams** for real-time data collection
+3. **Kinesis Data Firehose** delivers data to S3 in near real-time (~1 minute); Lambda can transform data in-flight
+4. **Amazon S3** (ingestion bucket) stores raw data; can trigger SQS notifications
+5. **Lambda** subscribes to SQS (alternative: connect S3 directly to Lambda)
+6. **Athena** runs serverless SQL queries on S3 data; results stored back in S3
+7. **Reporting bucket** contains analyzed data, consumed by **QuickSight** (dashboards) or **Redshift Serverless** (data warehouse)
 
 ---
 
