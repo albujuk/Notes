@@ -28,6 +28,8 @@ tags:
 | 9c | Global Accelerator | [[100 - Cloud/AWS/Solutions Architect Associate/Global Accelerator\|Global Accelerator]] | Anycast IP, features, health checks, vs CloudFront comparison |
 | 10 | Elastic Beanstalk | [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk\|Elastic Beanstalk]] | Managed app platform, components (app/version/environment), tiers (web/worker), instantiating apps quickly (Golden AMI, User Data, snapshots) |
 | 10b | Messaging | [[100 - Cloud/AWS/Solutions Architect Associate/Messaging\|Messaging]] | Sync vs async communication, decoupling patterns, SQS Standard Queue (attributes, throughput, retention, delivery) |
+| 10c | Lambda | [[100 - Cloud/AWS/Solutions Architect Associate/Lambda\|Lambda]] | Concurrency (reserved vs provisioned), cold starts, execution environments |
+| 10d | Analytics | [[100 - Cloud/AWS/Solutions Architect Associate/Analytics\|Analytics]] | Athena (serverless SQL on S3, federated query), Redshift (data warehousing, Spectrum, snapshots), OpenSearch (search, dashboards), EMR (Hadoop, Spark, big data), QuickSight (BI, dashboards, SPICE) |
 | 11 | Missing | [[100 - Cloud/AWS/Solutions Architect Associate/missing\|missing]] | SAA-C03 exam topics not yet studied |
 | 12 | Depth Gaps | [[100 - Cloud/AWS/Solutions Architect Associate/saa-depth-gaps\|saa-depth-gaps]] | SAA-specific sub-topics beyond Cloud Practitioner awareness level |
 | 13 | Study Plan | [[100 - Cloud/AWS/Solutions Architect Associate/Study Plan\|Study Plan]] | 2-day exam prep plan with time-blocked schedule |

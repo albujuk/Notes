@@ -16,6 +16,7 @@ From most user-managed to least:
 - [[Compute]]: EC2 (VMs you control), Lambda (serverless functions), Beanstalk, Batch, Lightsail, Outposts
 - [[100 - Cloud/AWS/Solutions Architect Associate/EC2|EC2 (SAA)]]: placement groups, ENI, hibernation, Auto Scaling Groups, instance bootstrapping
 - [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk|Elastic Beanstalk (SAA)]]: managed app platform, components, tiers, Golden AMI + User Data, deployment policies
+- [[100 - Cloud/AWS/Solutions Architect Associate/Lambda|Lambda (SAA)]]: concurrency (reserved vs provisioned), cold starts, execution environments
 - [[Containers]]: ECR (registry), ECS (AWS-native), EKS (Kubernetes), Fargate (serverless containers)
 
 Trade-off: more control ↔ less ops overhead.
@@ -51,6 +52,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[100 - Cloud/AWS/Solutions Architect Associate/Databases|Databases (SAA)]]: DocumentDB (MongoDB-compatible, serverless, global)
 - [[100 - Cloud/AWS/Solutions Architect Associate/ElastiCache|ElastiCache (SAA)]]: Redis vs Memcached, caching strategies, clustering, high availability
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
+- [[100 - Cloud/AWS/Solutions Architect Associate/Analytics|Analytics (SAA)]]: Athena (serverless SQL, federated query), Redshift (data warehousing, Spectrum, snapshots), OpenSearch (search, dashboards), EMR (Hadoop, Spark, big data), QuickSight (BI, dashboards, SPICE)
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q
 
 ## Security + governance

@@ -97,14 +97,12 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ### Compute Performance
 
 - [ ] EC2 instance families and selection (compute/memory/storage/GPU optimized)
-- [x] AWS Lambda (memory sizing, cold starts, concurrency, layers) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Lambda|Compute: Lambda]]
 - [x] AWS Fargate (serverless containers) → [[100 - Cloud/AWS/Cloud Practitioner/Containers#AWS Fargate|Containers: Fargate]]
 - [x] Amazon ECS vs EKS (container orchestration) → [[100 - Cloud/AWS/Cloud Practitioner/Containers|Containers]]
 - [ ] Amazon ECS Anywhere (run ECS tasks on-premises or in other clouds)
 - [ ] Amazon EKS Anywhere (run EKS clusters on-premises or in other clouds)
 - [ ] Amazon EKS Distro (open-source Kubernetes distribution used by EKS Anywhere)
 - [x] AWS Batch (batch processing workloads) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Batch|Compute: Batch]]
-- [x] Amazon EMR (big data processing) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon EMR|Analytics: EMR]]
 - [x] AWS Outposts (hybrid compute) → [[100 - Cloud/AWS/Cloud Practitioner/Compute#AWS Outposts|Compute: Outposts]] / [[100 - Cloud/AWS/Cloud Practitioner/Global Infrastructure#Outposts|Global Infra: Outposts]]
 - [ ] AWS Wavelength (edge compute for 5G)
 - [ ] VMware Cloud on AWS (hybrid cloud with VMware)
@@ -115,7 +113,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] Aurora Serverless v1 vs v2, ACU scaling, pause/resume, write forwarding
 - [ ] Aurora parallel query, multi-master, I/O-Optimized
 - [x] Amazon DynamoDB (partition keys, sort keys, GSIs, LSIs, DAX) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DynamoDB|Database: DynamoDB]]
-- [x] Amazon Redshift (data warehousing, distribution styles) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Redshift|Analytics: Redshift]]
 - [x] Amazon Neptune (graph database) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon Neptune|Database: Neptune]]
 - [x] Amazon DocumentDB (MongoDB-compatible) → [[100 - Cloud/AWS/Cloud Practitioner/Database#Amazon DocumentDB|Database: DocumentDB]]
 - [ ] Amazon Keyspaces (Cassandra-compatible)
@@ -132,9 +129,8 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] Amazon Kinesis (Data Streams, Data Firehose, Video Streams) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Data Ingestion|Analytics: Ingestion]]
 - [ ] Amazon MSK (Managed Streaming for Kafka)
 - [x] AWS Glue (ETL, Data Catalog, crawlers) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue|Analytics: Glue]] / [[100 - Cloud/AWS/Cloud Practitioner/Analytics#AWS Glue Data Catalog|Analytics: Glue Catalog]]
-- [x] Amazon Athena (serverless SQL on S3) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon Athena|Analytics: Athena]]
 - [ ] AWS Lake Formation (data lake governance)
-- [x] Amazon OpenSearch Service (search and analytics) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon OpenSearch Service|Analytics: OpenSearch]]
+- [ ] Amazon MSK (Managed Streaming for Kafka)
 
 ## Domain 4: Design Cost-Optimized Architectures (20%)
 
@@ -225,7 +221,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] Amazon Managed Grafana
 - [ ] Amazon Managed Service for Prometheus
 - [ ] AWS Compute Optimizer
-- [x] Amazon QuickSight (BI visualization) → [[100 - Cloud/AWS/Cloud Practitioner/Analytics#Amazon QuickSight|Analytics: QuickSight]]
 - [ ] AWS Data Exchange
 
 ---
