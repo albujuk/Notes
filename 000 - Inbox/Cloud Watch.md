@@ -135,3 +135,14 @@ CloudWatch Alarm: good to know
 • To test alarms and notifications, set the alarm state to Alarm using CLI
 `aws cloudwatch set-alarm-state --alarm-name "myalarm" --state-value ALARM --state-reason "testing purposes"`
 
+# CloudWatch Network Synthetic Monitor
+• Monitor and detects network issues between
+your apps hosted on AWS and your on-
+premises data center
+• Identify any network performance
+degradation (e.g., packet loss, latency, jitter…)
+• No agents required to be installed
+• Tests ICMP or TCP traffic to IPv4/IPv4 on-
+premises destinations through Direct
+Connect or S2S VPN connections
+• Publishes data to CloudWatch Metrics
