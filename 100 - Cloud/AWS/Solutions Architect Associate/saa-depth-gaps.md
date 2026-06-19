@@ -9,26 +9,26 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 ### IAM & Access Management
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Security#AWS IAM (Identity and Access Management)|Security: IAM]]** → SAA needs:
-- IAM policy evaluation logic (explicit deny always wins, order of evaluation)
-- Condition keys (aws:SourceIp, aws:PrincipalArn, aws:RequestedRegion)
-- Policy types: identity-based vs resource-based vs permissions boundaries vs SCPs
+- [x] IAM policy evaluation logic (explicit deny always wins, order of evaluation)
+- [x] Condition keys (aws:SourceIp, aws:PrincipalArn, aws:RequestedRegion)
+- [x] Policy types: identity-based vs resource-based vs permissions boundaries vs SCPs
 - IAM role chaining and session tags
 - Temporary credentials duration
 - IAM Access Analyzer for resource policies
-- Permissions boundaries for delegating permissions without granting them
+- [x] Permissions boundaries for delegating permissions without granting them
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Security#AWS IAM Identity Center|Security: IAM Identity Center]]** → SAA needs:
-- Permission sets and inline vs managed policies within Identity Center
-- Attribute-based access control (ABAC) with IAM Identity Center
-- Integration with AWS Organizations for multi-account access
+- [x] Permission sets and inline vs managed policies within Identity Center
+- [x] Attribute-based access control (ABAC) with IAM Identity Center
+- [x] Integration with AWS Organizations for multi-account access
 - SCIM provisioning from external IdP
 - SSO assignment to accounts vs OUs
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Organizations|Governance: Organizations]]** / **[[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Control Tower|Control Tower]]** → SAA needs:
-- SCP attachment points and inheritance (root vs OU vs account)
+- [x] SCP attachment points and inheritance (root vs OU vs account)
 - SCP effect on service-linked roles
-- Tag policies and data protection policies
-- Control Tower guardrails (preventive vs detective)
+- [x] Tag policies and data protection policies
+- [x] Control Tower guardrails (preventive vs detective)
 - Account vending machine patterns
 - Multi-account network design (shared services VPC vs distributed)
 
@@ -1003,11 +1003,9 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 These items are not covered by any existing note and need dedicated study:
 
 ### Security
-- IAM policy evaluation logic (allow/deny, SCPs, resource policies)
 - Cross-account access (STS, AssumeRole, resource-based policies)
 - Federation (SAML 2.0, OIDC, Cognito identity pools)
 - MFA enforcement, root user best practices
-- AWS Directory Service federation with IAM roles
 - AWS Network Firewall
 - Network segmentation strategies
 - AWS Firewall Manager (centralized WAF/Shield management)

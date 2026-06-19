@@ -9,14 +9,9 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ### IAM & Access Management
 
 - [x] IAM users, groups, roles, policies (inline vs managed) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS IAM (Identity and Access Management)|Security: IAM]]
-- [ ] IAM policy evaluation logic (allow/deny, SCPs, resource policies)
 - [ ] Cross-account access (STS, AssumeRole, resource-based policies)
-- [x] IAM Identity Center (formerly AWS SSO) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS IAM Identity Center|Security: IAM Identity Center]]
 - [ ] Federation (SAML 2.0, OIDC, Cognito identity pools)
 - [ ] MFA enforcement, root user best practices
-- [x] AWS Organizations, SCPs, Control Tower (multi-account governance) → [[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Organizations|Governance: Organizations]] / [[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Control Tower|Control Tower]]
-- [x] Resource policies (S3 bucket policies, KMS key policies) → [[100 - Cloud/AWS/Cloud Practitioner/S3#Security|S3: Security]] / [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS KMS (Key Management Service)|Security: KMS]]
-- [ ] AWS Directory Service federation with IAM roles
 
 ### Networking Security
 
