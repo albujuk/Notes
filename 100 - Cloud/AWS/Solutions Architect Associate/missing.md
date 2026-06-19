@@ -56,7 +56,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] Shared responsibility model (SAA depth) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Shared Responsibility Model|Security: Shared Responsibility]]
 - [x] AWS Artifact (compliance reports) → [[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Artifact|Governance: Artifact]]
 - [x] AWS Audit Manager → [[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Audit Manager|Governance: Audit Manager]]
-- [x] AWS Config (resource compliance tracking) → [[100 - Cloud/AWS/Cloud Practitioner/Governance#AWS Config|Governance: Config]]
 - [ ] Amazon Cognito (user pools vs identity pools)
 
 ## Domain 2: Design Resilient Architectures (26%)
@@ -180,7 +179,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 - [x] AWS CloudFormation (stacks, templates, drift detection, nested stacks) → [[100 - Cloud/AWS/Cloud Practitioner/CloudFormation|CloudFormation]]
 - [x] AWS Systems Manager (Parameter Store, Session Manager, Run Command, Patch Manager) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Systems Manager|Security: Systems Manager]]
-- [x] AWS CloudTrail (API auditing, multi-region trails) → [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#AWS CloudTrail|Monitoring: CloudTrail]]
 - [x] AWS Trusted Advisor (checks across cost, performance, security, fault tolerance) → [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#AWS Trusted Advisor|Monitoring: Trusted Advisor]]
 - [x] AWS Well-Architected Tool (workload reviews) → [[100 - Cloud/AWS/Cloud Practitioner/WellArchitected#AWS Well-Architected Tool|WellArchitected: Tool]]
 - [x] AWS Health Dashboard (service health, scheduled changes) → [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#AWS Health|Monitoring: Health]]
