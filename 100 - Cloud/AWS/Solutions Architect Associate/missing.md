@@ -196,18 +196,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] AWS DMS (Database Migration Service, SCT) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
 - [x] Migration strategies (6 Rs: rehost, replatform, repurchase, refactor, retire, retain) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#7 Rs of Migration|CAF: 7 Rs]]
 
-## ML & AI Services (awareness level)
-
-- [x] Amazon SageMaker AI → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon SageMaker AI|AI: SageMaker]]
-- [x] Amazon Rekognition (image/video analysis) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Rekognition|AI: Rekognition]]
-- [x] Amazon Polly (text-to-speech) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Polly|AI: Polly]]
-- [x] Amazon Transcribe (speech-to-text) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Transcribe|AI: Transcribe]]
-- [x] Amazon Translate (translation) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Translate|AI: Translate]]
-- [x] Amazon Comprehend (NLP) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Comprehend|AI: Comprehend]]
-- [x] Amazon Lex (chatbots) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Lex|AI: Lex]]
-- [x] Amazon Kendra (enterprise search) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Kendra|AI: Kendra]]
-- [x] Amazon Textract (document extraction) → [[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Textract|AI: Textract]]
-
 ## Other In-Scope Services
 
 - [x] AWS Amplify (front-end web/mobile) → [[100 - Cloud/AWS/Cloud Practitioner/SpecializedServices#Development Services|Specialized: Dev Services]]

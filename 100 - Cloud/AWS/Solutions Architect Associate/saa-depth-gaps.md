@@ -892,78 +892,78 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 ## ML & AI Services (awareness level)
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon SageMaker AI|AI: SageMaker]]** → SAA needs:
-- Built-in algorithms vs custom models
-- Training vs hosting endpoints
-- Batch transform vs real-time inference
-- SageMaker Studio vs Notebook instances
-- Model monitoring and drift detection
-- AutoML (SageMaker Autopilot)
-- Feature store
-- Pipeline orchestration
-- Cost considerations for training vs inference
+- [x] Built-in algorithms vs custom models
+- [x] Training vs hosting endpoints
+- [x] Batch transform vs real-time inference
+- [x] SageMaker Studio vs Notebook instances
+- [x] Model monitoring and drift detection
+- [x] AutoML (SageMaker Autopilot)
+- [x] Feature store
+- [x] Pipeline orchestration
+- [x] Cost considerations for training vs inference
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Rekognition|AI: Rekognition]]** → SAA needs:
-- Image vs video analysis APIs
-- Custom labels training
-- Face comparison and collection management
-- Content moderation use cases
-- Integration patterns with S3 and Lambda
-- Streaming video analysis
+- [x] Image vs video analysis APIs
+- [x] Custom labels training
+- [x] Face comparison and collection management
+- [x] Content moderation use cases
+- [x] Integration patterns with S3 and Lambda
+- [x] Streaming video analysis
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Polly|AI: Polly]]** → SAA needs:
-- Standard vs neural voices
-- SSML support
-- Speech marks for lip-sync
-- Real-time streaming vs batch synthesis
-- Use case: accessibility, IVR systems, content creation
+- [x] Standard vs neural voices
+- [x] SSML support
+- [x] Speech marks for lip-sync
+- [x] Real-time streaming vs batch synthesis
+- [x] Use case: accessibility, IVR systems, content creation
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Transcribe|AI: Transcribe]]** → SAA needs:
-- Real-time streaming vs batch transcription
-- Custom vocabulary and language models
-- Speaker identification
-- PII redaction
-- Medical transcription option
-- Integration with S3 and Lambda
+- [x] Real-time streaming vs batch transcription
+- [x] Custom vocabulary and language models
+- [x] Speaker identification
+- [x] PII redaction
+- [x] Medical transcription option
+- [x] Integration with S3 and Lambda
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Translate|AI: Translate]]** → SAA needs:
-- Real-time vs batch translation
-- Custom terminology
-- Auto-detect source language
-- Active custom translation
-- Use case: multi-language content pipelines
+- [x] Real-time vs batch translation
+- [x] Custom terminology
+- [x] Auto-detect source language
+- [x] Active custom translation
+- [x] Use case: multi-language content pipelines
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Comprehend|AI: Comprehend]]** → SAA needs:
-- Entity recognition
-- Sentiment analysis
-- Key phrase extraction
-- Topic modeling
-- Custom entity/classifier training
-- PII detection
-- Real-time vs async analysis
+- [x] Entity recognition
+- [x] Sentiment analysis
+- [x] Key phrase extraction
+- [x] Topic modeling
+- [x] Custom entity/classifier training
+- [x] PII detection
+- [x] Real-time vs async analysis
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Lex|AI: Lex]]** → SAA needs:
-- Bot aliases and versions
-- Intent/slot/utterance design
-- Lambda fulfillment integration
-- Session attributes
-- Multi-turn conversations
-- Integration with Connect and messaging platforms
-- V2 vs V1 API differences
+- [x] Bot aliases and versions
+- [x] Intent/slot/utterance design
+- [x] Lambda fulfillment integration
+- [x] Session attributes
+- [x] Multi-turn conversations
+- [x] Integration with Connect and messaging platforms
+- [x] V2 vs V1 API differences
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Kendra|AI: Kendra]]** → SAA needs:
-- Index configuration
-- Data source connectors
-- FAQ vs document ingestion
-- Query understanding
-- Experience boosting
-- User context filtering
-- S3/SharePoint/Confluence/RDS connectors
+- [x] Index configuration
+- [x] Data source connectors
+- [x] FAQ vs document ingestion
+- [x] Query understanding
+- [x] Experience boosting
+- [x] User context filtering
+- [x] S3/SharePoint/Confluence/RDS connectors
 
 **[[100 - Cloud/AWS/Cloud Practitioner/AI#Amazon Textract|AI: Textract]]** → SAA needs:
-- Document analysis (forms, tables) vs detect text only
-- Asynchronous vs synchronous APIs
-- Integration with S3 and Lambda
-- Use case: invoice processing, KYC workflows, expense reports
+- [x] Document analysis (forms, tables) vs detect text only
+- [x] Asynchronous vs synchronous APIs
+- [x] Integration with S3 and Lambda
+- [x] Use case: invoice processing, KYC workflows, expense reports
 
 ---
 

@@ -54,6 +54,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[Analytics]]: Kinesis, Glue, EMR, Athena, QuickSight, OpenSearch
 - [[100 - Cloud/AWS/Solutions Architect Associate/Analytics|Analytics (SAA)]]: Glue (ETL, DataBrew, Studio, Streaming), Lake Formation (data lake governance), Flink (stream processing), MSK (managed Kafka), Athena (serverless SQL, federated query), Redshift (data warehousing, Spectrum, loading data), OpenSearch (search, dashboards, log analysis), EMR (Hadoop, Spark, big data), QuickSight (BI, dashboards, SPICE), Big Data Ingestion Pipeline
 - [[AI]]: pre-built AI services, SageMaker, Bedrock, Amazon Q
+- [[100 - Cloud/AWS/Solutions Architect Associate/AI and ML|AI & ML (SAA)]]: Rekognition (content moderation, A2I), Transcribe (PII redaction, language ID), Polly (SSML, lexicons), Lex & Connect, Comprehend & Comprehend Medical (PHI), SageMaker (build/train/deploy), Kendra (document search), Personalize (recommendations), Textract (document extraction)
 
 ## Security + governance
 
