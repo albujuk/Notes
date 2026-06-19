@@ -788,18 +788,18 @@ Many items in [[missing|missing.md]] are checked because they were covered at Cl
 - Hybrid activation management
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Monitoring#Amazon CloudWatch|Monitoring: CloudWatch]]** → SAA needs:
-- Custom metrics vs standard metrics (including resolution: 1-min vs 5-min)
-- CloudWatch Agent installation and configuration for OS-level metrics
-- Log groups and log streams architecture
-- Metric filters and alarms on logs
-- Metric math expressions
-- Anomaly detection alarms
-- CloudWatch Logs Insights query syntax
-- Composite alarms
-- Cross-account cross-region dashboards
-- Contributor Insights
-- CloudWatch Synthetics canaries
-- EventBridge vs CloudWatch Events distinction
+- [x] Custom metrics vs standard metrics (including resolution: 1-min vs 5-min)
+- [x] CloudWatch Agent installation and configuration for OS-level metrics
+- [x] Log groups and log streams architecture
+- [x] Metric filters and alarms on logs
+- [x] Metric math expressions
+- [x] Anomaly detection alarms
+- [x] CloudWatch Logs Insights query syntax
+- [x] Composite alarms
+- [x] Cross-account cross-region dashboards
+- [x] Contributor Insights
+- [x] CloudWatch Synthetics canaries
+- [x] EventBridge vs CloudWatch Events distinction
 
 **[[100 - Cloud/AWS/Cloud Practitioner/Monitoring#AWS CloudTrail|Monitoring: CloudTrail]]** → SAA needs:
 - Management vs data events

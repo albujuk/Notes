@@ -180,7 +180,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 - [x] AWS CloudFormation (stacks, templates, drift detection, nested stacks) → [[100 - Cloud/AWS/Cloud Practitioner/CloudFormation|CloudFormation]]
 - [x] AWS Systems Manager (Parameter Store, Session Manager, Run Command, Patch Manager) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Systems Manager|Security: Systems Manager]]
-- [x] Amazon CloudWatch (metrics, alarms, logs, dashboards, CloudWatch Events) → [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#Amazon CloudWatch|Monitoring: CloudWatch]]
 - [x] AWS CloudTrail (API auditing, multi-region trails) → [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#AWS CloudTrail|Monitoring: CloudTrail]]
 - [x] AWS Trusted Advisor (checks across cost, performance, security, fault tolerance) → [[100 - Cloud/AWS/Cloud Practitioner/Monitoring#AWS Trusted Advisor|Monitoring: Trusted Advisor]]
 - [x] AWS Well-Architected Tool (workload reviews) → [[100 - Cloud/AWS/Cloud Practitioner/WellArchitected#AWS Well-Architected Tool|WellArchitected: Tool]]

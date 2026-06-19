@@ -61,6 +61,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[Security]]: IAM, Identity Center, Secrets Manager, Systems Manager
 - [[Governance]]: Organizations, Control Tower, Config, Audit Manager
 - [[Monitoring]]: CloudWatch, CloudTrail, Trusted Advisor
+- [[100 - Cloud/AWS/Solutions Architect Associate/CloudWatch|CloudWatch (SAA)]]: Metrics (custom, streams), Logs (Insights, subscriptions, Unified Agent), Alarms (composite, EC2 recovery), EventBridge (scheduling, cross-account, schema registry), Container/Lambda Insights, Contributor Insights, Application Insights
 
 ## Foundational
 
