@@ -146,3 +146,64 @@ degradation (e.g., packet loss, latency, jitter…)
 premises destinations through Direct
 Connect or S2S VPN connections
 • Publishes data to CloudWatch Metrics
+
+
+Amazon EventBridge
+(formerly CloudWatch Events)
+• Schedule: Cron jobs (scheduled scripts)
+Schedule Every hour to Trigger script on Lambda function
+• Event Pattern: Event rules to react to a service doing something
+IAM Root User Sign in Event then SNS Topic with Email Notification
+• Trigger Lambda functions, send SQS/SNS messages…
+
+Event Bridge Sources
+ EC2 Instance (ex: Start Instance)
+ CodeBuild (ex: failed build)
+ 
+ 
+ S3 Event (ex: upload object)
+ Trusted Advisor (ex: new Finding)
+ 
+ 
+ CloudTrail (any API call)
+ Schedule or Cron (ex: every 4 hours)
+ 
+ 
+ Dest 
+ 
+Combute
+Lambda
+AWS Batch
+ECS Task
+
+integration
+SQS
+SNS
+Kinesis Data Streams
+
+Orcastration
+Step Functions
+CodePipeline
+CodeBuild
+
+Maintenance 
+SSM
+EC2 Actions
+
+• Event buses can be accessed by other AWS accounts using Resource-based Policies
+• You can archive events (all/filter) sent to an event bus (indefinitely or set period)
+• Ability to replay archived events
+
+• EventBridge can analyze the events in
+your bus and infer the schema
+• The Schema Registry allows you to
+generate code for your application, that
+will know in advance how data is
+structured in the event bus
+• Schema can be versioned
+
+• Manage permissions for a specific Event Bus
+• Example: allow/deny events from another AWS account or AWS region
+• Use case: aggregate all events from your AWS Organization in a single AWS
+account or AWS region
+
