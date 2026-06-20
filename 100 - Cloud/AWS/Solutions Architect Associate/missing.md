@@ -15,7 +15,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Networking Security
 
-- [ ] AWS Network Firewall
 - [ ] Network segmentation strategies
 
 ### Application Security
@@ -118,7 +117,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] FSx cost considerations
 - [ ] Backup strategies and cost trade-offs
 - [ ] AWS Backup (centralized backup management across AWS services)
-- [ ] Data transfer costs (ingress/egress, cross-region, internet)
 
 ### Compute Cost Optimization
 
@@ -147,10 +145,8 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Network Cost Optimization
 
-- [ ] NAT gateway costs (per-AZ vs shared, data processing charges)
 - [ ] Transit Gateway costs (attachment hours, data processing)
 - [ ] CloudFront pricing and caching to reduce origin costs
-- [ ] Data transfer cost minimization (same-AZ, private IPs)
 - [ ] Bandwidth allocation planning
 
 ## Management & Governance

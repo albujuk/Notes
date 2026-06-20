@@ -11,6 +11,10 @@ tags:
   - subnets
   - nat
   - nacl
+  - ipv6
+  - traffic-mirroring
+  - network-firewall
+  - data-transfer-costs
 ---
 
 # VPC: Virtual Private Cloud
@@ -165,6 +169,103 @@ All new AWS accounts get a default VPC in each region.
 - Not suitable for multi-tier architectures with public/private subnets
 
 **Best practice:** Create custom VPCs with proper subnet tiering (public, private, data) for production workloads.
+
+## IPv6 in VPC
+
+IPv6 is the successor to IPv4, providing 3.4 x 10^38 unique addresses (vs IPv4's 4.3 billion).
+
+**Key differences from IPv4:**
+- Format: 8 groups of hexadecimal values separated by colons (e.g., `2001:db8:3333:4444:5555:6666:7777:8888`)
+- Zero compression: consecutive zero groups can be collapsed to `::` (e.g., `2001:db8::1234:5678`)
+- **Every IPv6 address in AWS is public and internet-routable** (no private IPv6 range exists)
+
+**IPv6 in your VPC:**
+- IPv4 cannot be disabled for VPCs and subnets
+- IPv6 can be enabled to operate in **dual-stack mode** (both IPv4 and IPv6)
+- EC2 instances get at least a private internal IPv4 and a public IPv6
+- Instances can communicate using either IPv4 or IPv6 to the internet through an Internet Gateway
+
+## Egress-only Internet Gateway
+
+Like a NAT Gateway, but for **IPv6 only**.
+
+**Characteristics:**
+- Allows instances in your VPC to make outbound connections over IPv6 while preventing the internet from initiating inbound IPv6 connections
+- You must update the Route Tables to route IPv6 traffic (e.g., `::/0`) to the Egress-only Internet Gateway
+
+**Comparison:**
+
+| Feature | NAT Gateway | Egress-only Internet Gateway |
+|---------|-------------|------------------------------|
+| IP version | IPv4 | IPv6 |
+| Direction | Outbound only | Outbound only |
+| Cost | Per hour + per GB | No additional cost |
+
+## VPC Traffic Mirroring
+
+Capture and inspect network traffic in your VPC for security analysis and troubleshooting.
+
+**Components:**
+- **Source:** ENIs (Elastic Network Interfaces) to capture traffic from
+- **Target:** ENI or Network Load Balancer to send captured traffic to
+
+**Characteristics:**
+- Route traffic to security appliances that you manage
+- Capture all packets or filter packets of interest (optionally truncate packets)
+- Source and Target can be in the same VPC or different VPCs (via VPC Peering)
+
+**Use cases:** content inspection, threat monitoring, troubleshooting, compliance auditing
+
+## AWS Network Firewall
+
+Managed firewall service that protects your entire VPC from Layer 3 through Layer 7.
+
+**Capabilities:**
+- Inspects traffic in any direction: VPC-to-VPC, outbound to internet, inbound from internet, to/from Direct Connect and Site-to-Site VPN
+- Internally uses AWS Gateway Load Balancer
+- Rules can be centrally managed cross-account by [[100 - Cloud/AWS/Solutions Architect Associate/WAF Shield Firewall Manager|Firewall Manager]] to apply to many VPCs
+
+**Fine-grained controls:**
+- Supports 1000s of rules with IP & port filtering (e.g., 10,000s of IPs)
+- Protocol filtering (e.g., block SMB protocol for outbound)
+- Stateful domain list rule groups (e.g., only allow outbound to `*.mycorp.com`)
+- General pattern matching using regex
+- Traffic actions: allow, drop, or alert
+- Active flow inspection with intrusion-prevention capabilities (IPS)
+- Logs rule matches to S3, CloudWatch Logs, or Kinesis Data Firehose
+
+## Networking Costs in AWS
+
+### Data Transfer Pricing (per GB)
+
+| Scenario | Cost |
+|----------|------|
+| Traffic within same AZ (private IP) | Free |
+| Traffic across AZs (private IP) | $0.01 |
+| Traffic across AZs (public IP / Elastic IP) | $0.02 |
+| Inter-region traffic | $0.02 |
+
+**Cost optimization tips:**
+- Use **private IPs** instead of public IPs for better savings and network performance
+- Keep traffic within the same AZ for maximum savings (at the cost of high availability)
+- Keep as much internet traffic within AWS as possible to minimize costs
+
+### Key Examples
+
+**S3 data transfer:**
+- S3 ingress: free
+- S3 to internet: $0.09/GB
+- S3 to CloudFront: free ($0.00/GB)
+- CloudFront to internet: $0.085/GB (slightly cheaper than S3 direct, plus caching and 7x cheaper S3 request pricing)
+- S3 Transfer Acceleration: +$0.04 to $0.08/GB on top of data transfer pricing (50-500% faster)
+- S3 Cross-Region Replication: $0.02/GB
+
+**EC2 in private subnet accessing S3:**
+- NAT Gateway: $0.045/hour + $0.045/GB data processed
+- Cross-region S3: $0.09/GB
+- Same-region S3 via Gateway Endpoint: free (no cost for Gateway Endpoint, $0.01/GB same-region transfer)
+
+**Direct Connect:** Co-located Direct Connect locations in the same AWS Region result in lower egress network costs.
 
 ---
 
