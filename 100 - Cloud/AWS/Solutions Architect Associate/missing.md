@@ -15,9 +15,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Networking Security
 
-- [x] VPC architecture (public/private subnets, route tables, internet gateway) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#VPC (Virtual Private Cloud)|Networking: VPC]]
-- [x] Security groups vs network ACLs (stateful vs stateless) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#Security Groups|Networking: Security Groups]]
-- [x] NAT gateways vs NAT instances → [[100 - Cloud/AWS/Cloud Practitioner/Networking#NAT Gateway|Networking: NAT Gateway]]
 - [ ] AWS Network Firewall
 - [x] VPC endpoints (Gateway vs Interface/PrivateLink) → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS PrivateLink|Connectivity: PrivateLink]]
 - [x] VPN (Site-to-Site, Client VPN) vs Direct Connect → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity|Connectivity]]
