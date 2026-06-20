@@ -26,14 +26,14 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Application Security
 
-- [x] AWS WAF (web ACLs, rules, rate limiting) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS WAF (Web Application Firewall)|Security: WAF]]
-- [x] AWS Shield (Standard vs Advanced, DDoS protection) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Shield|Security: Shield]]
+- [x] AWS WAF (web ACLs, rules, rate limiting) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS WAF (Web Application Firewall)|Security: WAF]] / [[100 - Cloud/AWS/Solutions Architect Associate/WAF Shield Firewall Manager|SAA: WAF]]
+- [x] AWS Shield (Standard vs Advanced, DDoS protection) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Shield|Security: Shield]] / [[100 - Cloud/AWS/Solutions Architect Associate/WAF Shield Firewall Manager|SAA: Shield]]
 - [x] Amazon GuardDuty (threat detection) → [[100 - Cloud/AWS/Cloud Practitioner/Security#Amazon GuardDuty|Security: GuardDuty]]
 - [x] Amazon Macie (data classification, PII discovery) → [[100 - Cloud/AWS/Cloud Practitioner/Security#Amazon Macie|Security: Macie]]
 - [x] Amazon Inspector (vulnerability scanning) → [[100 - Cloud/AWS/Cloud Practitioner/Security#Amazon Inspector|Security: Inspector]]
 - [x] AWS Security Hub (security posture aggregation) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Security Hub|Security: Security Hub]]
 - [x] Amazon Detective (incident investigation) → [[100 - Cloud/AWS/Cloud Practitioner/Security#Amazon Detective|Security: Detective]]
-- [ ] AWS Firewall Manager (centralized WAF/Shield management)
+- [x] AWS Firewall Manager (centralized WAF/Shield management) → [[100 - Cloud/AWS/Solutions Architect Associate/WAF Shield Firewall Manager|SAA: Firewall Manager]]
 
 ### Data Security & Encryption
 

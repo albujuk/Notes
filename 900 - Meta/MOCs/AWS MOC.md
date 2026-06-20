@@ -65,6 +65,8 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[100 - Cloud/AWS/Solutions Architect Associate/KMS|KMS (SAA)]]: key types (symmetric/asymmetric, AWS owned/managed/customer), key policies, key rotation, multi-region keys, client-side encryption (DynamoDB/Aurora Global), S3 replication encryption, KMS vs CloudHSM comparison
 - [[100 - Cloud/AWS/Solutions Architect Associate/Security Services|Security Services (SAA)]]: SSM Parameter Store (Standard vs Advanced, parameter policies), Secrets Manager (rotation, multi-region secrets), ACM (public/private certs, DNS validation, importing certs)
 - [[100 - Cloud/AWS/Solutions Architect Associate/API Gateway|API Gateway (SAA)]]: endpoint types (Edge-Optimized, Regional, Private), ACM integration for custom domain names
+- [[100 - Cloud/AWS/Solutions Architect Associate/WAF Shield Firewall Manager|WAF, Shield, Firewall Manager (SAA)]]: WAF (Web ACL rules, IP sets, rate-based rules, deployment targets), Shield (Standard vs Advanced, DDoS protection), Firewall Manager (organization-wide security policies)
+- [[100 - Cloud/AWS/Solutions Architect Associate/DDoS Best Practices|DDoS Best Practices (SAA)]]: Mitigation techniques (edge services, SYN cookies), EC2 instance selection (enhanced networking), Auto Scaling (BP7), ELB configuration (BP6, connection tracking), Shield Advanced benefits
 - [[100 - Cloud/AWS/Solutions Architect Associate/Monitoring|Monitoring (SAA)]]: CloudWatch (metrics, logs, alarms, EventBridge, Insights), CloudTrail (events, Insights, retention), AWS Config (rules, remediations, notifications), comparison
 
 ## Foundational
