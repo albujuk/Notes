@@ -37,11 +37,8 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Data Security & Encryption
 
-- [x] AWS CloudHSM (dedicated HSM) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS CloudHSM|Security: CloudHSM]]
-- [x] AWS Certificate Manager (ACM, TLS certificates) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Certificate Manager (ACM)|Security: ACM]]
 - [x] Encryption at rest (S3, EBS, RDS, DynamoDB) → [[100 - Cloud/AWS/Cloud Practitioner/Security#Data Protection|Security: Data Protection]] / [[100 - Cloud/AWS/Cloud Practitioner/S3#Security|S3: Security]] / [[100 - Cloud/AWS/Cloud Practitioner/Database|Database]]
 - [x] Encryption in transit (TLS, ACM) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Certificate Manager (ACM)|Security: ACM]]
-- [x] AWS Secrets Manager (rotation, integration) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Secrets Manager|Security: Secrets Manager]]
 - [x] Data lifecycle, classification, retention policies → [[100 - Cloud/AWS/Cloud Practitioner/S3#Object Lifecycle Management|S3: Lifecycle]]
 - [ ] AWS Certificate Manager integration with S3 (custom domains)
 
@@ -62,7 +59,7 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [ ] Amazon MQ (managed message broker)
 - [ ] AWS Step Functions (state machines, workflow orchestration)
 - [x] AWS AppSync (GraphQL, real-time subscriptions) → [[100 - Cloud/AWS/Cloud Practitioner/SpecializedServices#Development Services|Specialized: Dev Services]]
-- [x] Amazon API Gateway (REST API, stages, throttling, caching) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#API Gateway|Networking: API Gateway]]
+- [x] Amazon API Gateway (REST API, stages, throttling, caching, endpoint types) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#API Gateway|Networking: API Gateway]] / [[100 - Cloud/AWS/Solutions Architect Associate/API Gateway|SAA: API Gateway]]
 - [ ] Microservices design principles (stateless vs stateful)
 - [x] Event-driven architecture patterns → [[100 - Cloud/AWS/Cloud Practitioner/Messaging|Messaging]]
 - [x] Horizontal vs vertical scaling → [[100 - Cloud/AWS/Cloud Practitioner/Compute#Elasticity (Scaling)|Compute: Scaling]]

@@ -43,10 +43,10 @@ Anytime you hear encryption for an AWS service, it's most likely KMS. AWS manage
 |------|------|---------|
 | **AWS Owned Keys** | Free | SSE-S3, SSE-SQS, SSE-DDB (default key) |
 | **AWS Managed Key** | Free | aws/service-name (example: aws/rds or aws/ebs) |
-| **Customer managed keys created in KMS** |  / month | Custom keys you create |
-| **Customer managed keys imported** |  / month | Keys you import from external source |
+| **Customer managed keys created in KMS** | $1 / month | Custom keys you create |
+| **Customer managed keys imported** | $1 / month | Keys you import from external source |
 
-+ pay for API call to KMS (/bin/zsh.03 / 10000 calls)
++ pay for API call to KMS ($0.03 / 10000 calls)
 
 ## Automatic Key Rotation
 
@@ -127,6 +127,47 @@ For SSE-KMS replication:
 - You might get KMS throttling errors, in which case you can ask for a Service Quotas increase
 - You can use multi-region AWS KMS Keys, but they are currently treated as independent keys by Amazon S3 (the object will still be decrypted and then encrypted)
 
+## KMS vs CloudHSM
+
+> Builds on [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS CloudHSM|Cloud Practitioner: CloudHSM]].
+
+| Feature | AWS KMS | AWS CloudHSM |
+|---------|---------|--------------|
+| **Tenancy** | Multi-Tenant | Single-Tenant |
+| **Standard** | FIPS 140-2 Level 3 | FIPS 140-2 Level 3 |
+| **Master Keys** | AWS Owned CMK, AWS Managed CMK, Customer Managed CMK | Customer Managed CMK |
+| **Key Types** | Symmetric, Asymmetric, Digital Signing | Symmetric, Asymmetric, Digital Signing & Hashing |
+| **Key Accessibility** | Accessible in multiple AWS regions (can't access keys outside the region it's created in) | Deployed and managed in a VPC, can be shared across VPCs (VPC Peering) |
+| **Cryptographic Acceleration** | None | SSL/TLS Acceleration, Oracle TDE Acceleration |
+| **Access & Authentication** | AWS IAM | You create users and manage their permissions |
+| **High Availability** | AWS Managed Service | Add multiple HSMs over different AZs |
+| **Audit Capability** | CloudTrail, CloudWatch | CloudTrail, CloudWatch, MFA support |
+| **Free Tier** | Yes | No |
+
+**CloudHSM details:**
+- KMS: AWS manages the software for encryption
+- CloudHSM: AWS provisions encryption hardware (dedicated HSM = Hardware Security Module)
+- You manage your own encryption keys entirely (not AWS)
+- HSM device is tamper resistant, FIPS 140-2 Level 3 compliance
+- Supports both symmetric and asymmetric encryption (SSL/TLS keys)
+- No free tier available
+- Must use the CloudHSM Client Software
+- Redshift supports CloudHSM for database encryption and key management
+- Good option to use with SSE-C encryption
+
+**High Availability:**
+- CloudHSM clusters are spread across Multi AZ (HA)
+- Great for availability and durability
+
+**IAM permissions:**
+- CRUD an HSM Cluster
+
+**CloudHSM Software:**
+- Manage the Keys
+- Manage the Users
+
+**AWS manages the hardware**
+
 ---
 
-← [[100 - Cloud/AWS/Solutions Architect Associate/IAM|IAM]] · [[100 - Cloud/AWS/Solutions Architect Associate/README|Solutions Architect Associate]]
+← [[100 - Cloud/AWS/Solutions Architect Associate/Security Services|Security Services]] · [[100 - Cloud/AWS/Solutions Architect Associate/README|Solutions Architect Associate]]
