@@ -37,7 +37,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Data Security & Encryption
 
-- [x] AWS KMS (key types, key policies, key rotation, grants) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS KMS (Key Management Service)|Security: KMS]]
 - [x] AWS CloudHSM (dedicated HSM) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS CloudHSM|Security: CloudHSM]]
 - [x] AWS Certificate Manager (ACM, TLS certificates) → [[100 - Cloud/AWS/Cloud Practitioner/Security#AWS Certificate Manager (ACM)|Security: ACM]]
 - [x] Encryption at rest (S3, EBS, RDS, DynamoDB) → [[100 - Cloud/AWS/Cloud Practitioner/Security#Data Protection|Security: Data Protection]] / [[100 - Cloud/AWS/Cloud Practitioner/S3#Security|S3: Security]] / [[100 - Cloud/AWS/Cloud Practitioner/Database|Database]]

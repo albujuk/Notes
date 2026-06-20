@@ -62,6 +62,7 @@ Pick by access pattern: random IO → block; HTTP/API → object; POSIX shared �
 - [[Governance]]: Organizations, Control Tower, Config, Audit Manager
 - [[Monitoring]]: CloudWatch, CloudTrail, Trusted Advisor
 - [[100 - Cloud/AWS/Solutions Architect Associate/IAM|IAM (SAA)]]: policy evaluation logic, condition keys, resource-based policies vs roles, permission boundaries, Organizations (SCPs, tag policies), Control Tower guardrails, IAM Identity Center (permission sets, ABAC), Directory Services
+- [[100 - Cloud/AWS/Solutions Architect Associate/KMS|KMS (SAA)]]: key types (symmetric/asymmetric, AWS owned/managed/customer), key policies, key rotation, multi-region keys, client-side encryption (DynamoDB/Aurora Global), S3 replication encryption
 - [[100 - Cloud/AWS/Solutions Architect Associate/Monitoring|Monitoring (SAA)]]: CloudWatch (metrics, logs, alarms, EventBridge, Insights), CloudTrail (events, Insights, retention), AWS Config (rules, remediations, notifications), comparison
 
 ## Foundational
