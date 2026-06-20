@@ -18,3 +18,12 @@ VPC in AWS – IPv4
 • 192.168.0.0 – 192.168.255.255 (192.168.0.0/16)
 • Your VPC CIDR should NOT overlap with your other networks (e.g., corporate)
 
+Internet Gateway (IGW)
+• Allows resources (e.g., EC2 instances) in a VPC connect to the Internet
+• It scales horizontally and is highly available and redundant
+• Must be created separately from a VPC
+• One VPC can only be attached to one IGW and vice versa
+• Internet Gateways on their own do not allow Internet access…
+• Route tables must also be edited!
+
+
