@@ -50,4 +50,3 @@ Types of Endpoints
  premises (Site to Site VPN or
  Direct Connect), a different VPC
  or a different region
- 
