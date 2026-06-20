@@ -27,6 +27,7 @@ tags:
 | 9b | CloudFront | [[100 - Cloud/AWS/Solutions Architect Associate/CloudFront\|CloudFront]] | Origins (S3, VPC, Custom), geo restriction, cache invalidations, CloudFront vs S3 CRR |
 | 9c | Global Accelerator | [[100 - Cloud/AWS/Solutions Architect Associate/Global Accelerator\|Global Accelerator]] | Anycast IP, features, health checks, vs CloudFront comparison |
 | 9d | VPC | [[100 - Cloud/AWS/Solutions Architect Associate/VPC\|VPC]] | CIDR blocks, subnets, IGW, NAT Gateways (Regional), Bastion Hosts, NACL, ephemeral ports, Security Groups vs NACL, Default VPC |
+| 9e | VPC Connectivity | [[100 - Cloud/AWS/Solutions Architect Associate/VPC Connectivity\|VPC Connectivity]] | VPC Peering, VPC Endpoints (PrivateLink), VPC Flow Logs, Site-to-Site VPN, Direct Connect, Transit Gateway, ECMP |
 | 10 | Elastic Beanstalk | [[100 - Cloud/AWS/Solutions Architect Associate/Elastic Beanstalk\|Elastic Beanstalk]] | Managed app platform, components (app/version/environment), tiers (web/worker), instantiating apps quickly (Golden AMI, User Data, snapshots) |
 | 10b | Messaging | [[100 - Cloud/AWS/Solutions Architect Associate/Messaging\|Messaging]] | Sync vs async communication, decoupling patterns, SQS Standard Queue (attributes, throughput, retention, delivery) |
 | 10c | Lambda | [[100 - Cloud/AWS/Solutions Architect Associate/Lambda\|Lambda]] | Concurrency (reserved vs provisioned), cold starts, execution environments |

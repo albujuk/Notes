@@ -16,9 +16,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ### Networking Security
 
 - [ ] AWS Network Firewall
-- [x] VPC endpoints (Gateway vs Interface/PrivateLink) → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS PrivateLink|Connectivity: PrivateLink]]
-- [x] VPN (Site-to-Site, Client VPN) vs Direct Connect → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity|Connectivity]]
-- [x] AWS Transit Gateway → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS Transit Gateway|Connectivity: Transit Gateway]]
 - [ ] Network segmentation strategies
 
 ### Application Security
@@ -78,7 +75,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 
 ### Storage Performance
 
-- [ ] S3 Transfer Acceleration vs CloudFront
 - [x] Storage type selection (object vs file vs block) → [[100 - Cloud/AWS/Cloud Practitioner/Storage|Storage]]
 
 ### Compute Performance
@@ -106,10 +102,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 - [x] Database migration (DMS, SCT, homogeneous vs heterogeneous) → [[100 - Cloud/AWS/Cloud Practitioner/CloudAdoptionFramework#Migration Services|CAF: Migration]]
 
 ### Network Performance
-
-- [x] VPC design for performance (subnet tiers, IP planning) → [[100 - Cloud/AWS/Cloud Practitioner/Networking#VPC (Virtual Private Cloud)|Networking: VPC]]
-- [x] AWS PrivateLink → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS PrivateLink|Connectivity: PrivateLink]]
-- [x] Direct Connect (port speeds, Link Aggregation Groups) → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS Direct Connect|Connectivity: Direct Connect]]
 
 ### Data Ingestion & Transformation
 
@@ -156,8 +148,6 @@ Exam: 65 questions, 130 minutes, passing score 720/1000.
 ### Network Cost Optimization
 
 - [ ] NAT gateway costs (per-AZ vs shared, data processing charges)
-- [x] VPC endpoints to reduce data transfer costs → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity#AWS PrivateLink|Connectivity: PrivateLink]]
-- [x] Direct Connect vs VPN vs internet cost comparison → [[100 - Cloud/AWS/Cloud Practitioner/Connectivity|Connectivity]]
 - [ ] Transit Gateway costs (attachment hours, data processing)
 - [ ] CloudFront pricing and caching to reduce origin costs
 - [ ] Data transfer cost minimization (same-AZ, private IPs)

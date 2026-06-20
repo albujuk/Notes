@@ -47,8 +47,23 @@ S3 can notify downstream services when objects are created, deleted, restored, o
 - Parallelizes uploads to speed up transfers
 
 ### Transfer Acceleration
-- Increases transfer speed by routing file to an AWS edge location, which forwards data to the target S3 bucket region
-- Compatible with multi-part upload
+
+Increases transfer speed by routing file to an AWS edge location, which forwards data to the target S3 bucket region. Compatible with multi-part upload.
+
+### S3 Transfer Acceleration vs CloudFront
+
+| Aspect | S3 Transfer Acceleration | CloudFront |
+|--------|-------------------------|------------|
+| **Purpose** | Accelerate uploads TO S3 | Distribute content FROM origins (S3, VPC, Custom) |
+| **Direction** | Upload-focused | Download-focused (caches at edge) |
+| **Mechanism** | Edge location receives upload, forwards to S3 bucket | Edge location caches content, serves from cache |
+| **Caching** | No caching; forwards to S3 | Cached for TTL (e.g. a day) |
+| **Best for** | Large file uploads from distant locations | Static content available everywhere, repeated reads |
+| **Access** | Read and write | Read only (cached content) |
+| **Scope** | Routes to specific S3 bucket region | Global edge network (Points of Presence) |
+| **Integrations** | S3 multi-part upload | S3, EC2, ELB, Route 53, WAF, Shield |
+
+Both use AWS edge locations but serve different purposes: Transfer Acceleration speeds up uploads to S3, CloudFront speeds up downloads by caching content globally.
 
 ### Byte-Range Fetches
 - Parallelize GETs by requesting specific byte ranges
