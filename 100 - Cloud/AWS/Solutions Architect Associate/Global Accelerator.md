@@ -49,6 +49,10 @@ Both use the AWS global network and edge locations. Both integrate with Shield f
 
 **Decision rule**: need caching? → CloudFront. Need static IP + any TCP/UDP? → Global Accelerator.
 
+### Why Global Accelerator doesn't help with traffic spikes
+
+Global Accelerator does **not** cache content. Every request still hits the origin (ALB/EC2). It optimizes the network path (faster routing, health-check-based failover), but the origin servers must handle the full request volume. Against a traffic spike, GA provides no relief — the backend takes the same load. [[100 - Cloud/AWS/Solutions Architect Associate/CloudFront|CloudFront]] absorbs spikes by serving cached responses from edge locations, only forwarding cache misses to the origin.
+
 ---
 
 ← [[100 - Cloud/AWS/Solutions Architect Associate/README|Solutions Architect Associate]] · [[100 - Cloud/AWS/Solutions Architect Associate/CloudFront|CloudFront]] · [[100 - Cloud/AWS/Solutions Architect Associate/ELB|ELB]]
