@@ -100,6 +100,25 @@ EC2 instances configured to perform NAT. Launched in public subnets.
 
 **Use as Bastion Host:** NAT instances can double as bastion hosts for SSH access to private instances. NAT Gateways cannot.
 
+### NAT Gateway vs NAT Instance
+
+| Attribute        | NAT Gateway                                                                  | NAT Instance                                           |
+| ---------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Availability     | Highly available per AZ; create one per AZ for zone-independent architecture | Requires failover scripts (e.g., ASG + custom scripts) |
+| Bandwidth        | Scales up to 100 Gbps                                                        | Depends on instance type                               |
+| Maintenance      | Managed by AWS                                                               | You manage OS patches, software updates                |
+| Performance      | Optimized for NAT traffic                                                    | Generic AMI configured for NAT                         |
+| Cost             | Per NAT gateway + duration + data processed                                  | Per instance + duration + instance type/size           |
+| Type and size    | Uniform offering, no sizing decisions                                        | Must choose instance type/size based on workload       |
+| Public IP        | Associate Elastic IP at creation                                             | Elastic IP or public IP; can swap anytime              |
+| Private IP       | Auto-selected from subnet CIDR                                               | Manually assigned from subnet CIDR                     |
+| Security groups  | Cannot attach SGs to NAT Gateway; use SGs on resources behind it             | Attach SGs directly to the NAT instance                |
+| Port forwarding  | Not supported                                                                | Can manually configure                                 |
+| Bastion host     | Not supported                                                                | Can be used as bastion host                            |
+| Timeout behavior | Sends RST on timeout                                                         | Sends FIN on timeout                                   |
+| IP fragmentation | UDP only; TCP and ICMP fragments dropped                                     | Reassembles fragments for UDP, TCP, and ICMP           |
+| Status           | Current, recommended                                                         | Legacy; end of standard support Dec 31, 2020           |
+
 ### Bastion Hosts
 
 EC2 instance in a public subnet used as a jump box to SSH into private EC2 instances.
