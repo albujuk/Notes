@@ -182,7 +182,8 @@ Amazon Redshift is built on cloud economics that scale with your usage, powering
 
 Efficiently query and retrieve structured and semi-structured data from files in Amazon S3 **without loading the data into Redshift tables**.
 
-- Employs massive parallelism to run very fast against large datasets
+- **Must have a Redshift cluster available** to start the query (unlike Athena which is fully serverless)
+- The query is submitted to thousands of Redshift Spectrum nodes for massive parallelism
 - Much of the processing occurs in the Redshift Spectrum layer
 - Most data remains in Amazon S3
 - Multiple clusters can concurrently query the same dataset in S3 without copies

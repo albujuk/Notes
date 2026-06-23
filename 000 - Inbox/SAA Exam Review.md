@@ -1,0 +1,2 @@
+1. VPC sharing can share subnets, not the actual VPC
+2. route 53 is good for wight routing traffic for green/blue deployments but it's not the best option when there is dns caching, use global accelerator 
