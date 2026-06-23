@@ -97,9 +97,44 @@ Automatically adjusts the number of EC2 instances to match demand. Maintains a d
 
 **Key concepts:**
 - **Min/Max/Desired capacity**: bounds and target instance count
-- **Launch template**: defines instance configuration (AMI, instance type, security groups, etc.)
+- **Launch template** (preferred) or **Launch Configuration** (legacy): defines instance configuration (AMI, instance type, security groups, etc.)
 - **Health checks**: EC2 status checks + ELB health checks (if integrated)
 - **Cooldown period**: wait time after scaling before another action (default 300s)
+
+### Launch Template vs Launch Configuration
+
+AWS has two ways to define settings for EC2 instances launched in an ASG. **Launch Templates** are the current standard; **Launch Configurations** are legacy.
+
+**Launch Configuration (legacy):**
+- **Immutable** — once created, you cannot edit it. To change anything, create a new one and update the ASG.
+- Only usable with **one ASG** at a time (1:1 relationship).
+- No versioning support.
+- Does not support newer EC2 features (mixed instance types, Spot + On-Demand combos).
+- AWS has deprecated new launch configuration creation — legacy.
+
+**Launch Template (current standard):**
+- **Supports versioning** — create multiple versions, roll back if needed.
+- Reusable across **multiple ASGs** and can launch standalone EC2 instances directly.
+- Supports advanced features:
+  - **Mixed instance types and purchase options** (On-Demand + Spot in one ASG)
+  - **T2/T3 unlimited burst** settings
+  - Multiple **network interfaces**
+  - Flexible instance type + AMI specification per version
+- AWS recommends always using Launch Templates — explicitly tested on SAA-C03.
+
+**Comparison table:**
+
+| Feature               | Launch Configuration | Launch Template        |
+| --------------------- | -------------------- | ---------------------- |
+| Editable              | No (immutable)       | Yes (via new versions) |
+| Versioning            | No                   | Yes                    |
+| Reusable across ASGs  | No (1 ASG only)      | Yes                    |
+| Spot + On-Demand mix  | No                   | Yes                    |
+| Standalone EC2 launch | No                   | Yes                    |
+| AWS recommendation    | Legacy/deprecated    | Use this               |
+
+> [!tip] Exam Tip
+> Questions about combining Spot and On-Demand, reusing across ASGs, or versioning → **Launch Template**. Launch Configuration is a legacy distractor.
 
 ### Scaling Policies
 
@@ -121,10 +156,10 @@ New instances launched by an ASG use the **launch template**, which defines the 
 
 Two approaches to ensure new instances are app-ready:
 
-| Approach | How it works | Trade-off |
-|----------|-------------|-----------|
-| **Pre-baked AMI** | Bake the app into a custom AMI (manually or with [[100 - Cloud/AWS/Cloud Practitioner/Compute#EC2 Image Builder|EC2 Image Builder]]); instances launch ready to serve | Faster boot, less dynamic config |
-| **User data bootstrap** | Use user data to install/configure the app on first boot from a base AMI | More flexible, slower boot, can pull latest artifacts |
+| Approach                | How it works                                                                                                                                                           | Trade-off                                             |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| **Pre-baked AMI**       | Bake the app into a custom AMI (manually or with [[100 - Cloud/AWS/Cloud Practitioner/Compute#EC2 Image Builder\|EC2 Image Builder]]); instances launch ready to serve | Faster boot, less dynamic config                      |
+| **User data bootstrap** | Use user data to install/configure the app on first boot from a base AMI                                                                                               | More flexible, slower boot, can pull latest artifacts |
 
 Both can be combined: pre-bake a base image with dependencies, then use user data for final configuration (environment variables, pulling secrets, registering with services).
 
