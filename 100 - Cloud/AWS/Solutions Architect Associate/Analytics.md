@@ -116,6 +116,26 @@ Both Kinesis Data Streams and MSK can be consumed by:
 - Lambda
 - Applications running on EC2, ECS, EKS
 
+### Streaming S3 Data into Kinesis with AWS DMS
+
+AWS DMS can bridge existing S3 data (including ongoing updates) into Kinesis Data Streams without writing custom code. Useful for backfilling historical data + CDC into a real-time pipeline.
+
+**How it works:**
+- Source: **Amazon S3**
+- Target: **Amazon Kinesis Data Streams** (also supports MSK)
+- DMS performs **full load + CDC** (change data capture) from S3 files to the stream
+- A **DMS replication instance** handles the data movement and can scale up/down
+
+**Why DMS over Lambda/EventBridge:**
+- No custom code to write or maintain — fully configured via DMS console
+- DMS handles both existing data (backfill) and new/changed files
+- Lambda/EventBridge paths require significant custom development and only handle new events, not existing data
+
+**Consumers** of the Kinesis stream can then process data in real time (Lambda, Kinesis Data Firehose, Kinesis Data Analytics, KCL).
+
+> [!tip] Exam Tip
+> If the requirement is to stream **existing** S3 data + ongoing file updates into Kinesis **without custom code**, choose **AWS DMS**. Lambda/EventBridge handles new events only and needs custom development.
+
 ---
 
 ## Amazon Athena
