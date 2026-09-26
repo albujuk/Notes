@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: ib7ui-ajjvk
+created: 2026-08-30T01:09:27+03:00
